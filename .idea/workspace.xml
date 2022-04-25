@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/src/model/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/model/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/model/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/model/PersonList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/model/Rental.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/model/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
