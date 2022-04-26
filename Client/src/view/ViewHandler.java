@@ -61,7 +61,7 @@ public class ViewHandler
         root = loadMovieView("movie.fxml");
         break;
      // case "home":
-        //root = loadHomeView("home.fxml");
+        //root = loadHomeView("Top-Rated_Movies.fxml");
        // break;
     }
     currentScene.setRoot(root);

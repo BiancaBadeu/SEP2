@@ -77,6 +77,9 @@ public class MovieViewController
   {
     viewHandler.openView("home");
   }
+  /*
+
+
   /**
    * A FXML method called when the button named Leave review is pressed
    *
@@ -85,12 +88,14 @@ public class MovieViewController
    *  @see viewmodel.MovieViewModel
    *  @see view.MovieViewController
    */
-  @FXML private void leaveReviewPressed()
+
+  //not for this sprint
+  /*@FXML private void leaveReviewPressed()
   {
       boolean leaveReview = viewModel.leaveReview();
       if(leaveReview)
       {
         reset();
       }
-  }
+  }*/
 }
