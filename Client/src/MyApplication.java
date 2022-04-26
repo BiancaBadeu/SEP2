@@ -6,11 +6,11 @@ import viewmodel.*;
 
 public class MyApplication extends Application
 {
-  @Override public void start(Stage stage) throws Exception
+  @Override public void start(Stage primaryStage)
   {
     Model model = new ModelManager();
     ViewModelFactory viewModelFactory = new ViewModelFactory(model);
     ViewHandler view = new ViewHandler(viewModelFactory);
-    view.start(stage);
+    view.start(primaryStage);
   }
 }
