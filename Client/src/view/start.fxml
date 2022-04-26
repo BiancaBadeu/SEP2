@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StartViewController">
    <children>
       <Label alignment="CENTER" prefHeight="78.0" prefWidth="452.0" text="LOG IN / SING UP ">
          <font>
@@ -26,10 +25,10 @@
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <TextField maxWidth="200.0" minWidth="200.0" prefHeight="26.0" prefWidth="200.0" promptText="username" VBox.vgrow="NEVER" />
-                  <PasswordField maxWidth="200.0" prefWidth="200.0" promptText="password" />
-                  <Label prefHeight="3.0" prefWidth="200.0" text="error" textFill="RED" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Log in" />
+                  <TextField fx:id="usernameLogin" maxWidth="200.0" minWidth="200.0" prefHeight="26.0" prefWidth="200.0" promptText="username" VBox.vgrow="NEVER" />
+                  <PasswordField fx:id="passwordLogin" maxWidth="200.0" prefWidth="200.0" promptText="password" />
+                  <Label fx:id="errorLabelLogin" prefHeight="3.0" prefWidth="200.0" text="error" textFill="RED" />
+                  <Button onAction="#loginPressed" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Log in" />
                </children>
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="422.0" prefWidth="340.0" spacing="10.0">
@@ -39,14 +38,14 @@
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <TextField maxWidth="200.0" promptText="full name" />
-                  <TextField maxWidth="200.0" promptText="username" />
-                  <Label prefHeight="4.0" prefWidth="200.0" text="error" textFill="RED" />
-                  <TextField maxWidth="200.0" promptText="phone number" />
-                  <PasswordField maxWidth="200.0" promptText="password" />
-                  <DatePicker promptText="date of birth" />
-                  <Label maxWidth="200.0" text="error" textFill="RED" />
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Sing up" />
+                  <TextField fx:id="name" maxWidth="200.0" promptText="full name" />
+                  <TextField fx:id="usernameSignup" maxWidth="200.0" promptText="username" />
+                  <Label fx:id="errorUsername" prefHeight="4.0" prefWidth="200.0" text="error" textFill="RED" />
+                  <TextField fx:id="phoneNumber" maxWidth="200.0" promptText="phone number" />
+                  <PasswordField fx:id="passwordSignup" maxWidth="200.0" promptText="password" />
+                  <DatePicker fx:id="dob" promptText="date of birth" />
+                  <Label fx:id="errorDob" maxWidth="200.0" text="error" textFill="RED" />
+                  <Button onAction="#signupPressed" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="Sing up" />
                </children>
             </VBox>
          </children>
