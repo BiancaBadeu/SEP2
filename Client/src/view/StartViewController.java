@@ -5,6 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import viewmodel.*;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  * A class representing a controller for the start.fxml file @see view.start.fxml
  */
@@ -21,6 +25,8 @@ public class StartViewController
   @FXML private PasswordField passwordSignup;
   @FXML private DatePicker dob;
   @FXML private Label errorDob;
+
+  @FXML private Label dateLabel;
 
   private Region root;
   private StartViewModel viewModel;
@@ -54,6 +60,11 @@ public class StartViewController
     errorUsername.textProperty().bind(viewModel.getErrorUsernameProperty());
     phoneNumber.textProperty().bindBidirectional(viewModel.getPhoneProperty());
 
+    LocalDate date = dob.getValue();
+    String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+    dateLabel.setText(formattedDate);
+    dateLabel.textProperty().bind(viewModel.getDateLabelProperty());
+
     errorDob.textProperty().bind(viewModel.getErrorDobProperty());
     passwordSignup.textProperty().bindBidirectional(viewModel.getPasswordSignupProperty());
   }
@@ -76,7 +87,8 @@ public class StartViewController
   /**
    * A FXML method called when the button named Log in is pressed
    *
-   *
+   *  It cals the method login in the viewModel and if the method returns true(the user is allowed to log in),
+   *  it will call the method openView in the viewHandler. @see viewmodel.StartViewModel @see view.ViewHandler
    */
   @FXML private void loginPressed()
   {
@@ -86,6 +98,12 @@ public class StartViewController
       viewHandler.openView("home");
     }
   }
+  /**
+   * A FXML method called when the button named Sign up is pressed
+   *
+   *  It cals the method createUser in the viewModel and if the method returns true(the actor is allowed to create a new user),
+   *  it will call the method openView in the viewHandler. @see viewmodel.StartViewModel @see view.ViewHandler
+   */
   @FXML private void signupPressed()
   {
     boolean created = viewModel.createUser();
@@ -94,7 +112,21 @@ public class StartViewController
       viewHandler.openView("home");
     }
   }
-
+  /**
+   * A FXML method called when the user pressed the Enter key on their keyboard
+   *
+   *  If the user was inside the usernameLogin TextField, when they press the Enter key
+   *   the cursor will be transferred to the passwordLogin TextField
+   *
+   *  If the user was inside the name TextField, when they press the Enter key
+   *   the cursor will be transferred to the usernameSignup TextField
+   *
+   *  If the user was inside the usernameSignup TextField, when they press the Enter key
+   *   the cursor will be transferred to the phoneNumber TextField
+   *
+   *  If the user was inside the phoneNumber TextField, when they press the Enter key
+   *   the cursor will be transferred to the passwordSignup TextField
+   */
   @FXML private void onEnter(ActionEvent actionEvent)
   {
     if (actionEvent.getSource() == usernameLogin)

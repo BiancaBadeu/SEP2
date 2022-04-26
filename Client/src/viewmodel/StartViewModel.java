@@ -16,6 +16,7 @@ public class StartViewModel
   private StringProperty phoneNumber;
   private StringProperty passwordSignup;
   private StringProperty errorDob;
+  private StringProperty dateLabel;
 
   public StartViewModel(Model model)
   {
@@ -29,7 +30,7 @@ public class StartViewModel
     this.phoneNumber = new SimpleStringProperty();
     this.passwordSignup = new SimpleStringProperty();
     this.errorDob = new SimpleStringProperty();
-
+    this.dateLabel = new SimpleStringProperty();
   }
 
   public void reset()
@@ -43,6 +44,7 @@ public class StartViewModel
     phoneNumber.set("");
     passwordSignup.set("");
     errorDob.set("");
+    dateLabel.set("");
   }
 
   public  StringProperty getUsernameLoginProperty()
@@ -89,4 +91,6 @@ public class StartViewModel
   {
     return errorDob;
   }
+
+  public StringProperty getDateLabelProperty(){return dateLabel;}
 }
