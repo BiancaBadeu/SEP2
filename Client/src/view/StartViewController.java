@@ -50,12 +50,12 @@ public class StartViewController
     errorLabelLogin.textProperty().bind(viewModel.getErrorLabelLoginProperty());
 
     name.textProperty().bindBidirectional(viewModel.getNameProperty());
-    usernameSignup.textProperty().bindBidirectional(viewModel.getUsernameSingupProperty());
+    usernameSignup.textProperty().bindBidirectional(viewModel.getUsernameSignupProperty());
     errorUsername.textProperty().bind(viewModel.getErrorUsernameProperty());
     phoneNumber.textProperty().bindBidirectional(viewModel.getPhoneProperty());
 
     errorDob.textProperty().bind(viewModel.getErrorDobProperty());
-    passwordSignup.textProperty().bindBidirectional(viewModel.getPasswordSingupProperty());
+    passwordSignup.textProperty().bindBidirectional(viewModel.getPasswordSignupProperty());
   }
 
   /**

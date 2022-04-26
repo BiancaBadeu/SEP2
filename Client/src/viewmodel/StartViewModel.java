@@ -45,47 +45,47 @@ public class StartViewModel
     errorDob.set("");
   }
 
-  public  StringProperty getUsernameLogin()
+  public  StringProperty getUsernameLoginProperty()
   {
     return usernameLogin;
   }
 
-  public StringProperty getPasswordLogin()
+  public StringProperty getPasswordLoginProperty()
   {
     return passwordLogin;
   }
 
-  public StringProperty getErrorLabelLogin()
+  public StringProperty getErrorLabelLoginProperty()
   {
     return errorLabelLogin;
   }
 
-  public StringProperty getName()
+  public StringProperty getNameProperty()
   {
     return name;
   }
 
-  public StringProperty getUsernameSignup()
+  public StringProperty getUsernameSignupProperty()
   {
     return usernameSignup;
   }
 
-  public StringProperty getErrorUsername()
+  public StringProperty getErrorUsernameProperty()
   {
     return errorUsername;
   }
 
-  public StringProperty getPhoneNumber()
+  public StringProperty getPhoneProperty()
   {
     return phoneNumber;
   }
 
-  public StringProperty getPasswordSignup()
+  public StringProperty getPasswordSignupProperty()
   {
     return passwordSignup;
   }
 
-  public StringProperty getErrorDob()
+  public StringProperty getErrorDobProperty()
   {
     return errorDob;
   }
