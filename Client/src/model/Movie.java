@@ -1,15 +1,16 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Movie
 {
-
   private String title;
   private String director;
   private String description;
   private int length;
-  private float avgRating;
-  private Genre genre;
-  private Review review;
+  private double avgRating;
+  private ArrayList<Genre> genres;
+  private ArrayList<Review> reviews;
 
   /**
    * @param title the title of the movie
@@ -17,21 +18,24 @@ public class Movie
    * @param description the description of the movie
    * @param length the length of the movie
    * @param avgRating the average rating of the movie
-   * @param genre the genre of the movie
-   * @param review the review of the movie
+   * @param genres the genres of the movie
+   * @param reviews the reviews of the movie
    *
    * Constructor for the Movie class
    */
-  public Movie(String title, String director, String description, int length, float avgRating, Genre genre, Review review)
+  public Movie(String title, String director, String description, int length, double avgRating, ArrayList<Genre> genres, ArrayList<Review> reviews)
   {
     this.title = title;
     this.director = director;
     this.description = description;
     this.length = length;
     this.avgRating = avgRating;
-    this.genre = genre;
+    this.genres = genres;
+    this.reviews = reviews;
   }
 
-
-
+  public double getAvgRating()
+  {
+    return avgRating;
+  }
 }
