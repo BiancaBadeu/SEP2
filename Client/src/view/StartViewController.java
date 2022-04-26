@@ -43,7 +43,8 @@ public class StartViewController
    * @param root a Region variable for location within the GUI
    *
    * A method to initiate the GUI windows and initializing the parameters previously mentioned, plus binding all the
-   *             FXML variables to their respective properties from the viewModel @see viewmodel.StartViewModel
+   *    FXML variables to their respective properties from the viewModel
+   *  @see viewmodel.StartViewModel
    */
   public void init(ViewHandler viewHandler, StartViewModel viewModel, Region root)
   {
@@ -70,7 +71,8 @@ public class StartViewController
   }
 
   /**
-   * A method calling the viewModel because controllers are not supposed to have functionality(single purpose) @see viewmodel.StartViewModel
+   * A method calling the viewModel because controllers are not supposed to have functionality(single purpose)
+   * @see viewmodel.StartViewModel
    */
   public void reset()
   {
@@ -88,7 +90,9 @@ public class StartViewController
    * A FXML method called when the button named Log in is pressed
    *
    *  It cals the method login in the viewModel and if the method returns true(the user is allowed to log in),
-   *  it will call the method openView in the viewHandler. @see viewmodel.StartViewModel @see view.ViewHandler
+   *  it will call the method openView in the viewHandler.
+   *  @see viewmodel.StartViewModel
+   *  @see view.ViewHandler
    */
   @FXML private void loginPressed()
   {
@@ -102,7 +106,9 @@ public class StartViewController
    * A FXML method called when the button named Sign up is pressed
    *
    *  It cals the method createUser in the viewModel and if the method returns true(the actor is allowed to create a new user),
-   *  it will call the method openView in the viewHandler. @see viewmodel.StartViewModel @see view.ViewHandler
+   *  it will call the method openView in the viewHandler.
+   *  @see viewmodel.StartViewModel
+   *  @see view.ViewHandler
    */
   @FXML private void signupPressed()
   {

@@ -6,7 +6,8 @@ import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import viewmodel.ViewModelFactory;
 /**
- * A class representing a handler for all the controllers which also has access to the modelFactory @see viewmodel.ViewModelFactory
+ * A class representing a handler for all the controllers which also has access to the modelFactory
+ * @see viewmodel.ViewModelFactory
  */
 public class ViewHandler
 {
@@ -30,7 +31,8 @@ public class ViewHandler
   /**
    * @param primaryStage a Stage variable to open the GUI
    *
-   *  A method called to open the first GUI window, setting the primary stage and calling the method openView inside the viewHandler @see view.ViewHandler
+   *  A method called to open the first GUI window, setting the primary stage and calling the method openView inside the viewHandler
+   *  @see view.ViewHandler
    */
   public void start(Stage primaryStage)
   {
@@ -43,7 +45,8 @@ public class ViewHandler
    *
    *  A method called everytime we open a GUI window.
    *    Setting the root to null and using a switch to assign the proper value for the root using different load methods
-   *       based on the id parameter @see view.ViewHandler
+   *       based on the id parameter
+   * @see view.ViewHandler
    *    Setting the root for the current scene and setting the stage with a title, scene, width, height. Showing the stage.
    */
   public void openView(String id)
@@ -84,11 +87,14 @@ public class ViewHandler
 
   /**
    * @param fxmlFile a String variable that is the name of the fxml file we want to open
-   * @return the root for the controller, so that in the openView method we can utilize it @see view.ViewHandler
+   * @return the root for the controller, so that in the openView method we can utilize it
+   * @see view.ViewHandler
    *
    * A method to get the StartViewController's root and initialize the window.
-   *  If it is the first we are loading the controller, we will get the controller and root from the loader and call the method init @see view.StartViewController
-   *  If it is not the first time we are loading, we will call the reset method and return the controller's root @see view.StartViewController
+   *  If it is the first we are loading the controller, we will get the controller and root from the loader and call the method init
+   *  @see view.StartViewController
+   *  If it is not the first time we are loading, we will call the reset method and return the controller's root
+   *  @see view.StartViewController
    */
   private Region loadStartView(String fxmlFile)
   {
@@ -118,11 +124,14 @@ public class ViewHandler
   }
   /**
    * @param fxmlFile a String variable that is the name of the fxml file we want to open
-   * @return the root for the controller, so that in the openView method we can utilize it @see view.ViewHandler
+   * @return the root for the controller, so that in the openView method we can utilize it
+   * @see view.ViewHandler
    *
    * A method to get the MovieViewController's root and initialize the window.
-   *  If it is the first we are loading the controller, we will get the controller and root from the loader and call the method init @see view.MovieViewController
-   *  If it is not the first time we are loading, we will call the reset method and return the controller's root @see view.MovieViewController
+   *  If it is the first we are loading the controller, we will get the controller and root from the loader and call the method init
+   *  @see view.MovieViewController
+   *  If it is not the first time we are loading, we will call the reset method and return the controller's root
+   *  @see view.MovieViewController
    */
   private Region loadMovieView(String fxmlFile)
   {
