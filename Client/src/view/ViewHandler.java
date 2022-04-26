@@ -108,7 +108,7 @@ public class ViewHandler
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
         startViewController = loader.getController();
-        startViewController.init(this, viewModelFactory.getStartViewModel(), root);
+        startViewController.init(this,  viewModelFactory.getStartViewModel(), root);
       }
       catch (Exception e)
       {
