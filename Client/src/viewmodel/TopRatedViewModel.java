@@ -10,40 +10,49 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Model;
 
+/**
+ * TopRatedViewModel is a ViewModel for the TopRatedView.
+ */
 public class TopRatedViewModel implements PropertyChangeListener
 {
   private Model model;
-  private ObservableList<String> logs;
-  private StringProperty message;
+  private ObservableList<String> topRatedList;
 
-
-
+  /**
+   * @param model the model to set
+   *
+   *
+   * Constructor for TopRatedViewModel.
+   */
   public TopRatedViewModel(Model model)
   {
     this.model = model;
     this.model.addListener(this);
-    logs = FXCollections.observableArrayList();
+    topRatedList = FXCollections.observableArrayList();
 
-    message= new SimpleStringProperty();
   }
 
-
-
+  /**
+   * @return the topRatedList
+   *
+   * Method returns the topRatedList.
+   */
   public ObservableList<String> getTopRatedMovies(){
 
 
-    return model.getTopratedMovies();
-  }
-  public ObservableList<String> getLogs()
-  {
-    return logs;
+    return topRatedList;
   }
 
+  /**
+   * @param evt the PropertyChangeEvent
+   *
+   * When a property changes, update the topRatedList.
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt)
   {
     Platform.runLater(() -> {
-      logs.add(0, evt.getNewValue() + "");
+      topRatedList.add(0, evt.getNewValue() + "");
     });
   }
 }
