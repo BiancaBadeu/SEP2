@@ -1,9 +1,9 @@
 package view;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+import viewmodel.*;
 
 /**
  * A class representing a controller for the start.fxml file @see view.start.fxml
@@ -61,7 +61,7 @@ public class MovieViewController
   public Region getRoot() {return root;}
 
   /**
-   * A FXML method called when the button named Log in is pressed. what is does
+   * A FXML method called when the button named <- is pressed. what is does
    */
   @FXML private void goBackPressed()
   {
@@ -69,6 +69,10 @@ public class MovieViewController
   }
   @FXML private void leaveReviewPressed()
   {
-
+      boolean leaveReview = viewModel.leaveReview();
+      if(leaveReview)
+      {
+        reset();
+      }
   }
 }
