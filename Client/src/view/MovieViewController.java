@@ -19,6 +19,7 @@ public class MovieViewController
   @FXML private TextArea comment;
   @FXML private Label numberOfReviews;
   @FXML private ListView comments;
+  @FXML private Label errorLabel;
 
   private Region root;
   private MovieViewModel viewModel;
@@ -48,6 +49,7 @@ public class MovieViewController
     description.textProperty().bind(viewModel.getDescriptionProperty());
     numberOfReviews.textProperty().bind(viewModel.getNoOfReviewsProperty());
     averageRating.textProperty().bind(viewModel.getAvgRatingProperty());
+    errorLabel.textProperty().bind(viewModel.getErrorProperty());
     comment.textProperty().bindBidirectional(viewModel.getCommentProperty());
   }
 
