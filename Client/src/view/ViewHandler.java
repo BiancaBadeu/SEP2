@@ -37,9 +37,9 @@ public class ViewHandler
       case "movie":
         root = loadMovieView("movie.fxml");
         break;
-      case "home":
-        root = loadHomeView("home.fxml");
-        break;
+     // case "home":
+        //root = loadHomeView("home.fxml");
+       // break;
     }
     currentScene.setRoot(root);
     String title = "";
