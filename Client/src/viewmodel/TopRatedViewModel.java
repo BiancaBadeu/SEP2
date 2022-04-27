@@ -12,14 +12,15 @@ import model.Model;
 /**
  * TopRatedViewModel is a ViewModel for the TopRatedView.
  */
-public class TopRatedViewModel implements PropertyChangeListener
+public class
+TopRatedViewModel implements PropertyChangeListener
 {
   private Model model;
   private ObservableList<String> topRatedList;
 
   /**
    * @param model the model to set
-   *              Constructor for TopRatedViewModel.
+   * Constructor for TopRatedViewModel.
    */
   public TopRatedViewModel(Model model)
   {
@@ -36,6 +37,7 @@ public class TopRatedViewModel implements PropertyChangeListener
   public ObservableList<String> getTopRatedMovies()
   {
 
+    topRatedList.add(String.valueOf(model.getTop10TopRatedMovies()));
     return topRatedList;
   }
 
