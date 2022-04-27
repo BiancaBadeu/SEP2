@@ -29,4 +29,5 @@ public class ModelManager implements Model
       if(false)
         throw new IllegalStateException("Cannot rent this movie.");
   }
+  
 }
