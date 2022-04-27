@@ -64,7 +64,7 @@ public class StartViewController
     dateLabel.setText(formattedDate);
     dateLabel.textProperty().bind(viewModel.getDateLabelProperty());
 
-    errorSignup.textProperty().bind(viewModel.getErrorDobProperty());
+    errorSignup.textProperty().bind(viewModel.getErrorSignupProperty());
     passwordSignup.textProperty().bindBidirectional(viewModel.getPasswordSignupProperty());
   }
 

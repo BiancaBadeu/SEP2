@@ -20,6 +20,7 @@ public class MovieViewController
   @FXML private Label numberOfReviews;
   @FXML private ListView comments;
   @FXML private Label errorLabel;
+  @FXML private Button rentButton;
 
   private Region root;
   private MovieViewModel viewModel;
@@ -78,9 +79,20 @@ public class MovieViewController
     viewHandler.openView("home");
   }
 
+  /**
+   * A FXML method called when the button named Rent movie is pressed
+   * It cals the method rentMovie in the viewModel and if the method returns true(the user is allowed to rent the movie),
+   *   it will disable the button so that you cannot rent the same movie twice
+   *   @see viewmodel.MovieViewModel
+   *
+   */
   @FXML private void rentPressed()
   {
-    //Luis  boolean rent = viewModel.rentMovie();   if(rent) {//disable button rent}
+    boolean rent = viewModel.rentMovie();
+    if(rent)
+    {
+      rentButton.setDisable(true);
+    }
   }
 
 

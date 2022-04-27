@@ -31,6 +31,14 @@ TopRatedViewModel implements PropertyChangeListener
   }
 
   /**
+   * A method to reset the list view
+   */
+  public void reset()
+  {
+    topRatedList.setAll(getTopRatedMovies());
+  }
+
+  /**
    * @return the topRatedList
    * Method returns the topRatedList.
    */

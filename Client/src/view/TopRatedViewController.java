@@ -10,9 +10,6 @@ import javafx.scene.control.ListView;
  */
 public class TopRatedViewController
 {
-
-
-
   @FXML private ListView<String> topratedList;
 
   private ViewHandler viewHandler;
@@ -40,17 +37,14 @@ public class TopRatedViewController
   /**
    * Empty 0 argument constructor
    */
-  public TopRatedViewController()
-  {
-
-  }
+  public TopRatedViewController() {}
 
   /**
    * Resets the view
    */
   public void reset()
   {
-    // empty
+    topRatedViewModel.reset();
   }
 
   /**

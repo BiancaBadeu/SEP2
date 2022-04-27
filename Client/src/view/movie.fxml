@@ -41,7 +41,7 @@
       <Label fx:id="numberOfReviews" layoutX="288.0" layoutY="163.0" text="Label" />
       <Label layoutX="325.0" layoutY="163.0" text="reviews" />
       <Label fx:id="errorLabel" layoutX="270.0" layoutY="273.0" prefHeight="18.0" prefWidth="267.0" text="errorLabel" textFill="RED" />
-      <Button layoutX="425.0" layoutY="159.0" mnemonicParsing="false" onAction="#rentPressed" prefHeight="43.0" prefWidth="91.0" text="Rent movie">
+      <Button layoutX="425.0" layoutY="159.0" mnemonicParsing="false" fx:id="rentButton" onAction="#rentPressed" prefHeight="43.0" prefWidth="91.0" text="Rent movie">
          <font>
             <Font size="14.0" />
          </font>
