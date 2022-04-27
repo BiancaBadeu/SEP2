@@ -17,6 +17,13 @@ public class RentalList
     this.rentals = new ArrayList<>();
   }
 
+  /**
+   * @return arraylist of rentals
+   */
+  public ArrayList<Rental> getAllRentals()
+  {
+    return rentals;
+  }
 
 
 }
