@@ -4,8 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import javafx.application.Platform;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Model;
@@ -20,9 +19,7 @@ public class TopRatedViewModel implements PropertyChangeListener
 
   /**
    * @param model the model to set
-   *
-   *
-   * Constructor for TopRatedViewModel.
+   *              Constructor for TopRatedViewModel.
    */
   public TopRatedViewModel(Model model)
   {
@@ -34,22 +31,19 @@ public class TopRatedViewModel implements PropertyChangeListener
 
   /**
    * @return the topRatedList
-   *
    * Method returns the topRatedList.
    */
-  public ObservableList<String> getTopRatedMovies(){
-
+  public ObservableList<String> getTopRatedMovies()
+  {
 
     return topRatedList;
   }
 
   /**
    * @param evt the PropertyChangeEvent
-   *
-   * When a property changes, update the topRatedList.
+   *            When a property changes, update the topRatedList.
    */
-  @Override
-  public void propertyChange(PropertyChangeEvent evt)
+  @Override public void propertyChange(PropertyChangeEvent evt)
   {
     Platform.runLater(() -> {
       topRatedList.add(0, evt.getNewValue() + "");

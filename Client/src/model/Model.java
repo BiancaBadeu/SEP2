@@ -6,5 +6,5 @@ public interface Model
 {
   ArrayList<Movie> getTop10TopRatedMovies();
 
-  
+
 }
