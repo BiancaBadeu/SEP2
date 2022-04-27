@@ -20,5 +20,23 @@ public class Review
     this.rating = rating;
   }
 
+  /**
+   * @return the comment
+   *
+   * Getter for comment
+   */
+  public String getComment(){
+    return comment;
+  }
+
+  /**
+   * @return the rating
+   *
+   * Getter for rating
+   */
+  public int getRating(){
+    return rating;
+  }
+
 
 }
