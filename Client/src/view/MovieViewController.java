@@ -77,6 +77,13 @@ public class MovieViewController
   {
     viewHandler.openView("home");
   }
+
+  @FXML private void rentPressed()
+  {
+    //Luis  boolean rent = viewModel.rentMovie();   if(rent) {//disable button rent}
+  }
+
+
   /*
 
 

@@ -104,6 +104,20 @@ public class MovieViewModel
    */
   public  StringProperty getErrorProperty() {return errorLabel;}
 
+  public boolean rentMovie()
+  {
+    try
+    {
+      model.rentMovie(title.get(), averageRating.get()); //suppose there are no 2 movies with the same name and same rating
+      return true;
+    }
+    catch (Exception e)
+    {
+      errorLabel.set(e.getMessage());
+      return false;
+    }
+  }
+
   //not for this sprint
   /*public boolean leaveReview()
   {
