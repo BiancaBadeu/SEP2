@@ -24,4 +24,29 @@ public class Admin extends Person
     super(firstName, phoneNumber, userName, password);
     this.adminID = adminID;
   }
+
+  /**
+   * @return the ID of the administrator
+   *
+   * Getter for the instance variable adminID.
+   */
+  public String getAdminID(){
+    return adminID;
+  }
+
+  /**
+   * @param adminID the ID of the administrator
+   *
+   *                Setter for the instance variable adminID.
+   */
+  public void setAdminID(String adminID){
+    this.adminID = adminID;
+  }
+
+  /**
+   * @return a string representation of the administrator
+   */
+  public String toString(){
+    return "Admin: " + super.toString() + " " + adminID;
+  }
 }

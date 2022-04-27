@@ -23,4 +23,31 @@ public class Rental
     this.user = user;
     this.rentedMovie = rentedMovie;
   }
+
+  /**
+   * @return the expiration date of the rental
+   *
+   * Getter for the expiration date of the rental.
+   */
+  public Date getExpirationDate(){
+    return expirationDate;
+  }
+
+  /**
+   * @return the user who rented the movie
+   *
+   * Getter for the user who rented the movie.
+   */
+  public User getUser(){
+    return user;
+  }
+
+  /**
+   * @return the movie rented
+   *
+   * Getter for the movie rented.
+   */
+  public Movie getRentedMovie(){
+    return rentedMovie;
+  }
 }
