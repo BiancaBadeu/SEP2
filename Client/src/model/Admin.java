@@ -24,10 +24,9 @@ public class Admin extends Person
    *
    * @see model.Person
    */
-  public Admin(String name, String userName, String password, String phoneNumber, String dob, String adminID, RentalList rentalList){
+  public Admin(String name, String userName, String password, String phoneNumber, String dob, String adminID){
     super(name, userName, password, phoneNumber, dob, "admin");
     this.adminID = adminID;
-    this.rentalList= rentalList;
   }
 
   /**
@@ -53,12 +52,5 @@ public class Admin extends Person
    */
   public String toString(){
     return "Admin: " + super.toString() + " " + adminID;
-  }
-
-  /**
-   * @return an arraylist with all the rentals
-   */
-  public ArrayList<Rental> getRentals(){
-    return rentalList.getAllRentals();
   }
 }

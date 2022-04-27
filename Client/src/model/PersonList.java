@@ -34,11 +34,11 @@ public class PersonList
    */
   public void addPerson(String name, String username, String password, String phoneNumber, String dob, String type)
   {
-    Person person;
+    Person person = null;
     if(type.equals("user"))
     {person = new User(name, username, password, phoneNumber, dob);}
-    if(type.equals("admin"))
-    {persons = new Admin(name, username, password, phoneNumber, dob, 1, ;}
+    //if(type.equals("admin"))
+    //{persons = new Admin(name, username, password, phoneNumber, dob, 1, ;}
     persons.add(person);
   }
 }

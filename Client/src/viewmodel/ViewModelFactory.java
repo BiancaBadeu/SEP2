@@ -8,6 +8,8 @@ import model.*;
 public class ViewModelFactory
 {
   private MovieViewModel movieViewModel;
+  private StartViewModel startViewModel;
+  private TopRatedViewModel topRatedViewModel;
 
   /**
    * @param model a Model variable that we need to create the viewModels
@@ -17,6 +19,8 @@ public class ViewModelFactory
   public ViewModelFactory(Model model)
   {
       movieViewModel = new MovieViewModel(model);
+      startViewModel = new StartViewModel(model);
+      topRatedViewModel = new TopRatedViewModel(model);
   }
 
   /**
@@ -28,5 +32,27 @@ public class ViewModelFactory
   public MovieViewModel getMovieViewModel()
   {
     return movieViewModel;
+  }
+
+  /**
+   * @return the viewModel
+   *
+   * A getter for the StartViewModel
+   * @see viewmodel.StartViewModel
+   */
+  public StartViewModel getStartViewModel()
+  {
+    return startViewModel;
+  }
+
+  /**
+   * @return the viewModel
+   *
+   * A getter for the TopRatedViewModel
+   * @see viewmodel.TopRatedViewModel
+   */
+  public TopRatedViewModel getTopRatedViewModel()
+  {
+    return topRatedViewModel;
   }
 }
