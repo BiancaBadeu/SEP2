@@ -104,6 +104,8 @@ public class MovieViewModel
    */
   public  StringProperty getErrorProperty() {return errorLabel;}
 
+
+  //Luis
   public boolean rentMovie()
   {
     try
