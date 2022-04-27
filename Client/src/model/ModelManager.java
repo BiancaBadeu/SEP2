@@ -1,5 +1,6 @@
 package model;
 
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
 public class ModelManager implements Model
@@ -17,5 +18,15 @@ public class ModelManager implements Model
   @Override public ArrayList<Movie> getTop10TopRatedMovies()
   {
       return movieList.getTop10TopRatedMovies();
+  }
+
+  @Override public void addListener(PropertyChangeListener listener) {}
+
+  @Override public void removeListener(PropertyChangeListener listener) {}
+
+  @Override public void rentMovie(String title, String averageRating)
+  {
+      if(false)
+        throw new IllegalStateException("Cannot rent this movie.");
   }
 }
