@@ -20,11 +20,10 @@ public class StartViewController
 
   @FXML private TextField name;
   @FXML private TextField usernameSignup;
-  @FXML private Label errorUsername;
   @FXML private TextField phoneNumber;
   @FXML private PasswordField passwordSignup;
   @FXML private DatePicker dob;
-  @FXML private Label errorDob;
+  @FXML private Label errorSignup;
 
   @FXML private Label dateLabel;
 
@@ -58,7 +57,6 @@ public class StartViewController
 
     name.textProperty().bindBidirectional(viewModel.getNameProperty());
     usernameSignup.textProperty().bindBidirectional(viewModel.getUsernameSignupProperty());
-    errorUsername.textProperty().bind(viewModel.getErrorUsernameProperty());
     phoneNumber.textProperty().bindBidirectional(viewModel.getPhoneProperty());
 
     LocalDate date = dob.getValue();
@@ -66,7 +64,7 @@ public class StartViewController
     dateLabel.setText(formattedDate);
     dateLabel.textProperty().bind(viewModel.getDateLabelProperty());
 
-    errorDob.textProperty().bind(viewModel.getErrorDobProperty());
+    errorSignup.textProperty().bind(viewModel.getErrorDobProperty());
     passwordSignup.textProperty().bindBidirectional(viewModel.getPasswordSignupProperty());
   }
 
