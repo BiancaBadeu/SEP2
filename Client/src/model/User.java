@@ -8,20 +8,17 @@ import java.util.Date;
 public class User extends Person
 {
 
-  private Date dob;
-
   /**
    * @param name the name of the user
-   * @param phoneNumber the phone number of the user
-   * @param email the email of the user
+   * @param username the username chosen
    * @param password the password of the user
+   * @param phoneNumber the phone number of the user
    * @param dob date of birth of the user
    *
    * Constructor for the user class
    */
-  public User(String name, long phoneNumber, String email, String password, Date dob)
+  public User(String name, String username,String password, String phoneNumber, String dob)
   {
-    super(name, phoneNumber ,email, password);
-    this.dob = dob;
+    super(name, username, password, phoneNumber, dob, "user");
   }
 }

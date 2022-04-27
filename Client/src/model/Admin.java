@@ -10,10 +10,10 @@ public class Admin extends Person
 {
 
   private String adminID;
-  private RentalList rentalList;
+
 
   /**
-   * @param firstName the first name of the administrator
+   * @param name the first name of the administrator
    * @param phoneNumber the phone number of the administrator
    * @param userName the user name of the administrator
    * @param password the password of the administrator
@@ -24,8 +24,8 @@ public class Admin extends Person
    *
    * @see model.Person
    */
-  public Admin(String firstName, long phoneNumber, String userName, String password, String adminID, RentalList rentalList){
-    super(firstName, phoneNumber, userName, password);
+  public Admin(String name, String userName, String password, String phoneNumber, String dob, String adminID, RentalList rentalList){
+    super(name, userName, password, phoneNumber, dob, "admin");
     this.adminID = adminID;
     this.rentalList= rentalList;
   }

@@ -18,4 +18,4 @@ public interface Model extends UnnamedPropertyChangeSubject
   void login(String username, String password);
   void createUser(String name, String userName, String password, String phoneNumber, String dob);
 }
-}
+

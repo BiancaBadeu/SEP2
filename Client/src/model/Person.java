@@ -9,25 +9,30 @@ public abstract class Person
 {
 
   private String name;
-  private long phoneNumber;
+  private String phoneNumber;
   private String userName;
   private String password;
   private Date birthDate;
   private String type;
+  private String dob;
+  
+  private RentalList rentalList;
 
   /**
    * @param name the name of the person
    * @param phoneNumber the phone number of the person
-   * @param userName the user name of the person
+   * @param userName the username of the person
    * @param password the password of the person
    *
    * Constructor for the Person class.
    */
-  public Person(String name, long phoneNumber, String userName, String password){
+  public Person(String name, String userName, String password, String phoneNumber, String dob, String type){
     this.name = name;
     this.phoneNumber = phoneNumber;
     this.userName = userName;
     this.password = password;
+    this.dob = dob;
+    this.type = type;
   }
 
   /**
@@ -45,7 +50,7 @@ public abstract class Person
    *
    * Getter for the phone number of the person.
    */
-  public long getPhoneNumber()
+  public String getPhoneNumber()
   {
     return phoneNumber;
   }
@@ -89,4 +94,11 @@ public abstract class Person
   {
     return type;
   }
+
+  /**
+   * @return the rental list
+   *
+   * Getter for the rental list
+   */
+  public RentalList getRentalList(){return rentalList;}
 }

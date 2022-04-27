@@ -1,5 +1,6 @@
 package model;
 
+import java.beans.PersistenceDelegate;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
@@ -24,6 +25,12 @@ public class ModelManager implements Model
 
    public void removeListener(PropertyChangeListener listener) {}
 
+  /**
+   * @param title a String variable representing the title of a movie
+   * @param averageRating a String variable representing the average rating of a movie
+   *
+   * A method to check if the user can rent the movie
+   */
   @Override public void rentMovie(String title, String averageRating)
   {
       if(false)
@@ -47,19 +54,28 @@ public class ModelManager implements Model
         if (!(password.equals(personList.getPersons().get(i).getPassword())))
         {
           throw new IllegalArgumentException("password is incorrect");
-
         }
       }
-
     }
     if (exists == false)
       throw new IllegalArgumentException("The username doesn't exist");
   }
 
-  @Override public void createUser(String name, String userName,
-      String password, String phoneNumber, String dob)
+  /**
+   * @param name a String variable representing the name of the user
+   * @param userName a String variable representing the username chosen
+   * @param password a String variable representing the password chosen
+   * @param phoneNumber a String variable representing the phone number of the user
+   * @param dob a String variable representing the date of birth
+   */
+  @Override public void createUser(String name, String userName, String password, String phoneNumber, String dob)
   {
-
+      for(int i=0;i<personList.getPersons().size();i++)
+      {
+        if(personList.getPersons().get(i).getUserName().equals(userName))
+            throw new IllegalStateException("Username already exists!");
+      }
+      personList.addPerson(name, userName, password, phoneNumber, dob, "user");
   }
   
 }
