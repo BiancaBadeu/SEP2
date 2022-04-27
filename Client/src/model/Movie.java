@@ -2,6 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Movie class
+ */
 public class Movie
 {
   private String title;
@@ -38,4 +41,65 @@ public class Movie
   {
     return avgRating;
   }
+
+  /**
+   * @return the title of the movie
+   *
+   * Getter for the title of the movie
+   */
+  public String getTitle()
+  {
+    return title;
+  }
+
+  /**
+   * @return the director of the movie
+   *
+   * Getter for the director of the movie
+   */
+  public String getDirector()
+  {
+    return director;
+  }
+
+  /**
+   * @return the description of the movie
+   *
+   * Getter for the description of the movie
+   */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * @return the length of the movie
+   *
+   * Getter for the length of the movie
+   */
+  public int getLength()
+  {
+    return length;
+  }
+
+  /**
+   * @return the genres of the movie
+   *
+   * Getter for the genres of the movie
+   */
+  public ArrayList<Genre> getGenres()
+  {
+    return genres;
+  }
+
+  /**
+   * @return the reviews of the movie
+   *
+   * Getter for the reviews of the movie
+   */
+  public ArrayList<Review> getReviews()
+  {
+    return reviews;
+  }
+
 }
