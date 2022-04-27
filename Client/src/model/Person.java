@@ -15,7 +15,7 @@ public abstract class Person
   private Date birthDate;
   private String type;
   private String dob;
-  
+
   private RentalList rentalList;
 
   /**
