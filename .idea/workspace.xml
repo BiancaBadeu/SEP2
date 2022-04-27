@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Activity Diagram Manage Rentals.asta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Activity Diagram Manage Rentals.asta.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Activity Diagram View Rentals.asta.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Class Diagram.asta.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
