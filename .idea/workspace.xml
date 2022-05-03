@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/PersonList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/PersonList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="temurin-16" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Elly/VIA/Elly Y/Sem 2/SDJ/mvvm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Elly/VIA/Elly Y/Sem 2/SDJ/Assignment4" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
