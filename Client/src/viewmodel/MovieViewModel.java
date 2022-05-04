@@ -3,6 +3,7 @@ package viewmodel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.Model;
+import model.Movie;
 
 /**
  * A viewModel class that represents the functionality of the Controller class MovieViewController
@@ -25,16 +26,20 @@ public class MovieViewModel
    *
    * An 1 argument constructor that initializes the instance variables
    */
-  public MovieViewModel(Model model)
+  public MovieViewModel(Model model, ViewModelState state)
   {
+    Movie selected  = state.getSelectedMovie();
     this.model = model;
-    this.title = new SimpleStringProperty();
-    this.length = new SimpleStringProperty();
-    this.director = new SimpleStringProperty();
-    this.description = new SimpleStringProperty();
-    this.averageRating = new SimpleStringProperty();
+    if(selected != null)
+    {
+      this.title = new SimpleStringProperty(selected.getTitle());
+      this.length = new SimpleStringProperty(""+selected.getLength());
+      this.director = new SimpleStringProperty(selected.getDirector());
+      this.description = new SimpleStringProperty(selected.getDescription());
+      this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
+      this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
+    }
     this.comment = new SimpleStringProperty();
-    this.numberOfReviews = new SimpleStringProperty();
     this.errorLabel = new SimpleStringProperty();
   }
 

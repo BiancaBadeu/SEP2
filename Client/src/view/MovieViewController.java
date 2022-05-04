@@ -10,6 +10,7 @@ import viewmodel.*;
  */
 public class MovieViewController
 {
+
   @FXML private Label title;
   @FXML private Label length;
   @FXML private Label director;
@@ -21,6 +22,13 @@ public class MovieViewController
   @FXML private ListView comments;
   @FXML private Label errorLabel;
   @FXML private Button rentButton;
+
+  @FXML private RadioButton button0;
+  @FXML private RadioButton button1;
+  @FXML private RadioButton button2;
+  @FXML private RadioButton button3;
+  @FXML private RadioButton button4;
+  @FXML private RadioButton button5;
 
   private Region root;
   private MovieViewModel viewModel;
@@ -97,8 +105,7 @@ public class MovieViewController
 
 
   /*
-
-
+//not for this sprint
   /**
    * A FXML method called when the button named Leave review is pressed
    *
@@ -106,10 +113,7 @@ public class MovieViewController
    *  it will call the method reset in the controller, so that it refreshes the list of reviews and the average rating.
    *  @see viewmodel.MovieViewModel
    *  @see view.MovieViewController
-   */
-
-  //not for this sprint
-  /*@FXML private void leaveReviewPressed()
+   @FXML private void leaveReviewPressed()
   {
       boolean leaveReview = viewModel.leaveReview();
       if(leaveReview)

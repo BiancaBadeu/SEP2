@@ -12,6 +12,7 @@ public class Movie
   private String description;
   private int length;
   private double avgRating;
+  private int numberOfReviews;
   private ArrayList<Genre> genres;
   private ArrayList<Review> reviews;
 
@@ -26,7 +27,7 @@ public class Movie
    *
    * Constructor for the Movie class
    */
-  public Movie(String title, String director, String description, int length, double avgRating, ArrayList<Genre> genres, ArrayList<Review> reviews)
+  public Movie(String title, String director, String description, int length, double avgRating, int numberOfReviews, ArrayList<Genre> genres, ArrayList<Review> reviews)
   {
     this.title = title;
     this.director = director;
@@ -35,6 +36,7 @@ public class Movie
     this.avgRating = avgRating;
     this.genres = genres;
     this.reviews = reviews;
+    this.numberOfReviews = numberOfReviews;
   }
 
   public double getAvgRating()
@@ -81,6 +83,13 @@ public class Movie
   {
     return length;
   }
+
+  /**
+   * @return the number of reviews for the movie
+   *
+   * Getter for the number of reviews of the movie
+   */
+  public int getNumberOfReviews(){return numberOfReviews;}
 
   /**
    * @return the genres of the movie
