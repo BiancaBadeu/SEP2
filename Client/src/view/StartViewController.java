@@ -59,8 +59,10 @@ public class StartViewController
     usernameSignup.textProperty().bindBidirectional(viewModel.getUsernameSignupProperty());
     phoneNumber.textProperty().bindBidirectional(viewModel.getPhoneProperty());
 
+    String formattedDate = "";
     LocalDate date = dob.getValue();
-    String formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+    if(date != null)
+      formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
     dateLabel.setText(formattedDate);
     dateLabel.textProperty().bind(viewModel.getDateLabelProperty());
 

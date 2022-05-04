@@ -45,6 +45,7 @@ public class ModelManager implements Model
    */
   @Override public void login(String username, String password)
   {
+    System.out.println("I'm in the login model");
     boolean exists = false;
     for (int i = 0; i<personList.getPersons().size(); i++)
     {

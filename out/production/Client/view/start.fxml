@@ -11,7 +11,7 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StartViewController">
    <children>
-      <Label alignment="CENTER" prefHeight="78.0" prefWidth="452.0" text="LOG IN / SING UP ">
+      <Label alignment="CENTER" prefHeight="78.0" prefWidth="452.0" text="LOG IN / SIGN UP ">
          <font>
             <Font size="50.0" />
          </font>
@@ -34,7 +34,7 @@
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="422.0" prefWidth="340.0" spacing="10.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="90.0" prefWidth="240.0" text="SING UP">
+                  <Label alignment="CENTER" prefHeight="90.0" prefWidth="240.0" text="SIGN UP">
                      <font>
                         <Font size="40.0" />
                      </font>
