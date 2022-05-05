@@ -37,8 +37,8 @@ public class PersonList
     Person person = null;
     if(type.equals("user"))
     {person = new User(name, username, password, phoneNumber, dob);}
-    //if(type.equals("admin"))
-    //{persons = new Admin(name, username, password, phoneNumber, dob, 1, ;}
+    if(type.equals("admin"))
+    {person = new Admin(name, username, password, phoneNumber, dob, "1");}
     persons.add(person);
   }
 }

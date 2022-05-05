@@ -16,6 +16,12 @@ public class ModelManager implements Model
     this.rentalList = new RentalList();
     this.personList = new PersonList();
   }
+
+  public void addPerson(String name, String username, String password, String phoneNumber, String dob, String type)
+  {
+    personList.addPerson(name, username, password, phoneNumber, dob, type);
+  }
+
   @Override public ArrayList<Movie> getTop10TopRatedMovies()
   {
       return movieList.getTop10TopRatedMovies();
@@ -45,9 +51,8 @@ public class ModelManager implements Model
    */
   @Override public void login(String username, String password)
   {
-   System.out.println("I'm in the login model");
-   boolean exists = true;
-
+   System.out.println("I'm in the login model. Person list: " + personList.getPersons());
+   boolean exists = false;
     for (int i = 0; i<personList.getPersons().size(); i++)
     {
       if (username.equals(personList.getPersons().get(i).getUserName()))
@@ -59,10 +64,8 @@ public class ModelManager implements Model
         }
       }
     }
-    if (exists == false)
+    if (!exists)
       throw new IllegalArgumentException("The username doesn't exist");
-
-
   }
 
 

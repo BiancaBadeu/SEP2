@@ -99,6 +99,7 @@ public class StartViewController
     boolean logedin = viewModel.login();
     if(logedin)
     {
+      reset();
       viewHandler.openView("toprated");
     }
   }
@@ -115,6 +116,7 @@ public class StartViewController
     boolean created = viewModel.createUser();
     if (created)
     {
+      reset();
       viewHandler.openView("home");
     }
   }
