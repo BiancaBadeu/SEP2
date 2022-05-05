@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import model.*;
 
 public class ClientMain
 {

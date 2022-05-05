@@ -111,4 +111,9 @@ public class Movie
     return reviews;
   }
 
+
+  public String toString()
+  {
+    return "Movie: " + "title: " + title;
+  }
 }

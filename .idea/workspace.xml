@@ -8,12 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/MyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/model/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/MovieList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/PersonList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/PersonList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/TopRatedViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/TopRatedViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -27,7 +27,7 @@ TopRatedViewModel implements PropertyChangeListener
   {
     this.model = model;
     this.model.addListener(this);
-    topRatedList = FXCollections.observableArrayList();
+    this.topRatedList = FXCollections.observableArrayList();
     this.state= state;
 
   }

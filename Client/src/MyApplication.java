@@ -17,10 +17,11 @@ public class MyApplication extends Application
     genresForMovie1.add(genre);
     for(int i=0;i<12;i++)
     {
-      Movie movie = new Movie("Title " + i, "Director "+i, "Description "+i, i, 1.1,i+1, genresForMovie1, new ArrayList<>());
+      Movie movie = new Movie("Title " + i, "Director "+i, "Description "+i, i, 5.0,i+1, genresForMovie1, new ArrayList<>());
       model.addMovie(movie);
     }
-
+    System.out.println("All movies " + model.getAllMovies());
+    System.out.println("Top rated: " + model.getTop10TopRatedMovies());
     ViewModelFactory viewModelFactory = new ViewModelFactory(model);
     ViewHandler view = new ViewHandler(viewModelFactory);
     view.start(primaryStage);

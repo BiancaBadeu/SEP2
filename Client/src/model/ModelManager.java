@@ -32,6 +32,11 @@ public class ModelManager implements Model
       return movieList.getTop10TopRatedMovies();
   }
 
+  public ArrayList<Movie> getAllMovies()
+  {
+    return movieList.getAllMovies();
+  }
+
   @Override public void addListener(PropertyChangeListener listener) {}
 
    public void removeListener(PropertyChangeListener listener) {}

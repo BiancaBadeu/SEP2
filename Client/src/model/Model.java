@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public interface Model extends UnnamedPropertyChangeSubject
 {
   ArrayList<Movie> getTop10TopRatedMovies();
-
+  ArrayList<Movie> getAllMovies();
   void addPerson(String name, String username, String password, String phoneNumber, String dob, String type);
   void addMovie(Movie movie);
   void addListener(PropertyChangeListener listener);
