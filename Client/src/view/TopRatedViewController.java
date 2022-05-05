@@ -31,7 +31,7 @@ public class TopRatedViewController
     this.root = root;
     this.topRatedViewModel = topratedViewModel;
 
-    topratedList.setItems(topratedViewModel.getTopRatedMovies());
+    topratedList.setItems(topRatedViewModel.getTopRatedMovies());
   }
 
   /**
