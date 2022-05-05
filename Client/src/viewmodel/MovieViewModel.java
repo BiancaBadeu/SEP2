@@ -12,6 +12,7 @@ import model.Movie;
 public class MovieViewModel
 {
   private Model model;
+  private ViewModelState state;
   private StringProperty title;
   private StringProperty length;
   private StringProperty director;
@@ -31,6 +32,7 @@ public class MovieViewModel
   {
     Movie selected  = state.getSelectedMovie();
     this.model = model;
+    this.state = state;
     if(selected != null)
     {
       this.title = new SimpleStringProperty(selected.getTitle());
@@ -50,14 +52,15 @@ public class MovieViewModel
   public void reset()
   {
     //everything set to the selected movie info
+    Movie selected = state.getSelectedMovie();
+    this.title = new SimpleStringProperty(selected.getTitle());
+    this.length = new SimpleStringProperty(""+selected.getLength());
+    this.director = new SimpleStringProperty(selected.getDirector());
+    this.description = new SimpleStringProperty(selected.getDescription());
+    this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
+    this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
 
-    //title.set();
-    //length.set();
-    //director.set();
-    //description.set();
-    //averageRating.set();
     comment.set("");
-    //numberOfReviews.set();
     errorLabel.set("");
   }
 
