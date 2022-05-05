@@ -1,6 +1,7 @@
 package view;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Region;
 import viewmodel.TopRatedViewModel;
 import javafx.scene.control.ListView;
@@ -11,10 +12,12 @@ import javafx.scene.control.ListView;
 public class TopRatedViewController
 {
   @FXML private ListView<String> topratedList;
+  @FXML private Button viewMovieDetails;
 
   private ViewHandler viewHandler;
   private Region root;
   private TopRatedViewModel topRatedViewModel;
+
 
   /**
    * @param viewHandler  the viewHandler to set
