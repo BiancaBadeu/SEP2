@@ -13,7 +13,7 @@ public interface Model extends UnnamedPropertyChangeSubject
   ArrayList<Movie> getTop10TopRatedMovies();
 
   void addPerson(String name, String username, String password, String phoneNumber, String dob, String type);
-
+  void addMovie(Movie movie);
   void addListener(PropertyChangeListener listener);
 
   void rentMovie(String title, String averageRating);

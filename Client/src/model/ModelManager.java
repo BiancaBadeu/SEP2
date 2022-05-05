@@ -18,7 +18,13 @@ public class ModelManager implements Model
 
   public void addPerson(String name, String username, String password, String phoneNumber, String dob, String type)
   {
+    System.out.println("I am in the model manager method");
     personList.addPerson(name, username, password, phoneNumber, dob, type);
+  }
+
+  public void addMovie(Movie movie)
+  {
+    movieList.addMovie(movie);
   }
 
   @Override public ArrayList<Movie> getTop10TopRatedMovies()

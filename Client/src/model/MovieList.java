@@ -11,6 +11,11 @@ public class MovieList
     this.movies = new ArrayList<>();
   }
 
+  public void addMovie(Movie movie)
+  {
+    movies.add(movie);
+  }
+
   /**
    * @return the top 10 movies
    * This method returns the top 10 movies in the list.

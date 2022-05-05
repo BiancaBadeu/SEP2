@@ -159,7 +159,6 @@ public class StartViewModel
    @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
    @see model.Model
    **/
-
   public boolean login()
   {
     try{
