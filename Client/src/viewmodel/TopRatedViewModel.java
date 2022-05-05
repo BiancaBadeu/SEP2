@@ -5,6 +5,7 @@ import java.beans.PropertyChangeListener;
 
 import javafx.application.Platform;
 
+import javafx.beans.property.ObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Model;
@@ -18,6 +19,7 @@ TopRatedViewModel implements PropertyChangeListener
   private Model model;
   private ObservableList<String> topRatedList;
   private ViewModelState state;
+  private ObjectProperty<MovieViewModel> selectedMovieProperty;
 
   /**
    * @param model the model to set
@@ -62,5 +64,19 @@ TopRatedViewModel implements PropertyChangeListener
     Platform.runLater(() -> {
       topRatedList.add(0, evt.getNewValue() + "");
     });
+  }
+
+  public void setSelected(MovieViewModel movieViewModel){
+
+    selectedMovieProperty.set(movieViewModel);
+  }
+
+  public void showDetails(){
+
+    MovieViewModel selected= selectedMovieProperty.get();
+
+    if(selected!=null){
+      state.setMovie(selected.getMovieProperty().get());
+    }
   }
 }

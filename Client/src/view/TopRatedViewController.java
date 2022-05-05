@@ -34,6 +34,11 @@ public class TopRatedViewController
     this.root = root;
     this.topRatedViewModel = topratedViewModel;
 
+    topratedList.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) ->
+      topRatedViewModel.setSelected(newVal));
+
+
+
     topratedList.setItems(topRatedViewModel.getTopRatedMovies());
   }
 
@@ -62,7 +67,8 @@ public class TopRatedViewController
 
   @FXML private void detailsPressed(){
 
-    viewHandler.openView("movie");
+    topRatedViewModel.showDetails();
+
   }
 
 }
