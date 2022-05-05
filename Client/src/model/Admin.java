@@ -18,7 +18,6 @@ public class Admin extends Person
    * @param userName the user name of the administrator
    * @param password the password of the administrator
    * @param adminID the ID of the administrator
-   * @param rentalList the list of rentals
    *
    * Constructor for the class Admin. Initializes instance variables with the super method.
    *

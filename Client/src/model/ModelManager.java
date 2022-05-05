@@ -1,6 +1,5 @@
 package model;
 
-import java.beans.PersistenceDelegate;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
