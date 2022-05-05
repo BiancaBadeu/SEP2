@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AllDocumentation/documentation/Class Diagram.asta.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AllDocumentation/Backlog and tasks/Sprint2Backlog.docx" beforeDir="false" afterPath="$PROJECT_DIR$/AllDocumentation/Backlog and tasks/Sprint2Backlog.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/view/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/StartViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/TopRatedViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/TopRatedViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,9 +101,19 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

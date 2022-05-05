@@ -17,16 +17,18 @@ TopRatedViewModel implements PropertyChangeListener
 {
   private Model model;
   private ObservableList<String> topRatedList;
+  private ViewModelState state;
 
   /**
    * @param model the model to set
    * Constructor for TopRatedViewModel.
    */
-  public TopRatedViewModel(Model model)
+  public TopRatedViewModel(Model model, ViewModelState state)
   {
     this.model = model;
     this.model.addListener(this);
     topRatedList = FXCollections.observableArrayList();
+    this.state= state;
 
   }
 

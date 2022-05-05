@@ -45,8 +45,9 @@ public class ModelManager implements Model
    */
   @Override public void login(String username, String password)
   {
-    System.out.println("I'm in the login model");
-    boolean exists = false;
+   System.out.println("I'm in the login model");
+   boolean exists = true;
+
     for (int i = 0; i<personList.getPersons().size(); i++)
     {
       if (username.equals(personList.getPersons().get(i).getUserName()))
@@ -60,7 +61,11 @@ public class ModelManager implements Model
     }
     if (exists == false)
       throw new IllegalArgumentException("The username doesn't exist");
+
+
   }
+
+
 
   /**
    * @param name a String variable representing the name of the user

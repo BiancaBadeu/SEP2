@@ -30,9 +30,10 @@ public class MovieViewModel
    */
   public MovieViewModel(Model model, ViewModelState state)
   {
-    Movie selected  = state.getSelectedMovie();
     this.model = model;
     this.state = state;
+    Movie selected  = state.getSelectedMovie();
+
     if(selected != null)
     {
       this.title = new SimpleStringProperty(selected.getTitle());

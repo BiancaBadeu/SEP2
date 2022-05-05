@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import viewmodel.TopRatedViewModel;
 import viewmodel.ViewModelFactory;
 /**
  * A class representing a handler for all the controllers which also has access to the modelFactory
@@ -16,6 +17,7 @@ public class ViewHandler
   private ViewModelFactory viewModelFactory;
   private StartViewController startViewController;
   private MovieViewController movieViewController;
+  private TopRatedViewController topRatedViewController;
 
   /**
    * @param viewModelFactory a viewModelFactory variable for delegating the work to the viewModels
@@ -60,9 +62,9 @@ public class ViewHandler
       case "movie":
         root = loadMovieView("movie.fxml");
         break;
-     // case "home":
-        //root = loadHomeView("Top-Rated_Movies.fxml");
-       // break;
+      case "toprated":
+        root = loadTopRated("Top-Rated_Movies.fxml");
+        break;
     }
     currentScene.setRoot(root);
     String title = "";
@@ -159,5 +161,33 @@ public class ViewHandler
     }
     return movieViewController.getRoot();
   }
+
+  private Region loadTopRated(String fxmlFile)
+  {
+    Region root = null;
+    if (topRatedViewController == null)
+    {
+      // load from FXML
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        topRatedViewController = loader.getController();
+        topRatedViewController.init(this, viewModelFactory.getTopRatedViewModel(), root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      // reset window
+      topRatedViewController.reset();
+    }
+    return topRatedViewController.getRoot();
+  }
+
 
 }

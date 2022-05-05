@@ -8,8 +8,8 @@ public class ViewModelState
  private Movie movie;
 
 
- public ViewModelState(Movie movie){
-   this.movie = movie;
+ public ViewModelState(){
+   this.movie = null;
  }
 
  public Movie getSelectedMovie(){

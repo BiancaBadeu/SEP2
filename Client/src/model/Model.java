@@ -12,6 +12,7 @@ public interface Model extends UnnamedPropertyChangeSubject
 {
   ArrayList<Movie> getTop10TopRatedMovies();
 
+
   void addListener(PropertyChangeListener listener);
 
   void rentMovie(String title, String averageRating);

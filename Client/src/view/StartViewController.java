@@ -99,7 +99,7 @@ public class StartViewController
     boolean logedin = viewModel.login();
     if(logedin)
     {
-      viewHandler.openView("home");
+      viewHandler.openView("toprated");
     }
   }
   /**

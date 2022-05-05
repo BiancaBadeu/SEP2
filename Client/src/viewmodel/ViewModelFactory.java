@@ -19,9 +19,10 @@ public class ViewModelFactory
    */
   public ViewModelFactory(Model model)
   {
+    this.state= new ViewModelState();
       movieViewModel = new MovieViewModel(model, state);
       startViewModel = new StartViewModel(model);
-      topRatedViewModel = new TopRatedViewModel(model);
+      topRatedViewModel = new TopRatedViewModel(model, state);
   }
 
   /**
