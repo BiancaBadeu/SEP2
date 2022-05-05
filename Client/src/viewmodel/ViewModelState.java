@@ -12,12 +12,12 @@ public class ViewModelState
    this.movie = movie;
  }
 
- public Movie getMovie(){
+ public Movie getSelectedMovie(){
    return movie;
  }
 
  public void setMovie(Movie movie){
    this.movie = movie;
  }
- 
+
 }

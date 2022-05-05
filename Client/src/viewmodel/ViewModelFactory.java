@@ -10,6 +10,7 @@ public class ViewModelFactory
   private MovieViewModel movieViewModel;
   private StartViewModel startViewModel;
   private TopRatedViewModel topRatedViewModel;
+  private ViewModelState state;
 
   /**
    * @param model a Model variable that we need to create the viewModels
@@ -18,7 +19,7 @@ public class ViewModelFactory
    */
   public ViewModelFactory(Model model)
   {
-      movieViewModel = new MovieViewModel(model);
+      movieViewModel = new MovieViewModel(model, state);
       startViewModel = new StartViewModel(model);
       topRatedViewModel = new TopRatedViewModel(model);
   }
