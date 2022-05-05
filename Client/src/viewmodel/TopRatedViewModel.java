@@ -46,8 +46,10 @@ TopRatedViewModel implements PropertyChangeListener
    */
   public ObservableList<String> getTopRatedMovies()
   {
-
-    topRatedList.add(String.valueOf(model.getTop10TopRatedMovies()));
+    for(int i=0;i<model.getTop10TopRatedMovies().size();i++)
+    {
+      topRatedList.add(model.getTop10TopRatedMovies().get(i).toString());
+    }
     return topRatedList;
   }
 
