@@ -76,7 +76,10 @@ TopRatedViewModel implements PropertyChangeListener
     MovieViewModel selected= selectedMovieProperty.get();
 
     if(selected!=null){
-      state.setMovie(selected.getMovieProperty().get());
+      state.setMovie(selected.getMovieProperty());
+    }
+    else {
+      state.setMovie(null);
     }
   }
 }

@@ -21,6 +21,7 @@ public class MovieViewModel
   private StringProperty comment;
   private StringProperty numberOfReviews;
   private StringProperty errorLabel;
+  private Movie movie;
 
   /**
    * @param model a Model variable so that the viewModel has access to the model's methods
@@ -45,6 +46,7 @@ public class MovieViewModel
     }
     this.comment = new SimpleStringProperty();
     this.errorLabel = new SimpleStringProperty();
+    this.movie=selected;
   }
 
   /**
@@ -60,9 +62,15 @@ public class MovieViewModel
     this.description = new SimpleStringProperty(selected.getDescription());
     this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
     this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
+    this.movie=selected;
 
     comment.set("");
     errorLabel.set("");
+  }
+
+  public Movie getMovieProperty()
+  {
+    return movie;
   }
 
   /**
@@ -131,6 +139,8 @@ public class MovieViewModel
       return false;
     }
   }
+
+
 
   //not for this sprint
   /*public boolean leaveReview()

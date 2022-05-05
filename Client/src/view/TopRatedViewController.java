@@ -3,6 +3,7 @@ package view;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Region;
+import viewmodel.MovieViewModel;
 import viewmodel.TopRatedViewModel;
 import javafx.scene.control.ListView;
 
@@ -12,7 +13,6 @@ import javafx.scene.control.ListView;
 public class TopRatedViewController
 {
   @FXML private ListView<String> topratedList;
-  ;
 
   private ViewHandler viewHandler;
   private Region root;
@@ -34,8 +34,8 @@ public class TopRatedViewController
     this.root = root;
     this.topRatedViewModel = topratedViewModel;
 
-    topratedList.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) ->
-      topRatedViewModel.setSelected(newVal));
+    topratedList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) ->
+          topRatedViewModel.setSelected(newValue));
 
 
 
