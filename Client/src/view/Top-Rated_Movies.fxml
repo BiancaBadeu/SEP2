@@ -14,6 +14,6 @@
          </font>
       </Text>
       <ListView fx:id="topratedList" layoutX="54.0" layoutY="124.0" prefHeight="456.0" prefWidth="420.0" />
-      <Button fx:id="viewMovieDetails" layoutX="501.0" layoutY="158.0" mnemonicParsing="false" text="View movie details" />
+      <Button onAction="#detailsPressed" layoutX="501.0" layoutY="158.0" mnemonicParsing="false" text="View movie details" />
    </children>
 </AnchorPane>

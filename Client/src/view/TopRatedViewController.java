@@ -12,7 +12,7 @@ import javafx.scene.control.ListView;
 public class TopRatedViewController
 {
   @FXML private ListView<String> topratedList;
-  @FXML private Button viewMovieDetails;
+  ;
 
   private ViewHandler viewHandler;
   private Region root;
@@ -59,4 +59,10 @@ public class TopRatedViewController
   {
     return root;
   }
+
+  @FXML private void detailsPressed(){
+
+    viewHandler.openView("movie");
+  }
+
 }
