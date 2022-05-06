@@ -114,6 +114,6 @@ public class Movie
 
   public String toString()
   {
-    return "Movie: " + "title: " + title;
+    return "" + title;
   }
 }
