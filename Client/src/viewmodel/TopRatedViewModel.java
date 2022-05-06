@@ -6,6 +6,7 @@ import java.beans.PropertyChangeListener;
 import javafx.application.Platform;
 
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Model;
@@ -32,6 +33,7 @@ TopRatedViewModel implements PropertyChangeListener
     this.model.addListener(this);
     this.topRatedList = FXCollections.observableArrayList();
     this.state= state;
+    this.selectedMovieProperty= new SimpleObjectProperty<>();
 
   }
 
