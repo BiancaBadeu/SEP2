@@ -4,7 +4,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
-import viewmodel.TopRatedViewModel;
 import viewmodel.ViewModelFactory;
 /**
  * A class representing a handler for all the controllers which also has access to the modelFactory
