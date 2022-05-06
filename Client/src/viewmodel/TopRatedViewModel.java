@@ -9,6 +9,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
 import model.Model;
 import model.Movie;
 
@@ -69,18 +70,25 @@ TopRatedViewModel implements PropertyChangeListener
     });
   }
 
-  public void setSelected(MovieViewModel movieViewModel){
+  public void setSelected(TopRatedViewModel topRatedViewModel){
 
-    ;
+    selectedMovieProperty.set(topRatedViewModel);
   }
 
+<<<<<<< Updated upstream
   public boolean showDetails(){
+=======
+
+
+
+  public boolean showDetails(String string){
+>>>>>>> Stashed changes
 
     Movie movie= null;
 
     for(int i=0;i<model.getAllMovies().size();i++){
 
-      if(model.getAllMovies().get(i).getTitle().equals(selectedMovieProperty.toString())){
+      if(model.getAllMovies().get(i).getTitle().equals(string)){
 
         movie= model.getAllMovies().get(i);
       }
