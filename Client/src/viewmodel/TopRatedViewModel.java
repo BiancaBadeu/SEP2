@@ -40,7 +40,11 @@ TopRatedViewModel implements PropertyChangeListener
    */
   public void reset()
   {
-    topRatedList.setAll(getTopRatedMovies());
+    topRatedList.clear();
+    for(int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
+    {
+      topRatedList.add(i, String.valueOf(model.getTop10TopRatedMovies().get(i)));
+    }
   }
 
   /**
