@@ -77,6 +77,8 @@ TopRatedViewModel implements PropertyChangeListener
         movie = model.getTop10TopRatedMovies().get(i);
       }
     }
+      System.out.println(movie + "in show details");
+      System.out.println(movie.getTitle() + " title in show details");
     if (movie != null)
     {
       state.setMovie(movie);

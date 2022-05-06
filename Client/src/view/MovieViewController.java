@@ -23,13 +23,6 @@ public class MovieViewController
   @FXML private Label errorLabel;
   @FXML private Button rentButton;
 
-  @FXML private RadioButton button0;
-  @FXML private RadioButton button1;
-  @FXML private RadioButton button2;
-  @FXML private RadioButton button3;
-  @FXML private RadioButton button4;
-  @FXML private RadioButton button5;
-
   private Region root;
   private MovieViewModel viewModel;
   private ViewHandler viewHandler;
@@ -84,7 +77,7 @@ public class MovieViewController
    */
   @FXML private void goBackPressed()
   {
-    viewHandler.openView("home");
+    viewHandler.openView("toprated");
   }
 
   /**
@@ -113,12 +106,13 @@ public class MovieViewController
    *  it will call the method reset in the controller, so that it refreshes the list of reviews and the average rating.
    *  @see viewmodel.MovieViewModel
    *  @see view.MovieViewController
+   /*/
    @FXML private void leaveReviewPressed()
   {
-      boolean leaveReview = viewModel.leaveReview();
-      if(leaveReview)
+     // boolean leaveReview = viewModel.leaveReview();
+    //  if(leaveReview)
       {
-        reset();
+      //  reset();
       }
-  }*/
+  }
 }

@@ -146,6 +146,7 @@ public class ViewHandler
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
         movieViewController = loader.getController();
+        viewModelFactory.getMovieViewModel().reset();
         movieViewController.init(this, viewModelFactory.getMovieViewModel(), root);
       }
       catch (Exception e)
