@@ -74,7 +74,7 @@ TopRatedViewModel implements PropertyChangeListener
     ;
   }
 
-  public void showDetails(){
+  public boolean showDetails(){
 
     Movie movie= null;
 
@@ -86,13 +86,13 @@ TopRatedViewModel implements PropertyChangeListener
       }
     }
 
-
-
     if(movie!=null){
       state.setMovie(movie);
+      return true;
     }
     else {
       state.setMovie(null);
+      return false;
     }
   }
 }

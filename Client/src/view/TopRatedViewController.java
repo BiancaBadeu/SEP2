@@ -67,9 +67,9 @@ public class TopRatedViewController
 
   @FXML private void detailsPressed(){
 
-    topRatedViewModel.showDetails();
-    viewHandler.openView("movie");
-
+    boolean show = topRatedViewModel.showDetails();
+    if(show)
+      viewHandler.openView("movie");
   }
 
 }
