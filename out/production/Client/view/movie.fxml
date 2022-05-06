@@ -4,9 +4,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MovieViewController">
@@ -30,21 +30,25 @@
       </Button>
       <Button layoutX="545.0" layoutY="300.0" mnemonicParsing="false" onAction="#leaveReviewPressed" text="Leave review" />
       <TextArea fx:id="comment" layoutX="20.0" layoutY="299.0" prefHeight="50.0" prefWidth="520.0" />
-      <RadioButton layoutX="38.0" layoutY="273.0" mnemonicParsing="false" fx:id="button0" text="0" />
-      <RadioButton layoutX="75.0" layoutY="273.0" mnemonicParsing="false" fx:id="button1" text="1" />
-      <RadioButton layoutX="114.0" layoutY="273.0" mnemonicParsing="false" fx:id="button2" text="2" />
-      <RadioButton layoutX="150.0" layoutY="273.0" mnemonicParsing="false" fx:id="button3" text="3" />
-      <RadioButton layoutX="191.0" layoutY="273.0" mnemonicParsing="false" fx:id="button4" text="4" />
-      <RadioButton layoutX="227.0" layoutY="273.0" mnemonicParsing="false" fx:id="button5" text="5" />
       <ListView fx:id="comments" layoutX="22.0" layoutY="370.0" prefHeight="230.0" prefWidth="600.0" />
       <Label layoutX="248.0" layoutY="163.0" text="out of " />
       <Label fx:id="numberOfReviews" layoutX="288.0" layoutY="163.0" text="Label" />
       <Label layoutX="325.0" layoutY="163.0" text="reviews" />
-      <Label fx:id="errorLabel" layoutX="270.0" layoutY="273.0" prefHeight="18.0" prefWidth="267.0" text="errorLabel" textFill="RED" />
-      <Button layoutX="425.0" layoutY="159.0" mnemonicParsing="false" fx:id="rentButton" onAction="#rentPressed" prefHeight="43.0" prefWidth="91.0" text="Rent movie">
+      <Label fx:id="errorLabel" layoutX="302.0" layoutY="265.0" prefHeight="18.0" prefWidth="267.0" text="errorLabel" textFill="RED" />
+      <Button fx:id="rentButton" layoutX="425.0" layoutY="159.0" mnemonicParsing="false" onAction="#rentPressed" prefHeight="43.0" prefWidth="91.0" text="Rent movie">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
+      <HBox layoutX="26.0" layoutY="257.0" prefHeight="34.0" prefWidth="241.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" text="0" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" text="1" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" text="2" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" text="3" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" text="4" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" text="5" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
