@@ -35,7 +35,7 @@ public class PersonList
   public void addPerson(String name, String username, String password, String phoneNumber, String dob, String type)
   {
     System.out.println("I am in the person list method");
-    Person person = new User(name, username, password, phoneNumber, dob);
+    Person person = null;
     if(type.equals("user"))
     {person = new User(name, username, password, phoneNumber, dob);}
     if(type.equals("admin"))

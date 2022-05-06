@@ -12,9 +12,8 @@ public abstract class Person
   private String phoneNumber;
   private String userName;
   private String password;
-  private Date birthDate;
-  private String type;
   private String dob;
+  private String type;
 
   private RentalList rentalList;
 
@@ -76,16 +75,6 @@ public abstract class Person
   }
 
   /**
-   * @return the birth date of the person
-   *
-   * Getter for the birth date of the person.
-   */
-  public Date getBirthDate()
-  {
-    return birthDate;
-  }
-
-  /**
    * @return the type of the person
    *
    * Getter for the type of the person.
@@ -94,6 +83,8 @@ public abstract class Person
   {
     return type;
   }
+
+  public String getDob(){return dob;}
 
   /**
    * @return the rental list

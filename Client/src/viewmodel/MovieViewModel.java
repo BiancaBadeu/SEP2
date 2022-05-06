@@ -22,6 +22,12 @@ public class MovieViewModel
   private StringProperty numberOfReviews;
   private StringProperty errorLabel;
   private Movie movie;
+  private StringProperty radioButtton0;
+  private StringProperty radioButtton1;
+  private StringProperty radioButtton2;
+  private StringProperty radioButtton3;
+  private StringProperty radioButtton4;
+  private StringProperty radioButtton5;
 
   /**
    * @param model a Model variable so that the viewModel has access to the model's methods
@@ -47,6 +53,13 @@ public class MovieViewModel
     this.comment = new SimpleStringProperty();
     this.errorLabel = new SimpleStringProperty();
     this.movie=selected;
+
+    this.radioButtton0 = new SimpleStringProperty();
+    this.radioButtton1 = new SimpleStringProperty();
+    this.radioButtton2 = new SimpleStringProperty();
+    this.radioButtton3 = new SimpleStringProperty();
+    this.radioButtton4 = new SimpleStringProperty();
+    this.radioButtton5 = new SimpleStringProperty();
   }
 
   /**
@@ -56,16 +69,18 @@ public class MovieViewModel
   {
     //everything set to the selected movie info
     Movie selected = state.getSelectedMovie();
-    this.title = new SimpleStringProperty(selected.getTitle());
-    this.length = new SimpleStringProperty(""+selected.getLength());
-    this.director = new SimpleStringProperty(selected.getDirector());
-    this.description = new SimpleStringProperty(selected.getDescription());
-    this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
-    this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
+    this.title.set(selected.getTitle());
+    this.length.set(""+selected.getLength());
+    this.director.set(selected.getDirector());
+    this.description.set(selected.getDescription());
+    this.averageRating.set(""+selected.getAvgRating());
+    this.numberOfReviews.set(""+selected.getNumberOfReviews());
     this.movie=selected;
 
     comment.set("");
     errorLabel.set("");
+
+
   }
 
   public Movie getMovieProperty()
