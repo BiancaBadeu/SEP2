@@ -8,19 +8,19 @@ import java.util.Date;
 public class Rental
 {
   private Date expirationDate;
-  private User user;
+ // private User user;
   private Movie rentedMovie;
 
   /**
    * @param expirationDate the expiration date of the rental
-   * @param user the user who rented the movie
+   * //@param user the user who rented the movie
    * @param rentedMovie the movie rented
    *
    * Constructor for the rental class.
    */
-  public Rental(Date expirationDate, User user, Movie rentedMovie){
+  public Rental(Date expirationDate, Movie rentedMovie){
     this.expirationDate = expirationDate;
-    this.user = user;
+    //this.user = user;
     this.rentedMovie = rentedMovie;
   }
 
@@ -32,15 +32,15 @@ public class Rental
   public Date getExpirationDate(){
     return expirationDate;
   }
-
+ /*
   /**
    * @return the user who rented the movie
    *
    * Getter for the user who rented the movie.
-   */
-  public User getUser(){
+   *
+ public User getUser(){
     return user;
-  }
+  }*/
 
   /**
    * @return the movie rented

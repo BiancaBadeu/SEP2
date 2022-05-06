@@ -219,18 +219,18 @@ public class MovieList
    *
    * @return The movie with the given title
    */
-  public ArrayList<Movie> getMoviesWithTitle(String title){
+  public Movie getMovieWithTitle(String title){
 
-    ArrayList<Movie> moviesWithTitle = new ArrayList<>();
-
+    Movie movie = null;
     for(int i = 0; i < movies.size(); i++){
 
       if(movies.get(i).getTitle().equals(title)){
-
-        moviesWithTitle.add(movies.get(i));
+        movie = movies.get(i);
       }
     }
+    if(movie==null)
+      throw new IllegalStateException("Cannot rent this movie.");
 
-    return moviesWithTitle;
+    return movie;
   }
 }

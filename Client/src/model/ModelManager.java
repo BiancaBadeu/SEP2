@@ -2,6 +2,7 @@ package model;
 
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ModelManager implements Model
 {
@@ -39,18 +40,40 @@ public class ModelManager implements Model
 
   @Override public void addListener(PropertyChangeListener listener) {}
 
-   public void removeListener(PropertyChangeListener listener) {}
+  @Override public void addRental(Movie movie, Date expirationDate)
+  {
+    rentalList.addRental(movie,expirationDate);
+  }
+
+  @Override public ArrayList<Rental> getAllRentals()
+  {
+    return rentalList.getAllRentals();
+  }
+/*
+--For the next sprint :)
+  @Override public ArrayList<Rental> getRentalsWithUser(User user)
+  {
+    return rentalList.getRentalsWithUser(user);
+  }
+
+  @Override public ArrayList<Rental> getRentalsWithMovie(Movie movie)
+  {
+    return rentalList.getRentalsWithMovie(movie);
+  }
+*/
+  public void removeListener(PropertyChangeListener listener) {}
 
   /**
    * @param title a String variable representing the title of a movie
-   * @param averageRating a String variable representing the average rating of a movie
+   * //@param averageRating a String variable representing the average rating of a movie
    *
    * A method to check if the user can rent the movie
    */
-  @Override public void rentMovie(String title, String averageRating)
+  @Override public void rentMovie(String title)
   {
-      if(false)
-        throw new IllegalStateException("Cannot rent this movie.");
+    long rentalDate = System.currentTimeMillis() + (86400 * 7 * 1000);
+    Date expirationDate = new Date(rentalDate);
+    rentalList.addRental(movieList.getMovieWithTitle(title),expirationDate);
   }
 
   /**

@@ -145,7 +145,7 @@ public class MovieViewModel
   {
     try
     {
-      model.rentMovie(title.get(), averageRating.get()); //suppose there are no 2 movies with the same name and same rating
+      model.rentMovie(title.get()); //suppose there are no 2 movies with the same name and same rating
       return true;
     }
     catch (Exception e)
