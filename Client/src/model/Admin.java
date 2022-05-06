@@ -1,16 +1,12 @@
 package model;
 
-import java.util.ArrayList;
-
 /**
  * This class represents an administrator of the system that is an extension from the class Person.
  * @see model.Person
  */
 public class Admin extends Person
 {
-
   private String adminID;
-
 
   /**
    * @param name the first name of the administrator
