@@ -26,15 +26,15 @@ TopRatedViewModel implements PropertyChangeListener
 
   /**
    * @param model the model to set
-   * Constructor for TopRatedViewModel.
+   *              Constructor for TopRatedViewModel.
    */
   public TopRatedViewModel(Model model, ViewModelState state)
   {
     this.model = model;
     this.model.addListener(this);
     this.topRatedList = FXCollections.observableArrayList();
-    this.state= state;
-    this.selectedMovieProperty= new SimpleObjectProperty<>();
+    this.state = state;
+    this.selectedMovieProperty = new SimpleObjectProperty<>();
 
   }
 
@@ -52,7 +52,7 @@ TopRatedViewModel implements PropertyChangeListener
    */
   public ObservableList<String> getTopRatedMovies()
   {
-    for(int i=0;i<model.getTop10TopRatedMovies().size();i++)
+    for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
     {
       topRatedList.add(model.getTop10TopRatedMovies().get(i).toString());
     }
@@ -70,35 +70,35 @@ TopRatedViewModel implements PropertyChangeListener
     });
   }
 
-  public void setSelected(TopRatedViewModel topRatedViewModel){
+  public void setSelected(TopRatedViewModel topRatedViewModel)
+  {
 
     selectedMovieProperty.set(topRatedViewModel);
   }
 
-<<<<<<< Updated upstream
-  public boolean showDetails(){
-=======
+
+    public boolean showDetails (String string){
 
 
+    Movie movie = null;
 
-  public boolean showDetails(String string){
->>>>>>> Stashed changes
+    for (int i = 0; i < model.getAllMovies().size(); i++)
+    {
 
-    Movie movie= null;
+      if (model.getAllMovies().get(i).getTitle().equals(string))
+      {
 
-    for(int i=0;i<model.getAllMovies().size();i++){
-
-      if(model.getAllMovies().get(i).getTitle().equals(string)){
-
-        movie= model.getAllMovies().get(i);
+        movie = model.getAllMovies().get(i);
       }
     }
 
-    if(movie!=null){
+    if (movie != null)
+    {
       state.setMovie(movie);
       return true;
     }
-    else {
+    else
+    {
       state.setMovie(null);
       return false;
     }

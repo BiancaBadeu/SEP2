@@ -67,17 +67,9 @@ public class TopRatedViewController
 
   @FXML private void detailsPressed(){
 
-<<<<<<< Updated upstream
-    boolean show = topRatedViewModel.showDetails();
-    if(show)
-      viewHandler.openView("movie");
-=======
-   // System.out.println(topratedList.getFocusModel().getFocusedItem());
     boolean idk=  topRatedViewModel.showDetails(topratedList.getFocusModel().getFocusedItem());
 
     if(idk){viewHandler.openView("movie");}
-
->>>>>>> Stashed changes
   }
 
 }
