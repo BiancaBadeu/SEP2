@@ -85,7 +85,7 @@ TopRatedViewModel implements PropertyChangeListener
     for (int i = 0; i < model.getAllMovies().size(); i++)
     {
 
-      if (model.getAllMovies().get(i).getTitle().equals(string))
+      if (model.getTop10TopRatedMovies().get(i).getTitle().equals(string))
       {
 
         movie = model.getAllMovies().get(i);
