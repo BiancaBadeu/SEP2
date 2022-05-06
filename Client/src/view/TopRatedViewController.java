@@ -34,9 +34,9 @@ public class TopRatedViewController
     this.root = root;
     this.topRatedViewModel = topratedViewModel;
 
-    topratedList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) ->
+   /* topratedList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) ->
           topRatedViewModel.setSelected(newValue));
-
+*/
 
 
     topratedList.setItems(topRatedViewModel.getTopRatedMovies());

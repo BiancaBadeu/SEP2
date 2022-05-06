@@ -12,6 +12,7 @@ public class MyApplication extends Application
   {
     Model model = new ModelManager();
     model.addPerson("Steffen", "user", "SVA", "+123456789", "29-10-1969", "user");
+    model.addPerson("Lola", "admin", "admin", "+321654977", "01-01-2001", "admin");
     Genre genre = new Genre("Action");
     ArrayList<Genre> genresForMovie1 = new ArrayList<>();
     genresForMovie1.add(genre);
