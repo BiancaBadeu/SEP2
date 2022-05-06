@@ -70,11 +70,11 @@ TopRatedViewModel implements PropertyChangeListener
     public boolean showDetails (String string)
     {
     Movie movie = null;
-    for (int i = 0; i < model.getAllMovies().size(); i++)
+    for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
     {
       if (model.getTop10TopRatedMovies().get(i).getTitle().equals(string))
       {
-        movie = model.getAllMovies().get(i);
+        movie = model.getTop10TopRatedMovies().get(i);
       }
     }
     if (movie != null)
