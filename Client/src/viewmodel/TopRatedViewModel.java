@@ -71,6 +71,15 @@ TopRatedViewModel implements PropertyChangeListener
     });
   }
 
+  /**
+   * @param string the string to set
+   * @return true or false
+   *
+   * Method where the selected property is gathered and checked with the movies in the movieList. Such information is sent to the ViewModelState to be used by
+   * the MovieViewModel.
+   * @see ViewModelState
+   * @see MovieViewModel
+   */
     public boolean showDetails (String string)
     {
     Movie movie = null;

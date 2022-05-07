@@ -4,12 +4,18 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * The ModelManager class is the main class of the model. It is responsible for managing the model.
+ */
 public class ModelManager implements Model
 {
   private MovieList movieList;
   private RentalList rentalList;
   private PersonList personList;
 
+  /**
+   * Empty constructor which initializes the movieList, rentalList, and personList
+   */
   public ModelManager()
   {
     this.movieList = new MovieList();
@@ -17,38 +23,81 @@ public class ModelManager implements Model
     this.personList = new PersonList();
   }
 
+  /**
+   * @param name        the person's name to be added
+   * @param username    the person's username to be added
+   * @param password    the person's password to be added
+   * @param phoneNumber the person's phone number to be added
+   * @param dob         the person's date of birth to be added
+   * @param type        the person's type to be added
+   *
+   *                    A method to add a person to the person list
+   */
   public void addPerson(String name, String username, String password, String phoneNumber, String dob, String type)
   {
     System.out.println("I am in the model manager method");
     personList.addPerson(name, username, password, phoneNumber, dob, type);
   }
 
+  /**
+   * @param movie the movie to be added to the movie list
+   *
+   *              A method to add a movie to the movie list
+   */
   public void addMovie(Movie movie)
   {
     movieList.addMovie(movie);
   }
 
+  /**
+   * @return the top 10 movies with the highest average ratings
+   *
+   * A method to return the top 10 movies with the highest average ratings
+   */
   @Override public ArrayList<Movie> getTop10TopRatedMovies()
   {
       return movieList.getTop10TopRatedMovies();
   }
 
+  /**
+   * @return the movie list
+   *
+   * A method to return the movie list
+   */
   public ArrayList<Movie> getAllMovies()
   {
     return movieList.getAllMovies();
   }
 
+  /**
+   * @param listener the listener to be added
+   *
+   *                 A method to add a listener
+   */
   @Override public void addListener(PropertyChangeListener listener) {}
 
+  /**
+   * @param movie          the movie to be rented
+   * @param expirationDate the expiration date of the rental
+   *
+   *                       A method to add a rental to the rental list
+   */
   @Override public void addRental(Movie movie, Date expirationDate)
   {
     rentalList.addRental(movie,expirationDate);
   }
 
+  /**
+   * @return all rentals
+   *
+   * A method to return all rentals
+   */
   @Override public ArrayList<Rental> getAllRentals()
   {
     return rentalList.getAllRentals();
   }
+
+
 /*
 --For the next sprint :)
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
@@ -61,6 +110,12 @@ public class ModelManager implements Model
     return rentalList.getRentalsWithMovie(movie);
   }
 */
+
+  /**
+   * @param listener the listener to be removed
+   *
+   *                 A method to remove a listener
+   */
   public void removeListener(PropertyChangeListener listener) {}
 
   /**

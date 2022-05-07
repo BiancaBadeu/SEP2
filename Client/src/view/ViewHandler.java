@@ -162,6 +162,10 @@ public class ViewHandler
     return movieViewController.getRoot();
   }
 
+  /**
+   * @param fxmlFile  a String variable that is the name of the fxml file we want to open
+   * @return the root for the controller, so that in the openView method we can utilize it
+   */
   private Region loadTopRated(String fxmlFile)
   {
     Region root = null;

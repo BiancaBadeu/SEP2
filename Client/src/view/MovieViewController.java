@@ -111,6 +111,12 @@ public class MovieViewController
    *  @see viewmodel.MovieViewModel
    *  @see view.MovieViewController
    /*/
+
+  /**
+   * A FXML method called when the button named leave review is pressed
+   *
+   * It cals the method leaveReview in the viewModel and if the method returns true(the user is allowed to leave the review)
+   */
    @FXML private void leaveReviewPressed()
   {
      // boolean leaveReview = viewModel.leaveReview();
