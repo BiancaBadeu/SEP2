@@ -60,7 +60,6 @@ public class MovieViewModel
   {
     //everything set to the selected movie info
     Movie selected = state.getSelectedMovie();
-    System.out.println(selected + "in reset Movie viewmodel");
     this.title.set(""+selected.getTitle());
     this.length.set(""+selected.getLength());
     this.director.set(""+selected.getDirector());
@@ -70,8 +69,6 @@ public class MovieViewModel
 
     comment.set("");
     errorLabel.set("");
-
-
   }
 
   /**

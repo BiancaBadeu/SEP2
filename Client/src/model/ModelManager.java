@@ -73,7 +73,7 @@ public class ModelManager implements Model
   {
     long rentalDate = System.currentTimeMillis() + (86400 * 7 * 1000);
     Date expirationDate = new Date(rentalDate);
-    rentalList.addRental(movieList.getMovieWithTitle(title),expirationDate);
+    addRental(movieList.getMovieWithTitle(title),expirationDate);
   }
 
   /**
