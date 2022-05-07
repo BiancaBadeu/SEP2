@@ -68,10 +68,13 @@ public class MovieViewModel
     this.averageRating.set(""+selected.getAvgRating());
     this.numberOfReviews.set(""+selected.getNumberOfReviews());
 
-    for(int i=0;i<=model.getAllRentals().size();i++)
+    if(!model.getAllRentals().isEmpty())
     {
-      if(model.getAllRentals().get(i).getRentedMovie().equals(selected))
+      for(int i=0;i<model.getAllRentals().size();i++)
+      {
+        if(model.getAllRentals().get(i).getRentedMovie().equals(selected))
           return true;
+      }
     }
     comment.set("");
     errorLabel.set("");

@@ -55,6 +55,7 @@ public class MovieViewController
     averageRating.textProperty().bind(viewModel.getAvgRatingProperty());
     errorLabel.textProperty().bind(viewModel.getErrorProperty());
     comment.textProperty().bindBidirectional(viewModel.getCommentProperty());
+    rentButton.setDisable(false);
   }
   /**
    * A method calling the viewModel because controllers are not supposed to have functionality(single purpose)
@@ -65,6 +66,7 @@ public class MovieViewController
     boolean isRented = viewModel.reset();
     if(isRented)
       rentButton.setDisable(true);
+    else rentButton.setDisable(false);
   }
   /**
    * @return the root
