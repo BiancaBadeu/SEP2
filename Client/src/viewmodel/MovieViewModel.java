@@ -2,6 +2,7 @@ package viewmodel;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.Button;
 import model.Model;
 import model.Movie;
 
@@ -56,7 +57,7 @@ public class MovieViewModel
   /**
    * A method to reset the instance variables everytime we open the window
    */
-  public void reset()
+  public boolean reset()
   {
     //everything set to the selected movie info
     Movie selected = state.getSelectedMovie();
@@ -67,8 +68,14 @@ public class MovieViewModel
     this.averageRating.set(""+selected.getAvgRating());
     this.numberOfReviews.set(""+selected.getNumberOfReviews());
 
+    for(int i=0;i<=model.getAllRentals().size();i++)
+    {
+      if(model.getAllRentals().get(i).getRentedMovie().equals(selected))
+          return true;
+    }
     comment.set("");
     errorLabel.set("");
+    return false;
   }
 
   /**

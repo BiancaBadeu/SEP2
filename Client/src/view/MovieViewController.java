@@ -62,7 +62,9 @@ public class MovieViewController
    */
   public void reset()
   {
-    viewModel.reset();
+    boolean isRented = viewModel.reset();
+    if(isRented)
+      rentButton.setDisable(true);
   }
   /**
    * @return the root
