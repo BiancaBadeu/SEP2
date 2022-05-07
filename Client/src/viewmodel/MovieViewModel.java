@@ -34,7 +34,6 @@ public class MovieViewModel
     this.model = model;
     this.state = state;
     Movie selected  = state.getSelectedMovie();
-    System.out.println(selected + "in constructor MovieViewModel");
     if(selected != null)
     {
       this.title = new SimpleStringProperty(selected.getTitle());
@@ -55,7 +54,8 @@ public class MovieViewModel
   }
 
   /**
-   * A method to reset the instance variables everytime we open the window
+   * @return a boolean value and reset the instance variables everytime we open the window.
+   *          It returns true if the movie is rented already and false if not
    */
   public boolean reset()
   {
@@ -138,7 +138,7 @@ public class MovieViewModel
   {
     try
     {
-      model.rentMovie(title.get()); //suppose there are no 2 movies with the same name and same rating
+      model.rentMovie(title.get()); //suppose name is unique
       return true;
     }
     catch (Exception e)
