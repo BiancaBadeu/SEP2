@@ -9,7 +9,7 @@ public class ViewModelFactory
 {
   private MovieViewModel movieViewModel;
   private StartViewModel startViewModel;
-  private TopRatedViewModel topRatedViewModel;
+  private HomeViewModel homeViewModel;
   private ViewModelState state = null;
 
   /**
@@ -22,7 +22,7 @@ public class ViewModelFactory
       this.state= new ViewModelState();
       movieViewModel = new MovieViewModel(model, state);
       startViewModel = new StartViewModel(model);
-      topRatedViewModel = new TopRatedViewModel(model, state);
+      homeViewModel = new HomeViewModel(model, state);
   }
 
   /**
@@ -50,11 +50,11 @@ public class ViewModelFactory
   /**
    * @return the viewModel
    *
-   * A getter for the TopRatedViewModel
-   * @see viewmodel.TopRatedViewModel
+   * A getter for the HomeViewModel
+   * @see HomeViewModel
    */
-  public TopRatedViewModel getTopRatedViewModel()
+  public HomeViewModel getHomeViewModel()
   {
-    return topRatedViewModel;
+    return homeViewModel;
   }
 }

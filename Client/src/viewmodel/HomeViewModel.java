@@ -16,8 +16,7 @@ import model.Movie;
 /**
  * TopRatedViewModel is a ViewModel for the TopRatedView.
  */
-public class
-TopRatedViewModel implements PropertyChangeListener
+public class HomeViewModel implements PropertyChangeListener
 {
   private Model model;
   private ObservableList<String> topRatedList;
@@ -27,7 +26,7 @@ TopRatedViewModel implements PropertyChangeListener
    * @param model the model to set
    *              Constructor for TopRatedViewModel.
    */
-  public TopRatedViewModel(Model model, ViewModelState state)
+  public HomeViewModel(Model model, ViewModelState state)
   {
     this.model = model;
     this.model.addListener(this);

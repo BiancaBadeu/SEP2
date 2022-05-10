@@ -19,9 +19,10 @@ public class MovieViewController
   @FXML private Label averageRating;
   @FXML private TextArea comment;
   @FXML private Label numberOfReviews;
-  @FXML private ListView comments;
+  @FXML private ListView<String> comments;
   @FXML private Label errorLabel;
   @FXML private Button rentButton;
+  @FXML private Button cancelButton;
 
   private Region root;
   private MovieViewModel viewModel;
@@ -56,6 +57,7 @@ public class MovieViewController
     errorLabel.textProperty().bind(viewModel.getErrorProperty());
     comment.textProperty().bindBidirectional(viewModel.getCommentProperty());
     rentButton.setDisable(false);
+    cancelButton.setDisable(true);
   }
   /**
    * A method calling the viewModel because controllers are not supposed to have functionality(single purpose)
@@ -65,8 +67,10 @@ public class MovieViewController
   {
     boolean isRented = viewModel.reset();
     if(isRented)
-      rentButton.setDisable(true);
-    else rentButton.setDisable(false);
+    {rentButton.setDisable(true);
+    cancelButton.setDisable(false);}
+    else {rentButton.setDisable(false);
+    cancelButton.setDisable(true);}
   }
   /**
    * @return the root
@@ -81,7 +85,7 @@ public class MovieViewController
    */
   @FXML private void goBackPressed()
   {
-    viewHandler.openView("toprated");
+    viewHandler.openView("home");
   }
 
   /**
@@ -97,9 +101,26 @@ public class MovieViewController
     if(rent)
     {
       rentButton.setDisable(true);
+      cancelButton.setDisable(false);
     }
   }
 
+  /**
+   * A FXML method called when the button named Rent movie is pressed
+   * It cals the method rentMovie in the viewModel and if the method returns true(the user is allowed to rent the movie),
+   *   it will disable the button so that you cannot rent the same movie twice
+   *   @see viewmodel.MovieViewModel
+   *
+   */
+  @FXML private void cancelPressed()
+  {
+    boolean cancel = viewModel.cancelMovie();
+    if(cancel)
+    {
+      rentButton.setDisable(false);
+      cancelButton.setDisable(true);
+    }
+  }
 
   /*
 //not for this sprint
@@ -111,12 +132,6 @@ public class MovieViewController
    *  @see viewmodel.MovieViewModel
    *  @see view.MovieViewController
    /*/
-
-  /**
-   * A FXML method called when the button named leave review is pressed
-   *
-   * It cals the method leaveReview in the viewModel and if the method returns true(the user is allowed to leave the review)
-   */
    @FXML private void leaveReviewPressed()
   {
      // boolean leaveReview = viewModel.leaveReview();

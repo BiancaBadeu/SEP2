@@ -2,7 +2,6 @@ package viewmodel;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.control.Button;
 import model.Model;
 import model.Movie;
 
@@ -25,7 +24,7 @@ public class MovieViewModel
 
   /**
    * @param model a Model variable so that the viewModel has access to the model's methods
-   * @param state a ViewModel State variable so that the view Model has acces to what has been selected in another GUI window
+   * @param state a ViewModel State variable so that the view Model has access to what has been selected in another GUI window
    *
    * A 2 arguments constructor that initializes the instance variables
    */

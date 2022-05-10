@@ -115,7 +115,7 @@ public class StartViewController
     boolean created = viewModel.createUser();
     if (created)
     {
-      viewHandler.openView("toprated");
+      viewHandler.openView("home");
     }
   }
   /**

@@ -16,7 +16,8 @@ public class ViewHandler
   private ViewModelFactory viewModelFactory;
   private StartViewController startViewController;
   private MovieViewController movieViewController;
-  private TopRatedViewController topRatedViewController;
+  private HomeViewController homeViewController;
+  private AdminViewController adminViewController;
 
   /**
    * @param viewModelFactory a viewModelFactory variable for delegating the work to the viewModels
@@ -61,8 +62,11 @@ public class ViewHandler
       case "movie":
         root = loadMovieView("movie.fxml");
         break;
-      case "toprated":
-        root = loadTopRated("Top-Rated_Movies.fxml");
+      case "home":
+        root = loadHomeView("home.fxml");
+        break;
+      case "admin":
+        root = loadAdminView("admin.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -166,10 +170,10 @@ public class ViewHandler
    * @param fxmlFile  a String variable that is the name of the fxml file we want to open
    * @return the root for the controller, so that in the openView method we can utilize it
    */
-  private Region loadTopRated(String fxmlFile)
+  private Region loadHomeView(String fxmlFile)
   {
     Region root = null;
-    if (topRatedViewController == null)
+    if (homeViewController == null)
     {
       // load from FXML
       try
@@ -177,8 +181,8 @@ public class ViewHandler
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
-        topRatedViewController = loader.getController();
-        topRatedViewController.init(this, viewModelFactory.getTopRatedViewModel(), root);
+        homeViewController = loader.getController();
+        homeViewController.init(this, viewModelFactory.getHomeViewModel(), root);
       }
       catch (Exception e)
       {
@@ -188,9 +192,46 @@ public class ViewHandler
     else
     {
       // reset window
-      topRatedViewController.reset();
+      homeViewController.reset();
     }
-    return topRatedViewController.getRoot();
+    return homeViewController.getRoot();
+  }
+  /**
+   * @param fxmlFile a String variable that is the name of the fxml file we want to open
+   * @return the root for the controller, so that in the openView method we can utilize it
+   * @see view.ViewHandler
+   *
+   * A method to get the AdminViewController's root and initialize the window.
+   *  If it is the first we are loading the controller, we will get the controller and root from the loader and call the method init
+   *  @see view.AdminViewController
+   *  If it is not the first time we are loading, we will call the reset method and return the controller's root
+   *  @see view.AdminViewController
+   */
+  private Region loadAdminView(String fxmlFile)
+  {
+    Region root = null;
+    if (adminViewController == null)
+    {
+      // load from FXML
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        adminViewController = loader.getController();
+        adminViewController.init(this,  viewModelFactory.getAdminViewModel(), root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      // reset window
+      adminViewController.reset();
+    }
+    return adminViewController.getRoot();
   }
 
 

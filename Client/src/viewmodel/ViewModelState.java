@@ -27,7 +27,7 @@ public class ViewModelState
 
   /**
    * @param movie the movie to set
-   *              A method that sets the movie.
+   * A method that sets the movie.
    */
  public void setMovie(Movie movie){
    this.movie = movie;
