@@ -10,24 +10,24 @@ public class ViewModelFactory
   private MovieViewModel movieViewModel;
   private StartViewModel startViewModel;
   private HomeViewModel homeViewModel;
+  private AdminViewModel adminViewModel;
   private ViewModelState state = null;
 
   /**
    * @param model a Model variable that we need to create the viewModels
-   *
-   *  An 1 argument constructor that creates the viewModels
+   *              An 1 argument constructor that creates the viewModels
    */
   public ViewModelFactory(Model model)
   {
-      this.state= new ViewModelState();
-      movieViewModel = new MovieViewModel(model, state);
-      startViewModel = new StartViewModel(model);
-      homeViewModel = new HomeViewModel(model, state);
+    this.state = new ViewModelState();
+    movieViewModel = new MovieViewModel(model, state);
+    startViewModel = new StartViewModel(model);
+    homeViewModel = new HomeViewModel(model, state);
+    adminViewModel = new AdminViewModel(model, state);
   }
 
   /**
    * @return the viewModel
-   *
    * A getter for the MovieViewModel
    * @see viewmodel.MovieViewModel
    */
@@ -38,7 +38,6 @@ public class ViewModelFactory
 
   /**
    * @return the viewModel
-   *
    * A getter for the StartViewModel
    * @see viewmodel.StartViewModel
    */
@@ -49,7 +48,6 @@ public class ViewModelFactory
 
   /**
    * @return the viewModel
-   *
    * A getter for the HomeViewModel
    * @see HomeViewModel
    */
@@ -57,4 +55,11 @@ public class ViewModelFactory
   {
     return homeViewModel;
   }
+
+  /**
+   * @return the viewModel
+   *
+   * A getter for the AdminViewModel
+   */
+  public AdminViewModel getAdminViewModel(){ return adminViewModel;}
 }
