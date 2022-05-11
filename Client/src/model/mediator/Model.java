@@ -1,5 +1,7 @@
-package model;
+package model.mediator;
 
+import model.domain.Movie;
+import model.domain.Rental;
 import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 
 import java.beans.PropertyChangeListener;

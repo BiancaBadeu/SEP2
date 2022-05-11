@@ -1,8 +1,8 @@
-package model;
+package model.domain;
 
 /**
  * This class represents an administrator of the system that is an extension from the class Person.
- * @see model.Person
+ * @see Person
  */
 public class Admin extends Person
 {
@@ -17,7 +17,7 @@ public class Admin extends Person
    *
    * Constructor for the class Admin. Initializes instance variables with the super method.
    *
-   * @see model.Person
+   * @see Person
    */
   public Admin(String name, String userName, String password, String phoneNumber, String dob){
     super(name, userName, password, phoneNumber, dob, "admin");

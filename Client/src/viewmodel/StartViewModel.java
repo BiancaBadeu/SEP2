@@ -2,8 +2,7 @@ package viewmodel;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import model.Model;
-import model.Person;
+import model.mediator.Model;
 
 /**
  A viewModel class that represents the functionality of the Controller class StartViewController
@@ -158,7 +157,7 @@ public class StartViewModel
 
   /**
    @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
-   @see model.Model
+   @see Model
    **/
   public boolean login()
   {
@@ -183,7 +182,7 @@ public class StartViewModel
 
   /**
    * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
-   * @see model.Model
+   * @see Model
    */
   public boolean createUser()
   {

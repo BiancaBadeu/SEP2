@@ -1,4 +1,4 @@
-package model;
+package model.domain;
 
 import java.util.ArrayList;
 
@@ -116,4 +116,6 @@ public class Movie
   {
     return "" + title;
   }
+
+
 }

@@ -2,8 +2,8 @@ package viewmodel;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import model.Model;
-import model.Movie;
+import model.mediator.Model;
+import model.domain.Movie;
 
 /**
  * A viewModel class that represents the functionality of the Controller class MovieViewController
@@ -131,7 +131,7 @@ public class MovieViewModel
 
   /**
    *  @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
-   *  @see model.Model
+   *  @see Model
    */
   public boolean rentMovie()
   {

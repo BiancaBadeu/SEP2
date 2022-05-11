@@ -5,13 +5,10 @@ import java.beans.PropertyChangeListener;
 
 import javafx.application.Platform;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ListView;
-import model.Model;
-import model.Movie;
+import model.mediator.Model;
+import model.domain.Movie;
 
 /**
  * TopRatedViewModel is a ViewModel for the TopRatedView.

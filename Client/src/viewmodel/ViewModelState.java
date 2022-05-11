@@ -1,6 +1,6 @@
 package viewmodel;
 
-import model.Movie;
+import model.domain.Movie;
 
 /**
  * ViewModelState is a class that holds the state of the ViewModel.

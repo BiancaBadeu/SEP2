@@ -1,6 +1,9 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
-import model.*;
+import model.domain.Genre;
+import model.domain.Movie;
+import model.mediator.Model;
+import model.mediator.ModelManager;
 import view.*;
 import viewmodel.*;
 

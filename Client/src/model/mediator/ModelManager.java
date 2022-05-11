@@ -1,4 +1,6 @@
-package model;
+package model.mediator;
+
+import model.domain.*;
 
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ public class ModelManager implements Model
   private MovieList movieList;
   private RentalList rentalList;
   private PersonList personList;
+
+  private SEPPersistence database;
 
   /**
    * Empty constructor which initializes the movieList, rentalList, and personList

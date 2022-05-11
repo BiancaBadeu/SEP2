@@ -4,10 +4,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Model;
-import model.Movie;
+import model.mediator.Model;
+import model.domain.Movie;
 
-import javax.swing.text.html.ListView;
 import java.util.ArrayList;
 
 /**

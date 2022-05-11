@@ -1,6 +1,4 @@
-package model;
-
-import java.util.Date;
+package model.domain;
 
 /**
  * This class represents a person which can be a user or an admin.
