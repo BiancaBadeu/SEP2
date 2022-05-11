@@ -97,9 +97,14 @@ public class StartViewController
   @FXML private void loginPressed()
   {
     boolean logedin = viewModel.login();
-    if(logedin)
+    if(logedin && viewModel.checkType().equals("User"))
     {
-      viewHandler.openView("toprated");
+      viewHandler.openView("home");
+    }
+
+    else if(logedin && viewModel.checkType().equals("Admin")){
+
+      viewHandler.openView("admin");
     }
   }
   /**

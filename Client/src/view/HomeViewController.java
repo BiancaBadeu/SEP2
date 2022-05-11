@@ -73,7 +73,7 @@ public class HomeViewController
    */
   @FXML private void topratedDetailsPressed(){
 
-    boolean idk= viewModel.showDetails(topratedList.getFocusModel().getFocusedItem());
+    boolean idk= viewModel.showDetails(topratedList.getFocusModel().getFocusedItem(), "toprated");
 
     if(idk){viewHandler.openView("movie");}
   }
@@ -87,7 +87,7 @@ public class HomeViewController
    */
   @FXML private void trendingDetailsPressed(){
 
-    boolean idk= viewModel.showDetails(trendingList.getFocusModel().getFocusedItem());
+    boolean idk= viewModel.showDetails(trendingList.getFocusModel().getFocusedItem(), "trending");
 
     if(idk){viewHandler.openView("movie");}
   }

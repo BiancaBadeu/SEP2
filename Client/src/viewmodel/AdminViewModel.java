@@ -205,9 +205,10 @@ public class AdminViewModel
       if (model.getAllMovies().get(i).getTitle().equals(focusedItem))
       {
         model.removeMovie(model.getAllMovies().get(i));
+        return true;
       }
     }
-
+return false;
   }
 }
 

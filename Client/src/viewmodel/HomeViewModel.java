@@ -20,6 +20,8 @@ public class HomeViewModel implements PropertyChangeListener
 {
   private Model model;
   private ObservableList<String> topRatedList;
+  private ObservableList<String> trendingList;
+
   private ViewModelState state;
 
   /**
@@ -60,6 +62,20 @@ public class HomeViewModel implements PropertyChangeListener
   }
 
   /**
+   * @return the trendingList
+   *
+   * Method returns the trendingList.
+   */
+  public ObservableList<String> getTrendingMovies()
+  {
+    for (int i = 0; i < model.getTrendingMovies().size(); i++)
+    {
+      trendingList.add(model.getTrendingMovies().get(i).toString());
+    }
+    return trendingList;
+  }
+
+  /**
    * @param evt the PropertyChangeEvent
    *            When a property changes, update the topRatedList.
    */
@@ -79,16 +95,31 @@ public class HomeViewModel implements PropertyChangeListener
    * @see ViewModelState
    * @see MovieViewModel
    */
-    public boolean showDetails (String string)
+    public boolean showDetails (String string, String type)
     {
     Movie movie = null;
-    for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
+
+    if(type.equals("Top Rated"))
     {
-      if (model.getTop10TopRatedMovies().get(i).getTitle().equals(string))
+      for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
       {
-        movie = model.getTop10TopRatedMovies().get(i);
+        if (model.getTop10TopRatedMovies().get(i).getTitle().equals(string))
+        {
+          movie = model.getTop10TopRatedMovies().get(i);
+        }
       }
     }
+    else if(type.equals("Trending")){
+
+      for (int i = 0; i < model.getTrendingMovies().size(); i++)
+      {
+        if (model.getTrendingMovies().get(i).getTitle().equals(string))
+        {
+          movie = model.getTrendingMovies().get(i);
+        }
+      }
+    }
+
       System.out.println(movie + "in show details");
       System.out.println(movie.getTitle() + " title in show details");
     if (movie != null)

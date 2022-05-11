@@ -158,6 +158,8 @@ public class ModelManager implements Model
 
 
 
+
+
   /**
    * @param name a String variable representing the name of the user
    * @param userName a String variable representing the username chosen
@@ -174,5 +176,22 @@ public class ModelManager implements Model
       }
       personList.addPerson(name, userName, password, phoneNumber, dob, "user");
   }
-  
+
+  @Override public String checkPerson(String userName, String password){
+
+    for(int i=0;i<personList.getPersons().size();i++)
+    {
+      if(personList.getPersons().get(i).getUserName().equals(userName))
+      {
+        if(personList.getPersons().get(i).getPassword().equals(password))
+        {
+          return personList.getPersons().get(i).getType();
+        }
+      }
+    }
+
+    return null;
+  }
+
+
 }

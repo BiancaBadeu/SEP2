@@ -3,6 +3,7 @@ package viewmodel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.Model;
+import model.Person;
 
 /**
  A viewModel class that represents the functionality of the Controller class StartViewController
@@ -164,6 +165,7 @@ public class StartViewModel
     try{
       model.login(usernameLogin.get(), passwordLogin.get());
       return true;
+
     }
     catch(Exception e)
     {
@@ -171,6 +173,13 @@ public class StartViewModel
       return false;
     }
   }
+
+  public String checkType(){
+
+    return model.checkPerson(usernameLogin.get(), passwordLogin.get());
+  }
+
+
 
   /**
    * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception

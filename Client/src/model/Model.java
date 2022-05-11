@@ -69,5 +69,9 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param dob the date of birth of the user
    */
   void createUser(String name, String userName, String password, String phoneNumber, String dob);
+
+  String checkPerson(String name, String password);
+
+  ArrayList
 }
 
