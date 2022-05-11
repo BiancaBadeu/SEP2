@@ -68,22 +68,7 @@ create table rentals(
     PRIMARY KEY (userName, movieID)
 );
 
-
-insert into genres(genreName) values ('Fantasy');
-insert into genres(genreName) values ('Action');
-insert into genres(genreName) values ('Romance');
-insert into genres(genreName) values ('Adventure');
-insert into genres(genreName) values ('Horror');
-insert into genres(genreName) values ('Comedy');
-
-insert into genres(genreName) values ('Drama');
-insert into genres(genreName) values ('Mystery');
-insert into genres(genreName) values ('Thriller');
-insert into genres(genreName) values ('Western');
-insert into genres(genreName) values ('Musical');
-
-insert into genres(genreName) values ('Short');
-
+/** first 10 movies **/
 
 insert into movies(movieName, director, length, movieDescription, avgRating, releaseYear)
 values ('The Haunting in Connecticut', 'Peter Cornwell', 120, 'After a family is forced to relocate for their sons health, they begin experiencing supernatural behavior in their new home, and uncover a sinister history.', 4.20, 2009);
@@ -106,24 +91,6 @@ values ('V/H/S', 'Radio Silence', 116, 'When a group of misfits are hired by an 
 insert into movies(movieName, director, length, movieDescription, avgRating, releaseYear)
 values ('REC', 'Jaume Balagueró', 78, 'A television reporter and cameraman follow emergency workers into a dark apartment building and are quickly locked inside with something terrifying.', 4.20, 2007);
 
-
-insert into person(name, phoneNumber, userName, password, birthDate) values ('Maria-Elisabeta Mihai', '+4550284938', 'admin', 'Eli2003!', '2003-05-01');
-insert into person(name, phoneNumber, userName, password, birthDate) values ('Bianca-Cristina Badeu', '+4550316816', 'bbc', 'BadeuBianca', '2001-09-10');
-insert into person(name, phoneNumber, userName, password, birthDate) values ('Luis-Daniel Guzman Bertorelli', '+4550307694', 'Xbey', 'LuisIsTheBest<3', '2004-04-25');
-insert into person(name, phoneNumber, userName, password, birthDate) values ('Dominika Ingrid Ignatowicz', '+48503770353', 'domignat', 'PolishCow', '2002-02-21');
-insert into person(name, phoneNumber, userName, password, birthDate) values ('Cosmin-Mihai Teodoru', '+4550279231', 'costrucks', 'Comsin1204!', '2003-05-01');
-
-insert into reviewsAndRatings(movieID, rating, comment) VALUES (1, 4.94, 'SO GOOD! Loved it!<3');
-insert into reviewsAndRatings(movieID, rating, comment) VALUES (2, 2.54, 'Hate it.');
-insert into reviewsAndRatings(movieID, rating, comment) VALUES (3, 3.50, 'EHh...');
-
-insert into moviegenres(movieID, genreName) VALUES (6, 'Horror');
-insert into moviegenres(movieID, genreName) VALUES (6, 'Short');
-insert into moviegenres(movieID, genreName) VALUES (5, 'Mystery');
-
-insert into rentals(expirationDate, userName, movieID) VALUES ('2022-05-01', 'bbc', 1);
-insert into rentals(expirationDate, userName, movieID) VALUES ('2022-05-02', 'bbc', 2);
-insert into rentals(expirationDate, userName, movieID) VALUES ('2022-05-03', 'Xbey', 1);
 
 /** the rest of the 90 movies **/
 
@@ -399,4 +366,40 @@ values ('Jurassic Park', 'Steven Spielberg', 127, 'A pragmatic paleontologist to
 
 /** done TT^TT **/
 
+/** Genres **/
+insert into genres(genreName) values ('Action');
+insert into genres(genreName) values ('Adventure');
+insert into genres(genreName) values ('Animation');
+insert into genres(genreName) values ('Comedy');
+insert into genres(genreName) values ('Drama');
+insert into genres(genreName) values ('Fantasy');
+insert into genres(genreName) values ('Horror');
+insert into genres(genreName) values ('Musical');
+insert into genres(genreName) values ('Mystery');
+insert into genres(genreName) values ('Romance');
+insert into genres(genreName) values ('Thriller');
+insert into genres(genreName) values ('Western');
+
+
+
+/** admin+users **/
+insert into person(name, phoneNumber, userName, password, birthDate) values ('Maria-Elisabeta Mihai', '+4550284938', 'admin', 'Eli2003!', '2003-05-01');
+insert into person(name, phoneNumber, userName, password, birthDate) values ('Bianca-Cristina Badeu', '+4550316816', 'bbc', 'BadeuBianca', '2001-09-10');
+insert into person(name, phoneNumber, userName, password, birthDate) values ('Luis-Daniel Guzman Bertorelli', '+4550307694', 'Xbey', 'LuisIsTheBest<3', '2004-04-25');
+insert into person(name, phoneNumber, userName, password, birthDate) values ('Dominika Ingrid Ignatowicz', '+48503770353', 'domignat', 'PolishCow', '2002-02-21');
+insert into person(name, phoneNumber, userName, password, birthDate) values ('Cosmin-Mihai Teodoru', '+4550279231', 'costrucks', 'Comsin1204!', '2003-05-01');
+ /** reviews+ratings **/
+insert into reviewsAndRatings(movieID, rating, comment) VALUES (1, 4.94, 'SO GOOD! Loved it!<3');
+insert into reviewsAndRatings(movieID, rating, comment) VALUES (2, 2.54, 'Hate it.');
+insert into reviewsAndRatings(movieID, rating, comment) VALUES (3, 3.50, 'EHh...');
+
+/** rentals **/
+insert into rentals(expirationDate, userName, movieID) VALUES ('2022-05-01', 'bbc', 1);
+insert into rentals(expirationDate, userName, movieID) VALUES ('2022-05-02', 'bbc', 2);
+insert into rentals(expirationDate, userName, movieID) VALUES ('2022-05-03', 'Xbey', 1);
+
+
+
+
+/** movie-genres table **/
 
