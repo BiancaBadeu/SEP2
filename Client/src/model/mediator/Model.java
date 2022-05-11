@@ -74,6 +74,5 @@ public interface Model extends UnnamedPropertyChangeSubject
 
   String checkPerson(String name, String password);
 
-  ArrayList
 }
 

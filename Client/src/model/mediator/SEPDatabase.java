@@ -16,6 +16,9 @@ public class SEPDatabase implements SEPPersistence
   private static final String USER = "postgres";
   private static final String PASSWORD = "ladubuleve39";
 
+  /**
+   * Empty constructor which initializes the db and connects the database
+   */
   public SEPDatabase() throws ClassNotFoundException
   {
     this.db = new MyDatabase(DRIVER, URL, USER, PASSWORD);
