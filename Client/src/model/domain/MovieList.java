@@ -6,14 +6,29 @@ public class MovieList
 {
   private ArrayList<Movie> movies;
 
+  /**
+   * Constructor for the MovieList class.
+   */
   public MovieList()
   {
     this.movies = new ArrayList<>();
   }
 
+  /**
+   * @param movie
+   * adds a movie to the list.
+   */
   public void addMovie(Movie movie)
   {
     movies.add(movie);
+  }
+
+  /**
+   * @param movie
+   * removes a movie from the list.
+   */
+  public void removeMovie(Movie movie){
+    movies.remove(movie);
   }
 
   /**
@@ -37,6 +52,22 @@ public class MovieList
   }
 
   /**
+   * @return the trending movies
+   * This method returns the trending movies in the list.
+   */
+  public ArrayList<Movie> getTrendingMovies(){
+    ArrayList<Movie> trendingMovies = new ArrayList<>();
+    while (trendingMovies.size() < 10)
+    {
+      for (int i = 0; i < movies.size(); i++)
+      {
+        trendingMovies.add(movies.get(i));
+      }
+    }
+    return trendingMovies;
+  }
+
+  /**
    * @return All the movies in the list
    *
    * This method returns all the movies in the list.
@@ -49,8 +80,8 @@ public class MovieList
   /**
    * @param director The director to search for
    *
-   *                  This method returns all the movies in the list that have the given director.
-   * @return
+   * This method returns all the movies in the list that have the given director.
+   * @return All the movies with the given director in the list.
    */
   public ArrayList<Movie> getMoviesWithDirector(String director)
   {

@@ -1,5 +1,7 @@
 package model.domain;
 
+import java.util.Date;
+
 /**
  * This class represents an administrator of the system that is an extension from the class Person.
  * @see Person
@@ -19,7 +21,7 @@ public class Admin extends Person
    *
    * @see Person
    */
-  public Admin(String name, String userName, String password, String phoneNumber, String dob){
+  public Admin(String name, String userName, String password, String phoneNumber, Date dob){
     super(name, userName, password, phoneNumber, dob, "admin");
     this.adminID = userName;
   }

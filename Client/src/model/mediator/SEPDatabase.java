@@ -54,7 +54,7 @@ public class SEPDatabase implements SEPPersistence
             + "VALUES (?, ?, ?, ?, ?);";
     db.update(sql, movie.getTitle(), movie.getDirector(), movie.getLength(),
         movie.getDescription(), movie.getAvgRating(),
-        movie.getReleaseYear); //add a release year to movie class. make movie class match database
+        movie.getReleaseYear()); //add a release year to movie class. make movie class match database
   }
 
   /**
@@ -76,7 +76,7 @@ public class SEPDatabase implements SEPPersistence
         switch (j)
         {
           case 0:
-            movie.setMovieName(String.valueOf(row[j]));
+            movie.setTitle(String.valueOf(row[j]));
             break;
           case 1:
             movie.setDirector(String.valueOf(row[j]));
@@ -85,7 +85,7 @@ public class SEPDatabase implements SEPPersistence
             movie.setLength(Integer.parseInt((String.valueOf(row[j]))));
             break;
           case 3:
-            movie.setMovieDescription(String.valueOf(row[j]));
+            movie.setDescription(String.valueOf(row[j]));
             break;
           case 4:
             movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
@@ -121,7 +121,7 @@ public class SEPDatabase implements SEPPersistence
         switch (j)
         {
           case 0:
-            movie.setMovieName(String.valueOf(row[j]));
+            movie.setTitle(String.valueOf(row[j]));
             break;
           case 1:
             movie.setDirector(String.valueOf(row[j]));
@@ -130,7 +130,7 @@ public class SEPDatabase implements SEPPersistence
             movie.setLength(Integer.parseInt((String.valueOf(row[j]))));
             break;
           case 3:
-            movie.setMovieDescription(String.valueOf(row[j]));
+            movie.setDescription(String.valueOf(row[j]));
             break;
           case 4:
             movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
@@ -157,6 +157,7 @@ public class SEPDatabase implements SEPPersistence
   @Override public void addRental(Date expirationDate, String userName,
       int movieID) throws SQLException
   {
+
     String sql = "insert into rentals(expirationDate, userName, movieID)"
         + "VALUES (?, ?, ?);";
     db.update(sql, rental.getExpirationDate(), rental.getUserName(),
@@ -177,7 +178,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
       //rental should have expirationDate, userName, movieID
-      Rental rental = new Rental(null, "", 0);
+      Rental rental = new Rental(null, null, null);
       for (int j = 0; j < row.length; j++)
       {
         switch (j)

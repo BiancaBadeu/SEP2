@@ -1,6 +1,7 @@
 package model.domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * This class represents a list of persons.
@@ -32,7 +33,8 @@ public class PersonList
    * @param phoneNumber
    * @param dob
    */
-  public void addPerson(String name, String username, String password, String phoneNumber, String dob, String type)
+  public void addPerson(String name, String username, String password, String phoneNumber, Date
+      dob, String type)
   {
     System.out.println("I am in the person list method");
     Person person = null;

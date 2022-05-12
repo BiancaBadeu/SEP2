@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/SEPDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/SEPPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/SEPPersistence.java" afterDir="false" />
-    </list>
+    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,16 +40,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "OverrideImplement.generate.javadoc": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHub\SEP2" />
@@ -95,6 +80,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

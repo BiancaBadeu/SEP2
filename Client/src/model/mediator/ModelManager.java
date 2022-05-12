@@ -37,7 +37,7 @@ public class ModelManager implements Model
    *
    *                    A method to add a person to the person list
    */
-  public void addPerson(String name, String username, String password, String phoneNumber, String dob, String type)
+  public void addPerson(String name, String username, String password, String phoneNumber, Date dob, String type)
   {
     System.out.println("I am in the model manager method");
     personList.addPerson(name, username, password, phoneNumber, dob, type);
@@ -53,6 +53,11 @@ public class ModelManager implements Model
     movieList.addMovie(movie);
   }
 
+  @Override public void removeMovie(Movie movie)
+  {
+    movieList.removeMovie(movie);
+  }
+
   /**
    * @return the top 10 movies with the highest average ratings
    *
@@ -61,6 +66,11 @@ public class ModelManager implements Model
   @Override public ArrayList<Movie> getTop10TopRatedMovies()
   {
       return movieList.getTop10TopRatedMovies();
+  }
+
+  @Override public ArrayList<Movie> getTrendingMovies()
+  {
+    return movieList.getTrendingMovies();
   }
 
   /**
@@ -86,9 +96,9 @@ public class ModelManager implements Model
    *
    *                       A method to add a rental to the rental list
    */
-  @Override public void addRental(Movie movie, Date expirationDate)
+  @Override public void addRental(Movie movie, Date expirationDate,User user)
   {
-    rentalList.addRental(movie,expirationDate);
+    rentalList.addRental(movie,expirationDate, user);
   }
 
   /**
@@ -128,11 +138,11 @@ public class ModelManager implements Model
    *
    * A method to check if the user can rent the movie
    */
-  @Override public void rentMovie(String title)
+  @Override public void rentMovie(String title, User user)
   {
     long rentalDate = System.currentTimeMillis() + (86400 * 7 * 1000);
     Date expirationDate = new Date(rentalDate);
-    addRental(movieList.getMovieWithTitle(title),expirationDate);
+    addRental(movieList.getMovieWithTitle(title),expirationDate, user);
   }
 
   /**

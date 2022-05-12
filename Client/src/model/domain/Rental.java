@@ -8,7 +8,7 @@ import java.util.Date;
 public class Rental
 {
   private Date expirationDate;
- // private User user;
+  private User user;
   private Movie rentedMovie;
 
   /**
@@ -18,9 +18,9 @@ public class Rental
    *
    * Constructor for the rental class.
    */
-  public Rental(Date expirationDate, Movie rentedMovie){
+  public Rental(Date expirationDate, Movie rentedMovie, User user){
     this.expirationDate = expirationDate;
-    //this.user = user;
+    this.user = user;
     this.rentedMovie = rentedMovie;
   }
 
@@ -32,15 +32,15 @@ public class Rental
   public Date getExpirationDate(){
     return expirationDate;
   }
- /*
+
   /**
    * @return the user who rented the movie
    *
    * Getter for the user who rented the movie.
-   *
- public User getUser(){
+   */
+  public User getUser(){
     return user;
-  }*/
+  }
 
   /**
    * @return the movie rented
@@ -49,5 +49,56 @@ public class Rental
    */
   public Movie getRentedMovie(){
     return rentedMovie;
+  }
+
+  /**
+   * @param expirationDate
+   * Setter for the expiration date of the rental
+   */
+  public void setExpirationDate(Date expirationDate)
+  {
+    this.expirationDate = expirationDate;
+  }
+
+  /**
+   * @param user
+   * Setter for the user of the rental
+   */
+  public void setUser(User user)
+  {
+    this.user = user;
+  }
+
+  /**
+   * @return the username of the user
+   * Getter for the username of the rental
+   */
+  public String getUserName(){
+    return user.getUserName();
+  }
+
+  /**
+   * @param userName
+   * Setter for the username of the rental
+   */
+  public void setUserName(String userName){
+    user.setUserName(userName);
+  }
+
+  /**
+   * @param rentedMovie
+   * Setter for the rented movie of the rental
+   */
+  public void setRentedMovie(Movie rentedMovie)
+  {
+    this.rentedMovie = rentedMovie;
+  }
+
+  /**
+   * @param movieID
+   * Setter for the movie id of the rental
+   */
+  public void setMovieID(int movieID){
+    rentedMovie.setMovieID(movieID);
   }
 }

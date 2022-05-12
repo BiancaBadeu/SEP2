@@ -23,20 +23,25 @@ public class RentalList
    * @param expirationDate
    * rental is added to the rental List
    */
-  public void addRental(Movie movie, Date expirationDate){
-    Rental rented = new Rental(expirationDate,movie);
+  public void addRental(Movie movie, Date expirationDate, User user){
+    Rental rented = new Rental(expirationDate,movie,user);
     rentals.add(rented);
   }
 
   /**
    * @return arraylist of rentals
+   * This method returns all the rentals in the list.
    */
   public ArrayList<Rental> getAllRentals()
   {
     return rentals;
   }
-/*
--- for the next sprint :)
+
+  /**
+   * @param user
+   * @return All the rentals of the given user in the list
+   *This method returns all the rentals in the list that have the given user.
+   */
   public ArrayList<Rental> getRentalsWithUser(User user){
     ArrayList<Rental> userRentals = new ArrayList<>();
     for (int i = 0; i<rentals.size();i++)
@@ -47,6 +52,11 @@ public class RentalList
     return userRentals;
   }
 
+  /**
+   * @param movie
+   * @return All the rentals of the given movie in the list
+   * This method returns all the rentals in the list that have the given movie.
+   */
   public ArrayList<Rental> getRentalsWithMovie(Movie movie){
     ArrayList<Rental> movieRentals = new ArrayList<>();
     for (int i = 0; i<rentals.size();i++)
@@ -56,6 +66,6 @@ public class RentalList
     }
     return movieRentals;
   }
-*/
+
 
 }

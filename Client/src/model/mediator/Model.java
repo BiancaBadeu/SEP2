@@ -2,6 +2,7 @@ package model.mediator;
 
 import model.domain.Movie;
 import model.domain.Rental;
+import model.domain.User;
 import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 
 import java.beans.PropertyChangeListener;
@@ -17,6 +18,9 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @return the top 10 rated movies
    */
   ArrayList<Movie> getTop10TopRatedMovies();
+
+  ArrayList<Movie> getTrendingMovies();
+
   /**
    * @return all the movies
    */
@@ -29,15 +33,17 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param dob the person's date of birth
    * @param type the person's type
    */
-  void addPerson(String name, String username, String password, String phoneNumber, String dob, String type);
+  void addPerson(String name, String username, String password, String phoneNumber, Date dob, String type);
   /**
    * @param movie the movie to be added
    */
   void addMovie(Movie movie);
+
+  void removeMovie(Movie movie);
   /**
    * @param title the movie's title
    */
-  void rentMovie(String title);
+  void rentMovie(String title, User user);
 
   /**
    * @param listener the listener to be added
@@ -48,7 +54,7 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param movie the movie to be rented
    * @param expirationDate  the expiration date of the rental
    */
-  void addRental(Movie movie, Date expirationDate);
+  void addRental(Movie movie, Date expirationDate, User user);
   /**
    * @return all rentals
    */

@@ -1,5 +1,7 @@
 package model.domain;
 
+import java.util.Date;
+
 /**
  * This class represents a user.
  */
@@ -15,8 +17,10 @@ public class User extends Person
    *
    * Constructor for the user class
    */
-  public User(String name, String username, String password, String phoneNumber, String dob)
+  public User(String name, String username, String password, String phoneNumber, Date dob)
   {
     super(name, username, password, phoneNumber, dob, "user");
   }
+
+
 }
