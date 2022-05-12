@@ -6,9 +6,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import viewmodel.*;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 /**
  * A class representing a controller for the start.fxml file @see view.start.fxml
  */
@@ -22,10 +19,8 @@ public class StartViewController
   @FXML private TextField usernameSignup;
   @FXML private TextField phoneNumber;
   @FXML private PasswordField passwordSignup;
-  @FXML private DatePicker dob;
+  @FXML private TextField age;
   @FXML private Label errorSignup;
-
-  @FXML private Label dateLabel;
 
   private Region root;
   private StartViewModel viewModel;
@@ -58,16 +53,9 @@ public class StartViewController
     name.textProperty().bindBidirectional(viewModel.getNameProperty());
     usernameSignup.textProperty().bindBidirectional(viewModel.getUsernameSignupProperty());
     phoneNumber.textProperty().bindBidirectional(viewModel.getPhoneProperty());
-
-    String formattedDate = "";
-    LocalDate date = dob.getValue();
-    if(date != null)
-      formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-    dateLabel.setText(formattedDate);
-    dateLabel.textProperty().bind(viewModel.getDateLabelProperty());
-
-    errorSignup.textProperty().bind(viewModel.getErrorSignupProperty());
+    age.textProperty().bindBidirectional(viewModel.getAgeProperty());
     passwordSignup.textProperty().bindBidirectional(viewModel.getPasswordSignupProperty());
+    errorSignup.textProperty().bind(viewModel.getErrorSignupProperty());
   }
 
   /**

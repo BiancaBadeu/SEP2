@@ -28,7 +28,6 @@
                   <PasswordField fx:id="passwordLogin" maxWidth="200.0" prefWidth="200.0" promptText="password" />
                   <Label fx:id="errorLabelLogin" prefHeight="3.0" prefWidth="200.0" text="error" textFill="RED" />
                   <Button mnemonicParsing="false" onAction="#loginPressed" prefHeight="35.0" prefWidth="80.0" text="Log in" />
-                  <Label fx:id="dateLabel" disable="true" opacity="0.0" prefHeight="17.0" prefWidth="240.0" text="Label" />
                </children>
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="422.0" prefWidth="340.0" spacing="10.0">
@@ -42,7 +41,7 @@
                   <TextField fx:id="usernameSignup" maxWidth="200.0" promptText="username" />
                   <TextField fx:id="phoneNumber" maxWidth="200.0" promptText="phone number" />
                   <PasswordField fx:id="passwordSignup" maxWidth="200.0" promptText="password" />
-                  <TextField maxWidth="100.0" promptText="age" />
+                  <TextField fx:id="age" maxWidth="100.0" promptText="age" />
                   <Label fx:id="errorSignup" maxWidth="200.0" text="error" textFill="RED" />
                   <Button mnemonicParsing="false" onAction="#signupPressed" prefHeight="35.0" prefWidth="80.0" text="Sing up" />
                </children>
