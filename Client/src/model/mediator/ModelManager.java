@@ -111,6 +111,12 @@ public class ModelManager implements Model
     return rentalList.getAllRentals();
   }
 
+  @Override public void cancelRental(String title, User user){
+
+
+    rentalList.removeRental(title, user);
+  }
+
 
 /*
 --For the next sprint :)

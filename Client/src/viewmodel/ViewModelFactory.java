@@ -12,6 +12,7 @@ public class ViewModelFactory
   private HomeViewModel homeViewModel;
   private AdminViewModel adminViewModel;
   private ViewModelState state = null;
+  private ViewModelStateUser stateUser = null;
 
   /**
    * @param model a Model variable that we need to create the viewModels
@@ -20,8 +21,8 @@ public class ViewModelFactory
   public ViewModelFactory(Model model)
   {
     this.state = new ViewModelState();
-    movieViewModel = new MovieViewModel(model, state);
-    startViewModel = new StartViewModel(model);
+    movieViewModel = new MovieViewModel(model, state, stateUser);
+    startViewModel = new StartViewModel(model, stateUser);
     homeViewModel = new HomeViewModel(model, state);
     adminViewModel = new AdminViewModel(model, state);
   }

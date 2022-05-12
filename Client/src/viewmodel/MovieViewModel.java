@@ -13,6 +13,7 @@ public class MovieViewModel
 {
   private Model model;
   private ViewModelState state;
+  private ViewModelStateUser userState;
   private StringProperty title;
   private StringProperty length;
   private StringProperty director;
@@ -21,6 +22,8 @@ public class MovieViewModel
   private StringProperty comment;
   private StringProperty numberOfReviews;
   private StringProperty errorLabel;
+  private StringProperty releaseYear;
+
 
   /**
    * @param model a Model variable so that the viewModel has access to the model's methods
@@ -28,10 +31,11 @@ public class MovieViewModel
    *
    * A 2 arguments constructor that initializes the instance variables
    */
-  public MovieViewModel(Model model, ViewModelState state)
+  public MovieViewModel(Model model, ViewModelState state, ViewModelStateUser userState)
   {
     this.model = model;
     this.state = state;
+    this.userState= userState;
     Movie selected  = state.getSelectedMovie();
     if(selected != null)
     {
@@ -98,11 +102,16 @@ public class MovieViewModel
    * A getter for the director string property
    */
   public  StringProperty getDirectorProperty() {return director;}
+
+
+  public StringProperty getReleaseYearProperty() {return releaseYear;}
   /**
    * @return the description property
    *
    * A getter for the description string property
    */
+
+
   public  StringProperty getDescriptionProperty() {return description;}
   /**
    * @return the averageRating property
@@ -137,7 +146,7 @@ public class MovieViewModel
   {
     try
     {
-      model.rentMovie(title.get()); //suppose name is unique
+      model.rentMovie(title.get(), userState.getUser() ); //suppose name is unique
       return true;
     }
     catch (Exception e)
@@ -147,10 +156,10 @@ public class MovieViewModel
     }
   }
 
-  public boolean cancelRental(){
+  public boolean cancelMovie(){
 
     try{
-      model.cancelRental(title.get());
+      model.cancelRental(title.get(), userState.getUser());
       return true;
     }
 

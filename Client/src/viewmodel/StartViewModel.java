@@ -2,6 +2,7 @@ package viewmodel;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import model.domain.User;
 import model.mediator.Model;
 
 /**
@@ -20,6 +21,7 @@ public class StartViewModel
   private StringProperty passwordSignup;
   private StringProperty errorSignup;
   private StringProperty dateLabel;
+  private ViewModelStateUser userState;
 
   /**
    * @param model a Model variable so that the viewModel has access to the model's methods
@@ -27,7 +29,7 @@ public class StartViewModel
    * An 1 argument constructor that initializes the instance variables
    */
 
-  public StartViewModel(Model model)
+  public StartViewModel(Model model, ViewModelStateUser userState)
   {
     this.model = model;
     this.usernameLogin = new SimpleStringProperty();
@@ -39,6 +41,7 @@ public class StartViewModel
     this.passwordSignup = new SimpleStringProperty();
     this.errorSignup = new SimpleStringProperty();
     this.dateLabel = new SimpleStringProperty();
+    this.userState= userState;
   }
 
   /**

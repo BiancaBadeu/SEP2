@@ -22,7 +22,6 @@ public class AdminViewModel
   private StringProperty description;
   private StringProperty avgRating;
   private StringProperty error;
-  private StringProperty movieID;
   private StringProperty releaseYear;
 
 
@@ -47,9 +46,12 @@ public class AdminViewModel
     this.error = new SimpleStringProperty();
   }
 
-  
 
 
+public StringProperty getReleaseYearProperty(){
+
+    return releaseYear;
+}
 
   /**
    * @return The title property.
@@ -127,8 +129,8 @@ public class AdminViewModel
 
     if (addMovie())
     {
-      Movie newMovie = new Movie(title.get(), director.get(), description.get(),
-          Integer.parseInt(length.get()), Double.parseDouble(avgRating.get()),
+      Movie  newMovie = new Movie(title.get(), director.get(),Integer.parseInt(length.get()), description.get(),
+          Double.parseDouble(avgRating.get()), Integer.parseInt(releaseYear.get()),
           0, new ArrayList<>(), new ArrayList<>());
 
       model.addMovie(newMovie);

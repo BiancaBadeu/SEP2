@@ -28,6 +28,17 @@ public class RentalList
     rentals.add(rented);
   }
 
+  public void removeRental(String title, User user){
+
+    for (int i = 0; i<rentals.size();i++)
+    {
+      if (rentals.get(i).getRentedMovie().getTitle().equals(title) && rentals.get(i).getUser().equals(user))
+      {
+        rentals.remove(i);
+      }
+    }
+  }
+
   /**
    * @return arraylist of rentals
    * This method returns all the rentals in the list.
