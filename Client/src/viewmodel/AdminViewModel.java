@@ -22,6 +22,10 @@ public class AdminViewModel
   private StringProperty description;
   private StringProperty avgRating;
   private StringProperty error;
+  private StringProperty movieID;
+  private StringProperty releaseYear;
+
+
   private ObservableList<String> allMovies;
 
   /**
@@ -42,6 +46,10 @@ public class AdminViewModel
     this.avgRating = new SimpleStringProperty();
     this.error = new SimpleStringProperty();
   }
+
+  
+
+
 
   /**
    * @return The title property.

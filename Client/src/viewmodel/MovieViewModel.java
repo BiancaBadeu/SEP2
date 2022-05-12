@@ -147,6 +147,20 @@ public class MovieViewModel
     }
   }
 
+  public boolean cancelRental(){
+
+    try{
+      model.cancelRental(title.get());
+      return true;
+    }
+
+    catch(Exception e){
+      errorLabel.set(e.getMessage());
+      return false;
+    }
+
+  }
+
 
 
   //not for this sprint
