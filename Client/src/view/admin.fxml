@@ -34,10 +34,12 @@
             <TextField fx:id="avgRating" prefHeight="26.0" prefWidth="89.0" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="582.0" spacing="50.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="582.0" spacing="20.0">
          <children>
+            <Label text="Release year" />
+            <TextField fx:id="releaseYear" prefHeight="26.0" prefWidth="82.0" />
             <Label text="Description" />
-            <TextArea fx:id="description" prefHeight="100.0" prefWidth="400.0" />
+            <TextArea fx:id="description" prefHeight="100.0" prefWidth="312.0" />
          </children>
       </HBox>
       <Label fx:id="errorLabel" prefHeight="18.0" prefWidth="266.0" text="error label" textFill="RED" />

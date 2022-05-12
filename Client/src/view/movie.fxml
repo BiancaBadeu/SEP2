@@ -46,6 +46,8 @@
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" text="5" />
          </children>
       </HBox>
-      <Button layoutX="525.0" layoutY="159.0" fx:id="cancelButton" onAction="#cancelPressed" mnemonicParsing="false" prefHeight="43.0" prefWidth="91.0" text="Cancel rental" />
+      <Button fx:id="cancelButton" layoutX="525.0" layoutY="159.0" mnemonicParsing="false" onAction="#cancelPressed" prefHeight="43.0" prefWidth="91.0" text="Cancel rental" />
+      <Label layoutX="172.0" layoutY="102.0" text="Release year:" />
+      <Label fx:id="releaseYear" layoutX="248.0" layoutY="102.0" prefHeight="18.0" prefWidth="63.0" text="Label" />
    </children>
 </AnchorPane>
