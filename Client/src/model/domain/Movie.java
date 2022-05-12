@@ -43,16 +43,7 @@ public class Movie
     this.numberOfReviews = numberOfReviews;
   }
 
-  public Movie(int movieID, String title, String director, int length, String description, int avgRating, int releaseYear)
-  {
-    this.movieID=movieID;
-    this.title = title;
-    this.director = director;
-    this.description = description;
-    this.length = length;
-    this.releaseYear=releaseYear;
-    this.avgRating = avgRating;
-  }
+
 
   /**
    * @return the id of the movie

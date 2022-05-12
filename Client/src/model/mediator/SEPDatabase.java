@@ -1,7 +1,9 @@
 package model.mediator;
 
+import model.domain.Genre;
 import model.domain.Movie;
 import model.domain.Rental;
+import model.domain.Review;
 import utility.persistence.MyDatabase;
 
 import java.sql.Date;
@@ -70,7 +72,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
       //movie should have movieName, director, length, movieDescription, avgRating, releaseYear
-      Movie movie = new Movie(0, "", "", 0, "", 0, 0);
+      Movie movie = new Movie(0,"","",0,"",0,0,0, new ArrayList<>(), new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -115,7 +117,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
       //movie should have movieName, director, length, movieDescription, avgRating, releaseYear
-      Movie movie = new Movie(0, "", "", 0, "", 0, 0);
+      Movie movie = new Movie(0,"","",0,"",0,0,0, new ArrayList<>(), new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
