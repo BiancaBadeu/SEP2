@@ -9,8 +9,8 @@ public abstract class Person
 {
 
   private String name;
-  private String phoneNumber;
   private String userName;
+  private String phoneNumber;
   private String password;
   private Date dob;
   private String type;

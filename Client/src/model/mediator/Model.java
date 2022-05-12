@@ -19,6 +19,9 @@ public interface Model extends UnnamedPropertyChangeSubject
    */
   ArrayList<Movie> getTop10TopRatedMovies();
 
+  /**
+   * @return the trending movies
+   */
   ArrayList<Movie> getTrendingMovies();
 
   /**
@@ -59,15 +62,16 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @return all rentals
    */
   ArrayList<Rental> getAllRentals();
-  /**
-   * @param username the username of the user
-   * @param password the password of the user
-   */
+
  /*
   --For the next sprint :)
   ArrayList<Rental> getRentalsWithUser(User user);
   ArrayList<Rental> getRentalsWithMovie(Movie movie);
 */
+  /**
+   * @param username the username of the user
+   * @param password the password of the user
+   */
   void login(String username, String password);
   /**
    * @param name the name of the user
