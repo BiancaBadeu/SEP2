@@ -86,5 +86,7 @@ public interface Model extends UnnamedPropertyChangeSubject
 
   void cancelRental(String title, User user);
 
+  User getUser(String username);
+
 }
 

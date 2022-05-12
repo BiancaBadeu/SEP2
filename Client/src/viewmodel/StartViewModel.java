@@ -166,6 +166,7 @@ public class StartViewModel
   {
     try{
       model.login(usernameLogin.get(), passwordLogin.get());
+      userState.setUser(model.getUser(usernameLogin.get()));
       return true;
 
     }
