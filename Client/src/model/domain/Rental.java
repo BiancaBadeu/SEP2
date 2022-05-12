@@ -94,11 +94,4 @@ public class Rental
     this.rentedMovie = rentedMovie;
   }
 
-  /**
-   * @param movieID
-   * Setter for the movie id of the rental
-   */
-  public void setMovieID(int movieID){
-    rentedMovie.setMovieID(movieID);
-  }
 }

@@ -29,9 +29,9 @@ public class Movie
    *
    * Constructor for the Movie class
    */
-  public Movie(int movieID,String title, String director, int length,String description,  double avgRating, int releaseYear, int numberOfReviews, ArrayList<Genre> genres, ArrayList<Review> reviews)
+  public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, int numberOfReviews, ArrayList<Genre> genres, ArrayList<Review> reviews)
   {
-    this.movieID=movieID;
+
     this.title = title;
     this.director = director;
     this.description = description;
@@ -45,14 +45,6 @@ public class Movie
 
 
 
-  /**
-   * @return the id of the movie
-   * Getter for the id of the movie
-   */
-  public int getMovieID()
-  {
-    return movieID;
-  }
 
   /**
    * @return the average rating of the movie
@@ -184,14 +176,6 @@ public class Movie
     this.avgRating = avgRating;
   }
 
-  /**
-   * @param movieID
-   * Setter for the id of the movie
-   */
-  public void setMovieID(int movieID)
-  {
-    this.movieID = movieID;
-  }
 
   /**
    * @param releaseYear

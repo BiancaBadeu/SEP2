@@ -72,7 +72,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
       //movie should have movieName, director, length, movieDescription, avgRating, releaseYear
-      Movie movie = new Movie(0,"","",0,"",0,0,0, new ArrayList<>(), new ArrayList<>());
+      Movie movie = new Movie("","",0,"",0,0,0, new ArrayList<>(), new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
