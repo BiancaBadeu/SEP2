@@ -27,21 +27,22 @@ public class PersonList
   }
 
   /**
-   * @param name the name of the user
-   * @param username
-   * @param password
-   * @param phoneNumber
-   * @param dob
+   * @param name the name of the person
+   * @param username the username of the person
+   * @param password the password of the person
+   * @param phoneNumber the phone number of the person
+   * @param age the age of the person
+   * @param type the type of the person (user, admin)
+   *
+   *   A method adding a person in the person list. It checks for the type and adds the corresponding type.
    */
   public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
-    System.out.println("I am in the person list method");
     Person person = null;
     if(type.equals("user"))
     {person = new User(name, username, password, phoneNumber, age);}
     if(type.equals("admin"))
     {person = new Admin(name, username, password, phoneNumber, age);}
     persons.add(person);
-    System.out.println("I added the person in the person list.");
   }
 }

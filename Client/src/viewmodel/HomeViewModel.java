@@ -23,6 +23,7 @@ public class HomeViewModel implements PropertyChangeListener
 
   /**
    * @param model the model to set
+   * @param state the state to get the movie
    *              Constructor for TopRatedViewModel.
    */
   public HomeViewModel(Model model, ViewModelState state)
@@ -86,6 +87,7 @@ public class HomeViewModel implements PropertyChangeListener
 
   /**
    * @param string the string to set
+   * @param type the type of the list (top-rated, trending)
    * @return true or false
    *
    * Method where the selected property is gathered and checked with the movies in the movieList. Such information is sent to the ViewModelState to be used by
@@ -117,9 +119,6 @@ public class HomeViewModel implements PropertyChangeListener
         }
       }
     }
-
-      System.out.println(movie + "in show details");
-      System.out.println(movie.getTitle() + " title in show details");
     if (movie != null)
     {
       state.setMovie(movie);

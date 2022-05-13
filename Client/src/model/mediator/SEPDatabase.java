@@ -1,9 +1,7 @@
 package model.mediator;
 
-import model.domain.Genre;
 import model.domain.Movie;
 import model.domain.Rental;
-import model.domain.Review;
 import utility.persistence.MyDatabase;
 
 import java.sql.Date;

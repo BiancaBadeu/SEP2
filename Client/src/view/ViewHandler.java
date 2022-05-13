@@ -169,6 +169,13 @@ public class ViewHandler
   /**
    * @param fxmlFile  a String variable that is the name of the fxml file we want to open
    * @return the root for the controller, so that in the openView method we can utilize it
+   * @see view.ViewHandler
+   *
+   * A method to get the HomeViewController's root and initialize the window.
+   * If it is the first we are loading the controller, we will get the controller and root from the loader and call the method init
+   * @see view.HomeViewController
+   * If it is not the first time we are loading, we will call the reset method and return the controller's root
+   * @see view.HomeViewController
    */
   private Region loadHomeView(String fxmlFile)
   {

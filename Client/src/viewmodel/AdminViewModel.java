@@ -47,12 +47,11 @@ public class AdminViewModel
     this.releaseYear = new SimpleStringProperty();
   }
 
-
-
-public StringProperty getReleaseYearProperty(){
-
-    return releaseYear;
-}
+  /**
+   * @return the release year property
+   * Getter for the release year property.
+   */
+   public StringProperty getReleaseYearProperty() {return releaseYear;}
 
   /**
    * @return The title property.
@@ -151,35 +150,48 @@ public StringProperty getReleaseYearProperty(){
     releaseYear.set("");
   }
 
+  /**
+   * @return a boolean
+   * A method to see if we can add the movie. Return true if everything is ok.
+   */
   public boolean addMovie()
   {
 
-    if (title.get().isEmpty() || length.get().isEmpty() || director.get()
-        .isEmpty() || description.get().isEmpty() || avgRating.get().isEmpty() || releaseYear.get().isEmpty())
+    if (title.get().isEmpty() || length.get().isEmpty() || director.get().isEmpty()
+        || description.get().isEmpty() || avgRating.get().isEmpty()
+        || releaseYear.get().isEmpty())
     {
       error.set("Please fill in all fields.");
       return false;
     }
-
     return true;
   }
 
+  /**
+   * @param title the title of the movie
+   * @return a boolean variable
+   *
+   * A method to see if we can edit the movie. Return true if everything is ok.
+   */
   public boolean getEdit(String title)
   {
-
     boolean smol = true;
     if (title.isEmpty())
     {
       error.set("Please select a movie.");
       smol = false;
     }
-
     return smol;
   }
 
+  /**
+   * @param focusedItem the movie selected from the list
+   *
+   * A method to get the movie's information and store it into the text fields, so that the admin can edit them. It also removes the
+   *                    movie from the movie list, to be added later when the edit is done
+   */
   public void getMovieToEdit(String focusedItem)
   {
-
     for (int i = 0; i < model.getAllMovies().size(); i++)
     {
       if (model.getAllMovies().get(i).getTitle().equals(focusedItem))
@@ -195,10 +207,14 @@ public StringProperty getReleaseYearProperty(){
         this.releaseYear.set(Integer.toString(model.getAllMovies().get(i).getReleaseYear()));
         model.removeMovie(model.getAllMovies().get(i));
       }
-
     }
   }
 
+  /**
+   * @return a boolean value if we can edit the movie
+   *
+   * A method to see if we can edit the movie. Return true if everything is ok.
+   */
   public boolean editMovie()
   {
     if (title.getValue().isEmpty() || length.getValue().isEmpty() || director.getValue()
@@ -211,19 +227,23 @@ public StringProperty getReleaseYearProperty(){
       return true;
   }
 
+  /**
+   * @param focusedItem the movie selected from the list
+   * @return a boolean value if we can remove the movie
+   *
+   * A method that removes the movie from the movie list. Returns true if everything went ok.
+   */
   public boolean removeMovie(String focusedItem)
   {
-
     for (int i = 0; i < model.getAllMovies().size(); i++)
     {
-
       if (model.getAllMovies().get(i).getTitle().equals(focusedItem))
       {
         model.removeMovie(model.getAllMovies().get(i));
         return true;
       }
     }
-return false;
+    return false;
   }
 }
 

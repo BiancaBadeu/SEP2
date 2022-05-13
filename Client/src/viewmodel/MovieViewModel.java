@@ -27,9 +27,10 @@ public class MovieViewModel
 
   /**
    * @param model a Model variable so that the viewModel has access to the model's methods
-   * @param state a ViewModel State variable so that the view Model has access to what has been selected in another GUI window
+   * @param state a ViewModelState variable so that the view Model has access to what has been selected in another GUI window
+   * @param userState a ViewModelStateUser variable so that the view model knows which user is logged in
    *
-   * A 2 arguments constructor that initializes the instance variables
+   * A 3 arguments constructor that initializes the instance variables
    */
   public MovieViewModel(Model model, ViewModelState state, ViewModelStateUser userState)
   {
@@ -102,16 +103,17 @@ public class MovieViewModel
    * A getter for the director string property
    */
   public  StringProperty getDirectorProperty() {return director;}
-
-
+  /**
+   * @return the release year property
+   *
+   * A getter for the release year string property
+   */
   public StringProperty getReleaseYearProperty() {return releaseYear;}
   /**
    * @return the description property
    *
    * A getter for the description string property
    */
-
-
   public  StringProperty getDescriptionProperty() {return description;}
   /**
    * @return the averageRating property
@@ -141,6 +143,8 @@ public class MovieViewModel
   /**
    *  @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
    *  @see Model
+   *
+   *  A method to rent a movie
    */
   public boolean rentMovie()
   {
@@ -156,6 +160,12 @@ public class MovieViewModel
     }
   }
 
+  /**
+   * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
+   * @see Model
+   *
+   * A method to cancel a rental
+   */
   public boolean cancelMovie(){
 
     try{
@@ -169,8 +179,6 @@ public class MovieViewModel
     }
 
   }
-
-
 
   //not for this sprint
   /*public boolean leaveReview()

@@ -18,16 +18,22 @@ public class RentalList
     this.rentals = new ArrayList<>();
   }
   /**
-   * //@param user
-   * @param movie
-   * @param expirationDate
-   * rental is added to the rental List
+   *@param user the user renting a movie
+   * @param movie the movie rented
+   * @param expirationDate the date that the rental expires
+   * A method that adds a rental to the rental List
    */
   public void addRental(Movie movie, Date expirationDate, User user){
     Rental rented = new Rental(expirationDate,movie,user);
     rentals.add(rented);
   }
 
+  /**
+   * @param title the title of the movie
+   * @param user the user
+   *
+   *   A method to remove a rental from the list
+   */
   public void removeRental(String title, User user){
 
     for (int i = 0; i<rentals.size();i++)
@@ -49,7 +55,7 @@ public class RentalList
   }
 
   /**
-   * @param user
+   * @param user the user
    * @return All the rentals of the given user in the list
    *This method returns all the rentals in the list that have the given user.
    */
@@ -64,7 +70,7 @@ public class RentalList
   }
 
   /**
-   * @param movie
+   * @param movie the movie
    * @return All the rentals of the given movie in the list
    * This method returns all the rentals in the list that have the given movie.
    */

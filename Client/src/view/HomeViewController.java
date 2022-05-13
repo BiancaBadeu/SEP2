@@ -25,7 +25,6 @@ public class HomeViewController
    *
    * Initializes the controller class. This method is automatically called the first time we load the view.
    */
-
   public void init(ViewHandler viewHandler,HomeViewModel viewModel, Region root)
   {
 

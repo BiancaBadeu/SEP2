@@ -2,6 +2,9 @@ package model.domain;
 
 import java.util.ArrayList;
 
+/**
+ * This class represents a list of movies.
+ */
 public class MovieList
 {
   private ArrayList<Movie> movies;

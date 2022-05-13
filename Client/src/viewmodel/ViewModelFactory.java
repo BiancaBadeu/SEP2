@@ -16,7 +16,7 @@ public class ViewModelFactory
 
   /**
    * @param model a Model variable that we need to create the viewModels
-   *              An 1 argument constructor that creates the viewModels
+   *  An 1 argument constructor that creates the viewModels
    */
   public ViewModelFactory(Model model)
   {

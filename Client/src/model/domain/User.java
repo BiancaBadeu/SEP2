@@ -1,7 +1,5 @@
 package model.domain;
 
-import java.util.Date;
-
 /**
  * This class represents a user.
  */

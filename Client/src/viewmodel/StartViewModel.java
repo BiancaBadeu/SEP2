@@ -25,8 +25,9 @@ public class StartViewModel
 
   /**
    * @param model a Model variable so that the viewModel has access to the model's methods
+   * @param userState a ViewModelStateUser variable so that the view model knows which user is logged in
    *
-   * An 1 argument constructor that initializes the instance variables
+   * A 2 argument constructor that initializes the instance variables
    */
 
   public StartViewModel(Model model, ViewModelStateUser userState)
@@ -47,7 +48,6 @@ public class StartViewModel
   /**
    * A method to reset the instance variables everytime we open the window
    */
-
   public void reset()
   {
     usernameLogin.set("");
@@ -66,7 +66,6 @@ public class StartViewModel
    *
    * A getter for the usernameLogin string property
    */
-
   public  StringProperty getUsernameLoginProperty()
   {
     return usernameLogin;
@@ -77,7 +76,6 @@ public class StartViewModel
    *
    * A getter for the passwordLogin string property
    */
-
   public StringProperty getPasswordLoginProperty()
   {
     return passwordLogin;
@@ -88,7 +86,6 @@ public class StartViewModel
    *
    * A getter for the errorLabelLogin string property
    */
-
   public StringProperty getErrorLabelLoginProperty()
   {
     return errorLabelLogin;
@@ -99,7 +96,6 @@ public class StartViewModel
    *
    * A getter for the name string property
    */
-
   public StringProperty getNameProperty()
   {
     return name;
@@ -110,7 +106,6 @@ public class StartViewModel
    *
    * A getter for the usernameSignup string property
    */
-
   public StringProperty getUsernameSignupProperty()
   {
     return usernameSignup;
@@ -122,7 +117,6 @@ public class StartViewModel
    *
    * A getter for the phoneNumber string property
    */
-
   public StringProperty getPhoneProperty()
   {
     return phoneNumber;
@@ -133,7 +127,6 @@ public class StartViewModel
    *
    * A getter for the passwordSignup string property
    */
-
   public StringProperty getPasswordSignupProperty()
   {
     return passwordSignup;
@@ -144,7 +137,6 @@ public class StartViewModel
    *
    * A getter for the errorSignup string property
    */
-
   public StringProperty getErrorSignupProperty()
   {
     return errorSignup;
@@ -155,12 +147,13 @@ public class StartViewModel
    *
    * A getter for the dateLabel string property
    */
-
   public StringProperty getAgeProperty(){return age;}
 
   /**
    @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
    @see Model
+
+   A methof to log in the user
    **/
   public boolean login()
   {
@@ -179,12 +172,13 @@ public class StartViewModel
     }
   }
 
+  /**
+   * @return a String variable with the type of person (admin, user)
+   */
   public String checkType(){
 
     return model.checkPerson(usernameLogin.get(), passwordLogin.get());
   }
-
-
 
   /**
    * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
@@ -202,6 +196,4 @@ public class StartViewModel
       return false;
     }
   }
-
-
 }

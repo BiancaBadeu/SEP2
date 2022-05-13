@@ -34,7 +34,7 @@ public class ModelManager implements Model
    * @param phoneNumber the person's phone number to be added
    * @param age         the person's age to be added
    * @param type        the person's type to be added
-   *                    A method to add a person to the person list
+   *  A method to add a person to the person list
    */
   public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
@@ -44,13 +44,17 @@ public class ModelManager implements Model
 
   /**
    * @param movie the movie to be added to the movie list
-   *              A method to add a movie to the movie list
+   *  A method to add a movie to the movie list
    */
   public void addMovie(Movie movie)
   {
     movieList.addMovie(movie);
   }
 
+  /**
+   * @param movie the movie to be removed
+   *  A method to remove a movie from the movie list
+   */
   @Override public void removeMovie(Movie movie)
   {
     movieList.removeMovie(movie);
@@ -65,6 +69,10 @@ public class ModelManager implements Model
     return movieList.getTop10TopRatedMovies();
   }
 
+  /**
+   * @return the trending movies
+   * A method to return the trending movies
+   */
   @Override public ArrayList<Movie> getTrendingMovies()
   {
     return movieList.getTrendingMovies();
@@ -81,16 +89,16 @@ public class ModelManager implements Model
 
   /**
    * @param listener the listener to be added
-   *                 A method to add a listener
+   *  A method to add a listener
    */
   @Override public void addListener(PropertyChangeListener listener)
   {
   }
 
   /**
-   * @param movie          the movie to be rented
+   * @param movie the movie to be rented
    * @param expirationDate the expiration date of the rental
-   *                       A method to add a rental to the rental list
+   *    A method to add a rental to the rental list
    */
   @Override public void addRental(Movie movie, Date expirationDate, User user)
   {
@@ -106,6 +114,12 @@ public class ModelManager implements Model
     return rentalList.getAllRentals();
   }
 
+  /**
+   * @param title the title of the movie
+   * @param user  the user
+   *
+   *  A method to remove a rental from the rental list
+   */
   @Override public void cancelRental(String title, User user)
   {
 
@@ -128,7 +142,7 @@ public class ModelManager implements Model
 
   /**
    * @param listener the listener to be removed
-   *                 A method to remove a listener
+   *   A method to remove a listener
    */
   public void removeListener(PropertyChangeListener listener)
   {
@@ -136,8 +150,9 @@ public class ModelManager implements Model
 
   /**
    * @param title a String variable representing the title of a movie
-   *              //@param averageRating a String variable representing the average rating of a movie
-   *              A method to check if the user can rent the movie
+   * @param user the user
+   * //@param averageRating a String variable representing the average rating of a movie
+   *  A method to check if the user can rent the movie
    */
   @Override public void rentMovie(String title, User user)
   {
@@ -149,11 +164,10 @@ public class ModelManager implements Model
   /**
    * @param username string variable
    * @param password string variable
-   *                 Checks if the username exists and has a matching password
+   * Checks if the username exists and has a matching password
    */
   @Override public void login(String username, String password)
   {
-    System.out.println("I'm in the login model. Person list: " + personList.getPersons());
     boolean exists = false;
     for (int i = 0; i < personList.getPersons().size(); i++)
     {
@@ -176,6 +190,8 @@ public class ModelManager implements Model
    * @param password    a String variable representing the password chosen
    * @param phoneNumber a String variable representing the phone number of the user
    * @param age         a String variable representing the age of the user
+   *
+   *  A method to create a new User and add it to the person list
    */
   @Override public void createUser(String name, String userName, String password, String phoneNumber, String age)
   {
@@ -187,6 +203,11 @@ public class ModelManager implements Model
     personList.addPerson(name, userName, password, phoneNumber,Integer. parseInt(age), "user");
   }
 
+  /**
+   * @param userName the username of the person
+   * @param password the password of the person
+   * @return a String variable, the type of the person (admin, user) or null in case it does not found the person
+   */
   @Override public String checkPerson(String userName, String password)
   {
     for (int i = 0; i < personList.getPersons().size(); i++)
@@ -199,10 +220,15 @@ public class ModelManager implements Model
         }
       }
     }
-
     return null;
   }
 
+  /**
+   * @param userName the username
+   * @return a User variable
+   *
+   * A methof to get the user by username (username is unique). Returns null if it does not exist
+   */
   @Override public User getUser(String userName)
   {
     for (int i = 0; i < personList.getPersons().size(); i++)
@@ -212,7 +238,6 @@ public class ModelManager implements Model
         return (User) personList.getPersons().get(i);
       }
     }
-
     return null;
   }
 }
