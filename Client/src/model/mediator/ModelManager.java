@@ -240,4 +240,16 @@ public class ModelManager implements Model
     }
     return null;
   }
+
+  @Override public boolean validateAddMovie(String title){
+
+    for (int i = 0; i < movieList.getMovies().size(); i++)
+    {
+      if (movieList.getMovies().get(i).getTitle().equals(title))
+      {
+        return false;
+      }
+    }
+    return true;
+  }
 }

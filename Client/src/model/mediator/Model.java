@@ -112,5 +112,7 @@ public interface Model extends UnnamedPropertyChangeSubject
    */
   User getUser(String username);
 
+  boolean validateAddMovie(String title);
+
 }
 

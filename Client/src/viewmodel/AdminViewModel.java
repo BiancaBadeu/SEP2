@@ -164,7 +164,9 @@ public class AdminViewModel
       error.set("Please fill in all fields.");
       return false;
     }
-    return true;
+
+    else
+      return model.validateAddMovie(title.get());
   }
 
   /**
