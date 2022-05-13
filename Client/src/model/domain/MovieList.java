@@ -57,13 +57,11 @@ public class MovieList
    */
   public ArrayList<Movie> getTrendingMovies(){
     ArrayList<Movie> trendingMovies = new ArrayList<>();
-    while (trendingMovies.size() < 10)
-    {
       for (int i = 0; i < movies.size(); i++)
       {
-        trendingMovies.add(movies.get(i));
+        if(trendingMovies.size() < 15)
+            trendingMovies.add(movies.get(i));
       }
-    }
     return trendingMovies;
   }
 
