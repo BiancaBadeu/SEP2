@@ -129,13 +129,18 @@ public StringProperty getReleaseYearProperty(){
   {
     if (addMovie())
     {
-      Movie  newMovie = new Movie(title.get(), director.get(),Integer.parseInt(length.get()), description.get(),
+      Movie newMovie = new Movie(title.get(), director.get(), Integer.parseInt(length.get()), description.get(),
           Double.parseDouble(avgRating.get()), Integer.parseInt(releaseYear.get()),
           0, new ArrayList<>(), new ArrayList<>());
 
       model.addMovie(newMovie);
     }
 
+    allMovies.clear();
+    for (int i = 0; i < model.getAllMovies().size(); i++)
+    {
+      allMovies.add(i, String.valueOf(model.getAllMovies().get(i)));
+    }
 
     title.set("");
     length.set("");
@@ -144,13 +149,6 @@ public StringProperty getReleaseYearProperty(){
     avgRating.set("");
     error.set("");
     releaseYear.set("");
-    
-    allMovies.clear();
-    for(int i = 0; i < model.getAllMovies().size(); i++)
-    {
-      allMovies.add(i, String.valueOf(model.getTop10TopRatedMovies().get(i)));
-    }
-
   }
 
   public boolean addMovie()
