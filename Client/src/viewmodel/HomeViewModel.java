@@ -97,7 +97,7 @@ public class HomeViewModel implements PropertyChangeListener
     {
     Movie movie = null;
 
-    if(type.equals("Top Rated"))
+    if(type.equals("toprated"))
     {
       for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
       {
@@ -107,7 +107,7 @@ public class HomeViewModel implements PropertyChangeListener
         }
       }
     }
-    else if(type.equals("Trending")){
+    else if(type.equals("trending")){
 
       for (int i = 0; i < model.getTrendingMovies().size(); i++)
       {
