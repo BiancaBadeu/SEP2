@@ -136,13 +136,12 @@ public StringProperty getReleaseYearProperty(){
       model.addMovie(newMovie);
     }
 
-    title.set("");
-    length.set("");
-    director.set("");
-    description.set("");
-    avgRating.set("");
-    error.set("");
-    releaseYear.set("");
+    allMovies.clear();
+    for(int i = 0; i < model.getAllMovies().size(); i++)
+    {
+      allMovies.add(i, String.valueOf(model.getTop10TopRatedMovies().get(i)));
+    }
+
   }
 
   public boolean addMovie()
