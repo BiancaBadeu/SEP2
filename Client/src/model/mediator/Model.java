@@ -33,10 +33,10 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param username the person's username
    * @param password the person's password
    * @param phoneNumber the person's phone number
-   * @param dob the person's date of birth
+   * @param age the person's age
    * @param type the person's type
    */
-  void addPerson(String name, String username, String password, String phoneNumber, Date dob, String type);
+  void addPerson(String name, String username, String password, String phoneNumber, int age, String type);
   /**
    * @param movie the movie to be added
    */
@@ -80,7 +80,7 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param phoneNumber the phone number of the user
    * @param dob the date of birth of the user
    */
-  void createUser(String name, String userName, String password, String phoneNumber, String dob);
+  void createUser(String name, String userName, String password, String phoneNumber, String age);
 
   String checkPerson(String name, String password);
 

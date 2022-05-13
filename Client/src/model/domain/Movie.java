@@ -31,7 +31,6 @@ public class Movie
    */
   public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, int numberOfReviews, ArrayList<Genre> genres, ArrayList<Review> reviews)
   {
-
     this.title = title;
     this.director = director;
     this.description = description;
@@ -42,8 +41,6 @@ public class Movie
     this.reviews = reviews;
     this.numberOfReviews = numberOfReviews;
   }
-
-
 
 
   /**

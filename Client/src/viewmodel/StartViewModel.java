@@ -20,7 +20,7 @@ public class StartViewModel
   private StringProperty phoneNumber;
   private StringProperty passwordSignup;
   private StringProperty errorSignup;
-  private StringProperty dateLabel;
+  private StringProperty age;
   private ViewModelStateUser userState;
 
   /**
@@ -40,7 +40,7 @@ public class StartViewModel
     this.phoneNumber = new SimpleStringProperty();
     this.passwordSignup = new SimpleStringProperty();
     this.errorSignup = new SimpleStringProperty();
-    this.dateLabel = new SimpleStringProperty();
+    this.age = new SimpleStringProperty();
     this.userState= userState;
   }
 
@@ -58,7 +58,7 @@ public class StartViewModel
     phoneNumber.set("");
     passwordSignup.set("");
     errorSignup.set("");
-    dateLabel.set("");
+    age.set("");
   }
 
   /**
@@ -156,7 +156,7 @@ public class StartViewModel
    * A getter for the dateLabel string property
    */
 
-  public StringProperty getDateLabelProperty(){return dateLabel;}
+  public StringProperty getAgeProperty(){return age;}
 
   /**
    @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
@@ -166,12 +166,14 @@ public class StartViewModel
   {
     try{
       model.login(usernameLogin.get(), passwordLogin.get());
-      userState.setUser(model.getUser(usernameLogin.get()));
+      System.out.println("The model said ok.");
+      //userState.setUser(model.getUser(usernameLogin.get()));
+      System.out.println("The user is set.");
       return true;
-
     }
     catch(Exception e)
     {
+      System.out.println("I catched an exception");
       errorLabelLogin.set(e.getMessage());
       return false;
     }
@@ -191,7 +193,7 @@ public class StartViewModel
   public boolean createUser()
   {
     try{
-      model.createUser(name.get(), usernameSignup.get(), passwordSignup.get(), phoneNumber.get(), dateLabel.get());
+      model.createUser(name.get(), usernameSignup.get(), passwordSignup.get(), phoneNumber.get(), age.get());
       return true;
     }
     catch(Exception e)

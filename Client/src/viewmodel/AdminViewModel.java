@@ -44,6 +44,7 @@ public class AdminViewModel
     this.description = new SimpleStringProperty();
     this.avgRating = new SimpleStringProperty();
     this.error = new SimpleStringProperty();
+    this.releaseYear = new SimpleStringProperty();
   }
 
 
@@ -126,7 +127,6 @@ public StringProperty getReleaseYearProperty(){
    */
   public void reset()
   {
-
     if (addMovie())
     {
       Movie  newMovie = new Movie(title.get(), director.get(),Integer.parseInt(length.get()), description.get(),
@@ -136,20 +136,20 @@ public StringProperty getReleaseYearProperty(){
       model.addMovie(newMovie);
     }
 
-
     title.set("");
     length.set("");
     director.set("");
     description.set("");
     avgRating.set("");
     error.set("");
+    releaseYear.set("");
   }
 
   public boolean addMovie()
   {
 
     if (title.get().isEmpty() || length.get().isEmpty() || director.get()
-        .isEmpty() || description.get().isEmpty() || avgRating.get().isEmpty())
+        .isEmpty() || description.get().isEmpty() || avgRating.get().isEmpty() || releaseYear.get().isEmpty())
     {
       error.set("Please fill in all fields.");
       return false;
@@ -186,6 +186,7 @@ public StringProperty getReleaseYearProperty(){
         this.description.set(model.getAllMovies().get(i).getDescription());
         this.avgRating.set(
             Double.toString(model.getAllMovies().get(i).getAvgRating()));
+        this.releaseYear.set(Integer.toString(model.getAllMovies().get(i).getReleaseYear()));
         model.removeMovie(model.getAllMovies().get(i));
       }
 
@@ -194,13 +195,12 @@ public StringProperty getReleaseYearProperty(){
 
   public boolean editMovie()
   {
-    if (title.get().isEmpty() || length.get().isEmpty() || director.get()
-        .isEmpty() || description.get().isEmpty() || avgRating.get().isEmpty())
+    if (title.getValue().isEmpty() || length.getValue().isEmpty() || director.getValue()
+        .isEmpty() || description.getValue().isEmpty() || avgRating.getValue().isEmpty() || releaseYear.getValue().isEmpty())
     {
       error.set("Please fill in all fields.");
       return false;
     }
-
     else
       return true;
   }

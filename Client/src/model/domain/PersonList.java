@@ -33,15 +33,14 @@ public class PersonList
    * @param phoneNumber
    * @param dob
    */
-  public void addPerson(String name, String username, String password, String phoneNumber, Date
-      dob, String type)
+  public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
     System.out.println("I am in the person list method");
     Person person = null;
     if(type.equals("user"))
-    {person = new User(name, username, password, phoneNumber, dob);}
+    {person = new User(name, username, password, phoneNumber, age);}
     if(type.equals("admin"))
-    {person = new Admin(name, username, password, phoneNumber, dob);}
+    {person = new Admin(name, username, password, phoneNumber, age);}
     persons.add(person);
     System.out.println("I added the person in the person list.");
   }

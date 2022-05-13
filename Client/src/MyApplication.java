@@ -14,14 +14,15 @@ public class MyApplication extends Application
   @Override public void start(Stage primaryStage)
   {
     Model model = new ModelManager();
-    model.addPerson("Steffen", "user", "SVA", "+123456789", "29-10-1969", "user");
+    model.addPerson("Steffen", "user", "SVA", "+123456789", 40, "user");
+    model.addPerson("Mona", "admin", "MONA", "+12344567", 40, "admin");
 
     Genre genre = new Genre("Action");
     ArrayList<Genre> genresForMovie1 = new ArrayList<>();
     genresForMovie1.add(genre);
     for(int i=0;i<12;i++)
     {
-      Movie movie = new Movie("Title " + i, "Director "+i, "Description "+i, i, 5.0,i+1, genresForMovie1, new ArrayList<>());
+      Movie movie = new Movie("Title " + i, "Director "+i, 0, "Description "+i, 5.0,2000, 0, genresForMovie1, new ArrayList<>());
       model.addMovie(movie);
     }
     System.out.println("All movies " + model.getAllMovies());

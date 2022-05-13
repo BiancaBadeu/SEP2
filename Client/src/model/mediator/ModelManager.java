@@ -32,14 +32,14 @@ public class ModelManager implements Model
    * @param username    the person's username to be added
    * @param password    the person's password to be added
    * @param phoneNumber the person's phone number to be added
-   * @param dob         the person's date of birth to be added
+   * @param age         the person's age to be added
    * @param type        the person's type to be added
    *                    A method to add a person to the person list
    */
-  public void addPerson(String name, String username, String password, String phoneNumber, Date dob, String type)
+  public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
     System.out.println("I am in the model manager method");
-    personList.addPerson(name, username, password, phoneNumber, dob, type);
+    personList.addPerson(name, username, password, phoneNumber, age, type);
   }
 
   /**
@@ -175,21 +175,20 @@ public class ModelManager implements Model
    * @param userName    a String variable representing the username chosen
    * @param password    a String variable representing the password chosen
    * @param phoneNumber a String variable representing the phone number of the user
-   * @param dob         a String variable representing the date of birth
+   * @param age         a String variable representing the age of the user
    */
-  @Override public void createUser(String name, String userName, String password, String phoneNumber, String dob)
+  @Override public void createUser(String name, String userName, String password, String phoneNumber, String age)
   {
     for (int i = 0; i < personList.getPersons().size(); i++)
     {
       if (personList.getPersons().get(i).getUserName().equals(userName))
         throw new IllegalStateException("Username already exists!");
     }
-    personList.addPerson(name, userName, password, phoneNumber, dob, "user");
+    personList.addPerson(name, userName, password, phoneNumber,Integer. parseInt(age), "user");
   }
 
   @Override public String checkPerson(String userName, String password)
   {
-
     for (int i = 0; i < personList.getPersons().size(); i++)
     {
       if (personList.getPersons().get(i).getUserName().equals(userName))
@@ -206,7 +205,6 @@ public class ModelManager implements Model
 
   @Override public User getUser(String userName)
   {
-
     for (int i = 0; i < personList.getPersons().size(); i++)
     {
       if (personList.getPersons().get(i).getUserName().equals(userName))

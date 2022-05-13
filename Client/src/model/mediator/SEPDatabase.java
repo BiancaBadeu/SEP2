@@ -117,7 +117,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
       //movie should have movieName, director, length, movieDescription, avgRating, releaseYear
-      Movie movie = new Movie(0,"","",0,"",0,0,0, new ArrayList<>(), new ArrayList<>());
+      Movie movie = new Movie("","",0,"",0.0,0,0, new ArrayList<>(), new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -162,8 +162,8 @@ public class SEPDatabase implements SEPPersistence
 
     String sql = "insert into rentals(expirationDate, userName, movieID)"
         + "VALUES (?, ?, ?);";
-    db.update(sql, rental.getExpirationDate(), rental.getUserName(),
-        rental.getMovieID()); //edit rental to match database and add getters + setters
+    //db.update(sql, rental.getExpirationDate(), rental.getUserName(),
+      //  rental.getMovieID()); //edit rental to match database and add getters + setters
 
   }
 
@@ -192,7 +192,7 @@ public class SEPDatabase implements SEPPersistence
             rental.setUserName(String.valueOf(row[j]));
             break;
           case 2:
-            rental.setMovieID(Integer.parseInt((String.valueOf(row[j]))));
+           // rental.setMovieID(Integer.parseInt((String.valueOf(row[j]))));
             break;
           default:
             break;

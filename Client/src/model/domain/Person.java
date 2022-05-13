@@ -1,7 +1,5 @@
 package model.domain;
 
-import java.util.Date;
-
 /**
  * This class represents a person which can be a user or an admin.
  */
@@ -12,7 +10,7 @@ public abstract class Person
   private String userName;
   private String phoneNumber;
   private String password;
-  private Date dob;
+  private int age;
   private String type;
 
   private RentalList rentalList;
@@ -22,15 +20,17 @@ public abstract class Person
    * @param phoneNumber the phone number of the person
    * @param userName the username of the person
    * @param password the password of the person
+   * @param age the age of the person
+   * @param type the type of the person (user, admin)
    *
    * Constructor for the Person class.
    */
-  public Person(String name, String userName, String password, String phoneNumber, Date dob, String type){
+  public Person(String name, String userName, String password, String phoneNumber, int age, String type){
     this.name = name;
     this.phoneNumber = phoneNumber;
     this.userName = userName;
     this.password = password;
-    this.dob = dob;
+    this.age = age;
     this.type = type;
   }
 
@@ -55,9 +55,9 @@ public abstract class Person
   }
 
   /**
-   * @return the user name of the person
+   * @return the username of the person
    *
-   * Getter for the user name of the person.
+   * Getter for the username of the person.
    */
   public String getUserName()
   {
@@ -84,7 +84,12 @@ public abstract class Person
     return type;
   }
 
-  public Date getDob(){return dob;}
+  /**
+   * @return the age of the person
+   *
+   * Getter for the age of the person.
+   */
+  public int getAge(){return age;}
 
   /**
    * @return the rental list
@@ -130,12 +135,12 @@ public abstract class Person
   }
 
   /**
-   * @param dob
-   * Setter for the date of birth of the person
+   * @param age
+   * Setter for the age of the person
    */
-  public void setDob(Date dob)
+  public void setAge(int age)
   {
-    this.dob = dob;
+    this.age = age;
   }
 
 }
