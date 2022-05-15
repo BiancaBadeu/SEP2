@@ -1,7 +1,6 @@
 package model.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * This class represents a list of persons.

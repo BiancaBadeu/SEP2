@@ -2,7 +2,6 @@ package viewmodel;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import model.domain.User;
 import model.mediator.Model;
 
 /**
