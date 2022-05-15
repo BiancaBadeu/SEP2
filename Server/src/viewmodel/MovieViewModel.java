@@ -2,6 +2,8 @@ package viewmodel;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import model.mediator.Model;
 import model.domain.Movie;
 
@@ -14,6 +16,7 @@ public class MovieViewModel
   private Model model;
   private ViewModelState state;
   private ViewModelStateUser userState;
+  private ObservableList<String> comments;
   private StringProperty title;
   private StringProperty length;
   private StringProperty director;
@@ -37,6 +40,9 @@ public class MovieViewModel
     this.model = model;
     this.state = state;
     this.userState= userState;
+
+    this.comments = FXCollections.observableArrayList();
+
     Movie selected  = state.getSelectedMovie();
     if(selected != null)
     {
@@ -80,6 +86,13 @@ public class MovieViewModel
           return true;
       }
     }
+
+    comments.clear();
+    for(int i = 0; i < model.getCommentsForMovie(selected).size(); i++)
+    {
+      comments.add(i, String.valueOf(model.getCommentsForMovie(selected).get(i)));
+    }
+
     comment.set("");
     errorLabel.set("");
     return false;
@@ -139,6 +152,21 @@ public class MovieViewModel
    * A getter for the error string property
    */
   public  StringProperty getErrorProperty() {return errorLabel;}
+  /**
+   * @return the comments
+   *
+   * Method returns the comments for the movie.
+   */
+  public ObservableList<String> getComments()
+  {
+    Movie selected = state.getSelectedMovie();
+
+    for (int i = 0; i < model.getCommentsForMovie(selected).size(); i++)
+    {
+      comments.add(model.getCommentsForMovie(selected).get(i).toString());
+    }
+    return comments;
+  }
 
   /**
    *  @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
@@ -180,8 +208,13 @@ public class MovieViewModel
 
   }
 
-  //not for this sprint
-  /*public boolean leaveReview()
+  /**
+   * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
+   * @see Model
+   *
+   * A method to leave a comment
+   */
+  public boolean leaveReview()
   {
       try
       {
@@ -193,5 +226,5 @@ public class MovieViewModel
           errorLabel.set(e.getMessage());
           return false;
       }
-  }*/
+  }
 }

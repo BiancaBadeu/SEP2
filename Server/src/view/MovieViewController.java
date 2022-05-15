@@ -60,6 +60,8 @@ public class MovieViewController
     comment.textProperty().bindBidirectional(viewModel.getCommentProperty());
     rentButton.setDisable(false);
     cancelButton.setDisable(true);
+
+    comments.setItems(viewModel.getComments());
   }
   /**
    * A method calling the viewModel because controllers are not supposed to have functionality(single purpose)
@@ -124,8 +126,6 @@ public class MovieViewController
     }
   }
 
-  /*
-//not for this sprint
   /**
    * A FXML method called when the button named Leave review is pressed
    *
@@ -136,10 +136,10 @@ public class MovieViewController
    /*/
    @FXML private void leaveReviewPressed()
   {
-     // boolean leaveReview = viewModel.leaveReview();
-    //  if(leaveReview)
+      boolean leaveReview = viewModel.leaveReview();
+      if(leaveReview)
       {
-      //  reset();
+        reset();
       }
   }
 }

@@ -91,4 +91,13 @@ public class HomeViewController
     if(trending){viewHandler.openView("movie");}
   }
 
+  /**
+   * A FXML method called when the button named "View profile" is pressed. It cals the method openView in the viewHandler
+   * @see view.ViewHandler
+   */
+  @FXML private void viewProfilePressed()
+  {
+    viewHandler.openView("profile");
+  }
+
 }
