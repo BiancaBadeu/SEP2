@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/src/view/ProfileViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/view/profile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/HomeViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/view/MovieViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/MovieViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/view/movie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/movie.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/viewmodel/MovieViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/viewmodel/MovieViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -26,6 +26,7 @@ public class MovieViewModel
   private StringProperty numberOfReviews;
   private StringProperty errorLabel;
   private StringProperty releaseYear;
+  private StringProperty star;
 
 
   /**
@@ -52,23 +53,30 @@ public class MovieViewModel
       this.description = new SimpleStringProperty(selected.getDescription());
       this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
       this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
+      this.releaseYear = new SimpleStringProperty(""+selected.getReleaseYear());
     }
-    this.title = new SimpleStringProperty();
-    this.length = new SimpleStringProperty();
-    this.director = new SimpleStringProperty();
-    this.description = new SimpleStringProperty();
-    this.averageRating = new SimpleStringProperty();
-    this.numberOfReviews = new SimpleStringProperty();
+    else
+    {
+      this.title = new SimpleStringProperty();
+      this.length = new SimpleStringProperty();
+      this.director = new SimpleStringProperty();
+      this.description = new SimpleStringProperty();
+      this.averageRating = new SimpleStringProperty();
+      this.numberOfReviews = new SimpleStringProperty();
+      this.releaseYear = new SimpleStringProperty();
+    }
     this.comment = new SimpleStringProperty();
     this.errorLabel = new SimpleStringProperty();
+    this.star = new SimpleStringProperty();
   }
 
   /**
    * @return a boolean value and reset the instance variables everytime we open the window.
    *          It returns true if the movie is rented already and false if not
    */
-  public boolean reset()
+  public int reset()
   {
+    int ok = 0;
     //everything set to the selected movie info
     Movie selected = state.getSelectedMovie();
     this.title.set(""+selected.getTitle());
@@ -83,9 +91,17 @@ public class MovieViewModel
       for(int i=0;i<model.getAllRentals().size();i++)
       {
         if(model.getAllRentals().get(i).getRentedMovie().equals(selected))
-          return true;
+          ok = 1;
       }
     }
+
+    if(ok == 1)
+    {
+      if(!selected.getReviews().isEmpty())
+        ok=2;
+    }
+    else if(!selected.getReviews().isEmpty())
+      ok=3;
 
     comments.clear();
     for(int i = 0; i < model.getCommentsForMovie(selected).size(); i++)
@@ -95,7 +111,7 @@ public class MovieViewModel
 
     comment.set("");
     errorLabel.set("");
-    return false;
+    return ok;
   }
 
   /**
@@ -152,6 +168,12 @@ public class MovieViewModel
    * A getter for the error string property
    */
   public  StringProperty getErrorProperty() {return errorLabel;}
+  /**
+   * @return the star property
+   *
+   * A getter for the star string property
+   */
+  public  StringProperty getStarProperty() {return star;}
   /**
    * @return the comments
    *
@@ -212,13 +234,13 @@ public class MovieViewModel
    * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
    * @see Model
    *
-   * A method to leave a comment
+   * A method to leave a review (rating + comment)
    */
   public boolean leaveReview()
   {
       try
       {
-          model.leaveReview(comment.get());
+          model.leaveReview(comment.get(), star.get());
           return true;
       }
       catch (Exception e)
