@@ -4,42 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/MyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/MovieList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/PersonList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/PersonList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/RentalList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/RentalList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/SEPPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/AdminViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/AdminViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/HomeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/MovieViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/MovieViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/StartViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/movie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/movie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/view/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/view/start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/AdminViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/viewmodel/AdminViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/HomeViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/viewmodel/HomeViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/viewmodel/MovieViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/viewmodel/StartViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/viewmodel/ViewModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/viewmodel/ViewModelState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelStateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/viewmodel/ViewModelStateUser.java" afterDir="false" />
-    </list>
+    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,13 +43,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/MyDatabase.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Client" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/Client" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="model.mediator" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Domi\OneDrive\Dokumenty\GitHub\SEP2\Client" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Domi\OneDrive\Dokumenty\GitHub\SEP2\AllDocumentation" />
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHubSEP2\SEP2\Server" />
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHub\SEP2" />
     </key>
