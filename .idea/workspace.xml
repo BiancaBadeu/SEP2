@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="" />
+    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Client/src/model/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/model/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/model/Rental.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/model/RentalList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/MyApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,7 +58,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Client/src/model" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -54,12 +69,16 @@
       <recent name="model.mediator" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mihai\OneDrive\Documents\GitHubSEP2\SEP2\Client\src\model" />
       <recent name="C:\Users\Domi\OneDrive\Dokumenty\GitHub\SEP2\Client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Domi\OneDrive\Dokumenty\GitHub\SEP2\AllDocumentation" />
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHubSEP2\SEP2\Server" />
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHub\SEP2" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model" />
     </key>
   </component>
   <component name="RunManager">
