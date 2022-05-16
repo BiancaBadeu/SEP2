@@ -4,8 +4,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.mediator.Model;
-import model.domain.Movie;
+import model.Model;
+import model.Movie;
 
 /**
  * A viewModel class that represents the functionality of the Controller class MovieViewController
@@ -238,15 +238,15 @@ public class MovieViewModel
    */
   public boolean leaveReview()
   {
-      try
-      {
-          model.leaveReview(comment.get(), star.get());
-          return true;
-      }
-      catch (Exception e)
-      {
-          errorLabel.set(e.getMessage());
-          return false;
-      }
+    try
+    {
+      model.leaveReview(comment.get(), star.get());
+      return true;
+    }
+    catch (Exception e)
+    {
+      errorLabel.set(e.getMessage());
+      return false;
+    }
   }
 }

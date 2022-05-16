@@ -1,10 +1,11 @@
-import javafx.application.Application;
+import model.mediator.*;
 
 public class ServerMain
 {
   public static void main(String[] args)
   {
-    Application.launch(MyApplication.class);
+      Model model = new ModelManager();
+    System.out.println(model.getAllMovies());
   }
 
 }

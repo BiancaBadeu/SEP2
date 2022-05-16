@@ -3,6 +3,7 @@ package model.mediator;
 import model.domain.*;
 
 import java.beans.PropertyChangeListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,6 +26,14 @@ public class ModelManager implements Model
     this.movieList = new MovieList();
     this.rentalList = new RentalList();
     this.personList = new PersonList();
+    try
+    {
+      this.database = new SEPDatabase();
+    }
+    catch (ClassNotFoundException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -84,7 +93,15 @@ public class ModelManager implements Model
    */
   public ArrayList<Movie> getAllMovies()
   {
-    return movieList.getAllMovies();
+    try
+    {
+      return database.getAllMovies();
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+    return  null;
   }
 
   /**
@@ -241,7 +258,7 @@ public class ModelManager implements Model
     return null;
   }
 
-  @Override public boolean validateAddMovie(String title){
+  /*@Override public boolean validateAddMovie(String title){
 
     for (int i = 0; i < movieList.getMovies().size(); i++)
     {
@@ -251,5 +268,5 @@ public class ModelManager implements Model
       }
     }
     return true;
-  }
+  }*/
 }

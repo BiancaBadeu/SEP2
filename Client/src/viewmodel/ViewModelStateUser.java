@@ -1,6 +1,6 @@
 package viewmodel;
 
-import model.domain.User;
+import model.User;
 
 /**
  * ViewModelStateUser is a class that holds the state of the user.

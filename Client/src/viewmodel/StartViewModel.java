@@ -2,7 +2,7 @@ package viewmodel;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import model.mediator.Model;
+import model.Model;
 
 /**
  A viewModel class that represents the functionality of the Controller class StartViewController

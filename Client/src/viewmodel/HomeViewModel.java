@@ -7,8 +7,8 @@ import javafx.application.Platform;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.mediator.Model;
-import model.domain.Movie;
+import model.Model;
+import model.Movie;
 
 /**
  * TopRatedViewModel is a ViewModel for the TopRatedView.
@@ -95,8 +95,8 @@ public class HomeViewModel implements PropertyChangeListener
    * @see ViewModelState
    * @see MovieViewModel
    */
-    public boolean showDetails (String string, String type)
-    {
+  public boolean showDetails (String string, String type)
+  {
     Movie movie = null;
 
     if(type.equals("toprated"))

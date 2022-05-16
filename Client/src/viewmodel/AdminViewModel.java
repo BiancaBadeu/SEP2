@@ -4,8 +4,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.mediator.Model;
-import model.domain.Movie;
+import model.Model;
+import model.Movie;
 
 import java.util.ArrayList;
 
@@ -51,7 +51,7 @@ public class AdminViewModel
    * @return the release year property
    * Getter for the release year property.
    */
-   public StringProperty getReleaseYearProperty() {return releaseYear;}
+  public StringProperty getReleaseYearProperty() {return releaseYear;}
 
   /**
    * @return The title property.
