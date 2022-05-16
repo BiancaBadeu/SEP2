@@ -4,8 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Model;
-import model.Movie;
+import model.*;
 
 /**
  * A viewModel class that represents the functionality of the Controller class MovieViewController
@@ -74,9 +73,8 @@ public class MovieViewModel
    * @return a boolean value and reset the instance variables everytime we open the window.
    *          It returns true if the movie is rented already and false if not
    */
-  public int reset()
+  public boolean reset()
   {
-    int ok = 0;
     //everything set to the selected movie info
     Movie selected = state.getSelectedMovie();
     this.title.set(""+selected.getTitle());
@@ -91,17 +89,9 @@ public class MovieViewModel
       for(int i=0;i<model.getAllRentals().size();i++)
       {
         if(model.getAllRentals().get(i).getRentedMovie().equals(selected))
-          ok = 1;
+          return true;
       }
     }
-
-    if(ok == 1)
-    {
-      if(!selected.getReviews().isEmpty())
-        ok=2;
-    }
-    else if(!selected.getReviews().isEmpty())
-      ok=3;
 
     comments.clear();
     for(int i = 0; i < model.getCommentsForMovie(selected).size(); i++)
@@ -111,7 +101,7 @@ public class MovieViewModel
 
     comment.set("");
     errorLabel.set("");
-    return ok;
+    return false;
   }
 
   /**

@@ -5,42 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/src/viewmodel/AdminViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/viewmodel/HomeViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelStateUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/model/Genre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/model/Review.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AllDocumentation/Backlog and tasks/Sprint4Backlog.docx" beforeDir="false" afterPath="$PROJECT_DIR$/AllDocumentation/Backlog and tasks/Sprint4Backlog.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/MyApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/AdminViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/AdminViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/HomeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/MovieViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/MovieViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/ProfileViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/ProfileViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/StartViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/StartViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/movie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/movie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/view/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/start.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/viewmodel/AdminViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/viewmodel/HomeViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/viewmodel/MovieViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/viewmodel/StartViewModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/viewmodel/ViewModelFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/viewmodel/ViewModelState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/viewmodel/ViewModelStateUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/RentalList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/view/MovieViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/MovieViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Genre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/MovieList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/PersonList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Rental.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/RentalList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Review.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/Model.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/ModelManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/SEPDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/SEPPersistence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/AdminViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/HomeViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/AdminViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/HomeViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ViewModelStateUser.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

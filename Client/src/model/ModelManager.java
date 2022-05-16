@@ -1,15 +1,19 @@
 package model;
 import mediator.*;
 
-import java.beans.PropertyChangeListener;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ *
+ */
 public class ModelManager implements Model
 {
   private Client client;
 
+  /**
+   * A 0 argument constructor for the model manager creating a new client
+   */
   public ModelManager()
   {
     this.client = new Client();
@@ -76,14 +80,6 @@ public class ModelManager implements Model
   }
 
   /**
-   * @param listener the listener to be added
-   *  A method to add a listener
-   */
-  @Override public void addListener(PropertyChangeListener listener)
-  {
-  }
-
-  /**
    * @param movie the movie to be rented
    * @param expirationDate the expiration date of the rental
    *    A method to add a rental to the rental list
@@ -126,14 +122,6 @@ public class ModelManager implements Model
     return rentalList.getRentalsWithMovie(movie);
   }
 */
-
-  /**
-   * @param listener the listener to be removed
-   *   A method to remove a listener
-   */
-  public void removeListener(PropertyChangeListener listener)
-  {
-  }
 
   /**
    * @param title a String variable representing the title of a movie

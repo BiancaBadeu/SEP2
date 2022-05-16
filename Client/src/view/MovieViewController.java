@@ -89,54 +89,15 @@ public class MovieViewController
    */
   public void reset()
   {
-    int state = viewModel.reset();
-    if (state == 1) //just rented, not reviewed
+    boolean isRented = viewModel.reset();
+    if (isRented)
     {
       rentButton.setDisable(true);
-      cancelButton.setDisable(false);
-      star0.setDisable(false);
-      star1.setDisable(false);
-      star2.setDisable(false);
-      star3.setDisable(false);
-      star4.setDisable(false);
-      star5.setDisable(false);
-      reviewButton.setDisable(false);
-    }
-    else if (state == 0) // not rented, not reviewed
+      cancelButton.setDisable(false);}
+    else
     {
       rentButton.setDisable(false);
       cancelButton.setDisable(true);
-      star0.setDisable(false);
-      star1.setDisable(false);
-      star2.setDisable(false);
-      star3.setDisable(false);
-      star4.setDisable(false);
-      star5.setDisable(false);
-      reviewButton.setDisable(false);
-    }
-    else if(state == 2) // rented and reviewed
-    {
-      rentButton.setDisable(true);
-      cancelButton.setDisable(false);
-      star0.setDisable(true);
-      star1.setDisable(true);
-      star2.setDisable(true);
-      star3.setDisable(true);
-      star4.setDisable(true);
-      star5.setDisable(true);
-      reviewButton.setDisable(true);
-    }
-    else if(state == 3) // not rented, just reviewed
-    {
-      rentButton.setDisable(false);
-      cancelButton.setDisable(true);
-      star0.setDisable(true);
-      star1.setDisable(true);
-      star2.setDisable(true);
-      star3.setDisable(true);
-      star4.setDisable(true);
-      star5.setDisable(true);
-      reviewButton.setDisable(true);
     }
   }
 

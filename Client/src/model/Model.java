@@ -1,9 +1,11 @@
 package model;
 
-import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * A class representing the model
+ */
 public interface Model
 {
   /**
@@ -40,17 +42,14 @@ public interface Model
   void removeMovie(Movie movie);
   /**
    * @param title the movie's title
+   * @param user the user renting the movie
    */
   void rentMovie(String title, User user);
 
   /**
-   * @param listener the listener to be added
-   */
-  void addListener(PropertyChangeListener listener);
-
-  /**
    * @param movie the movie to be rented
    * @param expirationDate  the expiration date of the rental
+   * @param user the user renting the movie
    */
   void addRental(Movie movie, Date expirationDate, User user);
   /**
