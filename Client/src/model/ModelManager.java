@@ -185,8 +185,8 @@ public class ModelManager implements Model
     return client.validateAddMovie(title);
   }
 
-  @Override public Rental getRentalWithUser(User user)
+  @Override public Rental getRentalsWithUser(User user)
   {
-    return client.getRentalWithUser(user);
+    return client.getRentalsWithUser(user);
   }
 }

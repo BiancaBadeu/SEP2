@@ -103,5 +103,5 @@ public interface RemoteModel extends Remote
    */
   boolean validateAddMovie(String title);
 
-  Rental getRentalWithUser(User user);
+  Rental getRentalsWithUser(User user);
 }

@@ -6,6 +6,9 @@ import javafx.collections.ObservableList;
 import model.Model;
 import model.Movie;
 
+/**
+ * The Class ProfileViewModel.
+ */
 public class ProfileViewModel
 {
   private Model model;
@@ -17,6 +20,13 @@ public class ProfileViewModel
   private ObservableList<String> rentedMovies;
   private ViewModelState state;
 
+  /**
+   * @param model the model to set
+   * @param userState the userState to set
+   * @param state the state to set
+   *
+   *              Constructor for ProfileViewModel.
+   */
   public ProfileViewModel(Model model, ViewModelStateUser userState,
       ViewModelState state)
   {
@@ -29,26 +39,51 @@ public class ProfileViewModel
 
   }
 
+  /**
+   * @return the userNameLabel
+   *
+   *         Getter for userNameLabel.
+   */
   public StringProperty getUsernameProperty()
   {
     return userNameLabel;
   }
 
+  /**
+   * @return the userNameLabel
+   *
+   *         Getter for userNameLabel.
+   */
   public StringProperty getNameProperty()
   {
     return nameLabel;
   }
 
+  /**
+   * @return the phoneNoLabel
+   *
+   *         Getter for phoneNoLabel.
+   */
   public StringProperty getPhoneNoProperty()
   {
     return phoneNoLabel;
   }
 
+  /**
+   * @return the ageLabel
+   *
+   *         Getter for ageLabel.
+   */
   public StringProperty getAgeProperty()
   {
     return ageLabel;
   }
 
+  /**
+   * Reset the view.
+   *
+   *
+   */
   public void reset()
   {
 
@@ -56,15 +91,24 @@ public class ProfileViewModel
 
   }
 
+  /**
+   * @return the rentedMovies
+   *
+   * Sets the ListView to the rented movies.
+   */
   public ObservableList<String> getRentedMovies()
   {
 
-    rentedMovies.add(model.getRentalsWithUser(userState.getUser()).toString());
+    rentedMovies.add(model.getRentalsWithUser(userState.getUser()).getRentedMovie().getTitle());
 
     return rentedMovies;
 
   }
 
+  /**
+   * @param string Movie title
+   * @return  Whether the movie exists or not.
+   */
   public boolean showDetails(String string)
   {
     Movie movie = null;

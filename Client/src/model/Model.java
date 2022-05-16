@@ -109,5 +109,5 @@ public interface Model
    */
   boolean validateAddMovie(String title);
 
-  Rental getRentalWithUser(User user);
+  Rental getRentalsWithUser(User user);
 }
