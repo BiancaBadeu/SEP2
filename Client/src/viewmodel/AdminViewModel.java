@@ -130,7 +130,7 @@ public class AdminViewModel
     {
       Movie newMovie = new Movie(title.get(), director.get(), Integer.parseInt(length.get()), description.get(),
           Double.parseDouble(avgRating.get()), Integer.parseInt(releaseYear.get()),
-          0, new ArrayList<>(), new ArrayList<>());
+          genre.get(), new ArrayList<>());
 
       model.addMovie(newMovie);
     }
