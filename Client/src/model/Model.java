@@ -108,4 +108,6 @@ public interface Model
    * @return a boolean value
    */
   boolean validateAddMovie(String title);
+
+  Rental getRentalWithUser(User user);
 }

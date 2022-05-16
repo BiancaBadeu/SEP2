@@ -184,4 +184,9 @@ public class ModelManager implements Model
   {
     return client.validateAddMovie(title);
   }
+
+  @Override public Rental getRentalWithUser(User user)
+  {
+    return client.getRentalWithUser(user);
+  }
 }

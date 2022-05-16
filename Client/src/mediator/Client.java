@@ -183,4 +183,9 @@ public class Client implements Model
   {
       return remoteModel.getMovieWithTitle(title);
   }
+
+  @Override public Rental getRentalWithUser(User user)
+  {
+    return remoteModel.getRentalWithUser(user);
+  }
 }
