@@ -107,4 +107,6 @@ public interface RemoteModel extends Remote
   Rental getRentalsWithUser(User user);
 
   ArrayList<Review> getCommentsForMovie(Movie movie);
+
+  void leaveReview(String comment, int rating);
 }
