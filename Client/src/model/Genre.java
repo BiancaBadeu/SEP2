@@ -1,7 +1,7 @@
 package model;
 
 /**
- * class for genre
+ * A class representing the genre of the movie
  */
 public class Genre
 {

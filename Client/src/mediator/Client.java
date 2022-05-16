@@ -165,4 +165,22 @@ public class Client implements Model
   {
     return remoteModel.getUser(username);
   }
+
+  /**
+   * @param title the title of the movie
+   * @return a boolean value
+   */
+  @Override public boolean validateAddMovie(String title)
+  {
+    return remoteModel.validateAddMovie(title);
+  }
+
+  /**
+   * @param title the title of the movie
+   * @return the movie with that title (title is unique)
+   */
+  public Movie getMovieWithTitle(String title)
+  {
+      return remoteModel.getMovieWithTitle(title);
+  }
 }

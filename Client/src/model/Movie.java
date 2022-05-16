@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
- * Movie class
+ * A class representing a movie
  */
 public class Movie
 {
@@ -14,7 +14,7 @@ public class Movie
   private double avgRating;
   private int numberOfReviews;
   private int releaseYear;
-  private Genre genres;
+  private Genre genre;
   private ArrayList<Review> reviews;
 
   /**
@@ -23,12 +23,12 @@ public class Movie
    * @param description the description of the movie
    * @param length the length of the movie
    * @param avgRating the average rating of the movie
-   * @param genres the genres of the movie
+   * @param genre the genre of the movie
    * @param reviews the reviews of the movie
    *
    * Constructor for the Movie class
    */
-  public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, Genre genres, ArrayList<Review> reviews)
+  public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, Genre genre, ArrayList<Review> reviews)
   {
     this.title = title;
     this.director = director;
@@ -36,7 +36,7 @@ public class Movie
     this.length = length;
     this.releaseYear=releaseYear;
     this.avgRating = avgRating;
-    this.genres = genres;
+    this.genre = genre;
     this.reviews = reviews;
     this.numberOfReviews = reviews.size();
   }
@@ -113,7 +113,7 @@ public class Movie
    */
   public Genre getGenre()
   {
-    return genres;
+    return genre;
   }
 
   /**

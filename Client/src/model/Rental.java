@@ -13,7 +13,7 @@ public class Rental
 
   /**
    * @param expirationDate the expiration date of the rental
-   * //@param user the user who rented the movie
+   * @param user the user who rented the movie
    * @param rentedMovie the movie rented
    *
    * Constructor for the rental class.

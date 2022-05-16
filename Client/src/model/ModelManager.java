@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- *
+ * A class representing a model manager. Implements the model
+ * @see model.Model;
  */
 public class ModelManager implements Model
 {
@@ -106,9 +107,8 @@ public class ModelManager implements Model
    */
   @Override public void cancelRental(String title, User user)
   {
-    client.removeRental(title, user);
+    client.cancelRental(title, user);
   }
-
 
 /*
 --For the next sprint :)
@@ -126,7 +126,6 @@ public class ModelManager implements Model
   /**
    * @param title a String variable representing the title of a movie
    * @param user the user
-   * //@param averageRating a String variable representing the average rating of a movie
    *  A method to check if the user can rent the movie
    */
   @Override public void rentMovie(String title, User user)
@@ -144,20 +143,6 @@ public class ModelManager implements Model
   @Override public void login(String username, String password)
   {
     client.login(username, password);
-   /* boolean exists = false;
-    for (int i = 0; i < personList.getPersons().size(); i++)
-    {
-      if (username.equals(personList.getPersons().get(i).getUserName()))
-      {
-        exists = true;
-        if (!(password.equals(personList.getPersons().get(i).getPassword())))
-        {
-          throw new IllegalArgumentException("password is incorrect");
-        }
-      }
-    }
-    if (!exists)
-      throw new IllegalArgumentException("The username doesn't exist");*/
   }
 
   /**
@@ -172,12 +157,6 @@ public class ModelManager implements Model
   @Override public void createUser(String name, String userName, String password, String phoneNumber, String age)
   {
     client.createUser(name, userName, password, phoneNumber, age);
-    /*for (int i = 0; i < personList.getPersons().size(); i++)
-    {
-      if (personList.getPersons().get(i).getUserName().equals(userName))
-        throw new IllegalStateException("Username already exists!");
-    }
-    personList.addPerson(name, userName, password, phoneNumber,Integer. parseInt(age), "user");*/
   }
 
   /**
@@ -188,17 +167,6 @@ public class ModelManager implements Model
   @Override public String checkPerson(String userName, String password)
   {
     return client.checkPerson(userName, password);
-    /*for (int i = 0; i < personList.getPersons().size(); i++)
-    {
-      if (personList.getPersons().get(i).getUserName().equals(userName))
-      {
-        if (personList.getPersons().get(i).getPassword().equals(password))
-        {
-          return personList.getPersons().get(i).getType();
-        }
-      }
-    }
-    return null;*/
   }
 
   /**
@@ -210,25 +178,10 @@ public class ModelManager implements Model
   @Override public User getUser(String userName)
   {
     return client.getUser(userName);
-    /*for (int i = 0; i < personList.getPersons().size(); i++)
-    {
-      if (personList.getPersons().get(i).getUserName().equals(userName))
-      {
-        return (User) personList.getPersons().get(i);
-      }
-    }
-    return null;*/
   }
 
-  /*@Override public boolean validateAddMovie(String title){
-
-    for (int i = 0; i < movieList.getMovies().size(); i++)
-    {
-      if (movieList.getMovies().get(i).getTitle().equals(title))
-      {
-        return false;
-      }
-    }
-    return true;
-  }*/
+  @Override public boolean validateAddMovie(String title)
+  {
+    return client.validateAddMovie(title);
+  }
 }

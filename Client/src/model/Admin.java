@@ -1,7 +1,7 @@
 package model;
 
 /**
- * This class represents an administrator of the system that is an extension from the class Person.
+ * A class representing an administrator of the system that is an extension from the class Person.
  * @see Person
  */
 public class Admin extends Person

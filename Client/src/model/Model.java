@@ -103,5 +103,9 @@ public interface Model
    */
   User getUser(String username);
 
-  //boolean validateAddMovie(String title);
+  /**
+   * @param title the title of the movie
+   * @return a boolean value
+   */
+  boolean validateAddMovie(String title);
 }
