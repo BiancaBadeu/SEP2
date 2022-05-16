@@ -29,7 +29,6 @@ public class HomeViewModel implements PropertyChangeListener
   public HomeViewModel(Model model, ViewModelState state)
   {
     this.model = model;
-    this.model.addListener(this);
     this.topRatedList = FXCollections.observableArrayList();
     this.trendingList= FXCollections.observableArrayList();
     this.state = state;

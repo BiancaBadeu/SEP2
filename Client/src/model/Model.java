@@ -110,4 +110,6 @@ public interface Model
   boolean validateAddMovie(String title);
 
   Rental getRentalsWithUser(User user);
+
+  ArrayList<Review> getCommentsForMovie(Movie movie);
 }

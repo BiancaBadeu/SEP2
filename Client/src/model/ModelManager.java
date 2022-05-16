@@ -189,4 +189,9 @@ public class ModelManager implements Model
   {
     return client.getRentalsWithUser(user);
   }
+
+  @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
+  {
+    return client.getCommentsForMovie(movie);
+  }
 }

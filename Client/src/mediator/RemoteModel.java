@@ -2,6 +2,7 @@ package mediator;
 
 import model.Movie;
 import model.Rental;
+import model.Review;
 import model.User;
 
 import java.rmi.Remote;
@@ -104,4 +105,6 @@ public interface RemoteModel extends Remote
   boolean validateAddMovie(String title);
 
   Rental getRentalsWithUser(User user);
+
+  ArrayList<Review> getCommentsForMovie(Movie movie);
 }

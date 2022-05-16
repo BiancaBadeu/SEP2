@@ -188,4 +188,9 @@ public class Client implements Model
   {
     return remoteModel.getRentalsWithUser(user);
   }
+
+  @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
+  {
+    return remoteModel.getCommentsForMovie(movie);
+  }
 }
