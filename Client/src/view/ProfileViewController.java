@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
+import viewmodel.ProfileViewModel;
 
 /**
  * A class representing a controller for the profile.fxml file @see view.profile.fxml

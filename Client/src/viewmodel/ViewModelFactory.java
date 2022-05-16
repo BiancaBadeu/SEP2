@@ -11,6 +11,7 @@ public class ViewModelFactory
   private StartViewModel startViewModel;
   private HomeViewModel homeViewModel;
   private AdminViewModel adminViewModel;
+  private ProfileViewModel profileViewModel;
   private ViewModelState state = null;
   private ViewModelStateUser stateUser = null;
 
@@ -25,6 +26,8 @@ public class ViewModelFactory
     startViewModel = new StartViewModel(model, stateUser);
     homeViewModel = new HomeViewModel(model, state);
     adminViewModel = new AdminViewModel(model, state);
+    profileViewModel = new ProfileViewModel(model, stateUser, state);
+
   }
 
   /**
@@ -63,4 +66,6 @@ public class ViewModelFactory
    * A getter for the AdminViewModel
    */
   public AdminViewModel getAdminViewModel(){ return adminViewModel;}
+
+  public ProfileViewModel getProfileViewModel(){ return profileViewModel;}
 }
