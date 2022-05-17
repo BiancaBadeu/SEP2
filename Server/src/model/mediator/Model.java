@@ -19,6 +19,10 @@ public interface Model extends UnnamedPropertyChangeSubject
    */
   ArrayList<Movie> getTop10TopRatedMovies();
 
+  ArrayList<Movie> getMovieLike(String title);
+
+  Movie getMovieWithTitle(String title);
+
   /**
    * @return the trending movies
    */
@@ -112,6 +116,7 @@ public interface Model extends UnnamedPropertyChangeSubject
    * A method to get the user by username (username is unique)
    */
   User getUser(String username);
+  boolean validateAddMovie(String title);
 
   //boolean validateAddMovie(String title);
 

@@ -187,6 +187,17 @@ public class Movie
     this.releaseYear = releaseYear;
   }
 
+  public ArrayList<String> getAllComments()
+  {
+
+    ArrayList<String> list = new ArrayList<>();
+    for(int i=0;i<reviews.size();i++)
+    {
+      list.add(reviews.get(i).getComment());
+    }
+    return list;
+  }
+
   /**
    * @return a string representation of the movie
    */
@@ -194,6 +205,7 @@ public class Movie
   {
     return "" + title;
   }
+
 
 
 }

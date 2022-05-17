@@ -78,6 +78,16 @@ public class ModelManager implements Model
     return movieList.getTop10TopRatedMovies();
   }
 
+  @Override public ArrayList<Movie> getMovieLike(String title)
+  {
+    return movieList.getMovieLike(title);
+  }
+
+  @Override public Movie getMovieWithTitle(String title)
+  {
+    return movieList.getMovieWithTitle(title);
+  }
+
   /**
    * @return the trending movies
    * A method to return the trending movies
@@ -266,15 +276,20 @@ public class ModelManager implements Model
     return null;
   }
 
-  /*@Override public boolean validateAddMovie(String title){
+  @Override public boolean validateAddMovie(String title){
 
-    for (int i = 0; i < movieList.getMovies().size(); i++)
+    for (int i = 0; i < movieList.getAllMovies().size(); i++)
     {
-      if (movieList.getMovies().get(i).getTitle().equals(title))
+      if (movieList.getAllMovies().get(i).getTitle().equals(title))
       {
         return false;
       }
     }
     return true;
-  }*/
+  }
+
+  public ArrayList<Review> getCommentsForMovie(Movie movie)
+  {
+    movieList.getCommentsForMovie
+  }
 }

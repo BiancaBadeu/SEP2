@@ -17,6 +17,7 @@ public class MovieList
     this.movies = new ArrayList<>();
   }
 
+
   /**
    * @param movie
    * adds a movie to the list.
@@ -54,6 +55,16 @@ public class MovieList
     return topRatedMovies;
   }
 
+  public ArrayList<Movie> getMovieLike(String title)
+  {
+    ArrayList<Movie> list = new ArrayList<>();
+    for(int i = 0; i<movies.size();i++)
+    {
+      if(movies.get(i).getTitle().contains(title))
+        list.add(movies.get(i));
+    }
+    return list;
+  }
   /**
    * @return the trending movies
    * This method returns the trending movies in the list.
@@ -264,5 +275,16 @@ public class MovieList
       throw new IllegalStateException("Cannot rent this movie.");
 
     return movie;
+  }
+
+  ArrayList<String> getCommentsForMovie(Movie movie)
+  {
+    ArrayList<String> list= new ArrayList<>();
+    for(int i=0;i<movies.size();i++)
+    {
+      if(movies.get(i).equals(movie))
+        list = movies.get(i).getAllComments();
+    }
+    return list;
   }
 }
