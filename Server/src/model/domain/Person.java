@@ -25,13 +25,14 @@ public abstract class Person
    *
    * Constructor for the Person class.
    */
-  public Person(String name, String userName, String password, String phoneNumber, int age, String type){
+  public Person(String name, String userName, String password, String phoneNumber, int age, String type, RentalList rentalList){
     this.name = name;
     this.phoneNumber = phoneNumber;
     this.userName = userName;
     this.password = password;
     this.age = age;
     this.type = type;
+    this.rentalList=rentalList;
   }
 
   /**

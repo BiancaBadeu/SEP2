@@ -229,13 +229,13 @@ public class MovieList
    *
    * @return The movies with the given genre
    */
-  public ArrayList<Movie> getMoviesWithGenre(String genre){
+  public ArrayList<Movie> getMoviesWithGenre(Genre genre){
 
     ArrayList<Movie> moviesWithGenre = new ArrayList<>();
 
     for(int i = 0; i < movies.size(); i++){
 
-      if(movies.get(i).getGenres().contains(genre)){
+      if(movies.get(i).getGenres().equals(genre)){
 
         moviesWithGenre.add(movies.get(i));
       }

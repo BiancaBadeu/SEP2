@@ -1,13 +1,19 @@
 package model.mediator;
 
+import model.domain.Genre;
 import model.domain.Movie;
 import model.domain.Rental;
+import model.domain.User;
 import utility.persistence.MyDatabase;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * The SEPDatabase class is responsible for managing the connection with Database.
+ */
 public class SEPDatabase implements SEPPersistence
 {
   private MyDatabase db;
@@ -201,4 +207,64 @@ public class SEPDatabase implements SEPPersistence
     return all;
 
   }
+
+  /**
+   * @param user
+   * @return an arraylist with all the rentals of the user from the database
+   * @throws SQLException
+   *
+   */
+  @Override public ArrayList<Rental> getRentalsWithUser(User user)
+      throws SQLException
+  {
+    String sql = "select * from rentals r join movies m on m.movieID = r.movieID ;";
+    ArrayList<Object[]> results = db.query(sql);
+    ArrayList<Rental> all = new ArrayList<>();
+    for (int i = 0; i < results.size(); i++)
+    {
+      Object[] row = results.get(i);
+      //rental should have expirationDate, userName, movieID
+      Rental rental = new Rental(null, null, user);
+      Genre genre = new Genre("");
+      Movie rentedMovie = new Movie("","",0,"",0,0,genre,new ArrayList<>());
+      if (user.getUserName().equals(String.valueOf(row[1]))){
+      for (int j = 0; j < row.length; j++)
+      {
+        switch (j)
+        {
+          case 0:
+            rental.setExpirationDate(Date.valueOf((LocalDate) row[j]));//not sure how correct this is
+            break;
+          case 1:
+            rental.setUserName(String.valueOf(row[j]));
+            break;
+          case 4:
+            rentedMovie.setTitle(String.valueOf(row[j]));
+            break;
+          case 5:
+            rentedMovie.setDirector(String.valueOf(row[j]));
+          break;
+          case 6:
+            rentedMovie.setLength(Integer.parseInt((String.valueOf(row[j]))));
+            break;
+          case 7:
+            rentedMovie.setDescription(String.valueOf(row[j]));
+            break;
+          case 8:
+            rentedMovie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
+            break;
+          case 9:
+            rentedMovie.setReleaseYear(Integer.parseInt((String.valueOf(row[j]))));
+            break;
+          default:
+            break;
+        }
+      }
+      rental.setRentedMovie(rentedMovie);
+      all.add(rental);
+    }}
+    return all;
+
+  }
+
 }

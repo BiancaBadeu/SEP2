@@ -1,4 +1,6 @@
 drop schema sep cascade;
+
+
 create schema sep;
 set schema 'sep';
 

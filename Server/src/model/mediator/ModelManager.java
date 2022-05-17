@@ -144,13 +144,13 @@ public class ModelManager implements Model
   }
 
 
-/*
---For the next sprint :)
+
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
     return rentalList.getRentalsWithUser(user);
   }
-
+/*
+--For the next sprint :)
   @Override public ArrayList<Rental> getRentalsWithMovie(Movie movie)
   {
     return rentalList.getRentalsWithMovie(movie);

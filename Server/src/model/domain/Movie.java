@@ -7,7 +7,6 @@ import java.util.ArrayList;
  */
 public class Movie
 {
-  private int movieID;
   private String title;
   private String director;
   private String description;
@@ -15,7 +14,7 @@ public class Movie
   private double avgRating;
   private int numberOfReviews;
   private int releaseYear;
-  private ArrayList<Genre> genres;
+  private Genre genres;
   private ArrayList<Review> reviews;
 
   /**
@@ -29,7 +28,7 @@ public class Movie
    *
    * Constructor for the Movie class
    */
-  public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, int numberOfReviews, ArrayList<Genre> genres, ArrayList<Review> reviews)
+  public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, Genre genres, ArrayList<Review> reviews)
   {
     this.title = title;
     this.director = director;
@@ -39,7 +38,7 @@ public class Movie
     this.avgRating = avgRating;
     this.genres = genres;
     this.reviews = reviews;
-    this.numberOfReviews = numberOfReviews;
+    this.numberOfReviews = reviews.size();
   }
 
 
@@ -113,7 +112,7 @@ public class Movie
    *
    * Getter for the genres of the movie
    */
-  public ArrayList<Genre> getGenres()
+  public Genre getGenres()
   {
     return genres;
   }

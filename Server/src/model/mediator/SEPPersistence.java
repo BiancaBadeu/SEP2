@@ -2,6 +2,7 @@ package model.mediator;
 
 import model.domain.Movie;
 import model.domain.Rental;
+import model.domain.User;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -55,4 +56,10 @@ public interface SEPPersistence
    * @throws SQLException
    */
   ArrayList<Rental> getAllRentals() throws SQLException;
+  /**
+   * @param user
+   * @return an arraylist with all the rentals of the user from the database
+   * @throws SQLException
+   */
+  ArrayList<Rental> getRentalsWithUser(User user) throws SQLException;
 }

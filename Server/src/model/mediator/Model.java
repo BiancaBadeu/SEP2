@@ -66,9 +66,10 @@ public interface Model extends UnnamedPropertyChangeSubject
    */
   ArrayList<Rental> getAllRentals();
 
- /*
-  --For the next sprint :)
+
   ArrayList<Rental> getRentalsWithUser(User user);
+  /*
+  --For the next sprint :)
   ArrayList<Rental> getRentalsWithMovie(Movie movie);
 */
   /**
