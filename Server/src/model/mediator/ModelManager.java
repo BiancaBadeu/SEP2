@@ -147,21 +147,14 @@ public class ModelManager implements Model
 
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
-    try{
-    for (int i = 0; database.getRentalsWithUser(user).size()>i;i++){
-      addRental(database.getRentalsWithUser(user).get(i).getRentedMovie(),database.getRentalsWithUser(user).get(i).getExpirationDate(),user);
-    }}
-    catch (SQLException e){
-      e.printStackTrace();
-    }
-    /* try
+    try
     {
       return database.getRentalsWithUser(user);
     }
     catch (SQLException e)
     {
       e.printStackTrace();
-    }*/
+    }
     return rentalList.getRentalsWithUser(user);
   }
 /*

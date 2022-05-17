@@ -107,6 +107,11 @@ public class Movie
    */
   public int getNumberOfReviews(){return numberOfReviews;}
 
+  public void setGenres(String genres)
+  {
+    this.genres = genres;
+  }
+
   /**
    * @return the genres of the movie
    *

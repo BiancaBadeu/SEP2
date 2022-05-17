@@ -216,15 +216,15 @@ public class SEPDatabase implements SEPPersistence
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
       throws SQLException
   {
-    String sql = "select * from rentals r join movies m on m.movieID = r.movieID ;";
+    String sql = "select * from rentals r join movies m on m.movieName = r.movieTitle ;";
     ArrayList<Object[]> results = db.query(sql);
     ArrayList<Rental> all = new ArrayList<>();
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
-      //rental should have expirationDate, userName, movieID
+
       Rental rental = new Rental(null, null, user);
-      Movie rentedMovie = new Movie("","",0,"",0,0,"",new ArrayList<>());
+      Movie rentedMovie = new Movie("","",0,"",0.0,0,"",new ArrayList<>());
       if (user.getUserName().equals(String.valueOf(row[1]))){
       for (int j = 0; j < row.length; j++)
       {
@@ -253,6 +253,9 @@ public class SEPDatabase implements SEPPersistence
             break;
           case 9:
             rentedMovie.setReleaseYear(Integer.parseInt((String.valueOf(row[j]))));
+            break;
+          case 10:
+            rentedMovie.setGenres(String.valueOf(row[j]));
             break;
           default:
             break;
