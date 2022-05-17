@@ -91,6 +91,15 @@ public class ProfileViewModel
   public void reset()
   {
     rentedMovies.clear();
+
+
+    getRentedMovies();
+
+    userNameLabel.set(userState.getUser().getUserName());
+    phoneNoLabel.set(userState.getUser().getPhoneNumber());
+    ageLabel.set(String.valueOf(userState.getUser().getAge()));
+    nameLabel.set(userState.getUser().getName());
+
   }
 
   /**
