@@ -5,7 +5,10 @@ public class ServerMain
   public static void main(String[] args)
   {
       Model model = new ModelManager();
-    System.out.println(model.getAllMovies());
+      for(int i=0; i<100;i++)
+      {
+        System.out.println(model.getAllMovies().get(i).getTitle());
+      }
   }
 
 }

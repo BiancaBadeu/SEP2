@@ -19,7 +19,7 @@ public class SEPDatabase implements SEPPersistence
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "Perfect@gamer333";
+  private static final String PASSWORD = "ladubuleve39";
 
   /**
    * Empty constructor which initializes the db and connects the database
@@ -55,7 +55,7 @@ public class SEPDatabase implements SEPPersistence
   @Override public void addMovie(Movie movie) throws SQLException
   {
     String sql =
-        "insert into movies(movieName, director, length, movieDescription, avgRating, releaseYear)"
+        " insert into movies(movieName, director, length, movieDescription, avgRating, releaseYear)"
             + "VALUES (?, ?, ?, ?, ?);";
     db.update(sql, movie.getTitle(), movie.getDirector(), movie.getLength(),
         movie.getDescription(), movie.getAvgRating(),
@@ -113,14 +113,14 @@ public class SEPDatabase implements SEPPersistence
    */
   @Override public ArrayList<Movie> getAllMovies() throws SQLException
   {
-    String sql = "select * from movies;";
+    String sql = "select movieName from sep.movies;";
     ArrayList<Object[]> results = db.query(sql);
     ArrayList<Movie> all = new ArrayList<>();
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
       //movie should have movieName, director, length, movieDescription, avgRating, releaseYear
-      Movie movie = new Movie("","",0,"",0.0,0,"", new ArrayList<>());
+      Movie movie = new Movie("","bob",90,"arfea",2.0,2000,"bob", new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -128,7 +128,7 @@ public class SEPDatabase implements SEPPersistence
           case 0:
             movie.setTitle(String.valueOf(row[j]));
             break;
-          case 1:
+         /* case 1:
             movie.setDirector(String.valueOf(row[j]));
             break;
           case 2:
@@ -142,7 +142,7 @@ public class SEPDatabase implements SEPPersistence
             break;
           case 5:
             movie.setReleaseYear(Integer.parseInt(String.valueOf(row[j])));
-            break;
+            break;*/
           default:
             break;
         }
