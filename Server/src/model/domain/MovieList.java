@@ -277,7 +277,7 @@ public class MovieList
     return movie;
   }
 
-  ArrayList<String> getCommentsForMovie(Movie movie)
+  public ArrayList<String> getCommentsForMovie(Movie movie)
   {
     ArrayList<String> list= new ArrayList<>();
     for(int i=0;i<movies.size();i++)

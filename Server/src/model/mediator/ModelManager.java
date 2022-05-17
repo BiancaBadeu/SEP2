@@ -288,8 +288,8 @@ public class ModelManager implements Model
     return true;
   }
 
-  public ArrayList<Review> getCommentsForMovie(Movie movie)
+  public ArrayList<String> getCommentsForMovie(Movie movie)
   {
-    movieList.getCommentsForMovie
+    return movieList.getCommentsForMovie(movie);
   }
 }

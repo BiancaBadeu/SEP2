@@ -106,11 +106,7 @@ public interface RemoteModel extends Remote
    */
   ArrayList<Rental> getRentalsWithUser(User user);
 
-  /**
-   * @param movie the movie
-   * @return the movie's comments
-   */
-  ArrayList<Review> getCommentsForMovie(Movie movie);
+
 
   /**
    * @param comment the comment
@@ -118,4 +114,13 @@ public interface RemoteModel extends Remote
    * @return Moderation of the comment
    */
   boolean leaveReview(String comment, int rating);
+
+
+  ArrayList<Movie> getMovieLike(String title);
+
+  /**
+ * @param movie the movie
+ * @return the movie's comments
+ */
+  ArrayList<String> getCommentsForMovie(Movie movie);
 }
