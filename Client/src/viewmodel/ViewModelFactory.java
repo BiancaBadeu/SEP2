@@ -67,5 +67,10 @@ public class ViewModelFactory
    */
   public AdminViewModel getAdminViewModel(){ return adminViewModel;}
 
+  /**
+   * @return the viewModel
+   *
+   * A getter for the ProfileViewModel
+   */
   public ProfileViewModel getProfileViewModel(){ return profileViewModel;}
 }
