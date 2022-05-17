@@ -104,9 +104,22 @@ public interface RemoteModel extends Remote
    */
   boolean validateAddMovie(String title);
 
+  /**
+   * @param user the user
+   * @return the user's rentals
+   */
   Rental getRentalsWithUser(User user);
 
+  /**
+   * @param movie the movie
+   * @return the movie's comments
+   */
   ArrayList<Review> getCommentsForMovie(Movie movie);
 
+  /**
+   * @param comment the comment
+   * @param rating the rating
+   * @return Moderation of the comment
+   */
   boolean leaveReview(String comment, int rating);
 }

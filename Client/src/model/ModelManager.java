@@ -180,21 +180,38 @@ public class ModelManager implements Model
     return client.getUser(userName);
   }
 
+  /**
+   * @param title the title of the movie to be validated
+   * @return a boolean variable, true if the movie title is not in the movie list, false otherwise
+   */
   @Override public boolean validateAddMovie(String title)
   {
     return client.validateAddMovie(title);
   }
 
+  /**
+   * @param user the user
+   * @return The users rentals
+   */
   @Override public Rental getRentalsWithUser(User user)
   {
     return client.getRentalsWithUser(user);
   }
 
+  /**
+   * @param movie the movie
+   * @return The movies comments
+   */
   @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
   {
     return client.getCommentsForMovie(movie);
   }
 
+  /**
+   * @param comment the comment
+   * @param rating the rating
+   * @return Moderation for the comment
+   */
   @Override public boolean leaveReview(String comment, int rating){
 
     return client.leaveReview(comment, rating);

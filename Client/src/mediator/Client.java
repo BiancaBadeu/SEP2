@@ -184,16 +184,31 @@ public class Client implements Model
       return remoteModel.getMovieWithTitle(title);
   }
 
+  /**
+   * @param user the user
+   *
+   * @return the user's rentals
+   */
   @Override public Rental getRentalsWithUser(User user)
   {
     return remoteModel.getRentalsWithUser(user);
   }
 
+  /**
+   * @param movie the movie
+   *
+   * @return the movie's comments
+   */
   @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
   {
     return remoteModel.getCommentsForMovie(movie);
   }
 
+  /**
+   * @param comment the comment
+   * @param rating the rating
+   * @return Moderation of the comment
+   */
   @Override public boolean leaveReview(String comment, int rating){
 
 
