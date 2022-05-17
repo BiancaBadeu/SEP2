@@ -292,4 +292,27 @@ public class ModelManager implements Model
   {
     movieList.getCommentsForMovie
   }
-}
+
+  @Override public boolean leaveReview(String comment, int star)
+  {
+    ArrayList<String> badwords = new ArrayList<>();
+
+    badwords.add("fuck");
+    badwords.add("shit");
+    badwords.add("bitch");
+    badwords.add("asshole");
+    badwords.add("ass");
+    badwords.add("dick");
+    badwords.add("cock");
+    badwords.add("pussy");
+
+
+        if(badwords.contains(comment)){
+          return false;
+        }
+
+        else
+          return true;
+    }
+  }
+
