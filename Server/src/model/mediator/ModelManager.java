@@ -305,14 +305,16 @@ public class ModelManager implements Model
     badwords.add("dick");
     badwords.add("cock");
     badwords.add("pussy");
+    badwords.add("nigger");
+    badwords.add("nigga");
+    badwords.add("hitler");
+    badwords.add("Helvete");
+    badwords.add("puta");
+    badwords.add("Kurwa");
+    badwords.add("penis");
+    
 
-
-        if(badwords.contains(comment)){
-          return false;
-        }
-
-        else
-          return true;
+    return !badwords.contains(comment);
     }
   }
 
