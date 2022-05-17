@@ -194,8 +194,9 @@ public class Client implements Model
     return remoteModel.getCommentsForMovie(movie);
   }
 
-  @Override public void leaveReview(String comment, int rating){
+  @Override public boolean leaveReview(String comment, int rating){
 
-    remoteModel.leaveReview(comment, rating);
+
+    return  remoteModel.leaveReview(comment, rating);
   }
 }

@@ -108,5 +108,5 @@ public interface RemoteModel extends Remote
 
   ArrayList<Review> getCommentsForMovie(Movie movie);
 
-  void leaveReview(String comment, int rating);
+  boolean leaveReview(String comment, int rating);
 }

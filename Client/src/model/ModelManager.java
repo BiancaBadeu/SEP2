@@ -195,8 +195,8 @@ public class ModelManager implements Model
     return client.getCommentsForMovie(movie);
   }
 
-  @Override public void leaveReview(String comment, int rating){
+  @Override public boolean leaveReview(String comment, int rating){
 
-    client.leaveReview(comment, rating);
+    return client.leaveReview(comment, rating);
   }
 }
