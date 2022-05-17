@@ -119,7 +119,7 @@ public interface Model extends UnnamedPropertyChangeSubject
   boolean validateAddMovie(String title);
   boolean leaveReview(String comment, int star);
 
-  //boolean validateAddMovie(String title);
+  ArrayList<String> getCommentsForMovie(Movie movie);
 
 }
 

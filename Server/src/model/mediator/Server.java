@@ -185,7 +185,7 @@ public class Server implements RemoteModel
    * @param movie the movie
    * @return the movie's comments
    */
-  @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
+  @Override public ArrayList<String> getCommentsForMovie(Movie movie)
   {
     return modelManager.getCommentsForMovie(movie);
   }
@@ -199,4 +199,10 @@ public class Server implements RemoteModel
   {
     return modelManager.leaveReview(comment, rating);
   }
+
+  @Override public ArrayList<Movie> getMovieLike(String title)
+  {
+    return modelManager.getMovieLike(title);
+  }
+  
 }
