@@ -15,6 +15,7 @@ public class MovieViewController
   @FXML private Label length;
   @FXML private Label director;
   @FXML private Label releaseYear;
+  @FXML private Label genre;
   @FXML private Label description;
   @FXML private ProgressBar progressBar;
   @FXML private Label averageRating;
@@ -63,6 +64,7 @@ public class MovieViewController
     length.textProperty().bind(viewModel.getLengthProperty());
     director.textProperty().bind(viewModel.getDirectorProperty());
     releaseYear.textProperty().bind(viewModel.getReleaseYearProperty());
+    genre.textProperty().bind(viewModel.getGenreProperty());
     description.textProperty().bind(viewModel.getDescriptionProperty());
     numberOfReviews.textProperty().bind(viewModel.getNoOfReviewsProperty());
     averageRating.textProperty().bind(viewModel.getAvgRatingProperty());

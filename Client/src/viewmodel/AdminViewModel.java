@@ -19,6 +19,7 @@ public class AdminViewModel
   private StringProperty title;
   private StringProperty length;
   private StringProperty director;
+  private StringProperty genre;
   private StringProperty description;
   private StringProperty avgRating;
   private StringProperty error;
@@ -41,6 +42,7 @@ public class AdminViewModel
     this.title = new SimpleStringProperty();
     this.length = new SimpleStringProperty();
     this.director = new SimpleStringProperty();
+    this.genre = new SimpleStringProperty();
     this.description = new SimpleStringProperty();
     this.avgRating = new SimpleStringProperty();
     this.error = new SimpleStringProperty();
@@ -78,6 +80,15 @@ public class AdminViewModel
   public StringProperty getDirectorProperty()
   {
     return director;
+  }
+
+  /**
+   * @return The genre.
+   * Getter for the genre.
+   */
+  public StringProperty getGenreProperty()
+  {
+    return genre;
   }
 
   /**

@@ -1,6 +1,5 @@
 package model.mediator;
 
-import model.domain.Genre;
 import model.domain.Movie;
 import model.domain.Rental;
 import model.domain.User;
@@ -76,7 +75,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
       //movie should have movieName, director, length, movieDescription, avgRating, releaseYear
-      Movie movie = new Movie("","",0,"",0,0,0, new ArrayList<>(), new ArrayList<>());
+      Movie movie = new Movie("","",0,"",0,0,"", new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -121,7 +120,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
       //movie should have movieName, director, length, movieDescription, avgRating, releaseYear
-      Movie movie = new Movie("","",0,"",0.0,0,0, new ArrayList<>(), new ArrayList<>());
+      Movie movie = new Movie("","",0,"",0.0,0,"", new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -225,8 +224,7 @@ public class SEPDatabase implements SEPPersistence
       Object[] row = results.get(i);
       //rental should have expirationDate, userName, movieID
       Rental rental = new Rental(null, null, user);
-      Genre genre = new Genre("");
-      Movie rentedMovie = new Movie("","",0,"",0,0,genre,new ArrayList<>());
+      Movie rentedMovie = new Movie("","",0,"",0,0,"",new ArrayList<>());
       if (user.getUserName().equals(String.valueOf(row[1]))){
       for (int j = 0; j < row.length; j++)
       {

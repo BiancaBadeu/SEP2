@@ -229,7 +229,7 @@ public class MovieList
    *
    * @return The movies with the given genre
    */
-  public ArrayList<Movie> getMoviesWithGenre(Genre genre){
+  public ArrayList<Movie> getMoviesWithGenre(String genre){
 
     ArrayList<Movie> moviesWithGenre = new ArrayList<>();
 

@@ -18,6 +18,7 @@ public class AdminViewController
   @FXML TextField length;
   @FXML TextField director;
   @FXML TextField avgRating;
+  @FXML TextField genre;
   @FXML TextField releaseYear;
   @FXML TextArea description;
   @FXML Label errorLabel;
@@ -48,6 +49,7 @@ public class AdminViewController
     length.textProperty().bindBidirectional(viewModel.getLengthProperty());
     director.textProperty().bindBidirectional(viewModel.getDirectorProperty());
     description.textProperty().bindBidirectional(viewModel.getDescriptionProperty());
+    genre.textProperty().bindBidirectional(viewModel.getGenreProperty());
     releaseYear.textProperty().bindBidirectional(viewModel.getReleaseYearProperty());
     avgRating.textProperty().bindBidirectional(viewModel.getAvgRatingProperty());
     errorLabel.textProperty().bind(viewModel.getErrorProperty());

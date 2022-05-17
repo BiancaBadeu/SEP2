@@ -26,12 +26,14 @@
             <TextField fx:id="length" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="50.0">
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="7.0">
          <children>
             <Label text="Director" />
             <TextField fx:id="director" prefHeight="26.0" prefWidth="201.0" />
             <Label text="Average rating" />
             <TextField fx:id="avgRating" prefHeight="26.0" prefWidth="89.0" />
+            <Label text="Genre" />
+            <TextField fx:id="genre" prefHeight="26.0" prefWidth="104.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="582.0" spacing="20.0">

@@ -13,8 +13,6 @@ public abstract class Person
   private int age;
   private String type;
 
-  private RentalList rentalList;
-
   /**
    * @param name the name of the person
    * @param phoneNumber the phone number of the person
@@ -25,14 +23,13 @@ public abstract class Person
    *
    * Constructor for the Person class.
    */
-  public Person(String name, String userName, String password, String phoneNumber, int age, String type, RentalList rentalList){
+  public Person(String name, String userName, String password, String phoneNumber, int age, String type){
     this.name = name;
     this.phoneNumber = phoneNumber;
     this.userName = userName;
     this.password = password;
     this.age = age;
     this.type = type;
-    this.rentalList=rentalList;
   }
 
   /**
@@ -91,13 +88,6 @@ public abstract class Person
    * Getter for the age of the person.
    */
   public int getAge(){return age;}
-
-  /**
-   * @return the rental list
-   *
-   * Getter for the rental list
-   */
-  public RentalList getRentalList(){return rentalList;}
 
   /**
    * @param name

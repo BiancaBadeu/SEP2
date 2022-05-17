@@ -19,6 +19,7 @@ public class MovieViewModel
   private StringProperty title;
   private StringProperty length;
   private StringProperty director;
+  private StringProperty genre;
   private StringProperty description;
   private StringProperty averageRating;
   private StringProperty comment;
@@ -49,6 +50,7 @@ public class MovieViewModel
       this.title = new SimpleStringProperty(selected.getTitle());
       this.length = new SimpleStringProperty(""+selected.getLength());
       this.director = new SimpleStringProperty(selected.getDirector());
+      this.genre = new SimpleStringProperty(selected.getGenre());
       this.description = new SimpleStringProperty(selected.getDescription());
       this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
       this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
@@ -59,6 +61,7 @@ public class MovieViewModel
       this.title = new SimpleStringProperty();
       this.length = new SimpleStringProperty();
       this.director = new SimpleStringProperty();
+      this.genre = new SimpleStringProperty();
       this.description = new SimpleStringProperty();
       this.averageRating = new SimpleStringProperty();
       this.numberOfReviews = new SimpleStringProperty();
@@ -80,6 +83,7 @@ public class MovieViewModel
     this.title.set(""+selected.getTitle());
     this.length.set(""+selected.getLength());
     this.director.set(""+selected.getDirector());
+    this.genre.set(""+selected.getGenre());
     this.description.set(""+selected.getDescription());
     this.averageRating.set(""+selected.getAvgRating());
     this.numberOfReviews.set(""+selected.getNumberOfReviews());
@@ -122,6 +126,12 @@ public class MovieViewModel
    * A getter for the director string property
    */
   public  StringProperty getDirectorProperty() {return director;}
+  /**
+   * @return the genre property
+   *
+   * A getter for the genre string property
+   */
+  public  StringProperty getGenreProperty() {return genre;}
   /**
    * @return the release year property
    *
