@@ -1,0 +1,5 @@
+no table for genres and movie grenres. genre is an attribute in movies (just one genre. sting type)
+no id for movie. title is unique (PK). new pk
+movie: title, director, description, release year, genre, length, avgRating 
+connection between persson and reviews. person gives many reviews. username inside table reviews
+person has age as attribute, rather than date of birth  

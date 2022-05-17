@@ -1,5 +1,6 @@
 package viewmodel;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,6 +37,11 @@ public class ProfileViewModel
     this.state = state;
 
     this.rentedMovies = FXCollections.observableArrayList();
+
+    this.userNameLabel = new SimpleStringProperty();
+    this.nameLabel = new SimpleStringProperty();
+    this.phoneNoLabel = new SimpleStringProperty();
+    this.ageLabel = new SimpleStringProperty();
 
   }
 
@@ -81,14 +87,10 @@ public class ProfileViewModel
 
   /**
    * Reset the view.
-   *
-   *
    */
   public void reset()
   {
-
     rentedMovies.clear();
-
   }
 
   /**
@@ -98,11 +100,8 @@ public class ProfileViewModel
    */
   public ObservableList<String> getRentedMovies()
   {
-
     rentedMovies.add(model.getRentalsWithUser(userState.getUser()).getRentedMovie().getTitle());
-
     return rentedMovies;
-
   }
 
   /**
@@ -130,7 +129,6 @@ public class ProfileViewModel
           return false;
         }
       }
-
     }
     return false;
   }

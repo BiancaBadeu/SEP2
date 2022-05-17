@@ -40,9 +40,9 @@ public class ProfileViewController
     list.setItems(viewModel.getRentedMovies());
 
     usernameLabel.textProperty().bind(viewModel.getUsernameProperty());
-    usernameLabel.textProperty().bind(viewModel.getNameProperty());
-    usernameLabel.textProperty().bind(viewModel.getPhoneNoProperty());
-    usernameLabel.textProperty().bind(viewModel.getAgeProperty());
+    nameLabel.textProperty().bind(viewModel.getNameProperty());
+    phoneNoLabel.textProperty().bind(viewModel.getPhoneNoProperty());
+    ageLabel.textProperty().bind(viewModel.getAgeProperty());
   }
 
   /**
