@@ -62,4 +62,5 @@ public interface SEPPersistence
    * @throws SQLException
    */
   ArrayList<Rental> getRentalsWithUser(User user) throws SQLException;
+  Movie getMovieWithTitle(String title) throws SQLException;
 }
