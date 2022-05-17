@@ -158,14 +158,11 @@ public class StartViewModel
   {
     try{
       model.login(usernameLogin.get(), passwordLogin.get());
-      System.out.println("The model said ok.");
       //userState.setUser(model.getUser(usernameLogin.get()));
-      System.out.println("The user is set.");
       return true;
     }
     catch(Exception e)
     {
-      System.out.println("I catched an exception");
       errorLabelLogin.set(e.getMessage());
       return false;
     }
