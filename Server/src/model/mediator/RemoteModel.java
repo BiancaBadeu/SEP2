@@ -10,6 +10,11 @@ import java.util.Date;
  */
 public interface RemoteModel extends Remote
 {
+
+  /**
+   * A method to start the server
+   */
+  void startServer();
   /**
    * @return the top 10 top-rated movies
    */

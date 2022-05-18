@@ -2,15 +2,42 @@ import model.domain.Movie;
 import model.domain.User;
 import model.mediator.*;
 
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class ServerMain
 {
+  public static void startRegistry() throws RemoteException
+  {
+    try
+    {
+      Registry reg = LocateRegistry.createRegistry(1099);
+      System.out.println("Registry started...");
+    }
+    catch (java.rmi.server.ExportException ex)
+    {
+      // already started
+      System.out.println("Registry already started?" + " Message: " + ex.getMessage());}
+
+  }
+
   public static void main(String[] args)
   {
       Model model = new ModelManager();
-      RemoteModel remoteModel = new Server(model);
+    try
+    {
+      startRegistry();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    RemoteModel server = new Server(model);
+    server.startServer();
+    System.out.println("Server started...");
 /*
         System.out.println(model.getMovieWithTitle("Eli"));
         System.out.println(model.getUser("bbc").toString());
