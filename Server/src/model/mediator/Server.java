@@ -21,19 +21,28 @@ public class Server implements RemoteModel
 
   /**
    * @param model the model
-   *              A constructor for the server, which starts the registry and the server.
+   *     A constructor for the server
    */
   public Server(Model model)
   {
     this.model = model;
   }
 
+  /**
+   * @throws RemoteException  exception
+   * @throws AlreadyBoundException exception
+   *            A method to start the server
+   */
   public void startServer () throws RemoteException, AlreadyBoundException
   {
     Registry registry = LocateRegistry.createRegistry(1099);
     registry.bind("Server", this);
   }
 
+  /**
+   * @param title the title of the movie
+   * @return a boolean true if the movie is rented, false if it isn't
+   */
   public boolean checkMovieIsRented(String title)
   {
     return model.checkMovieIsRented(title);

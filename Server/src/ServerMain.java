@@ -49,11 +49,11 @@ public class ServerMain
 
     */
 
-    Movie movie=new Movie("HSM 2","Kenny Ortega",99,"A continuation of HSM where our main characters find work at a summer resort that turns out to belong to the popular girl's family.",4.7,2007,"Musical", new ArrayList<>());
-    User user = new User("Bianca", "bbc", "","",20);
-    long rentalDate = System.currentTimeMillis() + (86400 * 7 * 1000);
-    Date expirationDate = new Date(rentalDate);
-    model.addRental(movie, expirationDate,user);
+   // Movie movie=new Movie("HSM 2","Kenny Ortega",99,"A continuation of HSM where our main characters find work at a summer resort that turns out to belong to the popular girl's family.",4.7,2007,"Musical", new ArrayList<>());
+    //User user = new User("Bianca", "bbc", "","",20);
+    //long rentalDate = System.currentTimeMillis() + (86400 * 7 * 1000);
+    //Date expirationDate = new Date(rentalDate);
+   // model.addRental(movie, expirationDate,user);
 
 
       }
