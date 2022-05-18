@@ -4,6 +4,9 @@ import model.domain.Movie;
 import model.domain.Rental;
 import model.domain.User;
 
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -28,7 +31,14 @@ public class Server implements RemoteModel
 
   private void startRegistry()
   {
-
+    try
+    {
+      Registry reg= LocateRegistry.createRegistry(1099);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   private void startServer()

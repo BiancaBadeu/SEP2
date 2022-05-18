@@ -82,6 +82,7 @@ public class ModelManager implements Model
       {
         e.printStackTrace();
       }
+    }
   }
 
   @Override public void editMovie()
