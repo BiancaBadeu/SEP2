@@ -41,7 +41,6 @@ public class Movie
     this.numberOfReviews = reviews.size();
   }
 
-
   /**
    * @return the average rating of the movie
    * Getter for the average rating of the movie
@@ -107,8 +106,6 @@ public class Movie
    */
   public int getNumberOfReviews(){return numberOfReviews;}
 
-
-
   /**
    * @return the genres of the movie
    *
@@ -130,7 +127,7 @@ public class Movie
   }
 
   /**
-   * @param title
+   * @param title tht title
    * Setter for the title of the movie
    */
   public void setTitle(String title)
@@ -139,7 +136,7 @@ public class Movie
   }
 
   /**
-   * @param director
+   * @param director the director
    * Setter for the director of the movie
    */
   public void setDirector(String director)
@@ -148,7 +145,7 @@ public class Movie
   }
 
   /**
-   * @param description
+   * @param description the description
    * Setter for the description of the movie
    */
   public void setDescription(String description)
@@ -157,7 +154,7 @@ public class Movie
   }
 
   /**
-   * @param length
+   * @param length the length
    * Setter for the length of the movie
    */
   public void setLength(int length)
@@ -166,7 +163,7 @@ public class Movie
   }
 
   /**
-   * @param avgRating
+   * @param avgRating the average rating
    * Setter for the average rating of the movie
    */
   public void setAvgRating(double avgRating)
@@ -174,9 +171,8 @@ public class Movie
     this.avgRating = avgRating;
   }
 
-
   /**
-   * @param releaseYear
+   * @param releaseYear the release year
    * Setter for the release year of the movie
    */
   public void setReleaseYear(int releaseYear)
@@ -184,14 +180,21 @@ public class Movie
     this.releaseYear = releaseYear;
   }
 
+  /**
+   * @param genres the genre
+   *  Setter for the genre
+   */
   public void setGenres(String genres)
   {
     this.genres = genres;
   }
 
+  /**
+   * @return an array list of comments
+   * Getter for the comments
+   */
   public ArrayList<String> getAllComments()
   {
-
     ArrayList<String> list = new ArrayList<>();
     for(int i=0;i<reviews.size();i++)
     {
@@ -208,6 +211,11 @@ public class Movie
     return "" + title+ ", "+director+", "+ description+", "+ length+", "+avgRating+", "+ releaseYear+", "+ genres;
   }
 
+  /**
+   * @param comment the comment
+   * @param stars the rating
+   *            A method to add a review
+   */
   public void addReview(String comment, int stars)
   {
     Review review = new Review(comment,stars);

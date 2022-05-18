@@ -8,6 +8,7 @@ import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -36,6 +37,7 @@ public class Server implements RemoteModel
   public void startServer () throws RemoteException, AlreadyBoundException
   {
     Registry registry = LocateRegistry.createRegistry(1099);
+    UnicastRemoteObject.exportObject(this,0);
     registry.bind("Server", this);
   }
 
@@ -219,13 +221,17 @@ public class Server implements RemoteModel
     /**
      * @param comment the comment
      * @param rating  the rating
-     * @return Moderation of the comment
+     * @param title the title
      */
     @Override public void leaveReview (String comment,int rating, String title)
     {
       model.leaveReview(comment, rating, title);
     }
 
+  /**
+   * @param title the title
+   * @return an array list
+   */
     @Override public ArrayList<Movie> getMovieLike (String title)
     {
       return model.getMovieLike(title);

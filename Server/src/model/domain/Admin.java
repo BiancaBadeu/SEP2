@@ -16,7 +16,6 @@ public class Admin extends Person
    * @param age the age of the administrator
    *
    * Constructor for the class Admin. Initializes instance variables with the super method.
-   *
    * @see Person
    */
   public Admin(String name, String userName, String password, String phoneNumber, int age){
