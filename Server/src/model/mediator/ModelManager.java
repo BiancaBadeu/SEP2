@@ -47,7 +47,7 @@ public class ModelManager implements Model
    */
   public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
-    System.out.println("I am in the model manager method");
+
     personList.addPerson(name, username, password, phoneNumber, age, type);
   }
 
@@ -57,7 +57,14 @@ public class ModelManager implements Model
    */
   public void addMovie(Movie movie)
   {
-    movieList.addMovie(movie);
+    try
+    {
+      database.addMovie(movie);
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -75,7 +82,15 @@ public class ModelManager implements Model
    */
   @Override public ArrayList<Movie> getTop10TopRatedMovies()
   {
-    return movieList.getTop10TopRatedMovies();
+    try
+    {
+      return database.getTop10TopRatedMovies();
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+    return null;
   }
 
   @Override public ArrayList<Movie> getMovieLike(String title)
@@ -85,7 +100,15 @@ public class ModelManager implements Model
 
   @Override public Movie getMovieWithTitle(String title)
   {
-    return movieList.getMovieWithTitle(title);
+    try
+    {
+      return database.getMovieWithTitle(title);
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+    return null;
   }
 
   /**
@@ -129,7 +152,14 @@ public class ModelManager implements Model
    */
   @Override public void addRental(Movie movie, Date expirationDate, User user)
   {
-    rentalList.addRental(movie, expirationDate, user);
+    try
+    {
+      database.addRental( expirationDate, user, movie);
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -138,7 +168,15 @@ public class ModelManager implements Model
    */
   @Override public ArrayList<Rental> getAllRentals()
   {
-    return rentalList.getAllRentals();
+    try
+    {
+      return database.getAllRentals();
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+    return null;
   }
 
   /**
@@ -235,7 +273,14 @@ public class ModelManager implements Model
       if (personList.getPersons().get(i).getUserName().equals(userName))
         throw new IllegalStateException("Username already exists!");
     }
-    personList.addPerson(name, userName, password, phoneNumber,Integer. parseInt(age), "user");
+    try
+    {
+      database.addUser(name, phoneNumber, userName, password,Integer. parseInt(age));
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -266,12 +311,13 @@ public class ModelManager implements Model
    */
   @Override public User getUser(String userName)
   {
-    for (int i = 0; i < personList.getPersons().size(); i++)
+    try
     {
-      if (personList.getPersons().get(i).getUserName().equals(userName))
-      {
-        return (User) personList.getPersons().get(i);
-      }
+     return database.getUser(userName);
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
     }
     return null;
   }

@@ -50,6 +50,8 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param movie the movie to be removed
    */
   void removeMovie(Movie movie);
+
+  void editMovie();
   /**
    * @param title the movie's title
    */

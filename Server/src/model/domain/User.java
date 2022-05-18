@@ -20,5 +20,8 @@ public class User extends Person
     super(name, username, password, phoneNumber, age, "user");
   }
 
-
+  @Override public String toString()
+  {
+    return super.toString();
+  }
 }

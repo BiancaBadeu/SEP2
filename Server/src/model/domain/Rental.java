@@ -94,5 +94,9 @@ public class Rental
     this.rentedMovie = rentedMovie;
   }
 
-
+  @Override public String toString()
+  {
+    return "Rental{" + "expirationDate=" + expirationDate + ", user=" + user
+        + ", rentedMovie=" + rentedMovie + '}';
+  }
 }

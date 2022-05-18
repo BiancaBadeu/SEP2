@@ -18,11 +18,11 @@ public interface SEPPersistence
    * @param phoneNumber the phone number of the user
    * @param userName    the username of the user
    * @param password    the password of the user
-   * @param dob         the date of birth of the user
+   * @param age         the age of the user
    *                    adds user to database
    * @throws SQLException
    */
-  void addUser(String name, String phoneNumber, String userName, String password, Date dob) throws SQLException; //update Person (maybe user and admin too)to match database
+  void addUser(String name, String phoneNumber, String userName, String password, int age) throws SQLException; //update Person (maybe user and admin too)to match database
 
   /**
    * @param movie adds movie to database
@@ -44,13 +44,11 @@ public interface SEPPersistence
 
   /**
    * @param expirationDate
-   * @param userName
-   * @param movieID
-   * adds a rental to the database
+   * @param user
+   * @param rentedMovie
    * @throws SQLException
    */
-  void addRental(Date expirationDate, String userName, int movieID) throws SQLException;
-
+  void addRental(java.util.Date expirationDate, User user, Movie rentedMovie) throws SQLException;
   /**
    * @return an arraylist with all the rentals from the database
    * @throws SQLException
@@ -63,4 +61,6 @@ public interface SEPPersistence
    */
   ArrayList<Rental> getRentalsWithUser(User user) throws SQLException;
   Movie getMovieWithTitle(String title) throws SQLException;
+
+  User getUser(String userName) throws SQLException;
 }

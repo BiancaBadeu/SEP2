@@ -5,10 +5,15 @@ import model.domain.Rental;
 import model.domain.User;
 import utility.persistence.MyDatabase;
 
-import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * The SEPDatabase class is responsible for managing the connection with Database.
@@ -19,7 +24,7 @@ public class SEPDatabase implements SEPPersistence
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "ladubuleve39";
+  private static final String PASSWORD = "1234567890";
 
   /**
    * Empty constructor which initializes the db and connects the database
@@ -34,20 +39,55 @@ public class SEPDatabase implements SEPPersistence
    * @param phoneNumber the phone number of the user
    * @param userName    the username of the user
    * @param password    the password of the user
-   * @param dob         the date of birth of the user
+   * @param age         the age of the user
    *                    adds user to database
    * @throws SQLException
    */
   @Override public void addUser(String name, String phoneNumber,
-      String userName, String password, Date dob) throws SQLException
+      String userName, String password, int age) throws SQLException
   {
     String sql =
-        "insert into person(name, phoneNumber, userName, password, birthDate)  "
+        "insert into sep.person(name, phoneNumber, userName, password, age)  "
             + "VALUES (?, ?, ?, ?, ?);";
-    db.update(sql, name, phoneNumber, userName, password, dob);
+    db.update(sql, name, phoneNumber, userName, password, age);
 
   }
 
+  @Override public User getUser(String userName) throws SQLException
+  {
+    String sql = "select * from sep.person;";
+    ArrayList<Object[]> results = db.query(sql);
+    User user = new User("","","","",0);
+    for (int i = 0; i < results.size(); i++)
+    {
+      Object[] row = results.get(i);
+      for (int j = 0; j < row.length; j++)
+      {
+        if(row[2].equals(userName))
+        {
+          switch (j)
+          {
+            case 0:
+              user.setName(String.valueOf(row[j]));
+              break;
+            case 1:
+              user.setPhoneNumber(String.valueOf(row[j]));
+              break;
+            case 2:
+              user.setUserName(String.valueOf(row[j]));
+              break;
+            case 3:
+              user.setPassword(String.valueOf(row[j]));
+              break;
+            case 4:
+              user.setAge(Integer.parseInt(String.valueOf(row[j])));
+              break;
+          }
+        }
+      }
+    }
+    return user;
+  }
   /**
    * @param movie adds movie to database
    * @throws SQLException
@@ -55,11 +95,11 @@ public class SEPDatabase implements SEPPersistence
   @Override public void addMovie(Movie movie) throws SQLException
   {
     String sql =
-        " insert into movies(movieName, director, length, movieDescription, avgRating, releaseYear)"
-            + "VALUES (?, ?, ?, ?, ?);";
+        " insert into sep.movies(movieName, director, length, movieDescription, avgRating, releaseYear, genre)"
+            + "VALUES (?, ?, ?, ?, ?,?,?);";
     db.update(sql, movie.getTitle(), movie.getDirector(), movie.getLength(),
         movie.getDescription(), movie.getAvgRating(),
-        movie.getReleaseYear()); //add a release year to movie class. make movie class match database
+        movie.getReleaseYear(), movie.getGenres());
   }
 
   /**
@@ -68,7 +108,7 @@ public class SEPDatabase implements SEPPersistence
    */
   @Override public ArrayList<Movie> getTop10TopRatedMovies() throws SQLException
   {
-    String sql = "select * from movies order by avgRating DESC limit 10;";
+    String sql = "select * from sep.movies order by avgRating DESC limit 10;";
     ArrayList<Object[]> results = db.query(sql);
     ArrayList<Movie> top = new ArrayList<>();
     for (int i = 0; i < results.size(); i++)
@@ -116,59 +156,107 @@ public class SEPDatabase implements SEPPersistence
     String sql = "select * from sep.movies;";
     ArrayList<Object[]> results = db.query(sql);
     ArrayList<Movie> all = new ArrayList<>();
+
     for (int i = 0; i < results.size(); i++)
     {
+      Movie movie = new Movie("", "", 0, "", 0.0, 0, "", new ArrayList<>());
+
       Object[] row = results.get(i);
-      Movie movie = new Movie("","",0,"",0.0,0,"", new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
-        switch (j)
-        {
-          case 1:
-            movie.setTitle(String.valueOf(row[j]));
-            break;
-          case 2:
-            movie.setDirector(String.valueOf(row[j]));
-            break;
-          case 3:
-            movie.setLength(Integer.parseInt(String.valueOf(row[j])));
-            break;
-          case 4:
-            movie.setDescription(String.valueOf(row[j]));
-            break;
-          case 5:
-            movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
-            break;
-          case 6:
-            movie.setReleaseYear(Integer.parseInt(String.valueOf(row[j])));
-            break;
-          case 7:
-            movie.setGenres(String.valueOf(row[j]));
-            break;
-          default:
-            break;
-        }
+          switch (j)
+          {
+            case 0:
+              movie.setTitle(String.valueOf(row[j]));
+              break;
+            case 1:
+              movie.setDirector(String.valueOf(row[j]));
+              break;
+            case 2:
+              movie.setLength(Integer.parseInt(String.valueOf(row[j])));
+              break;
+            case 3:
+              movie.setDescription(String.valueOf(row[j]));
+              break;
+            case 4:
+              movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
+              break;
+            case 5:
+              movie.setReleaseYear(Integer.parseInt(String.valueOf(row[j])));
+              break;
+            case 6:
+              movie.setGenres(String.valueOf(row[j]));
+              break;
+            default:
+              break;
+          }
+
       }
       all.add(movie);
     }
     return all;
   }
 
+  @Override public Movie getMovieWithTitle(String title) throws SQLException
+  {
+    String sql = "select * from sep.movies;";
+
+    ArrayList<Object[]> results = db.query(sql);
+    Movie movie = new Movie("", "", 0, "", 0.0, 0, "", new ArrayList<>());
+    for (int i = 0; i < results.size(); i++)
+    {
+      Object[] row = results.get(i);
+      for (int j = 0; j < row.length; j++)
+      {
+        if (row[0].equals(title))
+        {
+          switch (j)
+          {
+            case 0:
+              movie.setTitle(String.valueOf(row[j]));
+              break;
+            case 1:
+              movie.setDirector(String.valueOf(row[j]));
+              break;
+            case 2:
+              movie.setLength(Integer.parseInt(String.valueOf(row[j])));
+              break;
+            case 3:
+              movie.setDescription(String.valueOf(row[j]));
+              break;
+            case 4:
+              movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
+              break;
+            case 5:
+              movie.setReleaseYear(Integer.parseInt(String.valueOf(row[j])));
+              break;
+            case 6:
+              movie.setGenres(String.valueOf(row[j]));
+              break;
+            default:
+              break;
+          }
+        }
+      }
+    }
+      return movie;
+  }
+
   /**
    * @param expirationDate
-   * @param userName
-   * @param movieID
-   * adds a rental to the database
+   * @param user
+   * @param rentedMovie
    * @throws SQLException
    */
-  @Override public void addRental(Date expirationDate, String userName,
-      int movieID) throws SQLException
+  @Override public void addRental(Date expirationDate, User user,
+      Movie rentedMovie) throws SQLException
   {
-
-    String sql = "insert into rentals(expirationDate, userName, movieID)"
+    String sql = "insert into sep.rentals(expirationDate, userName, movieTitle)"
         + "VALUES (?, ?, ?);";
-    //db.update(sql, rental.getExpirationDate(), rental.getUserName(),
-      //  rental.getMovieID()); //edit rental to match database and add getters + setters
+    java.sql.Date expirationDateInString
+        = new java.sql.Date(expirationDate.getTime());
+
+    db.update(sql, expirationDateInString, user.getUserName(), rentedMovie.getTitle());
 
   }
 
@@ -178,26 +266,37 @@ public class SEPDatabase implements SEPPersistence
    */
   @Override public ArrayList<Rental> getAllRentals() throws SQLException
   {
-    String sql = "select * from rentals;";
+    String sql = "select * from sep.rentals;";
     ArrayList<Object[]> results = db.query(sql);
     ArrayList<Rental> all = new ArrayList<>();
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
-      //rental should have expirationDate, userName, movieID
+
       Rental rental = new Rental(null, null, null);
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
         {
           case 0:
-            //rental.setExpirationDate(); no idea how to parse a date
+            try
+            {
+              SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy",
+                  Locale.ENGLISH);
+              String dateInString = String.valueOf(row[j]);
+              Date date = (Date) formatter.parseObject(dateInString);
+              rental.setExpirationDate(date);
+            }
+            catch (ParseException e)
+            {
+              e.printStackTrace();
+            }
             break;
           case 1:
-            rental.setUserName(String.valueOf(row[j]));
+            rental.setUser(getUser(String.valueOf(row[j])));
             break;
           case 2:
-           // rental.setMovieID(Integer.parseInt((String.valueOf(row[j]))));
+           rental.setRentedMovie(getMovieWithTitle((String.valueOf(row[j]))));
             break;
           default:
             break;
@@ -218,7 +317,7 @@ public class SEPDatabase implements SEPPersistence
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
       throws SQLException
   {
-    String sql = "select * from rentals r join movies m on m.movieName = r.movieTitle ;";
+    String sql = "select * from sep.rentals r join sep.movies m on m.movieName = r.movieTitle ;";
     ArrayList<Object[]> results = db.query(sql);
     ArrayList<Rental> all = new ArrayList<>();
     for (int i = 0; i < results.size(); i++)
@@ -233,30 +332,42 @@ public class SEPDatabase implements SEPPersistence
         switch (j)
         {
           case 0:
-            rental.setExpirationDate(Date.valueOf((LocalDate) row[j]));//not sure how correct this is
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy",
+                Locale.ENGLISH);
+            String dateInString = String.valueOf(row[j]);
+            Date date = null;
+            try
+            {
+              date = (Date) formatter.parseObject(dateInString);
+            }
+            catch (ParseException e)
+            {
+              e.printStackTrace();
+            }
+            rental.setExpirationDate(date);
             break;
           case 1:
             rental.setUserName(String.valueOf(row[j]));
             break;
-          case 4:
+          case 3:
             rentedMovie.setTitle(String.valueOf(row[j]));
             break;
-          case 5:
+          case 4:
             rentedMovie.setDirector(String.valueOf(row[j]));
           break;
-          case 6:
+          case 5:
             rentedMovie.setLength(Integer.parseInt((String.valueOf(row[j]))));
             break;
-          case 7:
+          case 6:
             rentedMovie.setDescription(String.valueOf(row[j]));
             break;
-          case 8:
+          case 7:
             rentedMovie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
             break;
-          case 9:
+          case 8:
             rentedMovie.setReleaseYear(Integer.parseInt((String.valueOf(row[j]))));
             break;
-          case 10:
+          case 9:
             rentedMovie.setGenres(String.valueOf(row[j]));
             break;
           default:
@@ -270,9 +381,6 @@ public class SEPDatabase implements SEPPersistence
 
   }
 
-  @Override public Movie getMovieWithTitle(String title) throws SQLException
-  {
-    return null;
-  }
+
 
 }

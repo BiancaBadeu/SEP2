@@ -107,10 +107,7 @@ public class Movie
    */
   public int getNumberOfReviews(){return numberOfReviews;}
 
-  public void setGenres(String genres)
-  {
-    this.genres = genres;
-  }
+
 
   /**
    * @return the genres of the movie
@@ -187,6 +184,11 @@ public class Movie
     this.releaseYear = releaseYear;
   }
 
+  public void setGenres(String genres)
+  {
+    this.genres = genres;
+  }
+
   public ArrayList<String> getAllComments()
   {
 
@@ -203,7 +205,7 @@ public class Movie
    */
   public String toString()
   {
-    return "" + title;
+    return "" + title+ ", "+director+", "+ description+", "+ length+", "+avgRating+", "+ releaseYear+", "+ genres;
   }
 
 
