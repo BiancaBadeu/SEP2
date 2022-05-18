@@ -10,6 +10,7 @@ public class ServerMain
   public static void main(String[] args)
   {
       Model model = new ModelManager();
+      RemoteModel remoteModel = new Server(model);
 /*
         System.out.println(model.getMovieWithTitle("Eli"));
         System.out.println(model.getUser("bbc").toString());

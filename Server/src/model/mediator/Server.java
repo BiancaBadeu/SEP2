@@ -2,27 +2,49 @@ package model.mediator;
 
 import model.domain.Movie;
 import model.domain.Rental;
-import model.domain.Review;
 import model.domain.User;
 
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * A class that represents the server. Implements the Remote model interface
+ */
 public class Server implements RemoteModel
 {
 
-  private ModelManager modelManager;
+  private Model model;
 
-  public Server()
+  /**
+   * @param model the model
+   *    A constructor for the server, which starts the registry and the server.
+   */
+  public Server(Model model)
   {
-    this.modelManager = new ModelManager();
+    this.model = model;
+    startRegistry();
+    startServer();
+  }
+
+  private void startRegistry()
+  {
+
+  }
+
+  private void startServer()
+  {
+
+    System.out.println("Starting server...");
+
+
+    System.out.println("Waiting for clients...");
   }
   /**
    * @return the top 10 top-rated movies
    */
   @Override public ArrayList<Movie> getTop10TopRatedMovies()
   {
-    return modelManager.getTop10TopRatedMovies();
+    return model.getTop10TopRatedMovies();
   }
 
   /**
@@ -30,7 +52,7 @@ public class Server implements RemoteModel
    */
   @Override public ArrayList<Movie> getTrendingMovies()
   {
-    return modelManager.getTrendingMovies();
+    return model.getTrendingMovies();
   }
 
   /**
@@ -38,7 +60,7 @@ public class Server implements RemoteModel
    */
   @Override public ArrayList<Movie> getAllMovies()
   {
-    return modelManager.getAllMovies();
+    return model.getAllMovies();
   }
 
   /**
@@ -53,7 +75,7 @@ public class Server implements RemoteModel
   @Override public void addPerson(String name, String username, String password,
       String phoneNumber, int age, String type)
   {
-
+    model.addPerson(name, username, password, phoneNumber, age, type);
   }
 
   /**
@@ -61,7 +83,7 @@ public class Server implements RemoteModel
    */
   @Override public void addMovie(Movie movie)
   {
-    modelManager.addMovie(movie);
+    model.addMovie(movie);
   }
 
   /**
@@ -69,7 +91,7 @@ public class Server implements RemoteModel
    */
   @Override public void removeMovie(Movie movie)
   {
-    modelManager.removeMovie(movie);
+    model.removeMovie(movie);
   }
 
   /**
@@ -79,7 +101,7 @@ public class Server implements RemoteModel
    */
   @Override public void rentMovie(String title, User user)
   {
-    modelManager.rentMovie(title, user);
+    model.rentMovie(title, user);
   }
 
   /**
@@ -90,7 +112,7 @@ public class Server implements RemoteModel
    */
   @Override public void addRental(Movie movie, Date expirationDate, User user)
   {
-    modelManager.addRental(movie,expirationDate,user);
+    model.addRental(movie,expirationDate,user);
   }
 
   /**
@@ -98,7 +120,7 @@ public class Server implements RemoteModel
    */
   @Override public ArrayList<Rental> getAllRentals()
   {
-    return modelManager.getAllRentals();
+    return model.getAllRentals();
   }
 
   /**
@@ -108,7 +130,7 @@ public class Server implements RemoteModel
    */
   @Override public void login(String username, String password)
   {
-    modelManager.login(username, password);
+    model.login(username, password);
   }
 
   /**
@@ -122,7 +144,7 @@ public class Server implements RemoteModel
   @Override public void createUser(String name, String userName,
       String password, String phoneNumber, String age)
   {
-    modelManager.createUser(name, userName, password, phoneNumber, age);
+    model.createUser(name, userName, password, phoneNumber, age);
   }
 
   /**
@@ -132,7 +154,7 @@ public class Server implements RemoteModel
    */
   @Override public String checkPerson(String name, String password)
   {
-    return modelManager.checkPerson(name, password);
+    return model.checkPerson(name, password);
   }
 
   /**
@@ -142,7 +164,7 @@ public class Server implements RemoteModel
    */
   @Override public void cancelRental(String title, User user)
   {
-    modelManager.cancelRental(title, user);
+    model.cancelRental(title, user);
   }
 
   /**
@@ -151,7 +173,7 @@ public class Server implements RemoteModel
    */
   @Override public User getUser(String username)
   {
-    return modelManager.getUser(username);
+    return model.getUser(username);
   }
 
   /**
@@ -160,7 +182,7 @@ public class Server implements RemoteModel
    */
   @Override public Movie getMovieWithTitle(String title)
   {
-    return modelManager.getMovieWithTitle(title);
+    return model.getMovieWithTitle(title);
   }
 
   /**
@@ -169,7 +191,7 @@ public class Server implements RemoteModel
    */
   @Override public boolean validateAddMovie(String title)
   {
-    return modelManager.validateAddMovie(title);
+    return model.validateAddMovie(title);
   }
 
   /**
@@ -178,7 +200,7 @@ public class Server implements RemoteModel
    */
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
-    return modelManager.getRentalsWithUser(user);
+    return model.getRentalsWithUser(user);
   }
 
   /**
@@ -187,7 +209,7 @@ public class Server implements RemoteModel
    */
   @Override public ArrayList<String> getCommentsForMovie(Movie movie)
   {
-    return modelManager.getCommentsForMovie(movie);
+    return model.getCommentsForMovie(movie);
   }
 
   /**
@@ -197,12 +219,12 @@ public class Server implements RemoteModel
    */
   @Override public void leaveReview(String comment, int rating, String title)
   {
-    modelManager.leaveReview(comment, rating, title);
+    model.leaveReview(comment, rating, title);
   }
 
   @Override public ArrayList<Movie> getMovieLike(String title)
   {
-    return modelManager.getMovieLike(title);
+    return model.getMovieLike(title);
   }
 
 }
