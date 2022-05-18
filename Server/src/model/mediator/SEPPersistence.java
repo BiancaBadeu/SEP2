@@ -28,7 +28,11 @@ public interface SEPPersistence
    * @throws SQLException
    */
   void addMovie(Movie movie) throws SQLException; // update movie to match database
-  public void removeMovie(Movie movie) throws SQLException;
+  /**
+   * @param movie the movie to be removed
+   * @throws SQLException
+   */
+  void removeMovie(Movie movie) throws SQLException;
   /**
    * @return an arraylist with the top 10 highest rated movies from the database
    * @throws SQLException
@@ -59,7 +63,17 @@ public interface SEPPersistence
    * @throws SQLException
    */
   ArrayList<Rental> getRentalsWithUser(User user) throws SQLException;
+  /**
+   * @param title the title
+   * @return a movie object
+   * @throws SQLException
+   */
   Movie getMovieWithTitle(String title) throws SQLException;
 
+  /**
+   * @param userName the username
+   * @return a user object
+   * @throws SQLException
+   */
   User getUser(String userName) throws SQLException;
 }

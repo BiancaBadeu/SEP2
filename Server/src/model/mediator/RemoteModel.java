@@ -121,21 +121,23 @@ public interface RemoteModel extends Remote
    */
   ArrayList<Rental> getRentalsWithUser(User user)throws RemoteException;
 
-
-
   /**
    * @param comment the comment
    * @param rating the rating
-   * @return Moderation of the comment
+   * @param title the title
    */
   void leaveReview(String comment, int rating, String title)throws RemoteException;
 
-
-  ArrayList<Movie> getMovieLike(String title)throws RemoteException;
+  /**
+   * @param title the title of the movie
+   * @return an array list with the movies that contain that title
+   *
+   */
+  ArrayList<Movie> getMovieLike(String title) throws RemoteException;
 
   /**
  * @param movie the movie
  * @return the movie's comments
  */
-  ArrayList<String> getCommentsForMovie(Movie movie)throws RemoteException;
+  ArrayList<String> getCommentsForMovie(Movie movie) throws RemoteException;
 }

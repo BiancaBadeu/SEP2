@@ -8,12 +8,10 @@ import utility.persistence.MyDatabase;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -53,9 +51,13 @@ public class SEPDatabase implements SEPPersistence
         "insert into sep.person(name, phoneNumber, userName, password, age)  "
             + "VALUES (?, ?, ?, ?, ?);";
     db.update(sql, name, phoneNumber, userName, password, age);
-
   }
 
+  /**
+   * @param userName the username
+   * @return a user object
+   * @throws SQLException
+   */
   @Override public User getUser(String userName) throws SQLException
   {
     String sql = "select * from sep.person;";
@@ -104,6 +106,11 @@ public class SEPDatabase implements SEPPersistence
         movie.getDescription(), movie.getAvgRating(),
         movie.getReleaseYear(), movie.getGenres());
   }
+
+  /**
+   * @param movie the movie to be removed
+   * @throws SQLException
+   */
   @Override public void removeMovie(Movie movie) throws SQLException
   {
     String sql =" delete from sep.movies where movieName=?";
@@ -208,6 +215,11 @@ public class SEPDatabase implements SEPPersistence
     return all;
   }
 
+  /**
+   * @param title the title
+   * @return a movie object
+   * @throws SQLException
+   */
   @Override public Movie getMovieWithTitle(String title) throws SQLException
   {
     String sql = "select * from sep.movies;";
@@ -254,9 +266,9 @@ public class SEPDatabase implements SEPPersistence
   }
 
   /**
-   * @param expirationDate
-   * @param user
-   * @param rentedMovie
+   * @param expirationDate the date the rental expires
+   * @param user the user
+   * @param rentedMovie the rented movie
    * @throws SQLException
    */
   @Override public void addRental(Date expirationDate, User user,
@@ -320,7 +332,7 @@ public class SEPDatabase implements SEPPersistence
   }
 
   /**
-   * @param user
+   * @param user the user
    * @return an arraylist with all the rentals of the user from the database
    * @throws SQLException
    *
