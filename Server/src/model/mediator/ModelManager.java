@@ -52,6 +52,18 @@ public class ModelManager implements Model
   }
 
   /**
+   * @param title the title of the movie
+   * @return a boolean true if the movie is rented, false if it isn't
+   */
+  public boolean checkMovieIsRented(String title)
+  {
+    ArrayList<Rental> rentals = rentalList.getRentalsWithMovie(getMovieWithTitle(title));
+    if(rentals.isEmpty())
+      return false;
+    return true;
+  }
+
+  /**
    * @param movie the movie to be added to the movie list
    *  A method to add a movie to the movie list
    */

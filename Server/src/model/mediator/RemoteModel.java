@@ -15,6 +15,13 @@ public interface RemoteModel extends Remote
    * A method to start the server
    */
   void startServer();
+
+  /**
+   * @param title the title of the movie
+   * @return a boolean true if the movie is rented, false if it isn't
+   */
+  boolean checkMovieIsRented(String title);
+
   /**
    * @return the top 10 top-rated movies
    */

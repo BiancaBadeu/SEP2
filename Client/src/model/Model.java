@@ -8,6 +8,12 @@ import java.util.Date;
  */
 public interface Model
 {
+
+  /**
+   * @param title the title of the movie
+   * @return a boolean true if the movie is rented, false if it isn't
+   */
+  boolean checkMovieIsRented(String title);
   /**
    * @return the top 10 rated movies
    */

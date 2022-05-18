@@ -31,6 +31,11 @@ public class Server implements RemoteModel
   {
 
   }
+
+  public boolean checkMovieIsRented(String title)
+  {
+    return model.checkMovieIsRented(title);
+  }
     /**
      * @return the top 10 top-rated movies
      */

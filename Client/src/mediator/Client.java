@@ -29,6 +29,11 @@ public class Client implements Model
     }
   }
 
+  public boolean checkMovieIsRented(String title)
+  {
+    return remoteModel.checkMovieIsRented(title);
+  }
+
   /**
    * @return the top 10 top-rated movies
    */
@@ -207,11 +212,11 @@ public class Client implements Model
   /**
    * @param comment the comment
    * @param rating the rating
-   * @return Moderation of the comment
+   * @param title the title
+   *              A method to leave a review
    */
-  @Override public void leaveReview(String comment, int rating, String title){
-
-
+  @Override public void leaveReview(String comment, int rating, String title)
+  {
     remoteModel.leaveReview(comment, rating, title);
   }
 }

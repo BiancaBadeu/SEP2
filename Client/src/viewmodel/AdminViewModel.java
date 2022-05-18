@@ -201,6 +201,11 @@ public class AdminViewModel
       error.set("Please select a movie.");
       smol = false;
     }
+    if(model.checkMovieIsRented(title))
+    {
+      error.set("Movie is rented. Cannot be edited.");
+      smol = false;
+    }
     return smol;
   }
 
@@ -255,6 +260,11 @@ public class AdminViewModel
    */
   public boolean removeMovie(String focusedItem)
   {
+    if(model.checkMovieIsRented(focusedItem))
+    {
+      error.set("Movie is rented. Cannot be removed.");
+      return false;
+    }
     for (int i = 0; i < model.getAllMovies().size(); i++)
     {
       if (model.getAllMovies().get(i).getTitle().equals(focusedItem))
