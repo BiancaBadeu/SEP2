@@ -17,7 +17,6 @@ public class MovieList
     this.movies = new ArrayList<>();
   }
 
-
   /**
    * @param movie
    * adds a movie to the list.
@@ -55,6 +54,11 @@ public class MovieList
     return topRatedMovies;
   }
 
+  /**
+   * @param title the title of the movie
+   * @return an array list of movies which contain the given string
+   *      A method to get the movies that contain the string given
+   */
   public ArrayList<Movie> getMovieLike(String title)
   {
     ArrayList<Movie> list = new ArrayList<>();
@@ -147,18 +151,13 @@ public class MovieList
   public ArrayList<Movie> getMoviesWithLengthSmallerThan(int length)
   {
     ArrayList<Movie> moviesArray = new ArrayList<>();
-
     for (int i = 0; i < movies.size(); i++)
     {
-
       if (movies.get(i).getLength() < length)
       {
-
         moviesArray.add(movies.get(i));
       }
-
     }
-
     return moviesArray;
   }
 
@@ -175,15 +174,11 @@ public class MovieList
 
     for (int i = 0; i < movies.size(); i++)
     {
-
       if (movies.get(i).getAvgRating() < rating)
       {
-
         moviesArrayRating.add(movies.get(i));
       }
-
     }
-
     return moviesArrayRating;
   }
 
@@ -200,15 +195,11 @@ public class MovieList
 
     for (int i = 0; i < movies.size(); i++)
     {
-
       if (movies.get(i).getAvgRating() > rating)
       {
-
         moviesArrayRating.add(movies.get(i));
       }
-
     }
-
     return moviesArrayRating;
   }
 
@@ -221,37 +212,31 @@ public class MovieList
 
     ArrayList<Movie> moviesWithNoReviews = new ArrayList<>();
 
-
-    for(int i = 0; i < movies.size(); i++){
-
-      if(movies.get(i).getReviews().size() == 0){
-
+    for(int i = 0; i < movies.size(); i++)
+    {
+      if(movies.get(i).getReviews().size() == 0)
+      {
         moviesWithNoReviews.add(movies.get(i));
       }
     }
-
     return moviesWithNoReviews;
   }
 
   /**
    * @param genre The genre to search for
-   *
    * This method returns all the movies in the list that have the given genre.
-   *
    * @return The movies with the given genre
    */
   public ArrayList<Movie> getMoviesWithGenre(String genre){
 
     ArrayList<Movie> moviesWithGenre = new ArrayList<>();
-
-    for(int i = 0; i < movies.size(); i++){
-
-      if(movies.get(i).getGenres().equals(genre)){
-
+    for(int i = 0; i < movies.size(); i++)
+    {
+      if(movies.get(i).getGenres().equals(genre))
+      {
         moviesWithGenre.add(movies.get(i));
       }
     }
-
     return moviesWithGenre;
   }
 
@@ -265,9 +250,10 @@ public class MovieList
   public Movie getMovieWithTitle(String title){
 
     Movie movie = null;
-    for(int i = 0; i < movies.size(); i++){
-
-      if(movies.get(i).getTitle().equals(title)){
+    for(int i = 0; i < movies.size(); i++)
+    {
+      if(movies.get(i).getTitle().equals(title))
+      {
         movie = movies.get(i);
       }
     }
@@ -277,6 +263,11 @@ public class MovieList
     return movie;
   }
 
+  /**
+   * @param movie the movie
+   * @return an array list with the comments of the movie
+   *            A method to return the comments of a movie
+   */
   public ArrayList<String> getCommentsForMovie(Movie movie)
   {
     ArrayList<String> list= new ArrayList<>();

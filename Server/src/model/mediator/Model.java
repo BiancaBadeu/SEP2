@@ -25,8 +25,16 @@ public interface Model extends UnnamedPropertyChangeSubject
    */
   ArrayList<Movie> getTop10TopRatedMovies();
 
+  /**
+   * @param title the title of the movie
+   * @return an array list of movies that contain that title
+   */
   ArrayList<Movie> getMovieLike(String title);
 
+  /**
+   * @param title the title of the movie
+   * @return a movie object with that title (title is unique)
+   */
   Movie getMovieWithTitle(String title);
 
   /**
@@ -57,7 +65,6 @@ public interface Model extends UnnamedPropertyChangeSubject
    */
   void removeMovie(Movie movie);
 
-  void editMovie();
   /**
    * @param title the movie's title
    */
@@ -78,7 +85,10 @@ public interface Model extends UnnamedPropertyChangeSubject
    */
   ArrayList<Rental> getAllRentals();
 
-
+  /**
+   * @param user the user
+   * @return an array list with the rentals for the user
+   */
   ArrayList<Rental> getRentalsWithUser(User user);
   /*
   --For the next sprint :)
@@ -124,10 +134,24 @@ public interface Model extends UnnamedPropertyChangeSubject
    * A method to get the user by username (username is unique)
    */
   User getUser(String username);
+  /**
+   * @param title the title of the movie
+   * @return a boolean value if we can add the movie
+   */
   boolean validateAddMovie(String title);
 
+  /**
+   * @param movie the movie
+   * @return an array list of the comments for the movie
+   */
   ArrayList<String> getCommentsForMovie(Movie movie);
 
+  /**
+   * @param comment the comment
+   * @param star the rating
+   * @param title the title of the movie
+   *              A method to leave a review
+   */
   void leaveReview(String comment, int star, String title);
 }
 

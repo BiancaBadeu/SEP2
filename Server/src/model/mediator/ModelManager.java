@@ -19,7 +19,7 @@ public class ModelManager implements Model
   private SEPPersistence database;
 
   /**
-   * Empty constructor which initializes the movieList, rentalList, and personList
+   * Empty constructor which initializes the movieList, rentalList, personList, and database
    */
   public ModelManager()
   {
@@ -47,7 +47,6 @@ public class ModelManager implements Model
    */
   public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
-
     personList.addPerson(name, username, password, phoneNumber, age, type);
   }
 
@@ -97,10 +96,6 @@ public class ModelManager implements Model
     }
   }
 
-  @Override public void editMovie()
-  {
-  }
-
   /**
    * @return the top 10 movies with the highest average ratings
    * A method to return the top 10 movies with the highest average ratings
@@ -118,11 +113,19 @@ public class ModelManager implements Model
     return null;
   }
 
+  /**
+   * @param title the title of the movie
+   * @return an array list with movies that contain that title
+   */
   @Override public ArrayList<Movie> getMovieLike(String title)
   {
     return movieList.getMovieLike(title);
   }
 
+  /**
+   * @param title the title of the movie
+   * @return a movie object with that title
+   */
   @Override public Movie getMovieWithTitle(String title)
   {
     try
@@ -216,8 +219,10 @@ public class ModelManager implements Model
     rentalList.removeRental(title, user);
   }
 
-
-
+  /**
+   * @param user the user
+   * @return an array list with rental which contains the user
+   */
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
     try
@@ -347,6 +352,10 @@ public class ModelManager implements Model
     return null;
   }
 
+  /**
+   * @param title the title of the movie
+   * @return a boolean value to see it we can add a movie
+   */
   @Override public boolean validateAddMovie(String title){
 
     for (int i = 0; i < movieList.getAllMovies().size(); i++)
@@ -359,11 +368,21 @@ public class ModelManager implements Model
     return true;
   }
 
+  /**
+   * @param movie the movie
+   * @return an array list with the comments for the movie
+   */
   public ArrayList<String> getCommentsForMovie(Movie movie)
   {
     return movieList.getCommentsForMovie(movie);
   }
 
+  /**
+   * @param comment the comment
+   * @param star    the rating
+   * @param title   the title of the movie
+   *                A method to leave a review
+   */
   @Override public void leaveReview(String comment, int star, String title)
   {
     ArrayList<String> badwords = new ArrayList<>();
