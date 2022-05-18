@@ -73,12 +73,19 @@ public class ModelManager implements Model
    */
   @Override public void removeMovie(Movie movie)
   {
-    movieList.removeMovie(movie);
+    {
+      try
+      {
+        database.removeMovie(movie);
+      }
+      catch (SQLException e)
+      {
+        e.printStackTrace();
+      }
   }
 
   @Override public void editMovie()
   {
-    
   }
 
   /**

@@ -139,9 +139,20 @@ public class AdminViewModel
   {
     if (addMovie())
     {
+
+
       Movie newMovie = new Movie(title.get(), director.get(), Integer.parseInt(length.get()), description.get(),
           Double.parseDouble(avgRating.get()), Integer.parseInt(releaseYear.get()),
           genre.get(), new ArrayList<>());
+
+
+      for(int i=0; i<model.getAllMovies().size(); i++){
+
+        if(newMovie.equals(model.getAllMovies().get(i))){
+
+          model.removeMovie(model.getAllMovies().get(i));
+        }
+      }
 
       model.addMovie(newMovie);
     }
