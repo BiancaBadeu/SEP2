@@ -1,7 +1,10 @@
 package model.mediator;
 
 import model.domain.*;
+
+import java.rmi.AlreadyBoundException;
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,7 +17,7 @@ public interface RemoteModel extends Remote
   /**
    * A method to start the server
    */
-  void startServer();
+  void startServer() throws RemoteException, AlreadyBoundException;
 
   /**
    * @param title the title of the movie

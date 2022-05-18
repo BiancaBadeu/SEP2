@@ -6,15 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/AdminViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/AdminViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/ServerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/AdminViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/viewmodel/AdminViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/ServerMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/RemoteModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/RemoteModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/Server.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

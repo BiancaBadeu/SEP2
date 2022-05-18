@@ -4,6 +4,7 @@ import model.domain.Movie;
 import model.domain.Rental;
 import model.domain.User;
 
+import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -27,9 +28,10 @@ public class Server implements RemoteModel
     this.model = model;
   }
 
-  public void startServer ()
+  public void startServer () throws RemoteException, AlreadyBoundException
   {
-
+    Registry registry = LocateRegistry.createRegistry(1099);
+    registry.bind("Server", this);
   }
 
   public boolean checkMovieIsRented(String title)
