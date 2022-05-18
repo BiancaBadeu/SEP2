@@ -76,6 +76,11 @@ public class ModelManager implements Model
     movieList.removeMovie(movie);
   }
 
+  @Override public void editMovie()
+  {
+    
+  }
+
   /**
    * @return the top 10 movies with the highest average ratings
    * A method to return the top 10 movies with the highest average ratings
@@ -339,7 +344,7 @@ public class ModelManager implements Model
     return movieList.getCommentsForMovie(movie);
   }
 
-  @Override public boolean leaveReview(String comment, int star)
+  @Override public void leaveReview(String comment, int star, String title)
   {
     ArrayList<String> badwords = new ArrayList<>();
 
@@ -358,9 +363,16 @@ public class ModelManager implements Model
     badwords.add("puta");
     badwords.add("Kurwa");
     badwords.add("penis");
-    
 
-    return !badwords.contains(comment);
+    for(int i=0; i<badwords.size(); i++){
+    if(comment.contains(badwords.get(i))){
+
+      throw new IllegalArgumentException("Swear words are not allowed!");
+      }
+    }
+
+    getMovieWithTitle(title).addReview(comment, star);
+
     }
   }
 

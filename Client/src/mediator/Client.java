@@ -209,9 +209,9 @@ public class Client implements Model
    * @param rating the rating
    * @return Moderation of the comment
    */
-  @Override public boolean leaveReview(String comment, int rating){
+  @Override public void leaveReview(String comment, int rating, String title){
 
 
-    return  remoteModel.leaveReview(comment, rating);
+    remoteModel.leaveReview(comment, rating, title);
   }
 }

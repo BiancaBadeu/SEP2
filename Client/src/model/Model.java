@@ -113,5 +113,5 @@ public interface Model
 
   ArrayList<Review> getCommentsForMovie(Movie movie);
 
-  boolean leaveReview(String comment, int star);
+  void leaveReview(String comment, int star, String title);
 }

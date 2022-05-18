@@ -208,6 +208,11 @@ public class Movie
     return "" + title+ ", "+director+", "+ description+", "+ length+", "+avgRating+", "+ releaseYear+", "+ genres;
   }
 
+  public void addReview(String comment, int stars)
+  {
+    Review review = new Review(comment,stars);
+    reviews.add(review);
+  }
 
 
 }

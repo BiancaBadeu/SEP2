@@ -119,9 +119,9 @@ public interface Model extends UnnamedPropertyChangeSubject
    */
   User getUser(String username);
   boolean validateAddMovie(String title);
-  boolean leaveReview(String comment, int star);
 
   ArrayList<String> getCommentsForMovie(Movie movie);
 
+  void leaveReview(String comment, int star, String title);
 }
 

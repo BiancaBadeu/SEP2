@@ -121,5 +121,5 @@ public interface RemoteModel extends Remote
    * @param rating the rating
    * @return Moderation of the comment
    */
-  boolean leaveReview(String comment, int rating);
+  void leaveReview(String comment, int rating, String title);
 }

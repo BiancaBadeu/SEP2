@@ -212,8 +212,8 @@ public class ModelManager implements Model
    * @param rating the rating
    * @return Moderation for the comment
    */
-  @Override public boolean leaveReview(String comment, int rating){
+  @Override public void leaveReview(String comment, int rating, String title){
 
-    return client.leaveReview(comment, rating);
+    client.leaveReview(comment, rating, title);
   }
 }

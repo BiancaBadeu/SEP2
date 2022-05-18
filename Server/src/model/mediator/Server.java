@@ -195,10 +195,9 @@ public class Server implements RemoteModel
    * @param rating  the rating
    * @return Moderation of the comment
    */
-  @Override public boolean leaveReview(String comment, int rating)
+  @Override public void leaveReview(String comment, int rating, String title)
   {
-    return true;
-    /*modelManager.leaveReview(comment, rating);*/
+    modelManager.leaveReview(comment, rating, title);
   }
 
   @Override public ArrayList<Movie> getMovieLike(String title)
