@@ -115,9 +115,23 @@ public interface Model
    */
   boolean validateAddMovie(String title);
 
+  /**
+   * @param user a user
+   * @return the rentals made by the user
+   */
   Rental getRentalsWithUser(User user);
 
+  /**
+   * @param movie a movie
+   * @return the comments for the given movie
+   */
   ArrayList<Review> getCommentsForMovie(Movie movie);
 
+  /**
+   * @param comment a comment
+   * @param star a rating
+   * @param title title of the movie
+   *              A method that creates a review for a movie
+   */
   void leaveReview(String comment, int star, String title);
 }

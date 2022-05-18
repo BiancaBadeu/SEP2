@@ -208,8 +208,8 @@ public class ModelManager implements Model
   }
 
   /**
-   * @param movie the movie
-   * @return The movies comments
+   * @param movie a movie
+   * @return the comments for a given movie
    */
   @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
   {
@@ -217,9 +217,10 @@ public class ModelManager implements Model
   }
 
   /**
-   * @param comment the comment
-   * @param rating the rating
-   * @return Moderation for the comment
+   * @param comment a comment
+   * @param rating  a rating
+   * @param title   title of the movie
+   *                A method that creates a review for a movie
    */
   @Override public void leaveReview(String comment, int rating, String title){
 
