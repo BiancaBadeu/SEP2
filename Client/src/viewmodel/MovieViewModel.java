@@ -240,7 +240,7 @@ public class MovieViewModel
   {
     try
     {
-      model.leaveReview(comment.get(), Integer.parseInt(star.get()));
+      model.leaveReview(comment.get(), Integer.parseInt(star.get()), title.get());
       return true;
     }
     catch (Exception e)
