@@ -4,8 +4,7 @@ import model.domain.Movie;
 import model.domain.Rental;
 import model.domain.User;
 
-import java.sql.Date;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -29,7 +28,7 @@ public interface SEPPersistence
    * @throws SQLException
    */
   void addMovie(Movie movie) throws SQLException; // update movie to match database
-
+  public void removeMovie(Movie movie) throws SQLException;
   /**
    * @return an arraylist with the top 10 highest rated movies from the database
    * @throws SQLException

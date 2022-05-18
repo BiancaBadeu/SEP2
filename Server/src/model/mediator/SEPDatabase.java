@@ -5,6 +5,9 @@ import model.domain.Rental;
 import model.domain.User;
 import utility.persistence.MyDatabase;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -101,7 +104,15 @@ public class SEPDatabase implements SEPPersistence
         movie.getDescription(), movie.getAvgRating(),
         movie.getReleaseYear(), movie.getGenres());
   }
-
+  @Override public void removeMovie(Movie movie) throws SQLException
+  {
+    String sql =" delete from sep.movies where movieName=?";
+    Connection connection = DriverManager.getConnection(URL,USER,PASSWORD);
+    PreparedStatement statement= connection.prepareStatement(sql);
+    statement.setString(1,movie.getTitle());
+    statement.executeUpdate();
+    connection.close();
+  }
   /**
    * @return an arraylist with the top 10 highest rated movies from the database
    * @throws SQLException
