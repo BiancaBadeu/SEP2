@@ -29,6 +29,10 @@ public class Client implements Model
     }
   }
 
+  /**
+   * @param title the title of the movie
+   * @return a boolean true if the movie is rented, false if it isn't
+   */
   public boolean checkMovieIsRented(String title)
   {
     return remoteModel.checkMovieIsRented(title);

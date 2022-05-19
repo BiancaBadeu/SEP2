@@ -22,6 +22,7 @@ public class ViewModelFactory
   public ViewModelFactory(Model model)
   {
     this.state = new ViewModelState();
+    this.stateUser = new ViewModelStateUser();
     movieViewModel = new MovieViewModel(model, state, stateUser);
     startViewModel = new StartViewModel(model, stateUser);
     homeViewModel = new HomeViewModel(model, state);
