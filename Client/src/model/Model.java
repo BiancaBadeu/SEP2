@@ -10,6 +10,11 @@ public interface Model
 {
 
   /**
+   * @return an array list containing the movies that are not rented
+   */
+  ArrayList<Movie> getNotRentedMovies();
+
+  /**
    * @param title the title of the movie
    * @return a boolean true if the movie is rented, false if it isn't
    */

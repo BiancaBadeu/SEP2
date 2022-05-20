@@ -30,6 +30,14 @@ public class Client implements Model
   }
 
   /**
+   * @return an array list containing the movies that are not rented
+   */
+  @Override public ArrayList<Movie> getNotRentedMovies()
+  {
+    return remoteModel.getNotRentedMovies();
+  }
+
+  /**
    * @param title the title of the movie
    * @return a boolean true if the movie is rented, false if it isn't
    */

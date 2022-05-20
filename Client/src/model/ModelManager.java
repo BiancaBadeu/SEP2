@@ -31,8 +31,15 @@ public class ModelManager implements Model
    */
   public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
-    System.out.println("I am in the model manager method");
     client.addPerson(name, username, password, phoneNumber, age, type);
+  }
+
+  /**
+   * @return an array list containing the movies that are not rented
+   */
+  public ArrayList<Movie> getNotRentedMovies()
+  {
+    return client.getNotRentedMovies();
   }
 
   /**

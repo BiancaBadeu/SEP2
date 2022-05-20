@@ -26,7 +26,7 @@ public class AdminViewModel
   private StringProperty releaseYear;
 
 
-  private ObservableList<String> allMovies;
+  private ObservableList<String> notRentedMovies;
 
   /**
    * @param model The model to set.
@@ -37,7 +37,7 @@ public class AdminViewModel
   {
     this.model = model;
     this.state = state;
-    this.allMovies = FXCollections.observableArrayList();
+    this.notRentedMovies = FXCollections.observableArrayList();
 
     this.title = new SimpleStringProperty();
     this.length = new SimpleStringProperty();
@@ -122,13 +122,13 @@ public class AdminViewModel
    * @return all the movies.
    * Sets the listview to the movies in the model.
    */
-  public ObservableList<String> getAllMovies()
+  public ObservableList<String> getNotRentedMovies()
   {
-    for (int i = 0; i < model.getAllMovies().size(); i++)
+    for (int i = 0; i < model.getNotRentedMovies().size(); i++)
     {
-      allMovies.add(model.getAllMovies().get(i).toString());
+      notRentedMovies.add(model.getNotRentedMovies().get(i).toString());
     }
-    return allMovies;
+    return notRentedMovies;
   }
 
   /**
@@ -143,20 +143,20 @@ public class AdminViewModel
           Double.parseDouble(avgRating.get()), Integer.parseInt(releaseYear.get()),
           genre.get(), new ArrayList<>());
 
-      for(int i=0; i<model.getAllMovies().size(); i++)
+      for(int i=0; i<model.getNotRentedMovies().size(); i++)
       {
-        if(newMovie.equals(model.getAllMovies().get(i)))
+        if(newMovie.equals(model.getNotRentedMovies().get(i)))
         {
-          model.removeMovie(model.getAllMovies().get(i));
+          model.removeMovie(model.getNotRentedMovies().get(i));
         }
       }
       model.addMovie(newMovie);
     }
 
-    allMovies.clear();
-    for (int i = 0; i < model.getAllMovies().size(); i++)
+    notRentedMovies.clear();
+    for (int i = 0; i < model.getNotRentedMovies().size(); i++)
     {
-      allMovies.add(i, String.valueOf(model.getAllMovies().get(i)));
+      notRentedMovies.add(i, String.valueOf(model.getNotRentedMovies().get(i)));
     }
 
     title.set("");
@@ -201,11 +201,6 @@ public class AdminViewModel
       error.set("Please select a movie.");
       smol = false;
     }
-    if(model.checkMovieIsRented(title))
-    {
-      error.set("Movie is rented. Cannot be edited.");
-      smol = false;
-    }
     return smol;
   }
 
@@ -217,20 +212,20 @@ public class AdminViewModel
    */
   public void getMovieToEdit(String focusedItem)
   {
-    for (int i = 0; i < model.getAllMovies().size(); i++)
+    for (int i = 0; i < model.getNotRentedMovies().size(); i++)
     {
-      if (model.getAllMovies().get(i).getTitle().equals(focusedItem))
+      if (model.getNotRentedMovies().get(i).getTitle().equals(focusedItem))
       {
 
-        this.title.set(model.getAllMovies().get(i).getTitle());
+        this.title.set(model.getNotRentedMovies().get(i).getTitle());
         this.length.set(
-            Integer.toString(model.getAllMovies().get(i).getLength()));
-        this.director.set(model.getAllMovies().get(i).getDirector());
-        this.description.set(model.getAllMovies().get(i).getDescription());
+            Integer.toString(model.getNotRentedMovies().get(i).getLength()));
+        this.director.set(model.getNotRentedMovies().get(i).getDirector());
+        this.description.set(model.getNotRentedMovies().get(i).getDescription());
         this.avgRating.set(
-            Double.toString(model.getAllMovies().get(i).getAvgRating()));
-        this.releaseYear.set(Integer.toString(model.getAllMovies().get(i).getReleaseYear()));
-        model.removeMovie(model.getAllMovies().get(i));
+            Double.toString(model.getNotRentedMovies().get(i).getAvgRating()));
+        this.releaseYear.set(Integer.toString(model.getNotRentedMovies().get(i).getReleaseYear()));
+        model.removeMovie(model.getNotRentedMovies().get(i));
       }
     }
   }
@@ -260,16 +255,12 @@ public class AdminViewModel
    */
   public boolean removeMovie(String focusedItem)
   {
-    if(model.checkMovieIsRented(focusedItem))
+
+    for (int i = 0; i < model.getNotRentedMovies().size(); i++)
     {
-      error.set("Movie is rented. Cannot be removed.");
-      return false;
-    }
-    for (int i = 0; i < model.getAllMovies().size(); i++)
-    {
-      if (model.getAllMovies().get(i).getTitle().equals(focusedItem))
+      if (model.getNotRentedMovies().get(i).getTitle().equals(focusedItem))
       {
-        model.removeMovie(model.getAllMovies().get(i));
+        model.removeMovie(model.getNotRentedMovies().get(i));
         return true;
       }
     }

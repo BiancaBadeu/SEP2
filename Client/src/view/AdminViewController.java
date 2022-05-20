@@ -43,7 +43,7 @@ public class AdminViewController
     this.root = root;
     this.viewModel = viewModel;
 
-    list.setItems(viewModel.getAllMovies());
+    list.setItems(viewModel.getNotRentedMovies());
 
     title.textProperty().bindBidirectional(viewModel.getTitleProperty());
     length.textProperty().bindBidirectional(viewModel.getLengthProperty());

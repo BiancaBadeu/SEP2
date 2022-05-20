@@ -99,6 +99,29 @@ public class ModelManager implements Model
   }
 
   /**
+   * @return an array list containing the movies that are not rented
+   */
+  @Override public ArrayList<Movie> getNotRentedMovies()
+  {
+    int deleted = 0;
+    ArrayList<Movie> allMovies = getAllMovies();
+    for(int i=0;i<getAllMovies().size();i++)
+    {
+      deleted = 0;
+      Movie toCheck = getAllMovies().get(i);
+      for(int j=0; j<getAllRentals().size() && deleted == 0;j++)
+      {
+        if(toCheck.equals(getAllRentals().get(i).getRentedMovie()))
+        {
+          allMovies.remove(toCheck);
+          deleted = 1;
+        }
+      }
+    }
+    return allMovies;
+  }
+
+  /**
    * @param title the title of the movie
    * @return a boolean true if the movie is rented, false if it isn't
    */
@@ -106,9 +129,7 @@ public class ModelManager implements Model
   {
     ArrayList<Rental> rentals = rentalList.getRentalsWithMovie(
         getMovieWithTitle(title));
-    if (rentals.isEmpty())
-      return false;
-    return true;
+    return !rentals.isEmpty();
   }
 
   /**
