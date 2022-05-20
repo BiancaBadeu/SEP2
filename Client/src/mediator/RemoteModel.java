@@ -114,7 +114,7 @@ public interface RemoteModel extends Remote
    * @param user the user
    * @return the user's rentals
    */
-  Rental getRentalsWithUser(User user);
+  ArrayList<Rental> getRentalsWithUser(User user);
 
   /**
    * @param movie the movie

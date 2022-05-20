@@ -6,6 +6,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Model;
 import model.Movie;
+import model.Rental;
+import model.User;
+
+import java.util.ArrayList;
 
 /**
  * The Class ProfileViewModel.
@@ -38,10 +42,20 @@ public class ProfileViewModel
 
     this.rentedMovies = FXCollections.observableArrayList();
 
-    this.userNameLabel = new SimpleStringProperty();
-    this.nameLabel = new SimpleStringProperty();
-    this.phoneNoLabel = new SimpleStringProperty();
-    this.ageLabel = new SimpleStringProperty();
+    User selected  = userState.getUser();
+    if(userState != null)
+    {
+      this.userNameLabel = new SimpleStringProperty(selected.getUserName());
+      this.nameLabel = new SimpleStringProperty(selected.getName());
+      this.phoneNoLabel = new SimpleStringProperty(selected.getPhoneNumber());
+      this.ageLabel = new SimpleStringProperty(""+selected.getAge());
+    }
+    else {
+      this.userNameLabel = new SimpleStringProperty();
+      this.nameLabel = new SimpleStringProperty();
+      this.phoneNoLabel = new SimpleStringProperty();
+      this.ageLabel = new SimpleStringProperty();
+    }
 
   }
 
@@ -92,13 +106,13 @@ public class ProfileViewModel
   {
     rentedMovies.clear();
 
-
     getRentedMovies();
 
-    userNameLabel.set(userState.getUser().getUserName());
-    phoneNoLabel.set(userState.getUser().getPhoneNumber());
-    ageLabel.set(String.valueOf(userState.getUser().getAge()));
-    nameLabel.set(userState.getUser().getName());
+    User selected = userState.getUser();
+    userNameLabel.set(selected.getUserName());
+    phoneNoLabel.set(selected.getPhoneNumber());
+    ageLabel.set(""+selected.getAge());
+    nameLabel.set(selected.getName());
 
   }
 
@@ -109,7 +123,14 @@ public class ProfileViewModel
    */
   public ObservableList<String> getRentedMovies()
   {
-    rentedMovies.add(model.getRentalsWithUser(userState.getUser()).getRentedMovie().getTitle());
+    ArrayList<Rental> rentals = model.getRentalsWithUser(userState.getUser());
+    if(!rentals.isEmpty())
+    {
+      for (int i = 0; i < rentals.size(); i++)
+      {
+        rentedMovies.add(rentals.get(i).getRentedMovie().getTitle());
+      }
+    }
     return rentedMovies;
   }
 
@@ -121,11 +142,11 @@ public class ProfileViewModel
   {
     Movie movie = null;
 
-    for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
+    for (int i = 0; i < model.getAllMovies().size(); i++)
     {
       if (model.getAllMovies().get(i).getTitle().equals(string))
       {
-        movie = model.getTop10TopRatedMovies().get(i);
+        movie = model.getAllMovies().get(i);
 
         if (movie != null)
         {

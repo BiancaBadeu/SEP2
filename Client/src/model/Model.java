@@ -119,7 +119,7 @@ public interface Model
    * @param user a user
    * @return the rentals made by the user
    */
-  Rental getRentalsWithUser(User user);
+  ArrayList<Rental> getRentalsWithUser(User user);
 
   /**
    * @param movie a movie

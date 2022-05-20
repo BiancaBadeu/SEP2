@@ -19,6 +19,7 @@ public class Client implements Model
    */
   public Client()
   {
+    System.out.println("Creating client...");
     try
     {
       remoteModel = (RemoteModel) Naming.lookup("rmi://localhost:1099/Server");
@@ -27,6 +28,7 @@ public class Client implements Model
     {
       e.printStackTrace();
     }
+    System.out.println("remote model done");
   }
 
   /**
@@ -198,7 +200,7 @@ public class Client implements Model
    *
    * @return the user's rentals
    */
-  @Override public Rental getRentalsWithUser(User user)
+  @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
     return remoteModel.getRentalsWithUser(user);
   }

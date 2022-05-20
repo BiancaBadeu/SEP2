@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Clients/Clients.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/MyApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ProfileViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ProfileViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEP2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/MyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/MyApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/mediator/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/mediator/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/mediator/RemoteModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/mediator/RemoteModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/ModelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/ViewHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/movie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/movie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/start.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ProfileViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/viewmodel/ProfileViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ViewModelFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/viewmodel/ViewModelFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,10 +70,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Software-A21/javafx-sdk-17.0.1/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Program Files/Java/javafx-sdk-17.0.1/lib/javafx.web.jar" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/Client" />
   </component>
   <component name="RecentsManager">

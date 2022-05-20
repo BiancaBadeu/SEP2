@@ -27,6 +27,7 @@ public class ViewHandler
    */
   public ViewHandler(ViewModelFactory viewModelFactory)
   {
+    System.out.println("creating view handler");
     this.viewModelFactory = viewModelFactory;
     this.currentScene = new Scene(new Region());
   }
@@ -39,6 +40,7 @@ public class ViewHandler
    */
   public void start(Stage primaryStage)
   {
+    System.out.println("starting view handler");
     this.primaryStage = primaryStage;
     openView("start");
   }
@@ -268,6 +270,7 @@ public class ViewHandler
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
         profileViewController = loader.getController();
+        viewModelFactory.getProfileViewModel().reset();
         profileViewController.init(this,  viewModelFactory.getProfileViewModel(), root);
       }
       catch (Exception e)

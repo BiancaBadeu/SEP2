@@ -21,13 +21,17 @@ public class ViewModelFactory
    */
   public ViewModelFactory(Model model)
   {
+    System.out.println("creating viewmodel state");
     this.state = new ViewModelState();
+    System.out.println("creating viewmodel state user");
+
     this.stateUser = new ViewModelStateUser();
     movieViewModel = new MovieViewModel(model, state, stateUser);
     startViewModel = new StartViewModel(model, stateUser);
     homeViewModel = new HomeViewModel(model, state);
     adminViewModel = new AdminViewModel(model, state);
     profileViewModel = new ProfileViewModel(model, stateUser, state);
+    System.out.println("done");
 
   }
 

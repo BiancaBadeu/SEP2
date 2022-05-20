@@ -17,7 +17,10 @@ public class ModelManager implements Model
    */
   public ModelManager()
   {
+
+    System.out.println("in model. creating client");
     this.client = new Client();
+    System.out.println("done creating client");
   }
 
   /**
@@ -202,7 +205,7 @@ public class ModelManager implements Model
    * @param user the user
    * @return The users rentals
    */
-  @Override public Rental getRentalsWithUser(User user)
+  @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
     return client.getRentalsWithUser(user);
   }
