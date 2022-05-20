@@ -1,6 +1,7 @@
 package model.mediator;
 
 import model.domain.Movie;
+import model.domain.Person;
 import model.domain.Rental;
 import model.domain.User;
 
@@ -76,4 +77,6 @@ public interface SEPPersistence
    * @throws SQLException
    */
   User getUser(String userName) throws SQLException;
+
+  ArrayList<Person> getAllPersons() throws SQLException;
 }

@@ -1,6 +1,7 @@
 package model.mediator;
 
 import model.domain.Movie;
+import model.domain.Person;
 import model.domain.Rental;
 import model.domain.User;
 import utility.persistence.MyDatabase;
@@ -51,6 +52,49 @@ public class SEPDatabase implements SEPPersistence
         "insert into sep.person(name, phoneNumber, userName, password, age)  "
             + "VALUES (?, ?, ?, ?, ?);";
     db.update(sql, name, phoneNumber, userName, password, age);
+  }
+
+  @Override public ArrayList<Person> getAllPersons() throws SQLException
+  {
+    String sql = "select * from sep.persons;";
+    ArrayList<Object[]> results = db.query(sql);
+    ArrayList<Person> all = new ArrayList<>();
+
+    for (int i = 0; i < results.size(); i++)
+    {
+      Person person = new Person("", "", "", "", 0, "")
+      {
+      };
+
+      Object[] row = results.get(i);
+      for (int j = 0; j < row.length; j++)
+      {
+        switch (j)
+        {
+          case 0:
+            person.setName(String.valueOf(row[j]));
+            break;
+          case 1:
+            person.setPhoneNumber(String.valueOf(row[j]));
+            break;
+          case 2:
+            person.setUserName((String.valueOf(row[j])));
+            break;
+          case 3:
+            person.setPassword(String.valueOf(row[j]));
+            break;
+          case 4:
+            person.setAge(Integer.parseInt(String.valueOf(row[j])));
+            break;
+
+          default:
+            break;
+        }
+
+      }
+      all.add(person);
+    }
+    return all;
   }
 
   /**
