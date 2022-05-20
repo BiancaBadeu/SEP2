@@ -9,6 +9,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -40,7 +41,14 @@ public class Server implements RemoteModel
     UnicastRemoteObject.exportObject(this,0);
     registry.bind("Server", this);
 
-    model.getAllInfo();
+    try
+    {
+      model.getAllInfo();
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**

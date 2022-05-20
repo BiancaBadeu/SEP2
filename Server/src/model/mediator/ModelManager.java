@@ -54,9 +54,12 @@ public class ModelManager implements Model
     PersonList persons = new PersonList();
     for(int i=0;i<database.getAllPersons().size();i++)
     {
-      persons.addPerson(database.getAllPersons().get(i).);
+      persons.addPerson(database.getAllPersons().get(i).getName(), database.getAllPersons().get(i).getUserName(),
+          database.getAllPersons().get(i).getPassword(), database.getAllPersons().get(i).getPhoneNumber(),
+          database.getAllPersons().get(i).getAge(), database.getAllPersons().get(i).getType());
     }
     this.personList = persons;
+    System.out.println(personList);
 
     RentalList rentals = new RentalList();
     for(int i=0;i<database.getAllRentals().size();i++)
