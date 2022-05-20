@@ -3,7 +3,6 @@ package model.mediator;
 import model.*;
 
 import java.rmi.Naming;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 

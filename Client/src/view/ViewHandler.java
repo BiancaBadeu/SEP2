@@ -117,7 +117,6 @@ public class ViewHandler
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
         startViewController = loader.getController();
-        viewModelFactory.getStartViewModel().reset();
         startViewController.init(this,  viewModelFactory.getStartViewModel(), root);
       }
       catch (Exception e)
@@ -194,7 +193,6 @@ public class ViewHandler
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
         homeViewController = loader.getController();
-        viewModelFactory.getHomeViewModel().reset();
         homeViewController.init(this, viewModelFactory.getHomeViewModel(), root);
       }
       catch (Exception e)
@@ -232,7 +230,6 @@ public class ViewHandler
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
         adminViewController = loader.getController();
-        viewModelFactory.getAdminViewModel().reset();
         adminViewController.init(this,  viewModelFactory.getAdminViewModel(), root);
       }
       catch (Exception e)

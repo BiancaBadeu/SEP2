@@ -62,14 +62,15 @@ public class Server implements RemoteModel
     /**
      * @return the top 10 top-rated movies
      */
-    @Override public ArrayList<Movie> getTop10TopRatedMovies () {
+    @Override public ArrayList<Movie> getTop10TopRatedMovies() throws RemoteException
+    {
     return model.getTop10TopRatedMovies();
   }
 
     /**
      * @return the trending movies
      */
-    @Override public ArrayList<Movie> getTrendingMovies () {
+    @Override public ArrayList<Movie> getTrendingMovies() {
     return model.getTrendingMovies();
   }
 
