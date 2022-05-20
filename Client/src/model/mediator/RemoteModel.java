@@ -14,7 +14,6 @@ import java.util.Date;
  */
 public interface RemoteModel extends Remote
 {
-
   /**
    * @param title the title of the movie
    * @return a boolean true if the movie is rented, false if it isn't
@@ -125,7 +124,7 @@ public interface RemoteModel extends Remote
   /**
    * @param comment the comment
    * @param rating the rating
-   * @return Moderation of the comment
+   * @param title the title
    */
   void leaveReview(String comment, int rating, String title);
 }
