@@ -3,6 +3,8 @@ package viewmodel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.Model;
+import model.Movie;
+import model.User;
 
 /**
  A viewModel class that represents the functionality of the Controller class StartViewController
@@ -32,6 +34,7 @@ public class StartViewModel
   public StartViewModel(Model model, ViewModelStateUser userState)
   {
     this.model = model;
+    this.userState= userState;
     this.usernameLogin = new SimpleStringProperty();
     this.passwordLogin = new SimpleStringProperty();
     this.errorLabelLogin = new SimpleStringProperty();
@@ -41,7 +44,7 @@ public class StartViewModel
     this.passwordSignup = new SimpleStringProperty();
     this.errorSignup = new SimpleStringProperty();
     this.age = new SimpleStringProperty();
-    this.userState= userState;
+
   }
 
   /**
@@ -158,7 +161,7 @@ public class StartViewModel
   {
     try{
       model.login(usernameLogin.get(), passwordLogin.get());
-      //userState.setUser(model.getUser(usernameLogin.get()));
+      userState.setUser(model.getUser(usernameLogin.get()));
       return true;
     }
     catch(Exception e)
@@ -184,6 +187,7 @@ public class StartViewModel
   {
     try{
       model.createUser(name.get(), usernameSignup.get(), passwordSignup.get(), phoneNumber.get(), age.get());
+      userState.setUser(model.getUser(usernameSignup.get()));
       return true;
     }
     catch(Exception e)

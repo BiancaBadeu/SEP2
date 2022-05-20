@@ -1,5 +1,5 @@
 package model;
-import mediator.*;
+import model.mediator.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,10 +17,7 @@ public class ModelManager implements Model
    */
   public ModelManager()
   {
-
-    System.out.println("in model. creating client");
     this.client = new Client();
-    System.out.println("done creating client");
   }
 
   /**

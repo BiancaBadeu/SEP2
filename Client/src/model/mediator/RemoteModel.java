@@ -1,4 +1,4 @@
-package mediator;
+package model.mediator;
 
 import model.Movie;
 import model.Rental;

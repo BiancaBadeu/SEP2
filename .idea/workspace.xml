@@ -6,28 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/MyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/RemoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/ModelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/ViewHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ProfileViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ProfileViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelStateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ViewModelStateUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/ClientMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ClientMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/MyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/MyApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/mediator/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/mediator/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/mediator/RemoteModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/mediator/RemoteModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/mediator/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/mediator/RemoteModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/model/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/ModelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/ViewHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/view/admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/view/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/view/movie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/movie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/view/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/view/start.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/view/start.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ProfileViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/viewmodel/ProfileViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ViewModelFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/viewmodel/ViewModelFactory.class" afterDir="false" />
     </list>
@@ -100,6 +93,7 @@
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="Client" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-17.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,6 +105,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ClientMain" />
+      <item itemvalue="Application.ServerMain" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ClientMain" />

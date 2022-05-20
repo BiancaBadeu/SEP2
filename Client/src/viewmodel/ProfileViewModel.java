@@ -30,24 +30,23 @@ public class ProfileViewModel
    * @param userState the userState to set
    * @param state the state to set
    *
-   *              Constructor for ProfileViewModel.
+   *     Constructor for ProfileViewModel.
    */
-  public ProfileViewModel(Model model, ViewModelStateUser userState,
-      ViewModelState state)
+  public ProfileViewModel(Model model, ViewModelStateUser userState, ViewModelState state)
   {
-
     this.model = model;
     this.userState = userState;
     this.state = state;
 
     this.rentedMovies = FXCollections.observableArrayList();
+    this.rentedMovies = getRentedMovies();
 
     User selected  = userState.getUser();
-    if(userState != null)
+    if(this.userState != null)
     {
-      this.userNameLabel = new SimpleStringProperty(selected.getUserName());
-      this.nameLabel = new SimpleStringProperty(selected.getName());
-      this.phoneNoLabel = new SimpleStringProperty(selected.getPhoneNumber());
+      this.userNameLabel = new SimpleStringProperty(""+selected.getUserName());
+      this.nameLabel = new SimpleStringProperty(""+selected.getName());
+      this.phoneNoLabel = new SimpleStringProperty(""+selected.getPhoneNumber());
       this.ageLabel = new SimpleStringProperty(""+selected.getAge());
     }
     else {
@@ -106,13 +105,13 @@ public class ProfileViewModel
   {
     rentedMovies.clear();
 
-    getRentedMovies();
+    rentedMovies = getRentedMovies();
 
     User selected = userState.getUser();
-    userNameLabel.set(selected.getUserName());
-    phoneNoLabel.set(selected.getPhoneNumber());
+    userNameLabel.set(""+selected.getUserName());
+    phoneNoLabel.set(""+selected.getPhoneNumber());
     ageLabel.set(""+selected.getAge());
-    nameLabel.set(selected.getName());
+    nameLabel.set(""+selected.getName());
 
   }
 

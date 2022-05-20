@@ -21,24 +21,19 @@ public class ViewModelFactory
    */
   public ViewModelFactory(Model model)
   {
-    System.out.println("creating viewmodel state");
     this.state = new ViewModelState();
-    System.out.println("creating viewmodel state user");
-
     this.stateUser = new ViewModelStateUser();
     movieViewModel = new MovieViewModel(model, state, stateUser);
     startViewModel = new StartViewModel(model, stateUser);
     homeViewModel = new HomeViewModel(model, state);
     adminViewModel = new AdminViewModel(model, state);
     profileViewModel = new ProfileViewModel(model, stateUser, state);
-    System.out.println("done");
-
   }
 
   /**
    * @return the viewModel
    * A getter for the MovieViewModel
-   * @see viewmodel.MovieViewModel
+   * @see MovieViewModel
    */
   public MovieViewModel getMovieViewModel()
   {
@@ -48,7 +43,7 @@ public class ViewModelFactory
   /**
    * @return the viewModel
    * A getter for the StartViewModel
-   * @see viewmodel.StartViewModel
+   * @see StartViewModel
    */
   public StartViewModel getStartViewModel()
   {
@@ -67,15 +62,15 @@ public class ViewModelFactory
 
   /**
    * @return the viewModel
-   *
    * A getter for the AdminViewModel
+   * @see AdminViewModel
    */
   public AdminViewModel getAdminViewModel(){ return adminViewModel;}
 
   /**
    * @return the viewModel
-   *
    * A getter for the ProfileViewModel
+   * @see ProfileViewModel
    */
   public ProfileViewModel getProfileViewModel(){ return profileViewModel;}
 }

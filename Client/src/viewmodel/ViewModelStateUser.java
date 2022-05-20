@@ -22,8 +22,8 @@ public class ViewModelStateUser
    * @return the user
    * A method that returns the user.
    */
-  public User getUser(){
-
+  public User getUser()
+  {
     return user;
   }
 
