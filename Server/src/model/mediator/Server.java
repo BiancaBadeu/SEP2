@@ -39,6 +39,8 @@ public class Server implements RemoteModel
     Registry registry = LocateRegistry.createRegistry(1099);
     UnicastRemoteObject.exportObject(this,0);
     registry.bind("Server", this);
+
+    model.getAllInfo();
   }
 
   /**

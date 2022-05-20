@@ -32,30 +32,18 @@ public class ProfileViewModel
    *
    *     Constructor for ProfileViewModel.
    */
-  public ProfileViewModel(Model model, ViewModelStateUser userState, ViewModelState state)
+  public ProfileViewModel(Model model, ViewModelState state, ViewModelStateUser userState)
   {
     this.model = model;
     this.userState = userState;
     this.state = state;
 
     this.rentedMovies = FXCollections.observableArrayList();
-    this.rentedMovies = getRentedMovies();
 
-    User selected  = userState.getUser();
-    if(this.userState != null)
-    {
-      this.userNameLabel = new SimpleStringProperty(""+selected.getUserName());
-      this.nameLabel = new SimpleStringProperty(""+selected.getName());
-      this.phoneNoLabel = new SimpleStringProperty(""+selected.getPhoneNumber());
-      this.ageLabel = new SimpleStringProperty(""+selected.getAge());
-    }
-    else {
       this.userNameLabel = new SimpleStringProperty();
       this.nameLabel = new SimpleStringProperty();
       this.phoneNoLabel = new SimpleStringProperty();
       this.ageLabel = new SimpleStringProperty();
-    }
-
   }
 
   /**

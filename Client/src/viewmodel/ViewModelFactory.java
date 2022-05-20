@@ -27,7 +27,7 @@ public class ViewModelFactory
     startViewModel = new StartViewModel(model, stateUser);
     homeViewModel = new HomeViewModel(model, state);
     adminViewModel = new AdminViewModel(model, state);
-    profileViewModel = new ProfileViewModel(model, stateUser, state);
+    profileViewModel = new ProfileViewModel(model, state, stateUser);
   }
 
   /**

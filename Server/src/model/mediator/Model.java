@@ -6,6 +6,7 @@ import model.domain.User;
 import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 
 import java.beans.PropertyChangeListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,6 +16,8 @@ import java.util.Date;
 public interface Model extends UnnamedPropertyChangeSubject
 {
 
+
+  void getAllInfo() throws SQLException;
   /**
    * @param title the title of the movie
    * @return a boolean true if the movie is rented, false if it isn't

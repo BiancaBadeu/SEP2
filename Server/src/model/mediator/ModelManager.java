@@ -34,6 +34,44 @@ public class ModelManager implements Model
     {
       e.printStackTrace();
     }
+
+    try
+    {
+      getAllInfo();
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * @throws SQLException exception
+   *      A method to get the information from the database and store it
+   */
+  public void getAllInfo() throws SQLException
+  {
+    PersonList persons = new PersonList();
+    for(int i=0;i<database.getAllPersons().size();i++)
+    {
+      persons.addPerson(database.getAllPersons().get(i).);
+    }
+    this.personList = persons;
+
+    RentalList rentals = new RentalList();
+    for(int i=0;i<database.getAllRentals().size();i++)
+    {
+        rentals.addRental(rentals.getAllRentals().get(i).getRentedMovie(), rentals.getAllRentals().get(i).getExpirationDate(),
+            rentals.getAllRentals().get(i).getUser());
+    }
+    this.rentalList = rentals;
+
+    MovieList movies = new MovieList();
+    for(int i=0;i<database.getAllMovies().size();i++)
+    {
+      movies.addMovie(database.getAllMovies().get(i));
+    }
+    this.movieList = movies;
   }
 
   /**
