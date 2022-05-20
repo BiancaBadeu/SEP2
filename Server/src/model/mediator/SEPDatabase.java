@@ -1,9 +1,6 @@
 package model.mediator;
 
-import model.domain.Movie;
-import model.domain.Person;
-import model.domain.Rental;
-import model.domain.User;
+import model.domain.*;
 import utility.persistence.MyDatabase;
 
 import java.sql.Connection;
@@ -43,7 +40,7 @@ public class SEPDatabase implements SEPPersistence
    * @param password    the password of the user
    * @param age         the age of the user
    *                    adds user to database
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public void addUser(String name, String phoneNumber,
       String userName, String password, int age) throws SQLException
@@ -56,43 +53,71 @@ public class SEPDatabase implements SEPPersistence
 
   @Override public ArrayList<Person> getAllPersons() throws SQLException
   {
-    String sql = "select * from sep.persons;";
+    String sql = "select * from sep.person;";
     ArrayList<Object[]> results = db.query(sql);
     ArrayList<Person> all = new ArrayList<>();
+    int adminok = 0;
 
     for (int i = 0; i < results.size(); i++)
     {
-      Person person = new Person("", "", "", "", 0, "")
-      {
-      };
+      Person user = new User("", "", "", "", 0);
+      Person admin = new Admin("", "", "", "", 0);
 
       Object[] row = results.get(i);
       for (int j = 0; j < row.length; j++)
       {
-        switch (j)
+        if(!row[2].equals("admin"))
         {
-          case 0:
-            person.setName(String.valueOf(row[j]));
-            break;
-          case 1:
-            person.setPhoneNumber(String.valueOf(row[j]));
-            break;
-          case 2:
-            person.setUserName((String.valueOf(row[j])));
-            break;
-          case 3:
-            person.setPassword(String.valueOf(row[j]));
-            break;
-          case 4:
-            person.setAge(Integer.parseInt(String.valueOf(row[j])));
-            break;
-
-          default:
-            break;
+          adminok =1;
+          switch (j)
+          {
+            case 0:
+              user.setName(String.valueOf(row[j]));
+              break;
+            case 1:
+              user.setPhoneNumber(String.valueOf(row[j]));
+              break;
+            case 2:
+              user.setUserName((String.valueOf(row[j])));
+              break;
+            case 3:
+              user.setPassword(String.valueOf(row[j]));
+              break;
+            case 4:
+              user.setAge(Integer.parseInt(String.valueOf(row[j])));
+              break;
+            default:
+              break;
+          }
         }
-
+        if(row[2].equals("admin"))
+        {
+          adminok = 0;
+          switch (j)
+          {
+            case 0:
+              admin.setName(String.valueOf(row[j]));
+              break;
+            case 1:
+              admin.setPhoneNumber(String.valueOf(row[j]));
+              break;
+            case 2:
+              admin.setUserName((String.valueOf(row[j])));
+              break;
+            case 3:
+              admin.setPassword(String.valueOf(row[j]));
+              break;
+            case 4:
+              admin.setAge(Integer.parseInt(String.valueOf(row[j])));
+              break;
+            default:
+              break;
+          }
+        }
       }
-      all.add(person);
+      if(adminok == 0)
+        all.add(admin);
+      else all.add(user);
     }
     return all;
   }
@@ -100,7 +125,7 @@ public class SEPDatabase implements SEPPersistence
   /**
    * @param userName the username
    * @return a user object
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public User getUser(String userName) throws SQLException
   {
@@ -139,7 +164,7 @@ public class SEPDatabase implements SEPPersistence
   }
   /**
    * @param movie adds movie to database
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public void addMovie(Movie movie) throws SQLException
   {
@@ -153,7 +178,7 @@ public class SEPDatabase implements SEPPersistence
 
   /**
    * @param movie the movie to be removed
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public void removeMovie(Movie movie) throws SQLException
   {
@@ -166,7 +191,7 @@ public class SEPDatabase implements SEPPersistence
   }
   /**
    * @return an arraylist with the top 10 highest rated movies from the database
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public ArrayList<Movie> getTop10TopRatedMovies() throws SQLException
   {
@@ -211,7 +236,7 @@ public class SEPDatabase implements SEPPersistence
 
   /**
    * @return an arraylist with all the movies from the database
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public ArrayList<Movie> getAllMovies() throws SQLException
   {
@@ -262,7 +287,7 @@ public class SEPDatabase implements SEPPersistence
   /**
    * @param title the title
    * @return a movie object
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public Movie getMovieWithTitle(String title) throws SQLException
   {
@@ -313,7 +338,7 @@ public class SEPDatabase implements SEPPersistence
    * @param expirationDate the date the rental expires
    * @param user the user
    * @param rentedMovie the rented movie
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public void addRental(Date expirationDate, User user,
       Movie rentedMovie) throws SQLException
@@ -329,7 +354,7 @@ public class SEPDatabase implements SEPPersistence
 
   /**
    * @return an arraylist with all the rentals from the database
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public ArrayList<Rental> getAllRentals() throws SQLException
   {
@@ -378,7 +403,7 @@ public class SEPDatabase implements SEPPersistence
   /**
    * @param user the user
    * @return an arraylist with all the rentals of the user from the database
-   * @throws SQLException
+   * @throws SQLException exception
    *
    */
   @Override public ArrayList<Rental> getRentalsWithUser(User user)

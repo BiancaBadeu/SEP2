@@ -37,7 +37,7 @@ public class Server implements RemoteModel
    */
   public void startServer () throws RemoteException, AlreadyBoundException
   {
-    Registry registry = LocateRegistry.createRegistry(1099);
+    Registry registry = LocateRegistry.createRegistry(1098);
     UnicastRemoteObject.exportObject(this,0);
     registry.bind("Server", this);
 

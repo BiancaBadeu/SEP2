@@ -6,8 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AllDocumentation/Backlog and tasks/Sprint5Backlog.docx" beforeDir="false" afterPath="$PROJECT_DIR$/AllDocumentation/Backlog and tasks/Sprint5Backlog.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/StartViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEP2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPPersistence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Program Files/Java/javafx-sdk-17.0.1/lib/javafx.web.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/MyDatabase-1.0 (1).jar" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -74,7 +85,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServerMain">
+  <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="Client" />
@@ -96,8 +107,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServerMain" />
         <item itemvalue="Application.ClientMain" />
+        <item itemvalue="Application.ServerMain" />
       </list>
     </recent_temporary>
   </component>

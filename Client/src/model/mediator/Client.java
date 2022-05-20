@@ -3,6 +3,7 @@ package model.mediator;
 import model.*;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -21,7 +22,7 @@ public class Client implements Model
   {
     try
     {
-      remoteModel = (RemoteModel) Naming.lookup("rmi://localhost:1099/Server");
+      remoteModel = (RemoteModel) Naming.lookup("rmi://localhost:1098/Server");
     }
     catch (Exception e)
     {

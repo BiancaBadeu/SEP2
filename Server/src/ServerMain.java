@@ -13,7 +13,7 @@ public class ServerMain
 {
   public static void main(String[] args)
   {
-      Model model = new ModelManager();
+    Model model = new ModelManager();
     RemoteModel server = new Server(model);
     try
     {

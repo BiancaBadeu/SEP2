@@ -34,47 +34,53 @@ public class ModelManager implements Model
     {
       e.printStackTrace();
     }
-
-    try
-    {
-      getAllInfo();
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
   }
 
   /**
    * @throws SQLException exception
-   *      A method to get the information from the database and store it
+   *                      A method to get the information from the database and store it
    */
   public void getAllInfo() throws SQLException
   {
     PersonList persons = new PersonList();
-    for(int i=0;i<database.getAllPersons().size();i++)
+    if (!database.getAllPersons().isEmpty())
     {
-      persons.addPerson(database.getAllPersons().get(i).getName(), database.getAllPersons().get(i).getUserName(),
-          database.getAllPersons().get(i).getPassword(), database.getAllPersons().get(i).getPhoneNumber(),
-          database.getAllPersons().get(i).getAge(), database.getAllPersons().get(i).getType());
+      for (int i = 0; i < database.getAllPersons().size(); i++)
+      {
+        persons.addPerson(database.getAllPersons().get(i).getName(),
+            database.getAllPersons().get(i).getUserName(),
+            database.getAllPersons().get(i).getPassword(),
+            database.getAllPersons().get(i).getPhoneNumber(),
+            database.getAllPersons().get(i).getAge(),
+            database.getAllPersons().get(i).getType());
+      }
+      this.personList = persons;
     }
-    this.personList = persons;
-    System.out.println(personList);
+    System.out.println(persons.getPersons());
 
     RentalList rentals = new RentalList();
-    for(int i=0;i<database.getAllRentals().size();i++)
+    if (!database.getAllRentals().isEmpty())
     {
-        rentals.addRental(rentals.getAllRentals().get(i).getRentedMovie(), rentals.getAllRentals().get(i).getExpirationDate(),
-            rentals.getAllRentals().get(i).getUser());
+      for (int i = 0; i < database.getAllRentals().size(); i++)
+      {
+        rentals.addRental(database.getAllRentals().get(i).getRentedMovie(),
+            database.getAllRentals().get(i).getExpirationDate(),
+            database.getAllRentals().get(i).getUser());
+      }
+      this.rentalList = rentals;
     }
-    this.rentalList = rentals;
+    System.out.println(rentals.getAllRentals());
 
     MovieList movies = new MovieList();
-    for(int i=0;i<database.getAllMovies().size();i++)
+    if (!database.getAllMovies().isEmpty())
     {
-      movies.addMovie(database.getAllMovies().get(i));
+      for (int i = 0; i < database.getAllMovies().size(); i++)
+      {
+        movies.addMovie(database.getAllMovies().get(i));
+      }
+      this.movieList = movies;
     }
-    this.movieList = movies;
+    System.out.println(movies.getAllMovies());
   }
 
   /**
@@ -84,9 +90,10 @@ public class ModelManager implements Model
    * @param phoneNumber the person's phone number to be added
    * @param age         the person's age to be added
    * @param type        the person's type to be added
-   *  A method to add a person to the person list
+   *                    A method to add a person to the person list
    */
-  public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
+  public void addPerson(String name, String username, String password,
+      String phoneNumber, int age, String type)
   {
     personList.addPerson(name, username, password, phoneNumber, age, type);
   }
@@ -97,15 +104,16 @@ public class ModelManager implements Model
    */
   public boolean checkMovieIsRented(String title)
   {
-    ArrayList<Rental> rentals = rentalList.getRentalsWithMovie(getMovieWithTitle(title));
-    if(rentals.isEmpty())
+    ArrayList<Rental> rentals = rentalList.getRentalsWithMovie(
+        getMovieWithTitle(title));
+    if (rentals.isEmpty())
       return false;
     return true;
   }
 
   /**
    * @param movie the movie to be added to the movie list
-   *  A method to add a movie to the movie list
+   *              A method to add a movie to the movie list
    */
   public void addMovie(Movie movie)
   {
@@ -121,7 +129,7 @@ public class ModelManager implements Model
 
   /**
    * @param movie the movie to be removed
-   *  A method to remove a movie from the movie list
+   *              A method to remove a movie from the movie list
    */
   @Override public void removeMovie(Movie movie)
   {
@@ -143,15 +151,7 @@ public class ModelManager implements Model
    */
   @Override public ArrayList<Movie> getTop10TopRatedMovies()
   {
-    try
-    {
-      return database.getTop10TopRatedMovies();
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
-    return null;
+    return movieList.getTop10TopRatedMovies();
   }
 
   /**
@@ -203,27 +203,27 @@ public class ModelManager implements Model
     {
       e.printStackTrace();
     }
-    return  null;
+    return null;
   }
 
   /**
    * @param listener the listener to be added
-   *  A method to add a listener
+   *                 A method to add a listener
    */
   @Override public void addListener(PropertyChangeListener listener)
   {
   }
 
   /**
-   * @param movie the movie to be rented
+   * @param movie          the movie to be rented
    * @param expirationDate the expiration date of the rental
-   *    A method to add a rental to the rental list
+   *                       A method to add a rental to the rental list
    */
   @Override public void addRental(Movie movie, Date expirationDate, User user)
   {
     try
     {
-      database.addRental( expirationDate, user, movie);
+      database.addRental(expirationDate, user, movie);
     }
     catch (SQLException e)
     {
@@ -251,8 +251,7 @@ public class ModelManager implements Model
   /**
    * @param title the title of the movie
    * @param user  the user
-   *
-   *  A method to remove a rental from the rental list
+   *              A method to remove a rental from the rental list
    */
   @Override public void cancelRental(String title, User user)
   {
@@ -286,7 +285,7 @@ public class ModelManager implements Model
 
   /**
    * @param listener the listener to be removed
-   *   A method to remove a listener
+   *                 A method to remove a listener
    */
   public void removeListener(PropertyChangeListener listener)
   {
@@ -294,9 +293,9 @@ public class ModelManager implements Model
 
   /**
    * @param title a String variable representing the title of a movie
-   * @param user the user
-   * //@param averageRating a String variable representing the average rating of a movie
-   *  A method to check if the user can rent the movie
+   * @param user  the user
+   *              //@param averageRating a String variable representing the average rating of a movie
+   *              A method to check if the user can rent the movie
    */
   @Override public void rentMovie(String title, User user)
   {
@@ -308,7 +307,7 @@ public class ModelManager implements Model
   /**
    * @param username string variable
    * @param password string variable
-   * Checks if the username exists and has a matching password
+   *                 Checks if the username exists and has a matching password
    */
   @Override public void login(String username, String password)
   {
@@ -334,10 +333,10 @@ public class ModelManager implements Model
    * @param password    a String variable representing the password chosen
    * @param phoneNumber a String variable representing the phone number of the user
    * @param age         a String variable representing the age of the user
-   *
-   *  A method to create a new User and add it to the person list
+   *                    A method to create a new User and add it to the person list
    */
-  @Override public void createUser(String name, String userName, String password, String phoneNumber, String age)
+  @Override public void createUser(String name, String userName,
+      String password, String phoneNumber, String age)
   {
     for (int i = 0; i < personList.getPersons().size(); i++)
     {
@@ -346,7 +345,8 @@ public class ModelManager implements Model
     }
     try
     {
-      database.addUser(name, phoneNumber, userName, password,Integer. parseInt(age));
+      database.addUser(name, phoneNumber, userName, password,
+          Integer.parseInt(age));
     }
     catch (SQLException e)
     {
@@ -377,18 +377,14 @@ public class ModelManager implements Model
   /**
    * @param userName the username
    * @return a User variable
-   *
-   * A methof to get the user by username (username is unique). Returns null if it does not exist
+   * A method to get the user by username (username is unique). Returns null if it does not exist
    */
   @Override public User getUser(String userName)
   {
-    try
+    for(int i=0;i<personList.getPersons().size();i++)
     {
-     return database.getUser(userName);
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
+      if(userName.equals(personList.getPersons().get(i).getUserName()))
+        return (User) personList.getPersons().get(i);
     }
     return null;
   }
@@ -397,7 +393,8 @@ public class ModelManager implements Model
    * @param title the title of the movie
    * @return a boolean value to see it we can add a movie
    */
-  @Override public boolean validateAddMovie(String title){
+  @Override public boolean validateAddMovie(String title)
+  {
 
     for (int i = 0; i < movieList.getAllMovies().size(); i++)
     {
@@ -444,15 +441,17 @@ public class ModelManager implements Model
     badwords.add("Kurwa");
     badwords.add("penis");
 
-    for(int i=0; i<badwords.size(); i++){
-    if(comment.contains(badwords.get(i))){
+    for (int i = 0; i < badwords.size(); i++)
+    {
+      if (comment.contains(badwords.get(i)))
+      {
 
-      throw new IllegalArgumentException("Swear words are not allowed!");
+        throw new IllegalArgumentException("Swear words are not allowed!");
       }
     }
 
     getMovieWithTitle(title).addReview(comment, star);
 
-    }
   }
+}
 

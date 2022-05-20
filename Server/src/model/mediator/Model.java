@@ -16,7 +16,10 @@ import java.util.Date;
 public interface Model extends UnnamedPropertyChangeSubject
 {
 
-
+  /**
+   * @throws SQLException exception
+   * A method to set the lists from the database in the model
+   */
   void getAllInfo() throws SQLException;
   /**
    * @param title the title of the movie
