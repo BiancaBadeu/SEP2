@@ -44,6 +44,11 @@ public class HomeViewModel implements PropertyChangeListener
     {
       topRatedList.add(i, String.valueOf(model.getTop10TopRatedMovies().get(i)));
     }
+    trendingList.clear();
+    for(int i = 0; i < model.getTrendingMovies().size(); i++)
+    {
+      trendingList.add(i, String.valueOf(model.getTrendingMovies().get(i)));
+    }
   }
 
   /**

@@ -65,7 +65,7 @@ public class HomeViewController
 
   /**
    * A FXML method called when the button named "View top-rated movie details" is pressed
-   * It cals the method showDetails in the viewModel and if the method returns true(the user is allowed to see the movie),
+   * It calls the method showDetails in the viewModel and if the method returns true(the user is allowed to see the movie),
    *   it will call the method openView in the ViewHandler
    *   @see viewmodel.HomeViewModel
    *   @see view.ViewHandler
@@ -79,7 +79,7 @@ public class HomeViewController
 
   /**
    * A FXML method called when the button named "View trending movie details" is pressed
-   * It cals the method showDetails in the viewModel and if the method returns true(the user is allowed to see the movie),
+   * It calls the method showDetails in the viewModel and if the method returns true(the user is allowed to see the movie),
    *   it will call the method openView in the ViewHandler
    *   @see viewmodel.HomeViewModel
    *   @see view.ViewHandler
@@ -92,12 +92,21 @@ public class HomeViewController
   }
 
   /**
-   * A FXML method called when the button named "View profile" is pressed. It cals the method openView in the viewHandler
+   * A FXML method called when the button named "View profile" is pressed. It calls the method openView in the viewHandler
    * @see view.ViewHandler
    */
   @FXML private void viewProfilePressed()
   {
     viewHandler.openView("profile");
+  }
+
+  /**
+   * A FXML method called when the button named "Search movies" is pressed. It calls the method openView in the viewHandler
+   * @see view.ViewHandler
+   */
+  @FXML private void searchPressed()
+  {
+    viewHandler.openView("search");
   }
 
 }

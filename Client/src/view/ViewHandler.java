@@ -19,6 +19,7 @@ public class ViewHandler
   private HomeViewController homeViewController;
   private AdminViewController adminViewController;
   private ProfileViewController profileViewController;
+  private SearchViewController searchViewController;
 
   /**
    * @param viewModelFactory a viewModelFactory variable for delegating the work to the viewModels
@@ -71,6 +72,9 @@ public class ViewHandler
         break;
       case "profile":
         root = loadProfileView("profile.fxml");
+        break;
+      case "search":
+        root = loadSearchView("search.fxml");
         break;
     }
     currentScene.setRoot(root);
@@ -282,5 +286,42 @@ public class ViewHandler
       profileViewController.reset();
     }
     return profileViewController.getRoot();
+  }
+  /**
+   * @param fxmlFile a String variable that is the name of the fxml file we want to open
+   * @return the root for the controller, so that in the openView method we can utilize it
+   * @see view.ViewHandler
+   *
+   * A method to get the SearchViewController's root and initialize the window.
+   *  If it is the first we are loading the controller, we will get the controller and root from the loader and call the method init
+   *  @see view.SearchViewController
+   *  If it is not the first time we are loading, we will call the reset method and return the controller's root
+   *  @see view.SearchViewController
+   */
+  private Region loadSearchView(String fxmlFile)
+  {
+    Region root = null;
+    if (searchViewController == null)
+    {
+      // load from FXML
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        root = loader.load();
+        searchViewController = loader.getController();
+        searchViewController.init(this,  viewModelFactory.getSearchViewModel(), root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      // reset window
+      searchViewController.reset();
+    }
+    return searchViewController.getRoot();
   }
 }
