@@ -14,6 +14,7 @@ public class ViewModelFactory
   private ProfileViewModel profileViewModel;
   private ViewModelState state = null;
   private ViewModelStateUser stateUser = null;
+  private SearchViewModel searchViewModel;
 
   /**
    * @param model a Model variable that we need to create the viewModels
@@ -28,6 +29,7 @@ public class ViewModelFactory
     homeViewModel = new HomeViewModel(model, state);
     adminViewModel = new AdminViewModel(model, state);
     profileViewModel = new ProfileViewModel(model, state, stateUser);
+    searchViewModel = new SearchViewModel(model, state);
   }
 
   /**
@@ -73,4 +75,6 @@ public class ViewModelFactory
    * @see ProfileViewModel
    */
   public ProfileViewModel getProfileViewModel(){ return profileViewModel;}
+
+  public SearchViewModel getSearchViewModel(){ return searchViewModel;}
 }
