@@ -28,6 +28,7 @@ public class SearchViewModel
   public void reset(){
 
     searchList.clear();
+    searchBar.set("");
 
   }
 
