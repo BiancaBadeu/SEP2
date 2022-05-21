@@ -76,5 +76,11 @@ public class ViewModelFactory
    */
   public ProfileViewModel getProfileViewModel(){ return profileViewModel;}
 
+  /**
+   * @return the viewModel
+   *
+   * A getter for the SearchViewModel
+   * @see SearchViewModel
+   */
   public SearchViewModel getSearchViewModel(){ return searchViewModel;}
 }

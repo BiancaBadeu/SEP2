@@ -8,6 +8,9 @@ import model.Movie;
 
 import java.util.ArrayList;
 
+/**
+ *  SearchViewModel class
+ */
 public class SearchViewModel
 {
 
@@ -16,8 +19,12 @@ public class SearchViewModel
   private StringProperty searchBar;
   private ViewModelState state;
 
-
-
+  /**
+   * @param model  model
+   * @param state state
+   *
+   *              SearchViewModel constructor
+   */
   public SearchViewModel(Model model, ViewModelState state)
   {
     this.model = model;
@@ -25,6 +32,9 @@ public class SearchViewModel
     this.state = state;
   }
 
+  /**
+   * Reset method for SearchViewController
+   */
   public void reset(){
 
     searchList.clear();
@@ -32,12 +42,19 @@ public class SearchViewModel
 
   }
 
-
+  /**
+   * @return searchBar contents
+   */
   public StringProperty getSearchBarProperty()
   {
     return searchBar;
   }
 
+  /**
+   * @return searchlist based on the filter criteria (title)
+   *
+   *        Search method for SearchViewController
+   */
   public ObservableList<String> getMoviesWithTitle()
   {
 
@@ -52,6 +69,11 @@ public class SearchViewModel
     return searchList;
   }
 
+  /**
+   * @return searchlist based on the filter criteria (genre)
+   *
+   *       Search method for SearchViewController
+   */
   public ObservableList<String> getMoviesWithGenre()
   {
 
@@ -66,20 +88,12 @@ public class SearchViewModel
     return searchList;
   }
 
-  public ObservableList<String> getMoviesWithDirector()
-  {
-
-
-    for(int i=0; i<model.getAllMovies().size(); i++){
-
-      if(model.getAllMovies().get(i).getDirector().equals(searchBar.get())){
-        searchList.add(model.getAllMovies().get(i).getTitle());
-      }
-    }
-
-    return searchList;
-  }
-
+  /**
+   * @param title title
+   * @return True if a movie was selected from the listview
+   *
+   *       Select method for showDetails in searchViewController
+   */
   public boolean showDetails(String title)
   {
     Movie movie = null;
