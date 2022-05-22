@@ -41,6 +41,7 @@ public class SEPDatabase implements SEPPersistence
    * @param age         the age of the user
    *                    adds user to database
    * @throws SQLException exception
+   * a method that adds a new user to database.
    */
   @Override public void addUser(String name, String phoneNumber,
       String userName, String password, int age) throws SQLException
@@ -51,6 +52,10 @@ public class SEPDatabase implements SEPPersistence
     db.update(sql, name, phoneNumber, userName, password, age);
   }
 
+  /**
+   * @return an array list of all persons in the database.
+   * @throws SQLException
+   */
   @Override public ArrayList<Person> getAllPersons() throws SQLException
   {
     String sql = "select * from sep.person;";
@@ -122,10 +127,20 @@ public class SEPDatabase implements SEPPersistence
     return all;
   }
 
+  @Override public void addReview(String title, int star, String comment)
+      throws SQLException
+  {
+    String sql =
+        "insert into sep.person(movieTitle, rating ,comment, userName)  "
+            + "VALUES (?, ?, ?, ?);";
+    db.update(sql,title,star,comment);
+  }
+
   /**
    * @param userName the username
    * @return a user object
    * @throws SQLException exception
+   * a method that gets a user with that name from the database
    */
   @Override public User getUser(String userName) throws SQLException
   {
@@ -164,7 +179,8 @@ public class SEPDatabase implements SEPPersistence
   }
   /**
    * @param movie adds movie to database
-   * @throws SQLException exception
+   * @throws SQLException exception\
+   * a method that adds the movie to the database.
    */
   @Override public void addMovie(Movie movie) throws SQLException
   {
@@ -179,6 +195,7 @@ public class SEPDatabase implements SEPPersistence
   /**
    * @param movie the movie to be removed
    * @throws SQLException exception
+   * a method that removes the movie from the database.
    */
   @Override public void removeMovie(Movie movie) throws SQLException
   {
@@ -278,6 +295,10 @@ public class SEPDatabase implements SEPPersistence
           }
 
       }
+      if (!getAllReviewForMovie(movie.getTitle()).isEmpty())
+      {
+        movie.setReviews(getAllReviewForMovie(movie.getTitle()));
+      }
       all.add(movie);
     }
     return all;
@@ -287,6 +308,7 @@ public class SEPDatabase implements SEPPersistence
    * @param title the title
    * @return a movie object
    * @throws SQLException exception
+   * a method that returns a movie with that title from the database.
    */
   @Override public Movie getMovieWithTitle(String title) throws SQLException
   {
@@ -330,6 +352,10 @@ public class SEPDatabase implements SEPPersistence
         }
       }
     }
+    if (!getAllReviewForMovie(movie.getTitle()).isEmpty())
+    {
+      movie.setReviews(getAllReviewForMovie(movie.getTitle()));
+    }
       return movie;
   }
 
@@ -338,6 +364,7 @@ public class SEPDatabase implements SEPPersistence
    * @param user the user
    * @param rentedMovie the rented movie
    * @throws SQLException exception
+   * a method that adds a rental to the database.
    */
   @Override public void addRental(Date expirationDate, User user,
       Movie rentedMovie) throws SQLException
@@ -472,6 +499,39 @@ public class SEPDatabase implements SEPPersistence
 
   }
 
+public ArrayList<Review> getAllReviewForMovie(String title) throws SQLException
+{
 
+  String sql = "select r.movieTitle,r.comment,r.rating from sep.reviewsAndRatings r;";
+  ArrayList<Object[]> results = db.query(sql);
+  ArrayList<Review> all = new ArrayList<>();
+
+  for (int i = 0; i < results.size(); i++)
+  {
+    Object[] row = results.get(i);
+
+    Review review = new Review("",0);
+
+    if (title.equals(String.valueOf(row[0]))){
+      for (int j = 0; j < row.length; j++)
+      {
+        switch (j)
+        {
+          case 1:
+            review.setComment(String.valueOf(row[j]));
+            break;
+          case 2:
+            review.setRating(Integer.parseInt((String.valueOf(row[j]))));
+            break;
+          default:
+            break;
+        }
+      }
+      all.add(review);
+    }}
+  return all;
+
+
+}
 
 }

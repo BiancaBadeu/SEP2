@@ -479,8 +479,15 @@ public class ModelManager implements Model
         throw new IllegalArgumentException("Swear words are not allowed!");
       }
     }
-    movieList.getMovieWithTitle(title).addReview(comment, star);
-    //database.addReview(title, star, comment);
+    try
+    {
+      database.addReview(title, star, comment);
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+
   }
 }
 

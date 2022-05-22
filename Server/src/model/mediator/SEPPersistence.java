@@ -79,4 +79,8 @@ public interface SEPPersistence
   User getUser(String userName) throws SQLException;
 
   ArrayList<Person> getAllPersons() throws SQLException;
+
+  void addReview(String title, int star, String comment) throws SQLException;
+
+
 }

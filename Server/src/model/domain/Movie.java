@@ -189,6 +189,10 @@ public class Movie
     this.genres = genres;
   }
 
+  public void setReviews(ArrayList<Review> reviews){
+    this.reviews=reviews;
+  }
+
   /**
    * @return an array list of comments
    * Getter for the comments
