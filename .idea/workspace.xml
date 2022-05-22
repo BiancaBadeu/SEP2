@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="" />
+    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/AllDocumentation/Database Backup/Backup-22-05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/domain/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/SearchViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/SearchViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/mediator/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/MovieViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/viewmodel/MovieViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/SearchViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/viewmodel/SearchViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/domain/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/domain/Review.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/ModelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPPersistence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPPersistence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/Server.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +85,7 @@
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHub\SEP2" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model.domain" />
       <recent name="model.mediator" />
       <recent name="model" />
     </key>

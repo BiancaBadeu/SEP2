@@ -1,11 +1,12 @@
 package model.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * A class representing a movie
+ * Movie class
  */
-public class Movie
+public class Movie implements Serializable
 {
   private String title;
   private String director;
@@ -14,7 +15,7 @@ public class Movie
   private double avgRating;
   private int numberOfReviews;
   private int releaseYear;
-  private String genre;
+  private String genres;
   private ArrayList<Review> reviews;
 
   /**
@@ -23,12 +24,12 @@ public class Movie
    * @param description the description of the movie
    * @param length the length of the movie
    * @param avgRating the average rating of the movie
-   * @param genre the genre of the movie
+   * @param genres the genres of the movie
    * @param reviews the reviews of the movie
    *
    * Constructor for the Movie class
    */
-  public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, String genre, ArrayList<Review> reviews)
+  public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, String genres, ArrayList<Review> reviews)
   {
     this.title = title;
     this.director = director;
@@ -36,7 +37,7 @@ public class Movie
     this.length = length;
     this.releaseYear=releaseYear;
     this.avgRating = avgRating;
-    this.genre = genre;
+    this.genres = genres;
     this.reviews = reviews;
     this.numberOfReviews = reviews.size();
   }
@@ -111,9 +112,9 @@ public class Movie
    *
    * Getter for the genres of the movie
    */
-  public String  getGenre()
+  public String getGenres()
   {
-    return genre;
+    return genres;
   }
 
   /**
@@ -127,7 +128,7 @@ public class Movie
   }
 
   /**
-   * @param title
+   * @param title tht title
    * Setter for the title of the movie
    */
   public void setTitle(String title)
@@ -136,7 +137,7 @@ public class Movie
   }
 
   /**
-   * @param director
+   * @param director the director
    * Setter for the director of the movie
    */
   public void setDirector(String director)
@@ -145,7 +146,7 @@ public class Movie
   }
 
   /**
-   * @param description
+   * @param description the description
    * Setter for the description of the movie
    */
   public void setDescription(String description)
@@ -154,7 +155,7 @@ public class Movie
   }
 
   /**
-   * @param length
+   * @param length the length
    * Setter for the length of the movie
    */
   public void setLength(int length)
@@ -163,7 +164,7 @@ public class Movie
   }
 
   /**
-   * @param avgRating
+   * @param avgRating the average rating
    * Setter for the average rating of the movie
    */
   public void setAvgRating(double avgRating)
@@ -171,9 +172,8 @@ public class Movie
     this.avgRating = avgRating;
   }
 
-
   /**
-   * @param releaseYear
+   * @param releaseYear the release year
    * Setter for the release year of the movie
    */
   public void setReleaseYear(int releaseYear)
@@ -182,12 +182,56 @@ public class Movie
   }
 
   /**
+   * @param genres the genre
+   *  Setter for the genre
+   */
+  public void setGenres(String genres)
+  {
+    this.genres = genres;
+  }
+
+  public void setReviews(ArrayList<Review> reviews){
+    this.reviews=reviews;
+  }
+
+  /**
+   * @return an array list of comments
+   * Getter for the comments
+   */
+  public ArrayList<String> getAllComments()
+  {
+    ArrayList<String> list = new ArrayList<>();
+    for(int i=0;i<reviews.size();i++)
+    {
+      list.add(reviews.get(i).getComment());
+    }
+    return list;
+  }
+
+  /**
    * @return a string representation of the movie
    */
   public String toString()
   {
-    return "" + title;
+    return "" + title+ ", "+director+", "+ description+", "+ length+", "+avgRating+", "+ releaseYear+", "+ genres;
   }
 
+  /**
+   * @param comment the comment
+   * @param stars the rating
+   *            A method to add a review and update the average rating
+   */
+  public void addReview(String comment, int stars)
+  {
+    double oldRating = avgRating;
+    int oldNoOfReviews = numberOfReviews;
 
+    numberOfReviews++;
+    double smth = oldRating * oldNoOfReviews;
+    smth += stars;
+    this.avgRating = smth / (double) numberOfReviews;
+
+    Review review = new Review(comment, stars);
+    reviews.add(review);
+  }
 }

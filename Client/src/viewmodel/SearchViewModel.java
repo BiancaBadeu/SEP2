@@ -78,7 +78,7 @@ public class SearchViewModel
 
     for(int i=0; i<model.getAllMovies().size(); i++){
 
-      if(model.getAllMovies().get(i).getGenre().equals(searchBar.get())){
+      if(model.getAllMovies().get(i).getGenres().equals(searchBar.get())){
         searchList.add(model.getAllMovies().get(i).getTitle());
       }
     }

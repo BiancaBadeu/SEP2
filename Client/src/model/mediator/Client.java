@@ -25,7 +25,7 @@ public class Client implements Model
   {
     try
     {
-      remoteModel = (RemoteModel) Naming.lookup("rmi://localhost:1098/Server");
+      remoteModel = (RemoteModel) Naming.lookup("rmi://localhost:1099/Server");
     }
     catch (Exception e)
     {

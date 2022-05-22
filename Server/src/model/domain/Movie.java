@@ -1,11 +1,12 @@
 package model.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Movie class
  */
-public class Movie
+public class Movie implements Serializable
 {
   private String title;
   private String director;

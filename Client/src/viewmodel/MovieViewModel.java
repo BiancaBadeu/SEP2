@@ -51,7 +51,7 @@ public class MovieViewModel
       this.title = new SimpleStringProperty(selected.getTitle());
       this.length = new SimpleStringProperty(""+selected.getLength());
       this.director = new SimpleStringProperty(selected.getDirector());
-      this.genre = new SimpleStringProperty(selected.getGenre());
+      this.genre = new SimpleStringProperty(selected.getGenres());
       this.description = new SimpleStringProperty(selected.getDescription());
       this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
       this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
@@ -84,7 +84,7 @@ public class MovieViewModel
     this.title.set(""+selected.getTitle());
     this.length.set(""+selected.getLength());
     this.director.set(""+selected.getDirector());
-    this.genre.set(""+selected.getGenre());
+    this.genre.set(""+selected.getGenres());
     this.description.set(""+selected.getDescription());
     this.averageRating.set(""+selected.getAvgRating());
     this.numberOfReviews.set(""+selected.getNumberOfReviews());
