@@ -187,7 +187,7 @@ public class ModelManager implements Model
    */
   @Override public Movie getMovieWithTitle(String title)
   {
-    try
+    /*try
     {
       return database.getMovieWithTitle(title);
     }
@@ -195,6 +195,20 @@ public class ModelManager implements Model
     {
       e.printStackTrace();
     }
+    return null;
+  }
+
+     */
+
+    for(int i=0;i<movieList.getAllMovies().size();i++)
+    {
+      if(movieList.getAllMovies().get(i).getTitle().equals(title))
+      {
+        return movieList.getAllMovies().get(i);
+      }
+    }
+
+
     return null;
   }
 
