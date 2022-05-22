@@ -201,7 +201,6 @@ public class SEPDatabase implements SEPPersistence
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
-      //movie should have movieName, director, length, movieDescription, avgRating, releaseYear
       Movie movie = new Movie("","",0,"",0,0,"", new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
