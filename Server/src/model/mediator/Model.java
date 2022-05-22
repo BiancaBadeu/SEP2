@@ -56,6 +56,12 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @return all the movies
    */
   ArrayList<Movie> getAllMovies();
+
+  /**
+   * @param genre
+   * @return array list of movies for that genre.
+   */
+  ArrayList<Movie> getMoviesWithGenre(String genre);
   /**
    * @param name the person's name
    * @param username the person's username

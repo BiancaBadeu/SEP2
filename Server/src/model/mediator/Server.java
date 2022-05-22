@@ -256,4 +256,10 @@ public class Server implements RemoteModel
       return model.getMovieLike(title);
     }
 
+  @Override public ArrayList<Movie> getMoviesWithGenre(String genre)
+      throws RemoteException
+  {
+    return model.getMoviesWithGenre(genre);
   }
+
+}

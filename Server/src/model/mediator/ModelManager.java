@@ -224,6 +224,19 @@ public class ModelManager implements Model
     return null;
   }
 
+  @Override public ArrayList<Movie> getMoviesWithGenre(String genre)
+  {
+    try
+    {
+      getAllInfo();
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+    return movieList.getMoviesWithGenre(genre);
+  }
+
   /**
    * @param listener the listener to be added
    *                 A method to add a listener
