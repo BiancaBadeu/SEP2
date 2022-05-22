@@ -7,8 +7,8 @@ import javafx.application.Platform;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Model;
-import model.Movie;
+import model.mediator.Model;
+import model.domain.Movie;
 
 /**
  * TopRatedViewModel is a ViewModel for the TopRatedView.

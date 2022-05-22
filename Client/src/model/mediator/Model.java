@@ -1,4 +1,9 @@
-package model;
+package model.mediator;
+
+import model.domain.Movie;
+import model.domain.Rental;
+import model.domain.Review;
+import model.domain.User;
 
 import java.util.ArrayList;
 import java.util.Date;

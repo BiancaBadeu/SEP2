@@ -1,4 +1,4 @@
-package model;
+package model.domain;
 
 /**
  * A class representing an administrator of the system that is an extension from the class Person.

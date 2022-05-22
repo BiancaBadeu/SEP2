@@ -1,9 +1,9 @@
 package model.mediator;
 
-import model.Movie;
-import model.Rental;
-import model.Review;
-import model.User;
+import model.domain.Movie;
+import model.domain.Rental;
+import model.domain.Review;
+import model.domain.User;
 
 import java.rmi.Remote;
 import java.util.ArrayList;

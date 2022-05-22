@@ -41,9 +41,7 @@ public class MovieViewController
   /**
    * A 0 argument empty constructor
    */
-  public MovieViewController()
-  {
-  }
+  public MovieViewController() {}
 
   /**
    * @param viewHandler a ViewHandler variable for control over the GUI

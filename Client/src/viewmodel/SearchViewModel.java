@@ -3,10 +3,8 @@ package viewmodel;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Model;
-import model.Movie;
-
-import java.util.ArrayList;
+import model.mediator.Model;
+import model.domain.Movie;
 
 /**
  *  SearchViewModel class

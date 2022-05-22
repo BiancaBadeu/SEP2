@@ -1,4 +1,4 @@
-package model;
+package model.domain;
 
 /**
  * This class represents a person which can be a user or an admin.

@@ -4,7 +4,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.*;
+import model.domain.Movie;
+import model.mediator.Model;
 
 /**
  * A viewModel class that represents the functionality of the Controller class MovieViewController
@@ -88,6 +89,15 @@ public class MovieViewModel
     this.averageRating.set(""+selected.getAvgRating());
     this.numberOfReviews.set(""+selected.getNumberOfReviews());
 
+    comment.set("");
+    errorLabel.set("");
+
+    comments.clear();
+    for(int i = 0; i < model.getCommentsForMovie(selected).size(); i++)
+    {
+      comments.add(i, String.valueOf(model.getCommentsForMovie(selected).get(i)));
+    }
+
     if(!model.getAllRentals().isEmpty())
     {
       for(int i=0;i<model.getAllRentals().size();i++)
@@ -96,15 +106,6 @@ public class MovieViewModel
           return true;
       }
     }
-
-    comments.clear();
-    for(int i = 0; i < model.getCommentsForMovie(selected).size(); i++)
-    {
-      comments.add(i, String.valueOf(model.getCommentsForMovie(selected).get(i)));
-    }
-
-    comment.set("");
-    errorLabel.set("");
     return false;
   }
 

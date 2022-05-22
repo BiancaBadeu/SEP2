@@ -56,7 +56,6 @@ public class ModelManager implements Model
       }
       this.personList = persons;
     }
-    System.out.println(persons.getPersons());
 
     RentalList rentals = new RentalList();
     if (!database.getAllRentals().isEmpty())
@@ -69,7 +68,6 @@ public class ModelManager implements Model
       }
       this.rentalList = rentals;
     }
-    System.out.println(rentals.getAllRentals());
 
     MovieList movies = new MovieList();
     if (!database.getAllMovies().isEmpty())
@@ -80,7 +78,6 @@ public class ModelManager implements Model
       }
       this.movieList = movies;
     }
-    System.out.println(movies.getAllMovies());
   }
 
   /**
@@ -466,13 +463,11 @@ public class ModelManager implements Model
     {
       if (comment.contains(badwords.get(i)))
       {
-
         throw new IllegalArgumentException("Swear words are not allowed!");
       }
     }
-
-    getMovieWithTitle(title).addReview(comment, star);
-
+    movieList.getMovieWithTitle(title).addReview(comment, star);
+    database.addReview(title, star, comment);
   }
 }
 

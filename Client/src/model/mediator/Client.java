@@ -1,6 +1,9 @@
 package model.mediator;
 
-import model.*;
+import model.domain.Movie;
+import model.domain.Rental;
+import model.domain.Review;
+import model.domain.User;
 
 import java.rmi.Naming;
 import java.util.ArrayList;
@@ -8,7 +11,7 @@ import java.util.Date;
 
 /**
  * A class representing the client. Implements the model
- * @see model.Model;
+ * @see Model ;
  */
 public class Client implements Model
 {

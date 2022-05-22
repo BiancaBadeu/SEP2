@@ -22,6 +22,7 @@
          </font>
       </Label>
       <Button layoutX="320.0" layoutY="414.0" mnemonicParsing="false" onAction="#trendingDetailsPressed" text="View trending movie details" />
-      <Button onAction="#viewProfilePressed" layoutX="362.0" layoutY="539.0" mnemonicParsing="false" text="View profile" />
+      <Button layoutX="362.0" layoutY="539.0" mnemonicParsing="false" onAction="#viewProfilePressed" text="View profile" />
+      <Button layoutX="356.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchPressed" text="Search movies" />
    </children>
 </AnchorPane>

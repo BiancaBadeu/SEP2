@@ -1,12 +1,15 @@
-package model;
-import model.mediator.*;
+package model.mediator;
+import model.domain.Movie;
+import model.domain.Rental;
+import model.domain.Review;
+import model.domain.User;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 /**
  * A class representing a model manager. Implements the model
- * @see model.Model;
+ * @see Model ;
  */
 public class ModelManager implements Model
 {
@@ -189,7 +192,7 @@ public class ModelManager implements Model
    * @param userName the username
    * @return a User variable
    *
-   * A methof to get the user by username (username is unique). Returns null if it does not exist
+   * A method to get the user by username (username is unique). Returns null if it does not exist
    */
   @Override public User getUser(String userName)
   {

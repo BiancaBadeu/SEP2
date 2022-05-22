@@ -214,13 +214,19 @@ public class Movie
   /**
    * @param comment the comment
    * @param stars the rating
-   *            A method to add a review
+   *            A method to add a review and update the average rating
    */
   public void addReview(String comment, int stars)
   {
-    Review review = new Review(comment,stars);
+    double oldRating = avgRating;
+    int oldNoOfReviews = numberOfReviews;
+
+    numberOfReviews++;
+    double smth = oldRating * oldNoOfReviews;
+    smth += stars;
+    this.avgRating = smth / (double) numberOfReviews;
+
+    Review review = new Review(comment, stars);
     reviews.add(review);
   }
-
-
 }

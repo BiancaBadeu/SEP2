@@ -1,6 +1,6 @@
 package viewmodel;
 
-import model.Model;
+import model.mediator.Model;
 
 /**
  * A class representing the model factory for the view models

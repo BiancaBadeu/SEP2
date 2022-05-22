@@ -1,7 +1,7 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
-import model.Model;
-import model.ModelManager;
+import model.mediator.Model;
+import model.mediator.ModelManager;
 import view.ViewHandler;
 import viewmodel.ViewModelFactory;
 
