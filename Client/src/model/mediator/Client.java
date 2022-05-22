@@ -6,6 +6,7 @@ import model.domain.Review;
 import model.domain.User;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -37,7 +38,15 @@ public class Client implements Model
    */
   @Override public ArrayList<Movie> getNotRentedMovies()
   {
-    return remoteModel.getNotRentedMovies();
+    try
+    {
+      return remoteModel.getNotRentedMovies();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return new ArrayList<>();
   }
 
   /**
@@ -46,7 +55,15 @@ public class Client implements Model
    */
   public boolean checkMovieIsRented(String title)
   {
-    return remoteModel.checkMovieIsRented(title);
+    try
+    {
+      return remoteModel.checkMovieIsRented(title);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return false;
   }
 
   /**
@@ -54,7 +71,15 @@ public class Client implements Model
    */
   @Override public ArrayList<Movie> getTop10TopRatedMovies()
   {
-    return remoteModel.getTop10TopRatedMovies();
+    try
+    {
+      return remoteModel.getTop10TopRatedMovies();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return new ArrayList<>();
   }
 
   /**
@@ -62,7 +87,15 @@ public class Client implements Model
    */
   @Override public ArrayList<Movie> getTrendingMovies()
   {
-    return remoteModel.getTrendingMovies();
+    try
+    {
+      return remoteModel.getTrendingMovies();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return new ArrayList<>();
   }
 
   /**
@@ -70,7 +103,15 @@ public class Client implements Model
    */
   @Override public ArrayList<Movie> getAllMovies()
   {
-    return remoteModel.getAllMovies();
+    try
+    {
+      return remoteModel.getAllMovies();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return new ArrayList<>();
   }
 
   /**
@@ -84,7 +125,14 @@ public class Client implements Model
    */
   @Override public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
+    try
+    {
       remoteModel.addPerson(name, username, password, phoneNumber, age, type);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -93,7 +141,14 @@ public class Client implements Model
    */
   @Override public void addMovie(Movie movie)
   {
+    try
+    {
       remoteModel.addMovie(movie);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -102,7 +157,14 @@ public class Client implements Model
    */
   @Override public void removeMovie(Movie movie)
   {
-    remoteModel.removeMovie(movie);
+    try
+    {
+      remoteModel.removeMovie(movie);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -112,7 +174,14 @@ public class Client implements Model
    */
   @Override public void rentMovie(String title, User user)
   {
-    remoteModel.rentMovie(title, user);
+    try
+    {
+      remoteModel.rentMovie(title, user);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -123,7 +192,14 @@ public class Client implements Model
    */
   @Override public void addRental(Movie movie, Date expirationDate, User user)
   {
-    remoteModel.addRental(movie, expirationDate, user);
+    try
+    {
+      remoteModel.addRental(movie, expirationDate, user);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -131,7 +207,15 @@ public class Client implements Model
    */
   @Override public ArrayList<Rental> getAllRentals()
   {
-    return remoteModel.getAllRentals();
+    try
+    {
+      return remoteModel.getAllRentals();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return new ArrayList<>();
   }
 
   /**
@@ -141,7 +225,14 @@ public class Client implements Model
    */
   @Override public void login(String username, String password)
   {
-    remoteModel.login(username, password);
+    try
+    {
+      remoteModel.login(username, password);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -154,7 +245,14 @@ public class Client implements Model
    */
   @Override public void createUser(String name, String userName, String password, String phoneNumber, String age)
   {
+    try
+    {
       remoteModel.createUser(name, userName, password, phoneNumber, age);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -164,7 +262,15 @@ public class Client implements Model
    */
   @Override public String checkPerson(String name, String password)
   {
-    return remoteModel.checkPerson(name, password);
+    try
+    {
+      return remoteModel.checkPerson(name, password);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return "";
   }
 
   /**
@@ -174,7 +280,14 @@ public class Client implements Model
    */
   @Override public void cancelRental(String title, User user)
   {
-    remoteModel.cancelRental(title, user);
+    try
+    {
+      remoteModel.cancelRental(title, user);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -183,7 +296,15 @@ public class Client implements Model
    */
   @Override public User getUser(String username)
   {
-    return remoteModel.getUser(username);
+    try
+    {
+      return remoteModel.getUser(username);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return null;
   }
 
   /**
@@ -192,7 +313,15 @@ public class Client implements Model
    */
   @Override public boolean validateAddMovie(String title)
   {
-    return remoteModel.validateAddMovie(title);
+    try
+    {
+      return remoteModel.validateAddMovie(title);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return false;
   }
 
   /**
@@ -201,7 +330,15 @@ public class Client implements Model
    */
   public Movie getMovieWithTitle(String title)
   {
+    try
+    {
       return remoteModel.getMovieWithTitle(title);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return null;
   }
 
   /**
@@ -211,7 +348,15 @@ public class Client implements Model
    */
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
-    return remoteModel.getRentalsWithUser(user);
+    try
+    {
+      return remoteModel.getRentalsWithUser(user);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return new ArrayList<>();
   }
 
   /**
@@ -221,7 +366,15 @@ public class Client implements Model
    */
   @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
   {
-    return remoteModel.getCommentsForMovie(movie);
+    try
+    {
+      return remoteModel.getCommentsForMovie(movie);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return new ArrayList<>();
   }
 
   /**
@@ -232,6 +385,13 @@ public class Client implements Model
    */
   @Override public void leaveReview(String comment, int rating, String title)
   {
-    remoteModel.leaveReview(comment, rating, title);
+    try
+    {
+      remoteModel.leaveReview(comment, rating, title);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 }

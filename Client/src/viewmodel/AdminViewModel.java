@@ -124,11 +124,15 @@ public class AdminViewModel
    */
   public ObservableList<String> getNotRentedMovies()
   {
-    for (int i = 0; i < model.getNotRentedMovies().size(); i++)
+    if(!model.getNotRentedMovies().isEmpty())
     {
-      notRentedMovies.add(model.getNotRentedMovies().get(i).toString());
+      for (int i = 0; i < model.getNotRentedMovies().size(); i++)
+      {
+        notRentedMovies.add(model.getNotRentedMovies().get(i).toString());
+      }
+      return notRentedMovies;
     }
-    return notRentedMovies;
+    return null;
   }
 
   /**

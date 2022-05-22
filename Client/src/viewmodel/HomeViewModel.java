@@ -57,11 +57,15 @@ public class HomeViewModel implements PropertyChangeListener
    */
   public ObservableList<String> getTopRatedMovies()
   {
-    for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
+    if(!model.getTop10TopRatedMovies().isEmpty())
     {
-      topRatedList.add(model.getTop10TopRatedMovies().get(i).toString());
+      for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
+      {
+        topRatedList.add(model.getTop10TopRatedMovies().get(i).toString());
+      }
+      return topRatedList;
     }
-    return topRatedList;
+    return null;
   }
 
   /**
@@ -71,11 +75,15 @@ public class HomeViewModel implements PropertyChangeListener
    */
   public ObservableList<String> getTrendingMovies()
   {
-    for (int i = 0; i < model.getTrendingMovies().size(); i++)
+    if(!model.getTrendingMovies().isEmpty())
     {
-      trendingList.add(model.getTrendingMovies().get(i).toString());
+      for (int i = 0; i < model.getTrendingMovies().size(); i++)
+      {
+        trendingList.add(model.getTrendingMovies().get(i).toString());
+      }
+      return trendingList;
     }
-    return trendingList;
+    return null;
   }
 
   /**
