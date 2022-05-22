@@ -480,7 +480,7 @@ public class ModelManager implements Model
       }
     }
     movieList.getMovieWithTitle(title).addReview(comment, star);
-    database.addReview(title, star, comment);
+    //database.addReview(title, star, comment);
   }
 }
 

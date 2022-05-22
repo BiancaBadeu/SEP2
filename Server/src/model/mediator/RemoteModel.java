@@ -22,7 +22,7 @@ public interface RemoteModel extends Remote
   /**
    * @return an array list containing the movies that are not rented
    */
-  ArrayList<Movie> getNotRentedMovies();
+  ArrayList<Movie> getNotRentedMovies() throws RemoteException;
 
   /**
    * @param title the title of the movie
