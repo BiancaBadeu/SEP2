@@ -5,18 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/MovieViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/MovieList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/RemoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/MyApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/RemoteModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/AdminViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/HomeViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/MovieViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/ProfileViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/StartViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/view/ViewHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/AdminViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/HomeViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/MovieViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ProfileViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/StartViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ViewModelFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ViewModelState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/ViewModelStateUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,17 +63,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/MyDatabase-1.0 (1).jar" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/Client" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="model.mediator" />
@@ -106,8 +112,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientMain" />
         <item itemvalue="Application.ServerMain" />
+        <item itemvalue="Application.ClientMain" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +138,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
