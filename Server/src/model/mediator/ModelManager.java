@@ -240,14 +240,6 @@ public class ModelManager implements Model
 
   @Override public ArrayList<Movie> getMoviesWithGenre(String genre)
   {
-    try
-    {
-      getAllInfo();
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
     return movieList.getMoviesWithGenre(genre);
   }
 
