@@ -134,4 +134,13 @@ public abstract class Person
     this.age = age;
   }
 
+  /**
+   * @return a string representation of the person
+   */
+  @Override public String toString()
+  {
+    return "name='" + name + '\'' + ", userName='" + userName + '\''
+        + ", phoneNumber='" + phoneNumber + '\'' + ", password='" + password
+        + '\'' + ", age=" + age + ", type='" + type + '\'' + '}';
+  }
 }

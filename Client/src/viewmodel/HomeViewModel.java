@@ -42,12 +42,12 @@ public class HomeViewModel implements PropertyChangeListener
     topRatedList.clear();
     for(int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
     {
-      topRatedList.add(i, String.valueOf(model.getTop10TopRatedMovies().get(i)));
+      topRatedList.add(i,model.getTop10TopRatedMovies().get(i).getTitle());
     }
     trendingList.clear();
     for(int i = 0; i < model.getTrendingMovies().size(); i++)
     {
-      trendingList.add(i, String.valueOf(model.getTrendingMovies().get(i)));
+      trendingList.add(i, model.getTrendingMovies().get(i).getTitle());
     }
   }
 
@@ -61,7 +61,7 @@ public class HomeViewModel implements PropertyChangeListener
     {
       for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
       {
-        topRatedList.add(model.getTop10TopRatedMovies().get(i).toString());
+        topRatedList.add(model.getTop10TopRatedMovies().get(i).getTitle());
       }
       return topRatedList;
     }
@@ -79,7 +79,7 @@ public class HomeViewModel implements PropertyChangeListener
     {
       for (int i = 0; i < model.getTrendingMovies().size(); i++)
       {
-        trendingList.add(model.getTrendingMovies().get(i).toString());
+        trendingList.add(model.getTrendingMovies().get(i).getTitle());
       }
       return trendingList;
     }

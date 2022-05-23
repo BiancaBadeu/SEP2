@@ -90,7 +90,7 @@ public class SearchViewController
   @FXML private void detailsPressed()
   {
     boolean details= viewModel.showDetails(list.getFocusModel().getFocusedItem());
-
+    System.out.println("details is" + details);
     if(details){viewHandler.openView("movie");}
   }
 

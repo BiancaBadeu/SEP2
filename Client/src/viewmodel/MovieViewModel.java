@@ -51,22 +51,24 @@ public class MovieViewModel
       this.title = new SimpleStringProperty(selected.getTitle());
       this.length = new SimpleStringProperty(""+selected.getLength());
       this.director = new SimpleStringProperty(selected.getDirector());
+      this.releaseYear = new SimpleStringProperty(""+selected.getReleaseYear());
       this.genre = new SimpleStringProperty(selected.getGenres());
       this.description = new SimpleStringProperty(selected.getDescription());
       this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
       this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
-      this.releaseYear = new SimpleStringProperty(""+selected.getReleaseYear());
+
     }
     else
     {
       this.title = new SimpleStringProperty();
       this.length = new SimpleStringProperty();
       this.director = new SimpleStringProperty();
+      this.releaseYear = new SimpleStringProperty();
       this.genre = new SimpleStringProperty();
       this.description = new SimpleStringProperty();
       this.averageRating = new SimpleStringProperty();
       this.numberOfReviews = new SimpleStringProperty();
-      this.releaseYear = new SimpleStringProperty();
+
     }
     this.comment = new SimpleStringProperty();
     this.errorLabel = new SimpleStringProperty();
@@ -84,6 +86,7 @@ public class MovieViewModel
     this.title.set(""+selected.getTitle());
     this.length.set(""+selected.getLength());
     this.director.set(""+selected.getDirector());
+    this.releaseYear.set(""+selected.getReleaseYear());
     this.genre.set(""+selected.getGenres());
     this.description.set(""+selected.getDescription());
     this.averageRating.set(""+selected.getAvgRating());
@@ -91,6 +94,7 @@ public class MovieViewModel
 
     comment.set("");
     errorLabel.set("");
+    star.set("");
 
     comments.clear();
     for(int i = 0; i < model.getReviewsForMovie(selected).size(); i++)

@@ -23,7 +23,7 @@ public class SEPDatabase implements SEPPersistence
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "ladubuleve39";
+  private static final String PASSWORD = "Perfect@gamer333";
 
   /**
    * Empty constructor which initializes the db and connects the database
@@ -394,7 +394,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
 
-      Rental rental = new Rental(null, null, null);
+      Rental rental = new Rental(new Date(), new Movie("","",0,"",0.0, 0, "", new ArrayList<>()), new User("","","","",0));
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -523,7 +523,7 @@ public class SEPDatabase implements SEPPersistence
             review.setComment(String.valueOf(row[j]));
             break;
           case 2:
-            review.setRating(Double.parseDouble(String.valueOf(row[j])));
+            review.setRating(Integer.parseInt(String.valueOf(row[j])));
             break;
           default:
             break;

@@ -1,11 +1,12 @@
 package model.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * This class represents a rental.
  */
-public class Rental
+public class Rental implements Serializable
 {
   private Date expirationDate;
   private User user;

@@ -1,9 +1,11 @@
 package model.domain;
 
+import java.io.Serializable;
+
 /**
  * This class represents a user.
  */
-public class User extends Person
+public class User extends Person implements Serializable
 {
 
   /**

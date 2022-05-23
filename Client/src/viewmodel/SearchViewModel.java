@@ -1,5 +1,6 @@
 package viewmodel;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,17 +28,17 @@ public class SearchViewModel
   {
     this.model = model;
     this.searchList = FXCollections.observableArrayList();
+    this.searchBar = new SimpleStringProperty();
     this.state = state;
   }
 
   /**
    * Reset method for SearchViewController
    */
-  public void reset(){
-
+  public void reset()
+  {
     searchList.clear();
     searchBar.set("");
-
   }
 
   /**
@@ -55,15 +56,15 @@ public class SearchViewModel
    */
   public ObservableList<String> getMoviesWithTitle()
   {
-
-
-    for(int i=0; i<model.getAllMovies().size(); i++){
-
-      if(model.getAllMovies().get(i).getTitle().contains(searchBar.get())){
-        searchList.add(model.getAllMovies().get(i).getTitle());
+    searchList.clear();
+    for(int i=0; i<model.getAllMovies().size(); i++)
+    {
+      String title = model.getAllMovies().get(i).getTitle();
+      if(title.contains(searchBar.get()))
+      {
+        searchList.add(title);
       }
     }
-
     return searchList;
   }
 
@@ -74,15 +75,15 @@ public class SearchViewModel
    */
   public ObservableList<String> getMoviesWithGenre()
   {
-
-
-    for(int i=0; i<model.getAllMovies().size(); i++){
-
-      if(model.getAllMovies().get(i).getGenres().equals(searchBar.get())){
-        searchList.add(model.getAllMovies().get(i).getTitle());
+    searchList.clear();
+    for(int i=0; i<model.getAllMovies().size(); i++)
+    {
+      String genre = model.getAllMovies().get(i).getGenres();
+      String title = model.getAllMovies().get(i).getTitle();
+      if(genre.equals(searchBar.get())){
+        searchList.add(title);
       }
     }
-
     return searchList;
   }
 
@@ -95,8 +96,6 @@ public class SearchViewModel
   public boolean showDetails(String title)
   {
     Movie movie = null;
-
-
       for (int i = 0; i < model.getAllMovies().size(); i++)
       {
         if (model.getAllMovies().get(i).getTitle().equals(title))
@@ -104,8 +103,7 @@ public class SearchViewModel
           movie = model.getAllMovies().get(i);
         }
       }
-
-
+    System.out.println(movie);
     if (movie != null)
     {
       state.setMovie(movie);

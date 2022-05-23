@@ -1,9 +1,11 @@
 package model.domain;
 
+import java.io.Serializable;
+
 /**
  * Review class
  */
-public class Review
+public class Review implements Serializable
 {
 
   private String comment;
@@ -38,5 +40,28 @@ public class Review
     return rating;
   }
 
+  /**
+   * @param comment the comment
+   */
+  public void setComment(String comment)
+  {
+    this.comment = comment;
+  }
+
+  /**
+   * @param rating the rating
+   */
+  public void setRating(int rating)
+  {
+    this.rating = rating;
+  }
+
+  /**
+   * @return a string representation of the class
+   */
+  public String toString()
+  {
+    return rating + " stars. " + comment;
+  }
 
 }

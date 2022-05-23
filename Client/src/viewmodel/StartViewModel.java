@@ -159,8 +159,7 @@ public class StartViewModel
   {
     try{
       model.login(usernameLogin.get(), passwordLogin.get());
-     // userState.setUser(model.getUser(usernameLogin.get()));
-      System.out.println("user state is not the problem");
+      userState.setUser(model.getUser(usernameLogin.get()));
       return true;
     }
     catch(Exception e)

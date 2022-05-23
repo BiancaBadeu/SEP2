@@ -21,14 +21,7 @@ public class MovieViewController
   @FXML private Label averageRating;
   @FXML private TextArea comment;
   @FXML private Label numberOfReviews;
-  @FXML private Button star0;
-  @FXML private Button star1;
-  @FXML private Button star2;
-  @FXML private Button star3;
-  @FXML private Button star4;
-  @FXML private Button star5;
   @FXML private Label star;
-  @FXML private Button reviewButton;
   @FXML private ListView<String> comments;
   @FXML private Label errorLabel;
   @FXML private Button rentButton;
@@ -72,14 +65,7 @@ public class MovieViewController
     cancelButton.setDisable(true);
 
     comments.setItems(viewModel.getComments());
-    star.textProperty().bind(viewModel.getStarProperty());
-    star0.setDisable(false);
-    star1.setDisable(false);
-    star2.setDisable(false);
-    star3.setDisable(false);
-    star4.setDisable(false);
-    star5.setDisable(false);
-    reviewButton.setDisable(false);
+    star.textProperty().bindBidirectional(viewModel.getStarProperty());
   }
 
   /**
@@ -179,11 +165,6 @@ public class MovieViewController
   @FXML private void star0Pressed()
   {
     this.star.setText("0");
-    star1.setDisable(true);
-    star2.setDisable(true);
-    star3.setDisable(true);
-    star4.setDisable(true);
-    star5.setDisable(true);
   }
 
   /**
@@ -193,11 +174,6 @@ public class MovieViewController
   @FXML private void star1Pressed()
   {
     this.star.setText("1");
-    star0.setDisable(true);
-    star2.setDisable(true);
-    star3.setDisable(true);
-    star4.setDisable(true);
-    star5.setDisable(true);
   }
 
   /**
@@ -207,11 +183,6 @@ public class MovieViewController
   @FXML private void star2Pressed()
   {
     this.star.setText("2");
-    star1.setDisable(true);
-    star0.setDisable(true);
-    star3.setDisable(true);
-    star4.setDisable(true);
-    star5.setDisable(true);
   }
 
   /**
@@ -221,11 +192,6 @@ public class MovieViewController
   @FXML private void star3Pressed()
   {
     this.star.setText("3");
-    star1.setDisable(true);
-    star2.setDisable(true);
-    star0.setDisable(true);
-    star4.setDisable(true);
-    star5.setDisable(true);
   }
 
   /**
@@ -235,11 +201,6 @@ public class MovieViewController
   @FXML private void star4Pressed()
   {
     this.star.setText("4");
-    star1.setDisable(true);
-    star2.setDisable(true);
-    star3.setDisable(true);
-    star0.setDisable(true);
-    star5.setDisable(true);
   }
 
   /**
@@ -249,10 +210,5 @@ public class MovieViewController
   @FXML private void star5Pressed()
   {
     this.star.setText("5");
-    star1.setDisable(true);
-    star2.setDisable(true);
-    star3.setDisable(true);
-    star4.setDisable(true);
-    star0.setDisable(true);
   }
 }

@@ -128,7 +128,7 @@ public class AdminViewModel
     {
       for (int i = 0; i < model.getNotRentedMovies().size(); i++)
       {
-        notRentedMovies.add(model.getNotRentedMovies().get(i).toString());
+        notRentedMovies.add(model.getNotRentedMovies().get(i).getTitle());
       }
       return notRentedMovies;
     }
@@ -160,7 +160,7 @@ public class AdminViewModel
     notRentedMovies.clear();
     for (int i = 0; i < model.getNotRentedMovies().size(); i++)
     {
-      notRentedMovies.add(i, String.valueOf(model.getNotRentedMovies().get(i)));
+      notRentedMovies.add(i, model.getNotRentedMovies().get(i).getTitle());
     }
 
     title.set("");

@@ -1,11 +1,12 @@
 package model.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * This class represents a rental.
  */
-public class Rental
+public class Rental implements Serializable
 {
   private Date expirationDate;
   private User user;
@@ -13,7 +14,7 @@ public class Rental
 
   /**
    * @param expirationDate the expiration date of the rental
-   * @param user the user who rented the movie
+   * //@param user the user who rented the movie
    * @param rentedMovie the movie rented
    *
    * Constructor for the rental class.
@@ -94,4 +95,12 @@ public class Rental
     this.rentedMovie = rentedMovie;
   }
 
+  /**
+   * @return a string representation of the rental
+   */
+  @Override public String toString()
+  {
+    return "Rental{" + "expirationDate=" + expirationDate + ", user=" + user
+        + ", rentedMovie=" + rentedMovie + '}';
+  }
 }

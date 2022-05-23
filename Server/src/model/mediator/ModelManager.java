@@ -42,41 +42,47 @@ public class ModelManager implements Model
    */
   public void getAllInfo() throws SQLException
   {
-    PersonList persons = new PersonList();
-    if (!database.getAllPersons().isEmpty())
+    MovieList movies = new MovieList();
+    ArrayList<Movie> dbMovies = database.getAllMovies();
+    if (!dbMovies.isEmpty())
     {
-      for (int i = 0; i < database.getAllPersons().size(); i++)
+      for (int i = 0; i < dbMovies.size(); i++)
       {
-        persons.addPerson(database.getAllPersons().get(i).getName(),
-            database.getAllPersons().get(i).getUserName(),
-            database.getAllPersons().get(i).getPassword(),
-            database.getAllPersons().get(i).getPhoneNumber(),
-            database.getAllPersons().get(i).getAge(),
-            database.getAllPersons().get(i).getType());
+        movies.addMovie(dbMovies.get(i));
+      }
+      this.movieList = movies;
+      System.out.println(movieList.getAllMovies());
+    }
+
+    PersonList persons = new PersonList();
+    ArrayList<Person> dbPersons = database.getAllPersons();
+    if (!dbPersons.isEmpty())
+    {
+      for (int i = 0; i < dbPersons.size(); i++)
+      {
+        persons.addPerson(dbPersons.get(i).getName(),
+            dbPersons.get(i).getUserName(),
+            dbPersons.get(i).getPassword(),
+            dbPersons.get(i).getPhoneNumber(),
+            dbPersons.get(i).getAge(),
+            dbPersons.get(i).getType());
       }
       this.personList = persons;
+      System.out.println(personList.getPersons());
     }
 
     RentalList rentals = new RentalList();
-    if (!database.getAllRentals().isEmpty())
+    ArrayList<Rental> dbRentals = database.getAllRentals();
+    if (!dbRentals.isEmpty())
     {
-      for (int i = 0; i < database.getAllRentals().size(); i++)
+      for (int i = 0; i < dbRentals.size(); i++)
       {
-        rentals.addRental(database.getAllRentals().get(i).getRentedMovie(),
-            database.getAllRentals().get(i).getExpirationDate(),
-            database.getAllRentals().get(i).getUser());
+        rentals.addRental(dbRentals.get(i).getRentedMovie(),
+            dbRentals.get(i).getExpirationDate(),
+            dbRentals.get(i).getUser());
       }
       this.rentalList = rentals;
-    }
-
-    MovieList movies = new MovieList();
-    if (!database.getAllMovies().isEmpty())
-    {
-      for (int i = 0; i < database.getAllMovies().size(); i++)
-      {
-        movies.addMovie(database.getAllMovies().get(i));
-      }
-      this.movieList = movies;
+      System.out.println(rentalList.getAllRentals());
     }
   }
 
@@ -108,7 +114,7 @@ public class ModelManager implements Model
       Movie toCheck = getAllMovies().get(i);
       for(int j=0; j<getAllRentals().size() && deleted == 0;j++)
       {
-        if(toCheck.equals(getAllRentals().get(i).getRentedMovie()))
+        if(toCheck.equals(getAllRentals().get(j).getRentedMovie()))
         {
           allMovies.remove(toCheck);
           deleted = 1;
@@ -187,19 +193,6 @@ public class ModelManager implements Model
    */
   @Override public Movie getMovieWithTitle(String title)
   {
-    /*try
-    {
-      return database.getMovieWithTitle(title);
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
-    return null;
-  }
-
-     */
-
     for(int i=0;i<movieList.getAllMovies().size();i++)
     {
       if(movieList.getAllMovies().get(i).getTitle().equals(title))
@@ -207,8 +200,6 @@ public class ModelManager implements Model
         return movieList.getAllMovies().get(i);
       }
     }
-
-
     return null;
   }
 
@@ -227,15 +218,7 @@ public class ModelManager implements Model
    */
   public ArrayList<Movie> getAllMovies()
   {
-    try
-    {
-      return database.getAllMovies();
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
-    return null;
+    return movieList.getAllMovies();
   }
 
   @Override public ArrayList<Movie> getMoviesWithGenre(String genre)
@@ -247,9 +230,7 @@ public class ModelManager implements Model
    * @param listener the listener to be added
    *                 A method to add a listener
    */
-  @Override public void addListener(PropertyChangeListener listener)
-  {
-  }
+  @Override public void addListener(PropertyChangeListener listener) {}
 
   /**
    * @param movie          the movie to be rented
@@ -274,15 +255,7 @@ public class ModelManager implements Model
    */
   @Override public ArrayList<Rental> getAllRentals()
   {
-    try
-    {
-      return database.getAllRentals();
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
-    return null;
+    return rentalList.getAllRentals();
   }
 
   /**
@@ -292,8 +265,8 @@ public class ModelManager implements Model
    */
   @Override public void cancelRental(String title, User user)
   {
-
     rentalList.removeRental(title, user);
+    //TODO: this should also call the database when changed
   }
 
   /**
@@ -302,15 +275,7 @@ public class ModelManager implements Model
    */
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
-    try
-    {
-      return database.getRentalsWithUser(user);
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
-    return rentalList.getRentalsWithUser(user);
+    return  rentalList.getRentalsWithUser(user);
   }
 /*
 --For the next sprint :)
@@ -324,9 +289,7 @@ public class ModelManager implements Model
    * @param listener the listener to be removed
    *                 A method to remove a listener
    */
-  public void removeListener(PropertyChangeListener listener)
-  {
-  }
+  public void removeListener(PropertyChangeListener listener) {}
 
   /**
    * @param title a String variable representing the title of a movie
@@ -339,6 +302,8 @@ public class ModelManager implements Model
     long rentalDate = System.currentTimeMillis() + (86400 * 7 * 1000);
     Date expirationDate = new Date(rentalDate);
     addRental(movieList.getMovieWithTitle(title), expirationDate, user);
+
+    // TODO: should also call the database since is adding a rental
   }
 
   /**
@@ -384,6 +349,7 @@ public class ModelManager implements Model
     {
       database.addUser(name, phoneNumber, userName, password,
           Integer.parseInt(age));
+      // TODO: this should also change in the model
     }
     catch (SQLException e)
     {
@@ -418,10 +384,19 @@ public class ModelManager implements Model
    */
   @Override public User getUser(String userName)
   {
+    User user = new User("", "", "", "", 0);
     for(int i=0;i<personList.getPersons().size();i++)
     {
-      if(userName.equals(personList.getPersons().get(i).getUserName()))
-        return (User) personList.getPersons().get(i);
+      Person person = personList.getPersons().get(i);
+      if(userName.equals(person.getUserName()))
+      {
+        user.setName(person.getName());
+        user.setUserName(person.getUserName());
+        user.setPassword(person.getPassword());
+        user.setPhoneNumber(person.getPhoneNumber());
+        user.setAge(person.getAge());
+        return user;
+      }
     }
     return null;
   }
@@ -432,7 +407,6 @@ public class ModelManager implements Model
    */
   @Override public boolean validateAddMovie(String title)
   {
-
     for (int i = 0; i < movieList.getAllMovies().size(); i++)
     {
       if (movieList.getAllMovies().get(i).getTitle().equals(title))
@@ -488,6 +462,7 @@ public class ModelManager implements Model
     try
     {
       database.addReview(title, star, comment, user);
+      // TODO: should also change in the model
     }
     catch (SQLException e)
     {
