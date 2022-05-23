@@ -79,6 +79,7 @@ public interface SEPPersistence
 
   void addReview(String title, int star, String comment, String user) throws SQLException;
 
+  void updateAvgRating(double avgRating, String title) throws SQLException;
 
 
 }

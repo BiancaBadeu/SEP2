@@ -23,7 +23,7 @@ public class SEPDatabase implements SEPPersistence
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "Perfect@gamer333";
+  private static final String PASSWORD = "1234567890";
 
   /**
    * Empty constructor which initializes the db and connects the database
@@ -352,6 +352,12 @@ public class SEPDatabase implements SEPPersistence
       return movie;
   }
 
+  @Override public void updateAvgRating(double avgRating, String title) throws SQLException
+  {
+    String sql = "update sep.movies set avgRating = ? WHERE movieName=?;";
+    db.update(sql, avgRating, title);
+  }
+
   /**
    * @param expirationDate the date the rental expires
    * @param user the user
@@ -513,7 +519,7 @@ public class SEPDatabase implements SEPPersistence
             review.setComment(String.valueOf(row[j]));
             break;
           case 2:
-            review.setRating(Double.parseDouble(String.valueOf(row[j])));
+            review.setRating(Integer.parseInt(String.valueOf(row[j])));
             break;
           default:
             break;

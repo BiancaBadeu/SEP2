@@ -170,6 +170,15 @@ public class Movie implements Serializable
   public void setAvgRating(double avgRating)
   {
     this.avgRating = avgRating;
+    /*
+    if(!reviews.isEmpty()){
+    double sum=avgRating;
+    for (int i=0; i<reviews.size();i++){
+      sum=sum+reviews.get(i).getRating();
+    }
+    sum= sum/numberOfReviews;
+    this.avgRating= sum;
+    }*/
   }
 
   /**
