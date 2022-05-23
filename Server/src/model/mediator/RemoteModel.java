@@ -131,7 +131,7 @@ public interface RemoteModel extends Remote
    * @param rating the rating
    * @param title the title
    */
-  void leaveReview(String comment, int rating, String title)throws RemoteException;
+  void leaveReview(String comment, int rating, String title, String user)throws RemoteException;
 
   /**
    * @param title the title of the movie

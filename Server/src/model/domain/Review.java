@@ -7,7 +7,7 @@ public class Review
 {
 
   private String comment;
-  private int rating;
+  private double rating;
 
   /**
    * @param comment the comment to set
@@ -15,7 +15,7 @@ public class Review
    *
    * Constructor for Review
    */
-  public Review(String comment, int rating){
+  public Review(String comment, double rating){
     this.comment = comment;
     this.rating = rating;
   }
@@ -34,16 +34,22 @@ public class Review
    *
    * Getter for rating
    */
-  public int getRating(){
+  public double getRating(){
     return rating;
   }
 
+  /**
+   * @param comment
+   */
   public void setComment(String comment)
   {
     this.comment = comment;
   }
 
-  public void setRating(int rating)
+  /**
+   * @param rating
+   */
+  public void setRating(double rating)
   {
     this.rating = rating;
   }

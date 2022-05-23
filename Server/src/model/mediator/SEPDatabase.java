@@ -127,14 +127,7 @@ public class SEPDatabase implements SEPPersistence
     return all;
   }
 
-  @Override public void addReview(String title, int star, String comment)
-      throws SQLException
-  {
-    String sql =
-        "insert into sep.person(movieTitle, rating ,comment, userName)  "
-            + "VALUES (?, ?, ?, ?);";
-    db.update(sql,title,star,comment);
-  }
+
 
   /**
    * @param userName the username
@@ -245,6 +238,10 @@ public class SEPDatabase implements SEPPersistence
             break;
         }
       }
+      if (!getAllReviewForMovie(movie.getTitle()).isEmpty())
+      {
+        movie.setReviews(getAllReviewForMovie(movie.getTitle()));
+      }
       top.add(movie);
     }
     return top;
@@ -351,10 +348,6 @@ public class SEPDatabase implements SEPPersistence
           }
         }
       }
-    }
-    if (!getAllReviewForMovie(movie.getTitle()).isEmpty())
-    {
-      movie.setReviews(getAllReviewForMovie(movie.getTitle()));
     }
       return movie;
   }
@@ -499,7 +492,7 @@ public class SEPDatabase implements SEPPersistence
 
   }
 
-public ArrayList<Review> getAllReviewForMovie(String title) throws SQLException
+  public ArrayList<Review> getAllReviewForMovie(String title) throws SQLException
 {
 
   String sql = "select r.movieTitle,r.comment,r.rating from sep.reviewsAndRatings r;";
@@ -509,7 +502,6 @@ public ArrayList<Review> getAllReviewForMovie(String title) throws SQLException
   for (int i = 0; i < results.size(); i++)
   {
     Object[] row = results.get(i);
-
     Review review = new Review("",0);
 
     if (title.equals(String.valueOf(row[0]))){
@@ -521,7 +513,7 @@ public ArrayList<Review> getAllReviewForMovie(String title) throws SQLException
             review.setComment(String.valueOf(row[j]));
             break;
           case 2:
-            review.setRating(Integer.parseInt((String.valueOf(row[j]))));
+            review.setRating(Double.parseDouble(String.valueOf(row[j])));
             break;
           default:
             break;
@@ -530,8 +522,15 @@ public ArrayList<Review> getAllReviewForMovie(String title) throws SQLException
       all.add(review);
     }}
   return all;
-
-
 }
 
+
+  @Override public void addReview(String title, int star, String comment, String user)
+      throws SQLException
+  {
+    String sql =
+        "insert into sep.reviewsAndRatings(movieTitle, rating ,comment, userName)  "
+            + "VALUES (?, ?, ?, ?);";
+    db.update(sql,title,star,comment,user);
+  }
 }

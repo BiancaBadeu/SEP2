@@ -466,7 +466,7 @@ public class ModelManager implements Model
    * @param title   the title of the movie
    *                A method to leave a review
    */
-  @Override public void leaveReview(String comment, int star, String title)
+  @Override public void leaveReview(String comment, int star, String title, String user)
   {
     ArrayList<String> badwords = new ArrayList<>();
 
@@ -495,7 +495,7 @@ public class ModelManager implements Model
     }
     try
     {
-      database.addReview(title, star, comment);
+      database.addReview(title, star, comment, user);
     }
     catch (SQLException e)
     {
@@ -503,5 +503,7 @@ public class ModelManager implements Model
     }
 
   }
+
+
 }
 

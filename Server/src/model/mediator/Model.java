@@ -2,6 +2,7 @@ package model.mediator;
 
 import model.domain.Movie;
 import model.domain.Rental;
+import model.domain.Review;
 import model.domain.User;
 import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 
@@ -168,6 +169,9 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param title the title of the movie
    *              A method to leave a review
    */
-  void leaveReview(String comment, int star, String title);
+  void leaveReview(String comment, int star, String title, String user);
+
+  //void addReview(String comment, int stars);
+
 }
 

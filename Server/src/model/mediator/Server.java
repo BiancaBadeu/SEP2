@@ -245,9 +245,9 @@ public class Server implements RemoteModel
      * @param rating  the rating
      * @param title the title
      */
-    @Override public void leaveReview (String comment,int rating, String title) throws RemoteException
+    @Override public void leaveReview (String comment,int rating, String title, String user) throws RemoteException
     {
-      model.leaveReview(comment, rating, title);
+      model.leaveReview(comment, rating, title, user);
     }
 
   /**

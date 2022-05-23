@@ -1,9 +1,6 @@
 package model.mediator;
 
-import model.domain.Movie;
-import model.domain.Person;
-import model.domain.Rental;
-import model.domain.User;
+import model.domain.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -22,13 +19,13 @@ public interface SEPPersistence
    *                    adds user to database
    * @throws SQLException exception
    */
-  void addUser(String name, String phoneNumber, String userName, String password, int age) throws SQLException; //update Person (maybe user and admin too)to match database
+  void addUser(String name, String phoneNumber, String userName, String password, int age) throws SQLException;
 
   /**
    * @param movie adds movie to database
    * @throws SQLException exception
    */
-  void addMovie(Movie movie) throws SQLException; // update movie to match database
+  void addMovie(Movie movie) throws SQLException; 
   /**
    * @param movie the movie to be removed
    * @throws SQLException exception
@@ -80,7 +77,8 @@ public interface SEPPersistence
 
   ArrayList<Person> getAllPersons() throws SQLException;
 
-  void addReview(String title, int star, String comment) throws SQLException;
+  void addReview(String title, int star, String comment, String user) throws SQLException;
+
 
 
 }
