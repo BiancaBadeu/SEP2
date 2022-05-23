@@ -265,17 +265,11 @@ public class MovieList
 
   /**
    * @param movie the movie
-   * @return an array list with the comments of the movie
-   *            A method to return the comments of a movie
+   * @return an array list with the reviews of the movie
+   *            A method to return the reviews of a movie
    */
-  public ArrayList<String> getCommentsForMovie(Movie movie)
+  public ArrayList<Review> getReviewsForMovie(Movie movie)
   {
-    ArrayList<String> list= new ArrayList<>();
-    for(int i=0;i<movies.size();i++)
-    {
-      if(movies.get(i).equals(movie))
-        list = movies.get(i).getAllComments();
-    }
-    return list;
+    return movie.getReviews();
   }
 }

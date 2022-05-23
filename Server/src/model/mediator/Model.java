@@ -59,7 +59,7 @@ public interface Model extends UnnamedPropertyChangeSubject
   ArrayList<Movie> getAllMovies();
 
   /**
-   * @param genre
+   * @param genre the genre
    * @return array list of movies for that genre.
    */
   ArrayList<Movie> getMoviesWithGenre(String genre);
@@ -161,7 +161,7 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param movie the movie
    * @return an array list of the comments for the movie
    */
-  ArrayList<String> getCommentsForMovie(Movie movie);
+  ArrayList<Review> getReviewsForMovie(Movie movie);
 
   /**
    * @param comment the comment

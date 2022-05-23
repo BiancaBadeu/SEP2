@@ -23,7 +23,7 @@ public class SEPDatabase implements SEPPersistence
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "1234567890";
+  private static final String PASSWORD = "Perfect@gamer333";
 
   /**
    * Empty constructor which initializes the db and connects the database
@@ -54,7 +54,7 @@ public class SEPDatabase implements SEPPersistence
 
   /**
    * @return an array list of all persons in the database.
-   * @throws SQLException
+   * @throws SQLException exception
    */
   @Override public ArrayList<Person> getAllPersons() throws SQLException
   {
@@ -347,6 +347,10 @@ public class SEPDatabase implements SEPPersistence
               break;
           }
         }
+      }
+      if (!getAllReviewForMovie(movie.getTitle()).isEmpty())
+      {
+        movie.setReviews(getAllReviewForMovie(movie.getTitle()));
       }
     }
       return movie;

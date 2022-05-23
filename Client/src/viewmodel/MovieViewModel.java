@@ -93,9 +93,9 @@ public class MovieViewModel
     errorLabel.set("");
 
     comments.clear();
-    for(int i = 0; i < model.getCommentsForMovie(selected).size(); i++)
+    for(int i = 0; i < model.getReviewsForMovie(selected).size(); i++)
     {
-      comments.add(i, String.valueOf(model.getCommentsForMovie(selected).get(i)));
+      comments.add(i, String.valueOf(model.getReviewsForMovie(selected).get(i)));
     }
 
     if(!model.getAllRentals().isEmpty())
@@ -184,9 +184,9 @@ public class MovieViewModel
   {
     Movie selected = state.getSelectedMovie();
 
-    for (int i = 0; i < model.getCommentsForMovie(selected).size(); i++)
+    for (int i = 0; i < model.getReviewsForMovie(selected).size(); i++)
     {
-      comments.add(model.getCommentsForMovie(selected).get(i).toString());
+      comments.add(model.getReviewsForMovie(selected).get(i).toString());
     }
     return comments;
   }
@@ -241,7 +241,7 @@ public class MovieViewModel
   {
     try
     {
-      model.leaveReview(comment.get(), Integer.parseInt(star.get()), title.get());
+      model.leaveReview(comment.get(), Integer.parseInt(star.get()), title.get(), userState.getUser().getUserName());
       return true;
     }
     catch (Exception e)

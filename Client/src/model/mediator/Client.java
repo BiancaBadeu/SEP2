@@ -364,11 +364,11 @@ public class Client implements Model
    *
    * @return the movie's comments
    */
-  @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
+  @Override public ArrayList<Review> getReviewsForMovie(Movie movie)
   {
     try
     {
-      return remoteModel.getCommentsForMovie(movie);
+      return remoteModel.getReviewsForMovie(movie);
     }
     catch (RemoteException e)
     {
@@ -381,13 +381,14 @@ public class Client implements Model
    * @param comment the comment
    * @param rating the rating
    * @param title the title
+   * @param user the username
    *              A method to leave a review
    */
-  @Override public void leaveReview(String comment, int rating, String title)
+  @Override public void leaveReview(String comment, int rating, String title, String user)
   {
     try
     {
-      remoteModel.leaveReview(comment, rating, title);
+      remoteModel.leaveReview(comment, rating, title, user);
     }
     catch (RemoteException e)
     {

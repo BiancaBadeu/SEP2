@@ -1,10 +1,8 @@
 package model.mediator;
 
-import model.domain.Movie;
-import model.domain.Rental;
-import model.domain.Review;
-import model.domain.User;
+import model.domain.*;
 
+import java.rmi.AlreadyBoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -17,26 +15,33 @@ public interface RemoteModel extends Remote
 {
 
   /**
+   * A method to start the server
+   */
+  void startServer() throws RemoteException, AlreadyBoundException;
+
+  /**
    * @return an array list containing the movies that are not rented
    */
   ArrayList<Movie> getNotRentedMovies() throws RemoteException;
+
   /**
    * @param title the title of the movie
    * @return a boolean true if the movie is rented, false if it isn't
    */
   boolean checkMovieIsRented(String title) throws RemoteException;
+
   /**
    * @return the top 10 top-rated movies
    */
-    ArrayList<Movie> getTop10TopRatedMovies() throws RemoteException;
+  ArrayList<Movie> getTop10TopRatedMovies()throws RemoteException;
   /**
    * @return the trending movies
    */
-    ArrayList<Movie> getTrendingMovies() throws RemoteException;
+  ArrayList<Movie> getTrendingMovies()throws RemoteException;
   /**
    * @return all movies
    */
-    ArrayList<Movie> getAllMovies() throws RemoteException;
+  ArrayList<Movie> getAllMovies()throws RemoteException;
   /**
    * @param name the name of the person
    * @param username the username of the person
@@ -46,38 +51,38 @@ public interface RemoteModel extends Remote
    * @param type the type of the person (user, admin)
    *             A method to add a person
    */
-    void addPerson(String name, String username, String password, String phoneNumber, int age, String type) throws RemoteException;
+  void addPerson(String name, String username, String password, String phoneNumber, int age, String type)throws RemoteException;
   /**
    * @param movie the movie to be added
    */
-    void addMovie(Movie movie) throws RemoteException;
+  void addMovie(Movie movie)throws RemoteException;
   /**
    * @param movie the movie to be removed
    */
-    void removeMovie(Movie movie) throws RemoteException;
+  void removeMovie(Movie movie)throws RemoteException;
   /**
    * @param title the title of the movie
    * @param user the user
    *             A method to rent a movie
    */
-  void rentMovie(String title, User user) throws RemoteException;
+  void rentMovie(String title, User user)throws RemoteException;
   /**
    * @param movie the movie to be rented
    * @param expirationDate the date the rental expires
    * @param user the user renting
    *             A method to add a rental
    */
-  void addRental(Movie movie, Date expirationDate, User user) throws RemoteException;
+  void addRental(Movie movie, Date expirationDate, User user)throws RemoteException;
   /**
    * @return all rentals
    */
-  ArrayList<Rental> getAllRentals() throws RemoteException;
+  ArrayList<Rental> getAllRentals()throws RemoteException;
   /**
    * @param username the username
    * @param password the password
    *                 A method to login
    */
-  void login(String username, String password) throws RemoteException;
+  void login(String username, String password)throws RemoteException;
   /**
    * @param name the name of the user
    * @param userName the username of the user
@@ -86,51 +91,66 @@ public interface RemoteModel extends Remote
    * @param age the age of the user
    *            A method to create a user
    */
-  void createUser(String name, String userName, String password, String phoneNumber, String age) throws RemoteException;
+  void createUser(String name, String userName, String password, String phoneNumber, String age)throws RemoteException;
   /**
    * @param name the name of the person
    * @param password the password of the person
    * @return the type of the person (user, admin)
    */
-  String checkPerson(String name, String password) throws RemoteException;
+  String checkPerson(String name, String password)throws RemoteException;
   /**
    * @param title the title of the movie
    * @param user the user
    *             A method to cancel a rental
    */
-  void cancelRental(String title, User user) throws RemoteException;
+  void cancelRental(String title, User user)throws RemoteException;
   /**
    * @param username the username of the user
    * @return the user
    */
-  User getUser(String username) throws RemoteException;
+  User getUser(String username)throws RemoteException;
   /**
    * @param title the title of the movie
    * @return the movie with that title (title is unique)
    */
-  Movie getMovieWithTitle(String title) throws RemoteException;
+  Movie getMovieWithTitle(String title)throws RemoteException;
   /**
    * @param title the title of the movie
    * @return a boolean value
    */
-  boolean validateAddMovie(String title) throws RemoteException;
+  boolean validateAddMovie(String title)throws RemoteException;
 
   /**
    * @param user the user
    * @return the user's rentals
    */
-  ArrayList<Rental> getRentalsWithUser(User user) throws RemoteException;
-
-  /**
-   * @param movie the movie
-   * @return the movie's comments
-   */
-  ArrayList<Review> getCommentsForMovie(Movie movie) throws RemoteException;
+  ArrayList<Rental> getRentalsWithUser(User user)throws RemoteException;
 
   /**
    * @param comment the comment
    * @param rating the rating
    * @param title the title
    */
-  void leaveReview(String comment, int rating, String title) throws RemoteException;
+  void leaveReview(String comment, int rating, String title, String user)throws RemoteException;
+
+  /**
+   * @param title the title of the movie
+   * @return an array list with the movies that contain that title
+   *
+   */
+  ArrayList<Movie> getMovieLike(String title) throws RemoteException;
+
+  /**
+   * @param genre the genre
+   * @return an array list with the movies that are from that genre
+   * @throws RemoteException exception
+   */
+  ArrayList<Movie> getMoviesWithGenre(String genre) throws RemoteException;
+
+
+  /**
+   * @param movie the movie
+   * @return the movie's comments
+   */
+  ArrayList<Review> getReviewsForMovie(Movie movie) throws RemoteException;
 }

@@ -447,9 +447,9 @@ public class ModelManager implements Model
    * @param movie the movie
    * @return an array list with the comments for the movie
    */
-  public ArrayList<String> getCommentsForMovie(Movie movie)
+  public ArrayList<Review> getReviewsForMovie(Movie movie)
   {
-    return movieList.getCommentsForMovie(movie);
+    return movieList.getReviewsForMovie(movie);
   }
 
   /**

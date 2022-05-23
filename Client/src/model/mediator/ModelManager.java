@@ -221,19 +221,20 @@ public class ModelManager implements Model
    * @param movie a movie
    * @return the comments for a given movie
    */
-  @Override public ArrayList<Review> getCommentsForMovie(Movie movie)
+  @Override public ArrayList<Review> getReviewsForMovie(Movie movie)
   {
-    return client.getCommentsForMovie(movie);
+    return client.getReviewsForMovie(movie);
   }
 
   /**
    * @param comment a comment
    * @param rating  a rating
    * @param title   title of the movie
+   * @param user the username
    *                A method that creates a review for a movie
    */
-  @Override public void leaveReview(String comment, int rating, String title){
+  @Override public void leaveReview(String comment, int rating, String title, String user){
 
-    client.leaveReview(comment, rating, title);
+    client.leaveReview(comment, rating, title, user);
   }
 }

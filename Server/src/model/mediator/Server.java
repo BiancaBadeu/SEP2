@@ -2,6 +2,7 @@ package model.mediator;
 
 import model.domain.Movie;
 import model.domain.Rental;
+import model.domain.Review;
 import model.domain.User;
 
 import java.rmi.AlreadyBoundException;
@@ -235,9 +236,9 @@ public class Server implements RemoteModel
      * @param movie the movie
      * @return the movie's comments
      */
-    @Override public ArrayList<String> getCommentsForMovie (Movie movie) throws RemoteException
+    @Override public ArrayList<Review> getReviewsForMovie (Movie movie) throws RemoteException
     {
-      return model.getCommentsForMovie(movie);
+      return model.getReviewsForMovie(movie);
     }
 
     /**

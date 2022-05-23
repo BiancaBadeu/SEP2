@@ -135,13 +135,14 @@ public interface Model
    * @param movie a movie
    * @return the comments for the given movie
    */
-  ArrayList<Review> getCommentsForMovie(Movie movie);
+  ArrayList<Review> getReviewsForMovie(Movie movie);
 
   /**
    * @param comment a comment
    * @param star a rating
    * @param title title of the movie
+   * @param user the username
    *              A method that creates a review for a movie
    */
-  void leaveReview(String comment, int star, String title);
+  void leaveReview(String comment, int star, String title, String user);
 }

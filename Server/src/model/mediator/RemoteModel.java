@@ -141,9 +141,9 @@ public interface RemoteModel extends Remote
   ArrayList<Movie> getMovieLike(String title) throws RemoteException;
 
   /**
-   * @param genre
+   * @param genre the genre
    * @return an array list with the movies that are from that genre
-   * @throws RemoteException
+   * @throws RemoteException exception
    */
   ArrayList<Movie> getMoviesWithGenre(String genre) throws RemoteException;
 
@@ -152,5 +152,5 @@ public interface RemoteModel extends Remote
  * @param movie the movie
  * @return the movie's comments
  */
-  ArrayList<String> getCommentsForMovie(Movie movie) throws RemoteException;
+  ArrayList<Review> getReviewsForMovie(Movie movie) throws RemoteException;
 }
