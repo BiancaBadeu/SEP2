@@ -5,7 +5,11 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.domain.Movie;
+import model.domain.Rental;
+import model.domain.Review;
 import model.mediator.Model;
+
+import java.util.ArrayList;
 
 /**
  * A viewModel class that represents the functionality of the Controller class MovieViewController
@@ -97,16 +101,18 @@ public class MovieViewModel
     star.set("");
 
     comments.clear();
-    for(int i = 0; i < model.getReviewsForMovie(selected).size(); i++)
+    ArrayList<Review> reviews = model.getReviewsForMovie(selected);
+    for(int i = 0; i < reviews.size(); i++)
     {
-      comments.add(i, String.valueOf(model.getReviewsForMovie(selected).get(i)));
+      comments.add(i, String.valueOf(reviews.get(i)));
     }
 
-    if(!model.getAllRentals().isEmpty())
+    ArrayList<Rental> rentals = model.getAllRentals();
+    if(!rentals.isEmpty())
     {
-      for(int i=0;i<model.getAllRentals().size();i++)
+      for(int i=0;i<rentals.size();i++)
       {
-        if(model.getAllRentals().get(i).getRentedMovie().equals(selected))
+        if(rentals.get(i).getRentedMovie().equals(selected))
           return true;
       }
     }
@@ -187,10 +193,11 @@ public class MovieViewModel
   public ObservableList<String> getComments()
   {
     Movie selected = state.getSelectedMovie();
-
-    for (int i = 0; i < model.getReviewsForMovie(selected).size(); i++)
+    comments.clear();
+    ArrayList<Review> reviews = model.getReviewsForMovie(selected);
+    for (int i = 0; i < reviews.size(); i++)
     {
-      comments.add(model.getReviewsForMovie(selected).get(i).toString());
+      comments.add(reviews.get(i).toString());
     }
     return comments;
   }

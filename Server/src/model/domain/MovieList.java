@@ -41,15 +41,23 @@ public class MovieList
   public ArrayList<Movie> getTop10TopRatedMovies()
   {
     ArrayList<Movie> topRatedMovies = new ArrayList<>();
-    double topRating = 5.0;
-    while (topRating >= 0 && topRatedMovies.size() < 10)
+
+    double highRating = 0;
+    int index = -1;
+    for(int t = 0;t<10;t++)
     {
-      for (int i = 0; i < movies.size(); i++)
+      for (int i = t; i < movies.size(); i++)
       {
-        if (movies.get(i).getAvgRating() == topRating && topRatedMovies.size() < 10)
-          topRatedMovies.add(movies.get(i));
+        if (movies.get(i).getAvgRating() > highRating)
+        {
+          highRating = movies.get(i).getAvgRating();
+          index = i;
+        }
       }
-      topRating = topRating - 0.1;
+      Movie tempMovie = movies.get(t);
+      movies.set(t, movies.get(index));
+      movies.set(index, tempMovie);
+      topRatedMovies.add(movies.get(t));
     }
     return topRatedMovies;
   }

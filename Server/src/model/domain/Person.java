@@ -1,9 +1,11 @@
 package model.domain;
 
+import java.io.Serializable;
+
 /**
  * This class represents a person which can be a user or an admin.
  */
-public abstract class Person
+public abstract class Person implements Serializable
 {
 
   private String name;

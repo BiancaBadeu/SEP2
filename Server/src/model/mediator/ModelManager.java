@@ -462,6 +462,7 @@ public class ModelManager implements Model
     try
     {
       database.addReview(title, star, comment, user);
+      movieList.getMovieWithTitle(title).addReview(comment,star);
       // TODO: should also change in the model
     }
     catch (SQLException e)

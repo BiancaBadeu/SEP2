@@ -39,14 +39,14 @@ public class AdminViewModel
     this.state = state;
     this.notRentedMovies = FXCollections.observableArrayList();
 
-    this.title = new SimpleStringProperty();
-    this.length = new SimpleStringProperty();
-    this.director = new SimpleStringProperty();
-    this.genre = new SimpleStringProperty();
-    this.description = new SimpleStringProperty();
-    this.avgRating = new SimpleStringProperty();
-    this.error = new SimpleStringProperty();
-    this.releaseYear = new SimpleStringProperty();
+    this.title = new SimpleStringProperty("");
+    this.length = new SimpleStringProperty("");
+    this.director = new SimpleStringProperty("");
+    this.genre = new SimpleStringProperty("");
+    this.description = new SimpleStringProperty("");
+    this.avgRating = new SimpleStringProperty("");
+    this.error = new SimpleStringProperty("");
+    this.releaseYear = new SimpleStringProperty("");
   }
 
   /**

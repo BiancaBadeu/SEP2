@@ -13,7 +13,6 @@ public class Movie implements Serializable
   private String description;
   private int length;
   private double avgRating;
-  private int numberOfReviews;
   private int releaseYear;
   private String genres;
   private ArrayList<Review> reviews;
@@ -39,7 +38,6 @@ public class Movie implements Serializable
     this.avgRating = avgRating;
     this.genres = genres;
     this.reviews = reviews;
-    this.numberOfReviews = reviews.size();
   }
 
   /**
@@ -105,7 +103,7 @@ public class Movie implements Serializable
    *
    * Getter for the number of reviews of the movie
    */
-  public int getNumberOfReviews(){return numberOfReviews;}
+  public int getNumberOfReviews(){return reviews.size();}
 
   /**
    * @return the genres of the movie
@@ -199,7 +197,8 @@ public class Movie implements Serializable
     this.genres = genres;
   }
 
-  public void setReviews(ArrayList<Review> reviews){
+  public void setReviews(ArrayList<Review> reviews)
+  {
     this.reviews=reviews;
   }
 
@@ -233,14 +232,13 @@ public class Movie implements Serializable
   public void addReview(String comment, int stars)
   {
     double oldRating = avgRating;
-    int oldNoOfReviews = numberOfReviews;
-
-    numberOfReviews++;
-    double smth = oldRating * oldNoOfReviews;
-    smth += stars;
-    this.avgRating = smth / (double) numberOfReviews;
+    int oldNoOfReviews = reviews.size();
 
     Review review = new Review(comment, stars);
     reviews.add(review);
+
+    double smth = oldRating * oldNoOfReviews;
+    smth += stars;
+    this.avgRating = smth / (double) reviews.size();
   }
 }
