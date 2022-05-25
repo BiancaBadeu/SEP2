@@ -267,6 +267,7 @@ public class ModelManager implements Model
   {
     rentalList.removeRental(title, user);
     //TODO: this should also call the database when changed
+
   }
 
   /**
@@ -303,7 +304,14 @@ public class ModelManager implements Model
     Date expirationDate = new Date(rentalDate);
     addRental(movieList.getMovieWithTitle(title), expirationDate, user);
 
-    // TODO: should also call the database since is adding a rental
+    try
+    {
+      database.addRental(expirationDate,user, getMovieWithTitle(title));
+    }
+    catch (SQLException e)
+    {
+      throw new RuntimeException(e);
+    }
   }
 
   /**
@@ -345,11 +353,11 @@ public class ModelManager implements Model
       if (personList.getPersons().get(i).getUserName().equals(userName))
         throw new IllegalStateException("Username already exists!");
     }
+    personList.addPerson(name, userName, password, phoneNumber, Integer.parseInt(age), "user");
     try
     {
       database.addUser(name, phoneNumber, userName, password,
           Integer.parseInt(age));
-      // TODO: this should also change in the model
     }
     catch (SQLException e)
     {
@@ -459,11 +467,11 @@ public class ModelManager implements Model
         throw new IllegalArgumentException("Swear words are not allowed!");
       }
     }
+    movieList.getMovieWithTitle(title).addReview(comment,star);
+
     try
     {
       database.addReview(title, star, comment, user);
-      movieList.getMovieWithTitle(title).addReview(comment,star);
-      // TODO: should also change in the model
     }
     catch (SQLException e)
     {

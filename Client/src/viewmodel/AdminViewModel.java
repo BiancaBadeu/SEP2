@@ -25,7 +25,6 @@ public class AdminViewModel
   private StringProperty error;
   private StringProperty releaseYear;
 
-
   private ObservableList<String> notRentedMovies;
 
   /**
@@ -53,7 +52,10 @@ public class AdminViewModel
    * @return the release year property
    * Getter for the release year property.
    */
-  public StringProperty getReleaseYearProperty() {return releaseYear;}
+  public StringProperty getReleaseYearProperty()
+  {
+    return releaseYear;
+  }
 
   /**
    * @return The title property.
@@ -124,7 +126,7 @@ public class AdminViewModel
    */
   public ObservableList<String> getNotRentedMovies()
   {
-    if(!model.getNotRentedMovies().isEmpty())
+    if (!model.getNotRentedMovies().isEmpty())
     {
       for (int i = 0; i < model.getNotRentedMovies().size(); i++)
       {
@@ -141,15 +143,16 @@ public class AdminViewModel
    */
   public void reset()
   {
-    if (addMovie())
+    if (addMovie() || editMovie())
     {
-      Movie newMovie = new Movie(title.get(), director.get(), Integer.parseInt(length.get()), description.get(),
-          Double.parseDouble(avgRating.get()), Integer.parseInt(releaseYear.get()),
-          genre.get(), new ArrayList<>());
+      Movie newMovie = new Movie(title.get(), director.get(),
+          Integer.parseInt(length.get()), description.get(),
+          Double.parseDouble(avgRating.get()),
+          Integer.parseInt(releaseYear.get()), genre.get(), new ArrayList<>());
 
-      for(int i=0; i<model.getNotRentedMovies().size(); i++)
+      for (int i = 0; i < model.getNotRentedMovies().size(); i++)
       {
-        if(newMovie.equals(model.getNotRentedMovies().get(i)))
+        if (newMovie.equals(model.getNotRentedMovies().get(i)))
         {
           model.removeMovie(model.getNotRentedMovies().get(i));
         }
@@ -170,6 +173,7 @@ public class AdminViewModel
     avgRating.set("");
     error.set("");
     releaseYear.set("");
+    genre.set("");
   }
 
   /**
@@ -179,9 +183,9 @@ public class AdminViewModel
   public boolean addMovie()
   {
 
-    if (title.get().isEmpty() || length.get().isEmpty() || director.get().isEmpty()
-        || description.get().isEmpty() || avgRating.get().isEmpty()
-        || releaseYear.get().isEmpty())
+    if (title.get().isEmpty() || length.get().isEmpty() || director.get()
+        .isEmpty() || description.get().isEmpty() || avgRating.get().isEmpty()
+        || releaseYear.get().isEmpty() || genre.get().isEmpty())
     {
       error.set("Please fill in all fields.");
       return false;
@@ -194,7 +198,6 @@ public class AdminViewModel
   /**
    * @param title the title of the movie
    * @return a boolean variable
-   *
    * A method to see if we can edit the movie. Return true if everything is ok.
    */
   public boolean getEdit(String title)
@@ -210,39 +213,40 @@ public class AdminViewModel
 
   /**
    * @param focusedItem the movie selected from the list
-   *
-   * A method to get the movie's information and store it into the text fields, so that the admin can edit them. It also removes the
+   *                    A method to get the movie's information and store it into the text fields, so that the admin can edit them. It also removes the
    *                    movie from the movie list, to be added later when the edit is done
    */
   public void getMovieToEdit(String focusedItem)
   {
-    for (int i = 0; i < model.getNotRentedMovies().size(); i++)
+    ArrayList<Movie> movies = model.getNotRentedMovies();
+    for (int i = 0; i < movies.size(); i++)
     {
-      if (model.getNotRentedMovies().get(i).getTitle().equals(focusedItem))
+      if (movies.get(i).getTitle().equals(focusedItem))
       {
 
-        this.title.set(model.getNotRentedMovies().get(i).getTitle());
-        this.length.set(
-            Integer.toString(model.getNotRentedMovies().get(i).getLength()));
-        this.director.set(model.getNotRentedMovies().get(i).getDirector());
-        this.description.set(model.getNotRentedMovies().get(i).getDescription());
-        this.avgRating.set(
-            Double.toString(model.getNotRentedMovies().get(i).getAvgRating()));
-        this.releaseYear.set(Integer.toString(model.getNotRentedMovies().get(i).getReleaseYear()));
-        model.removeMovie(model.getNotRentedMovies().get(i));
+        this.title.set(movies.get(i).getTitle());
+        this.length.set(Integer.toString(movies.get(i).getLength()));
+        this.director.set(movies.get(i).getDirector());
+        this.description.set(movies.get(i).getDescription());
+        this.avgRating.set(Double.toString(movies.get(i).getAvgRating()));
+        this.releaseYear.set(Integer.toString(movies.get(i).getReleaseYear()));
+        this.genre.set(movies.get(i).getGenres());
+        model.removeMovie(movies.get(i));
+
       }
     }
   }
 
   /**
    * @return a boolean value if we can edit the movie
-   *
    * A method to see if we can edit the movie. Return true if everything is ok.
    */
   public boolean editMovie()
   {
-    if (title.getValue().isEmpty() || length.getValue().isEmpty() || director.getValue()
-        .isEmpty() || description.getValue().isEmpty() || avgRating.getValue().isEmpty() || releaseYear.getValue().isEmpty())
+    if (title.getValue().isEmpty() || length.getValue().isEmpty()
+        || director.getValue().isEmpty() || description.getValue().isEmpty()
+        || avgRating.getValue().isEmpty() || releaseYear.getValue().isEmpty()
+        || genre.getValue().isEmpty())
     {
       error.set("Please fill in all fields.");
       return false;
@@ -254,17 +258,16 @@ public class AdminViewModel
   /**
    * @param focusedItem the movie selected from the list
    * @return a boolean value if we can remove the movie
-   *
    * A method that removes the movie from the movie list. Returns true if everything went ok.
    */
   public boolean removeMovie(String focusedItem)
   {
-
-    for (int i = 0; i < model.getNotRentedMovies().size(); i++)
+    ArrayList<Movie> movies = model.getNotRentedMovies();
+    for (int i = 0; i < movies.size(); i++)
     {
-      if (model.getNotRentedMovies().get(i).getTitle().equals(focusedItem))
+      if (movies.get(i).getTitle().equals(focusedItem))
       {
-        model.removeMovie(model.getNotRentedMovies().get(i));
+        model.removeMovie(movies.get(i));
         return true;
       }
     }

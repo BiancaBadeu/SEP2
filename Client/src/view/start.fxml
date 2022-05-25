@@ -43,7 +43,7 @@
                   <PasswordField fx:id="passwordSignup" maxWidth="200.0" promptText="password" />
                   <TextField fx:id="age" maxWidth="100.0" promptText="age" />
                   <Label fx:id="errorSignup" maxWidth="200.0" text="error" textFill="RED" />
-                  <Button mnemonicParsing="false" onAction="#signupPressed" prefHeight="35.0" prefWidth="80.0" text="Sing up" />
+                  <Button mnemonicParsing="false" onAction="#signupPressed" prefHeight="35.0" prefWidth="80.0" text="Sign up" />
                </children>
             </VBox>
          </children>
