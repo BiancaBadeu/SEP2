@@ -161,10 +161,7 @@ public class AdminViewModel
     }
 
     notRentedMovies.clear();
-    for (int i = 0; i < model.getNotRentedMovies().size(); i++)
-    {
-      notRentedMovies.add(i, model.getNotRentedMovies().get(i).getTitle());
-    }
+    getNotRentedMovies();
 
     title.set("");
     length.set("");

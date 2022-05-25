@@ -61,10 +61,8 @@ public class ModelManager implements Model
       for (int i = 0; i < dbPersons.size(); i++)
       {
         persons.addPerson(dbPersons.get(i).getName(),
-            dbPersons.get(i).getUserName(),
-            dbPersons.get(i).getPassword(),
-            dbPersons.get(i).getPhoneNumber(),
-            dbPersons.get(i).getAge(),
+            dbPersons.get(i).getUserName(), dbPersons.get(i).getPassword(),
+            dbPersons.get(i).getPhoneNumber(), dbPersons.get(i).getAge(),
             dbPersons.get(i).getType());
       }
       this.personList = persons;
@@ -78,8 +76,7 @@ public class ModelManager implements Model
       for (int i = 0; i < dbRentals.size(); i++)
       {
         rentals.addRental(dbRentals.get(i).getRentedMovie(),
-            dbRentals.get(i).getExpirationDate(),
-            dbRentals.get(i).getUser());
+            dbRentals.get(i).getExpirationDate(), dbRentals.get(i).getUser());
       }
       this.rentalList = rentals;
       System.out.println(rentalList.getAllRentals());
@@ -99,6 +96,7 @@ public class ModelManager implements Model
       String phoneNumber, int age, String type)
   {
     personList.addPerson(name, username, password, phoneNumber, age, type);
+
   }
 
   /**
@@ -108,13 +106,13 @@ public class ModelManager implements Model
   {
     int deleted = 0;
     ArrayList<Movie> allMovies = getAllMovies();
-    for(int i=0;i<getAllMovies().size();i++)
+    for (int i = 0; i < getAllMovies().size(); i++)
     {
       deleted = 0;
       Movie toCheck = getAllMovies().get(i);
-      for(int j=0; j<getAllRentals().size() && deleted == 0;j++)
+      for (int j = 0; j < getAllRentals().size() && deleted == 0; j++)
       {
-        if(toCheck.equals(getAllRentals().get(j).getRentedMovie()))
+        if (toCheck.equals(getAllRentals().get(j).getRentedMovie()))
         {
           allMovies.remove(toCheck);
           deleted = 1;
@@ -141,6 +139,7 @@ public class ModelManager implements Model
    */
   public void addMovie(Movie movie)
   {
+    movieList.addMovie(movie);
     try
     {
       database.addMovie(movie);
@@ -157,16 +156,16 @@ public class ModelManager implements Model
    */
   @Override public void removeMovie(Movie movie)
   {
+    movieList.removeMovie(movie);
+    try
     {
-      try
-      {
-        database.removeMovie(movie);
-      }
-      catch (SQLException e)
-      {
-        e.printStackTrace();
-      }
+      database.removeMovie(movie);
     }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
+
   }
 
   /**
@@ -193,11 +192,12 @@ public class ModelManager implements Model
    */
   @Override public Movie getMovieWithTitle(String title)
   {
-    for(int i=0;i<movieList.getAllMovies().size();i++)
+    ArrayList<Movie> movies = movieList.getAllMovies();
+    for (int i = 0; i <movies.size(); i++)
     {
-      if(movieList.getAllMovies().get(i).getTitle().equals(title))
+      if (movies.get(i).getTitle().equals(title))
       {
-        return movieList.getAllMovies().get(i);
+        return movies.get(i);
       }
     }
     return null;
@@ -230,7 +230,9 @@ public class ModelManager implements Model
    * @param listener the listener to be added
    *                 A method to add a listener
    */
-  @Override public void addListener(PropertyChangeListener listener) {}
+  @Override public void addListener(PropertyChangeListener listener)
+  {
+  }
 
   /**
    * @param movie          the movie to be rented
@@ -239,6 +241,7 @@ public class ModelManager implements Model
    */
   @Override public void addRental(Movie movie, Date expirationDate, User user)
   {
+    rentalList.addRental(movie, expirationDate, user);
     try
     {
       database.addRental(expirationDate, user, movie);
@@ -276,7 +279,7 @@ public class ModelManager implements Model
    */
   @Override public ArrayList<Rental> getRentalsWithUser(User user)
   {
-    return  rentalList.getRentalsWithUser(user);
+    return rentalList.getRentalsWithUser(user);
   }
 /*
 --For the next sprint :)
@@ -290,7 +293,9 @@ public class ModelManager implements Model
    * @param listener the listener to be removed
    *                 A method to remove a listener
    */
-  public void removeListener(PropertyChangeListener listener) {}
+  public void removeListener(PropertyChangeListener listener)
+  {
+  }
 
   /**
    * @param title a String variable representing the title of a movie
@@ -302,11 +307,11 @@ public class ModelManager implements Model
   {
     long rentalDate = System.currentTimeMillis() + (86400 * 7 * 1000);
     Date expirationDate = new Date(rentalDate);
-    addRental(movieList.getMovieWithTitle(title), expirationDate, user);
+    rentalList.addRental(movieList.getMovieWithTitle(title), expirationDate, user);
 
     try
     {
-      database.addRental(expirationDate,user, getMovieWithTitle(title));
+      database.addRental(expirationDate, user, getMovieWithTitle(title));
     }
     catch (SQLException e)
     {
@@ -353,7 +358,8 @@ public class ModelManager implements Model
       if (personList.getPersons().get(i).getUserName().equals(userName))
         throw new IllegalStateException("Username already exists!");
     }
-    personList.addPerson(name, userName, password, phoneNumber, Integer.parseInt(age), "user");
+    personList.addPerson(name, userName, password, phoneNumber,
+        Integer.parseInt(age), "user");
     try
     {
       database.addUser(name, phoneNumber, userName, password,
@@ -393,10 +399,10 @@ public class ModelManager implements Model
   @Override public User getUser(String userName)
   {
     User user = new User("", "", "", "", 0);
-    for(int i=0;i<personList.getPersons().size();i++)
+    for (int i = 0; i < personList.getPersons().size(); i++)
     {
       Person person = personList.getPersons().get(i);
-      if(userName.equals(person.getUserName()))
+      if (userName.equals(person.getUserName()))
       {
         user.setName(person.getName());
         user.setUserName(person.getUserName());
@@ -415,9 +421,10 @@ public class ModelManager implements Model
    */
   @Override public boolean validateAddMovie(String title)
   {
-    for (int i = 0; i < movieList.getAllMovies().size(); i++)
+    ArrayList<Movie> movies = movieList.getAllMovies();
+    for (int i = 0; i < movies.size(); i++)
     {
-      if (movieList.getAllMovies().get(i).getTitle().equals(title))
+      if (movies.get(i).getTitle().equals(title))
       {
         return false;
       }
@@ -440,7 +447,8 @@ public class ModelManager implements Model
    * @param title   the title of the movie
    *                A method to leave a review
    */
-  @Override public void leaveReview(String comment, int star, String title, String user)
+  @Override public void leaveReview(String comment, int star, String title,
+      String user)
   {
     ArrayList<String> badwords = new ArrayList<>();
 
@@ -467,7 +475,7 @@ public class ModelManager implements Model
         throw new IllegalArgumentException("Swear words are not allowed!");
       }
     }
-    movieList.getMovieWithTitle(title).addReview(comment,star);
+    movieList.getMovieWithTitle(title).addReview(comment, star);
 
     try
     {
@@ -479,7 +487,6 @@ public class ModelManager implements Model
     }
 
   }
-
 
 }
 
