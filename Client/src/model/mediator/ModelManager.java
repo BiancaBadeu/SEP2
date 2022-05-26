@@ -149,9 +149,7 @@ public class ModelManager implements Model
    */
   @Override public void rentMovie(String title, User user)
   {
-    long rentalDate = System.currentTimeMillis() + (86400 * 7 * 1000);
-    Date expirationDate = new Date(rentalDate);
-    addRental(client.getMovieWithTitle(title), expirationDate, user);
+    client.rentMovie(title,user);
   }
 
   /**

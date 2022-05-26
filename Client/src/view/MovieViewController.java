@@ -61,8 +61,18 @@ public class MovieViewController
     averageRating.textProperty().bind(viewModel.getAvgRatingProperty());
     errorLabel.textProperty().bind(viewModel.getErrorProperty());
     comment.textProperty().bindBidirectional(viewModel.getCommentProperty());
-    rentButton.setDisable(false);
-    cancelButton.setDisable(true);
+
+    boolean isRented = viewModel.reset();
+    if (isRented)
+    {
+      rentButton.setDisable(true);
+      cancelButton.setDisable(false);
+    }
+    else
+    {
+      rentButton.setDisable(false);
+      cancelButton.setDisable(true);
+    }
 
     comments.setItems(viewModel.getComments());
     star.textProperty().bindBidirectional(viewModel.getStarProperty());
@@ -79,7 +89,8 @@ public class MovieViewController
     if (isRented)
     {
       rentButton.setDisable(true);
-      cancelButton.setDisable(false);}
+      cancelButton.setDisable(false);
+    }
     else
     {
       rentButton.setDisable(false);

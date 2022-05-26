@@ -149,8 +149,8 @@ public interface RemoteModel extends Remote
 
 
   /**
- * @param movie the movie
- * @return the movie's comments
- */
+   * @param movie the movie
+   * @return the movie's comments
+   */
   ArrayList<Review> getReviewsForMovie(Movie movie) throws RemoteException;
 }

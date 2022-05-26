@@ -300,8 +300,7 @@ public class ModelManager implements Model
   /**
    * @param title a String variable representing the title of a movie
    * @param user  the user
-   *              //@param averageRating a String variable representing the average rating of a movie
-   *              A method to check if the user can rent the movie
+   *       A method to rent the movie
    */
   @Override public void rentMovie(String title, User user)
   {

@@ -52,31 +52,29 @@ public class MovieViewModel
     Movie selected  = state.getSelectedMovie();
     if(selected != null)
     {
-      this.title = new SimpleStringProperty(selected.getTitle());
+      this.title = new SimpleStringProperty(""+selected.getTitle());
       this.length = new SimpleStringProperty(""+selected.getLength());
-      this.director = new SimpleStringProperty(selected.getDirector());
+      this.director = new SimpleStringProperty(""+selected.getDirector());
       this.releaseYear = new SimpleStringProperty(""+selected.getReleaseYear());
-      this.genre = new SimpleStringProperty(selected.getGenres());
-      this.description = new SimpleStringProperty(selected.getDescription());
+      this.genre = new SimpleStringProperty(""+selected.getGenres());
+      this.description = new SimpleStringProperty(""+selected.getDescription());
       this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
       this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
-
     }
     else
     {
-      this.title = new SimpleStringProperty();
-      this.length = new SimpleStringProperty();
-      this.director = new SimpleStringProperty();
-      this.releaseYear = new SimpleStringProperty();
-      this.genre = new SimpleStringProperty();
-      this.description = new SimpleStringProperty();
-      this.averageRating = new SimpleStringProperty();
-      this.numberOfReviews = new SimpleStringProperty();
-
+      this.title = new SimpleStringProperty("");
+      this.length = new SimpleStringProperty("");
+      this.director = new SimpleStringProperty("");
+      this.releaseYear = new SimpleStringProperty("");
+      this.genre = new SimpleStringProperty("");
+      this.description = new SimpleStringProperty("");
+      this.averageRating = new SimpleStringProperty("");
+      this.numberOfReviews = new SimpleStringProperty("");
     }
-    this.comment = new SimpleStringProperty();
-    this.errorLabel = new SimpleStringProperty();
-    this.star = new SimpleStringProperty();
+    this.comment = new SimpleStringProperty("");
+    this.errorLabel = new SimpleStringProperty("");
+    this.star = new SimpleStringProperty("");
   }
 
   /**
@@ -101,18 +99,14 @@ public class MovieViewModel
     star.set("");
 
     comments.clear();
-    ArrayList<Review> reviews = model.getReviewsForMovie(selected);
-    for(int i = 0; i < reviews.size(); i++)
-    {
-      comments.add(i, String.valueOf(reviews.get(i)));
-    }
+    getComments();
 
     ArrayList<Rental> rentals = model.getAllRentals();
     if(!rentals.isEmpty())
     {
       for(int i=0;i<rentals.size();i++)
       {
-        if(rentals.get(i).getRentedMovie().equals(selected))
+        if(rentals.get(i).getRentedMovie().getTitle().equals(selected.getTitle()))
           return true;
       }
     }
@@ -212,7 +206,7 @@ public class MovieViewModel
   {
     try
     {
-      model.rentMovie(title.get(), userState.getUser() ); //suppose name is unique
+      model.rentMovie(title.get(), userState.getUser()); //suppose name is unique
       return true;
     }
     catch (Exception e)
