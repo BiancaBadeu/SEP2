@@ -382,22 +382,6 @@ public class SEPDatabase implements SEPPersistence
   }
 
   /**
-   * @param title
-   * @param user
-   * @throws SQLException
-   * a method that removes the rental for given title of the movie and for that user from the database.
-   */
-  @Override public void removeRental(String title,User user) throws SQLException
-  {
-    String sql ="delete from sep.rentals where movieTitle=? and userName=?";
-    Connection connection = DriverManager.getConnection(URL,USER,PASSWORD);
-    PreparedStatement statement= connection.prepareStatement(sql);
-    statement.setString(1,title);
-    statement.setString(2, user.getUserName());
-    statement.executeUpdate();
-    connection.close();
-  }
-  /**
    * @return an arraylist with all the rentals from the database
    * @throws SQLException exception
    */
@@ -560,6 +544,12 @@ public class SEPDatabase implements SEPPersistence
     db.update(sql,title,star,comment,user);
   }
 
+  /**
+   * @param title the title
+   * @param username the username
+   * @throws SQLException exception
+   * a method that removes the rental for given title of the movie and for that user from the database.
+   */
   public void removeRental(String title, String username) throws SQLException
   {
     String sql =" delete from sep.rentals where movietitle=? and username=?;";
