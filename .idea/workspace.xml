@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/AdminTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/MovieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/MovieTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/RentalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/RentalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Client/ReviewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/ReviewTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Client/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/UserTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +90,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientMain">
+  <component name="RunManager" selected="JUnit.ReviewTest">
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="Client" />
@@ -100,12 +106,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ReviewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ReviewTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.ClientMain" />
       <item itemvalue="Application.ServerMain" />
+      <item itemvalue="JUnit.ReviewTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReviewTest" />
         <item itemvalue="Application.ClientMain" />
         <item itemvalue="Application.ServerMain" />
       </list>
@@ -132,7 +149,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
