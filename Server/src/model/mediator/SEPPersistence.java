@@ -81,5 +81,7 @@ public interface SEPPersistence
 
   void updateAvgRating(double avgRating, String title) throws SQLException;
 
+  void removeRental(String title,User user) throws SQLException;
+
 
 }

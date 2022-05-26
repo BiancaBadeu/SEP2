@@ -382,6 +382,14 @@ public class SEPDatabase implements SEPPersistence
   }
 
   /**
+   * @param title
+   * @param user
+   * @throws SQLException
+   * a method that removes the rental for given title of the movie and for that user from the database.
+   */
+  @Override public void removeRental(String title,User user) throws SQLException
+  {
+  /**
    * @return an arraylist with all the rentals from the database
    * @throws SQLException exception
    */

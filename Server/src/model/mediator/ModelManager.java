@@ -269,6 +269,15 @@ public class ModelManager implements Model
   @Override public void cancelRental(String title, User user)
   {
     rentalList.removeRental(title, user);
+
+    try
+    {
+      database.removeRental(title,user);
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
     //TODO: this should also call the database when changed
 
   }
