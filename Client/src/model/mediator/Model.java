@@ -109,7 +109,7 @@ public interface Model
    *
    * A method to cancel a rental
    */
-  void cancelRental(String title, User user);
+  void cancelRental(String title, String username);
 
   /**
    * @param username the username of the user

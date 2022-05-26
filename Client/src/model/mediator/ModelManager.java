@@ -124,9 +124,9 @@ public class ModelManager implements Model
    *
    *  A method to remove a rental from the rental list
    */
-  @Override public void cancelRental(String title, User user)
+  @Override public void cancelRental(String title, String username)
   {
-    client.cancelRental(title, user);
+    client.cancelRental(title, username);
   }
 
 /*

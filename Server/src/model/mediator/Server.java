@@ -191,9 +191,9 @@ public class Server implements RemoteModel
      * @param user  the user
      *              A method to cancel a rental
      */
-    @Override public void cancelRental (String title, User user) throws RemoteException
+    @Override public void cancelRental (String title, String username) throws RemoteException
     {
-      model.cancelRental(title, user);
+      model.cancelRental(title, username);
     }
 
     /**

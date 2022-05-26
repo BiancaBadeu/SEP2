@@ -30,17 +30,18 @@ public class RentalList
 
   /**
    * @param title the title of the movie
-   * @param user the user
+   * @param username the username
    *
    *   A method to remove a rental from the list
    */
-  public void removeRental(String title, User user){
+  public void removeRental(String title, String username){
 
     for (int i = 0; i<rentals.size();i++)
     {
-      if (rentals.get(i).getRentedMovie().getTitle().equals(title) && rentals.get(i).getUser().equals(user))
+      if (rentals.get(i).getRentedMovie().getTitle().equals(title) && rentals.get(i).getUser().getUserName().equals(username))
       {
         rentals.remove(i);
+        break;
       }
     }
   }

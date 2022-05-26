@@ -278,11 +278,11 @@ public class Client implements Model
    * @param user  the user
    *              A method to cancel a rental
    */
-  @Override public void cancelRental(String title, User user)
+  @Override public void cancelRental(String title, String username)
   {
     try
     {
-      remoteModel.cancelRental(title, user);
+      remoteModel.cancelRental(title, username);
     }
     catch (RemoteException e)
     {

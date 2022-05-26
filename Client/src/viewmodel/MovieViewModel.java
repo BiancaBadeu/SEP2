@@ -225,7 +225,7 @@ public class MovieViewModel
   public boolean cancelMovie(){
 
     try{
-      model.cancelRental(title.get(), userState.getUser());
+      model.cancelRental(title.get(), userState.getUser().getUserName());
       return true;
     }
 

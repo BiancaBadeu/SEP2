@@ -4,6 +4,7 @@ import model.domain.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * A class representing a persistence interface
@@ -95,19 +96,20 @@ public interface SEPPersistence
   void addReview(String title, int star, String comment, String user) throws SQLException;
 
   /**
-   * @param avgRating
-   * @param title
-   * @throws SQLException
+   * @param avgRating the average rating
+   * @param title the title
+   * @throws SQLException exception
    */
   void updateAvgRating(double avgRating, String title) throws SQLException;
 
+
+  ArrayList<Review> getAllReviewForMovie(String title) throws SQLException;
+
   /**
-   * @param title
-   * @param user
-   * @throws SQLException
+   * @param title the title
+   * @param username the usename
+   * @throws SQLException exception
    * removes rental from database.
    */
-  void removeRental(String title,User user) throws SQLException;
-
-
+  void removeRental(String title, String username) throws SQLException;
 }

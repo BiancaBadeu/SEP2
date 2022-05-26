@@ -263,23 +263,20 @@ public class ModelManager implements Model
 
   /**
    * @param title the title of the movie
-   * @param user  the user
+   * @param username  the username
    *              A method to remove a rental from the rental list
    */
-  @Override public void cancelRental(String title, User user)
+  @Override public void cancelRental(String title, String username)
   {
-    rentalList.removeRental(title, user);
-
+    rentalList.removeRental(title, username);
     try
     {
-      database.removeRental(title,user);
+      database.removeRental(title, username);
     }
     catch (SQLException e)
     {
       e.printStackTrace();
     }
-    //TODO: this should also call the database when changed
-
   }
 
   /**

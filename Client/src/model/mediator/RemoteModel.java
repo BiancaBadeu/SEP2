@@ -100,10 +100,10 @@ public interface RemoteModel extends Remote
   String checkPerson(String name, String password)throws RemoteException;
   /**
    * @param title the title of the movie
-   * @param user the user
+   * @param username the username
    *             A method to cancel a rental
    */
-  void cancelRental(String title, User user)throws RemoteException;
+  void cancelRental(String title, String username)throws RemoteException;
   /**
    * @param username the username of the user
    * @return the user

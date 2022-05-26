@@ -559,4 +559,11 @@ public class SEPDatabase implements SEPPersistence
             + "VALUES (?, ?, ?, ?);";
     db.update(sql,title,star,comment,user);
   }
+
+  public void removeRental(String title, String username) throws SQLException
+  {
+    String sql =" delete from sep.rentals where movietitle=? and username=?;";
+    db.update(sql, title, username);
+  }
+
 }
