@@ -24,11 +24,13 @@ public interface SEPPersistence
   /**
    * @param movie adds movie to database
    * @throws SQLException exception
+   * adds a movie to database
    */
   void addMovie(Movie movie) throws SQLException; 
   /**
    * @param movie the movie to be removed
    * @throws SQLException exception
+   * removes a movie form database
    */
   void removeMovie(Movie movie) throws SQLException;
   /**
@@ -48,6 +50,7 @@ public interface SEPPersistence
    * @param user the user
    * @param rentedMovie the rented movie
    * @throws SQLException exception
+   * adds rental to database
    */
   void addRental(java.util.Date expirationDate, User user, Movie rentedMovie) throws SQLException;
   /**
@@ -75,12 +78,35 @@ public interface SEPPersistence
    */
   User getUser(String userName) throws SQLException;
 
+  /**
+   * @return Array list of person
+   * @throws SQLException
+   */
   ArrayList<Person> getAllPersons() throws SQLException;
 
+  /**
+   * @param title
+   * @param star
+   * @param comment
+   * @param user
+   * @throws SQLException
+   * adds a review to database
+   */
   void addReview(String title, int star, String comment, String user) throws SQLException;
 
+  /**
+   * @param avgRating
+   * @param title
+   * @throws SQLException
+   */
   void updateAvgRating(double avgRating, String title) throws SQLException;
 
+  /**
+   * @param title
+   * @param user
+   * @throws SQLException
+   * removes rental from database.
+   */
   void removeRental(String title,User user) throws SQLException;
 
 
