@@ -42,10 +42,10 @@ public class MovieList
   {
     ArrayList<Movie> topRatedMovies = new ArrayList<>();
 
-    double highRating = 0;
-    int index = -1;
-    for(int t = 0;t<10;t++)
+    for(int t = 0; t < 10; t++)
     {
+      double highRating = 0;
+      int index = -1;
       for (int i = t; i < movies.size(); i++)
       {
         if (movies.get(i).getAvgRating() > highRating)

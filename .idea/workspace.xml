@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/Tests/AdminTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Tests/MovieTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Tests/RentalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/Tests/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEP2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/AdminTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/MovieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/MovieTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/RentalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/RentalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/view/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/view/HomeViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/HomeViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/HomeViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/MovieList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/MovieList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +59,13 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -93,7 +98,7 @@
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="Client" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-17.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,6 +142,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

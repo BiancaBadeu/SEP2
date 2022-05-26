@@ -32,9 +32,6 @@ public class HomeViewController
     this.root = root;
     this.viewModel = viewModel;
 
-   /* topratedList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) ->
-          topRatedViewModel.setSelected(newValue));
-*/
     topratedList.setItems(viewModel.getTopRatedMovies());
     trendingList.setItems(viewModel.getTrendingMovies());
   }

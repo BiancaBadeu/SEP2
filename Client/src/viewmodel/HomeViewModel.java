@@ -2,6 +2,7 @@ package viewmodel;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
 
 import javafx.application.Platform;
 
@@ -40,15 +41,9 @@ public class HomeViewModel implements PropertyChangeListener
   public void reset()
   {
     topRatedList.clear();
-    for(int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
-    {
-      topRatedList.add(i,model.getTop10TopRatedMovies().get(i).getTitle());
-    }
+    getTopRatedMovies();
     trendingList.clear();
-    for(int i = 0; i < model.getTrendingMovies().size(); i++)
-    {
-      trendingList.add(i, model.getTrendingMovies().get(i).getTitle());
-    }
+    getTrendingMovies();
   }
 
   /**
@@ -57,11 +52,12 @@ public class HomeViewModel implements PropertyChangeListener
    */
   public ObservableList<String> getTopRatedMovies()
   {
-    if(!model.getTop10TopRatedMovies().isEmpty())
+    ArrayList<Movie> movies = model.getTop10TopRatedMovies();
+    if(!movies.isEmpty())
     {
-      for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
+      for (int i = 0; i < movies.size(); i++)
       {
-        topRatedList.add(model.getTop10TopRatedMovies().get(i).getTitle());
+        topRatedList.add(movies.get(i).getTitle());
       }
       return topRatedList;
     }
@@ -75,11 +71,12 @@ public class HomeViewModel implements PropertyChangeListener
    */
   public ObservableList<String> getTrendingMovies()
   {
-    if(!model.getTrendingMovies().isEmpty())
+    ArrayList<Movie> movies = model.getTrendingMovies();
+    if(!movies.isEmpty())
     {
-      for (int i = 0; i < model.getTrendingMovies().size(); i++)
+      for (int i = 0; i < movies.size(); i++)
       {
-        trendingList.add(model.getTrendingMovies().get(i).getTitle());
+        trendingList.add(movies.get(i).getTitle());
       }
       return trendingList;
     }
@@ -113,21 +110,23 @@ public class HomeViewModel implements PropertyChangeListener
 
     if(type.equals("toprated"))
     {
-      for (int i = 0; i < model.getTop10TopRatedMovies().size(); i++)
+      ArrayList<Movie> toprated = model.getTop10TopRatedMovies();
+      for (int i = 0; i < toprated.size(); i++)
       {
-        if (model.getTop10TopRatedMovies().get(i).getTitle().equals(string))
+        if (toprated.get(i).getTitle().equals(string))
         {
-          movie = model.getTop10TopRatedMovies().get(i);
+          movie = toprated.get(i);
         }
       }
     }
-    else if(type.equals("trending")){
-
-      for (int i = 0; i < model.getTrendingMovies().size(); i++)
+    else if(type.equals("trending"))
+    {
+      ArrayList<Movie> trending = model.getTrendingMovies();
+      for (int i = 0; i < trending.size(); i++)
       {
-        if (model.getTrendingMovies().get(i).getTitle().equals(string))
+        if (trending.get(i).getTitle().equals(string))
         {
-          movie = model.getTrendingMovies().get(i);
+          movie = trending.get(i);
         }
       }
     }
