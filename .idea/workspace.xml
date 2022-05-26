@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Client/Tests/AdminTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Tests/MovieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Tests/RentalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/Tests/UserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/AdminViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/AdminViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/viewmodel/AdminViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/viewmodel/AdminViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEP2.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +24,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -45,6 +50,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="model.mediator" />
@@ -58,6 +75,13 @@
       <recent name="C:\Users\Domi\OneDrive\Dokumenty\GitHub\SEP2\AllDocumentation" />
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHubSEP2\SEP2\Server" />
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHub\SEP2" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+      <recent name="model.domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="model.domain" />
