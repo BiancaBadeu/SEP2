@@ -211,7 +211,7 @@ public class SEPDatabase implements SEPPersistence
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
-      Movie movie = new Movie("test","test",0,"test",0,0,"test", new ArrayList<>());
+      Movie movie = new Movie("test","test",9,"test",0,1999,"test", new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -259,7 +259,7 @@ public class SEPDatabase implements SEPPersistence
 
     for (int i = 0; i < results.size(); i++)
     {
-      Movie movie = new Movie("test", "test", 0, "test", 0.0, 0, "test", new ArrayList<>());
+      Movie movie = new Movie("test", "test", 1, "test", 0.0, 1999, "test", new ArrayList<>());
 
       Object[] row = results.get(i);
       for (int j = 0; j < row.length; j++)
@@ -312,7 +312,7 @@ public class SEPDatabase implements SEPPersistence
     String sql = "select * from sep.movies;";
 
     ArrayList<Object[]> results = db.query(sql);
-    Movie movie = new Movie("test", "test", 0, "test", 0.0, 0, "test", new ArrayList<>());
+    Movie movie = new Movie("test", "test", 8, "test", 0.0, 1999, "test", new ArrayList<>());
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
@@ -394,7 +394,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
 
-      Rental rental = new Rental(new Date(), new Movie("test","test",0,"test",0.0, 0, "test", new ArrayList<>()), new User("test","test","test","test",0));
+      Rental rental = new Rental(new Date(), new Movie("test","test",9,"test",0.0, 1999, "test", new ArrayList<>()), new User("test","test","test","test",0));
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -444,7 +444,7 @@ public class SEPDatabase implements SEPPersistence
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
-      Movie rentedMovie = new Movie("test","test",0,"test",0.0,0,"test",new ArrayList<>());
+      Movie rentedMovie = new Movie("test","test",89,"test",0.0,1999,"test",new ArrayList<>());
       Rental rental = new Rental(new Date(), rentedMovie, user);
 
       if (user.getUserName().equals(String.valueOf(row[1]))){
