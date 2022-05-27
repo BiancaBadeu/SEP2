@@ -62,20 +62,10 @@ public class MovieViewController
     errorLabel.textProperty().bind(viewModel.getErrorProperty());
     comment.textProperty().bindBidirectional(viewModel.getCommentProperty());
 
-    boolean isRented = viewModel.reset();
-    if (isRented)
-    {
-      rentButton.setDisable(true);
-      cancelButton.setDisable(false);
-    }
-    else
-    {
-      rentButton.setDisable(false);
-      cancelButton.setDisable(true);
-    }
-
     comments.setItems(viewModel.getComments());
     star.textProperty().bindBidirectional(viewModel.getStarProperty());
+
+    reset();
   }
 
   /**
@@ -96,6 +86,11 @@ public class MovieViewController
       rentButton.setDisable(false);
       cancelButton.setDisable(true);
     }
+
+    String avgRating = viewModel.getAvgRatingProperty().get();
+    double rating = Double.parseDouble(avgRating);
+    rating /= 5;
+    this.progressBar.setProgress(rating);
   }
 
   /**
