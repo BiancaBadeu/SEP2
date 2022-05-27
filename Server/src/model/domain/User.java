@@ -1,93 +1,255 @@
 package model.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
- * This class represents a user.
+ * Movie class
  */
-public class User extends Person implements Serializable
+public class Movie implements Serializable
 {
+  private String title;
+  private String director;
+  private String description;
+  private int length;
+  private double avgRating;
+  private int releaseYear;
+  private String genres;
+  private ArrayList<Review> reviews;
 
   /**
-   * @param name the name of the user
-   * @param username the username chosen
-   * @param password the password of the user
-   * @param phoneNumber the phone number of the user
-   * @param age the age of the user
+   * @param title the title of the movie
+   * @param director the director of the movie
+   * @param description the description of the movie
+   * @param length the length of the movie
+   * @param avgRating the average rating of the movie
+   * @param genres the genres of the movie
+   * @param reviews the reviews of the movie
    *
-   * Constructor for the user class
+   * Constructor for the Movie class
    */
-  public User(String name, String username, String password, String phoneNumber, int age)
+  public Movie(String title, String director, int length,String description,  double avgRating, int releaseYear, String genres, ArrayList<Review> reviews)
   {
-    super(name, username, password, phoneNumber, age, "user");
+    this.title = title;
+    this.director = director;
+    this.description = description;
+    this.length = length;
+    this.releaseYear=releaseYear;
+    this.avgRating = avgRating;
+    this.genres = genres;
+    this.reviews = reviews;
 
-    if(!isValidPhoneNumber(phoneNumber))
+    if(!isValid())
     {
-      throw new IllegalArgumentException("Invalid phone number");
-    }
-    if(!isValidName(name))
-    {
-      throw new IllegalArgumentException("Invalid name");
-    }
-    if(!isValidUsername(username))
-    {
-      throw new IllegalArgumentException("Invalid username");
+      throw new IllegalArgumentException("Invalid title");
     }
   }
 
   /**
-   * @return a string representation of the user
+   * @return the average rating of the movie
+   * Getter for the average rating of the movie
    */
-  @Override public String toString()
+  public double getAvgRating()
   {
-    return super.toString();
+    return avgRating;
   }
 
-  private boolean isValidPhoneNumber(String phoneNumber)
+  /**
+   * @return the title of the movie
+   *
+   * Getter for the title of the movie
+   */
+  public String getTitle()
   {
-    if(phoneNumber.length() != 8)
-    {
-      return false;
-    }
-    for(int i = 0; i < phoneNumber.length(); i++)
-    {
-      if(!Character.isDigit(phoneNumber.charAt(i)))
-      {
-        return false;
-      }
-    }
-    return true;
+    return title;
   }
 
-  private boolean isValidName(String name)
+  /**
+   * @return the director of the movie
+   *
+   * Getter for the director of the movie
+   */
+  public String getDirector()
   {
-    if(name.length() < 2)
-    {
-      return false;
-    }
-    for(int i = 0; i < name.length(); i++)
-    {
-      if(!Character.isLetter(name.charAt(i)))
-      {
-        return false;
-      }
-    }
-    return true;
+    return director;
   }
 
-  private boolean isValidUsername(String username)
+  /**
+   * @return the description of the movie
+   *
+   * Getter for the description of the movie
+   */
+  public String getDescription()
   {
-    if(username.length() < 2)
-    {
-      return false;
+    return description;
+  }
+
+  /**
+   * @return the length of the movie
+   *
+   * Getter for the length of the movie
+   */
+  public int getLength()
+  {
+    return length;
+  }
+
+  /**
+   * @return the release year of the movie
+   * Getter for the release year of the movie
+   */
+  public int getReleaseYear()
+  {
+    return releaseYear;
+  }
+
+  /**
+   * @return the number of reviews for the movie
+   *
+   * Getter for the number of reviews of the movie
+   */
+  public int getNumberOfReviews(){return reviews.size();}
+
+  /**
+   * @return the genres of the movie
+   *
+   * Getter for the genres of the movie
+   */
+  public String getGenres()
+  {
+    return genres;
+  }
+
+  /**
+   * @return the reviews of the movie
+   *
+   * Getter for the reviews of the movie
+   */
+  public ArrayList<Review> getReviews()
+  {
+    return reviews;
+  }
+
+  /**
+   * @param title tht title
+   * Setter for the title of the movie
+   */
+  public void setTitle(String title)
+  {
+    this.title = title;
+  }
+
+  /**
+   * @param director the director
+   * Setter for the director of the movie
+   */
+  public void setDirector(String director)
+  {
+    this.director = director;
+  }
+
+  /**
+   * @param description the description
+   * Setter for the description of the movie
+   */
+  public void setDescription(String description)
+  {
+    this.description = description;
+  }
+
+  /**
+   * @param length the length
+   * Setter for the length of the movie
+   */
+  public void setLength(int length)
+  {
+    this.length = length;
+  }
+
+  /**
+   * @param avgRating the average rating
+   * Setter for the average rating of the movie
+   */
+  public void setAvgRating(double avgRating)
+  {
+    this.avgRating = avgRating;
+    /*
+    if(!reviews.isEmpty()){
+    double sum=avgRating;
+    for (int i=0; i<reviews.size();i++){
+      sum=sum+reviews.get(i).getRating();
     }
-    for(int i = 0; i < username.length(); i++)
+    sum= sum/numberOfReviews;
+    this.avgRating= sum;
+    }*/
+  }
+
+  /**
+   * @param releaseYear the release year
+   * Setter for the release year of the movie
+   */
+  public void setReleaseYear(int releaseYear)
+  {
+    this.releaseYear = releaseYear;
+  }
+
+  /**
+   * @param genres the genre
+   *  Setter for the genre
+   */
+  public void setGenres(String genres)
+  {
+    this.genres = genres;
+  }
+
+  public void setReviews(ArrayList<Review> reviews)
+  {
+    this.reviews=reviews;
+  }
+
+  /**
+   * @return an array list of comments
+   * Getter for the comments
+   */
+  public ArrayList<String> getAllComments()
+  {
+    ArrayList<String> list = new ArrayList<>();
+    for(int i=0;i<reviews.size();i++)
     {
-      if(!Character.isLetter(username.charAt(i)) && !Character.isDigit(username.charAt(i)))
-      {
-        return false;
-      }
+      list.add(reviews.get(i).getComment());
     }
-    return true;
+    return list;
+  }
+
+  /**
+   * @return a string representation of the movie
+   */
+  public String toString()
+  {
+    return "" + title+ ", "+director+", "+ description+", "+ length+", "+avgRating+", "+ releaseYear+", "+ genres;
+  }
+
+  /**
+   * @param comment the comment
+   * @param stars the rating
+   *            A method to add a review and update the average rating
+   */
+  public void addReview(String comment, int stars)
+  {
+    double oldRating = avgRating;
+    int oldNoOfReviews = reviews.size();
+
+    Review review = new Review(comment, stars);
+    reviews.add(review);
+
+    double smth = oldRating * oldNoOfReviews;
+    smth += stars;
+    this.avgRating = smth / (double) reviews.size();
+  }
+
+  public boolean isValid()
+  {
+    return !title.equals("") && !director.equals("") && !description.equals("")
+        && length >= 0 && releaseYear >= 1888 && !genres.equals("");
   }
 }
