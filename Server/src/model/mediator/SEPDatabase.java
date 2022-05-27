@@ -66,7 +66,7 @@ public class SEPDatabase implements SEPPersistence
     for (int i = 0; i < results.size(); i++)
     {
       Person user = new User("test", "test", "test", "123456789", 0);
-      Person admin = new Admin("test", "test", "test", "123456789", 0);
+      Person admin = new Admin("test", "test", "test", "987654321", 0);
 
       Object[] row = results.get(i);
       for (int j = 0; j < row.length; j++)
