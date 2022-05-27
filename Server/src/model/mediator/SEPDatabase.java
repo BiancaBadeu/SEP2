@@ -24,7 +24,7 @@ public class SEPDatabase implements SEPPersistence
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "admin";
+  private static final String PASSWORD = "Perfect@gamer333";
 
   /**
    * Empty constructor which initializes the db and connects the database
@@ -408,7 +408,7 @@ public class SEPDatabase implements SEPPersistence
           case 0:
             try
             {
-              SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy",
+              SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd",
                   Locale.ENGLISH);
               String dateInString = String.valueOf(row[j]);
               Date date = (Date) formatter.parseObject(dateInString);
@@ -459,7 +459,7 @@ public class SEPDatabase implements SEPPersistence
         switch (j)
         {
           case 0:
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy",
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd",
                 Locale.ENGLISH);
             String dateInString = String.valueOf(row[j]);
             Date date = null;

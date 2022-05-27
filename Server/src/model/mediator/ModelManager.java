@@ -93,13 +93,14 @@ public class ModelManager implements Model
 
     RentalList rentals = new RentalList();
     ArrayList<Rental> dbRentals = database.getAllRentals();
+    System.out.println("rentals: " + dbRentals.size());
     if (!dbRentals.isEmpty())
     {
       for (int i = 0; i < dbRentals.size(); i++)
       {
-        if(dbRentals.get(i).getExpirationDate().toInstant().isBefore(date.toInstant()))
+        if(dbRentals.get(i).getExpirationDate().before(date))
         {
-              database.removeRental(dbRentals.get(i).getRentedMovie().getTitle(), dbRentals.get(i).getUserName());
+          database.removeRental(dbRentals.get(i).getRentedMovie().getTitle(), dbRentals.get(i).getUserName());
         }
         else
         {
@@ -107,7 +108,7 @@ public class ModelManager implements Model
         }
       }
       this.rentalList = rentals;
-      System.out.println(rentalList.getAllRentals());
+      System.out.println("size: " + rentalList.getAllRentals().size() + ", " + rentalList.getAllRentals());
     }
   }
 
