@@ -12,5 +12,6 @@
     <orderEntry type="library" name="postgresql-42.3.5" level="application" />
     <orderEntry type="library" name="MyDatabaseCorrectOne" level="application" />
     <orderEntry type="library" name="lib" level="application" />
+    <orderEntry type="library" name="StringStack" level="application" />
   </component>
 </module>

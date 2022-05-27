@@ -126,10 +126,10 @@ public interface Model
   boolean validateAddMovie(String title);
 
   /**
-   * @param user a user
+   * @param username the username
    * @return the rentals made by the user
    */
-  ArrayList<Rental> getRentalsWithUser(User user);
+  ArrayList<Rental> getRentalsWithUser(String username);
 
   /**
    * @param movie a movie

@@ -121,10 +121,10 @@ public interface RemoteModel extends Remote
   boolean validateAddMovie(String title)throws RemoteException;
 
   /**
-   * @param user the user
+   * @param username the username
    * @return the user's rentals
    */
-  ArrayList<Rental> getRentalsWithUser(User user)throws RemoteException;
+  ArrayList<Rental> getRentalsWithUser(String username)throws RemoteException;
 
   /**
    * @param comment the comment

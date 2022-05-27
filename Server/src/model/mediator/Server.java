@@ -38,7 +38,7 @@ public class Server implements RemoteModel
    */
   public void startServer () throws RemoteException, AlreadyBoundException
   {
-    Registry registry = LocateRegistry.createRegistry(1099);
+    Registry registry = LocateRegistry.createRegistry(1098);
     UnicastRemoteObject.exportObject(this,0);
     registry.bind("Server", this);
 
@@ -224,12 +224,12 @@ public class Server implements RemoteModel
     }
 
     /**
-     * @param user the user
+     * @param username the username
      * @return the user's rentals
      */
-    @Override public ArrayList<Rental> getRentalsWithUser (User user) throws RemoteException
+    @Override public ArrayList<Rental> getRentalsWithUser (String username) throws RemoteException
     {
-      return model.getRentalsWithUser(user);
+      return model.getRentalsWithUser(username);
     }
 
     /**

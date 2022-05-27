@@ -110,7 +110,8 @@ public class ProfileViewModel
    */
   public ObservableList<String> getRentedMovies()
   {
-    ArrayList<Rental> rentals = model.getRentalsWithUser(userState.getUser());
+    rentedMovies.clear();
+    ArrayList<Rental> rentals = model.getRentalsWithUser(userState.getUser().getUserName());
     if(!rentals.isEmpty())
     {
       for (int i = 0; i < rentals.size(); i++)

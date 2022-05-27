@@ -6,11 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/domain/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/MovieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/MovieTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/RentalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/RentalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ProfileViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ProfileViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEP2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/RentalList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/RentalList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/RemoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/model/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/mediator/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Client/AdminTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/AdminTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Client/MovieTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/MovieTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Client/RentalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/RentalTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Client/ReviewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/ReviewTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Client/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/UserTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +70,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/StringStack.jar" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.14476615" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="model.mediator" />
@@ -67,8 +101,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="" />
       <recent name="model.domain" />
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="model.domain" />
@@ -80,7 +114,7 @@
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="Client" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-18.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-17.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,6 +191,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -280,12 +280,12 @@ public class ModelManager implements Model
   }
 
   /**
-   * @param user the user
+   * @param username the username
    * @return an array list with rental which contains the user
    */
-  @Override public ArrayList<Rental> getRentalsWithUser(User user)
+  @Override public ArrayList<Rental> getRentalsWithUser(String username)
   {
-    return rentalList.getRentalsWithUser(user);
+    return rentalList.getRentalsWithUser(username);
   }
 /*
 --For the next sprint :)

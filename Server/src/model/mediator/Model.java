@@ -103,10 +103,10 @@ public interface Model extends UnnamedPropertyChangeSubject
   ArrayList<Rental> getAllRentals();
 
   /**
-   * @param user the user
+   * @param username the username
    * @return an array list with the rentals for the user
    */
-  ArrayList<Rental> getRentalsWithUser(User user);
+  ArrayList<Rental> getRentalsWithUser(String username);
   /*
   --For the next sprint :)
   ArrayList<Rental> getRentalsWithMovie(Movie movie);

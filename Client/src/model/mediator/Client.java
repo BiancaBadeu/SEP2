@@ -25,7 +25,7 @@ public class Client implements Model
   {
     try
     {
-      remoteModel = (RemoteModel) Naming.lookup("rmi://localhost:1099/Server");
+      remoteModel = (RemoteModel) Naming.lookup("rmi://localhost:1098/Server");
     }
     catch (Exception e)
     {
@@ -342,15 +342,15 @@ public class Client implements Model
   }
 
   /**
-   * @param user the user
+   * @param username the username
    *
    * @return the user's rentals
    */
-  @Override public ArrayList<Rental> getRentalsWithUser(User user)
+  @Override public ArrayList<Rental> getRentalsWithUser(String username)
   {
     try
     {
-      return remoteModel.getRentalsWithUser(user);
+      return remoteModel.getRentalsWithUser(username);
     }
     catch (RemoteException e)
     {

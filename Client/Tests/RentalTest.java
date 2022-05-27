@@ -2,16 +2,16 @@ import model.domain.Movie;
 import model.domain.Rental;
 import model.domain.Review;
 import model.domain.User;
-//import org.junit.jupiter.api.AfterEach;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-//import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-//import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class RentalTest
 {
@@ -21,7 +21,7 @@ class RentalTest
   private User user;
   private Rental rental;
 
- // @BeforeEach void setUp()
+  @BeforeEach void setUp()
   {
 
     date = new Date();
@@ -32,50 +32,50 @@ class RentalTest
      rental = new Rental(date, movie, user);
   }
 
-//  @AfterEach void tearDown()
+  @AfterEach void tearDown()
   {
   }
 
- // @Test void setInvalidDate()
+  @Test void setInvalidDate()
   {
-  //  assertThrows(IllegalArgumentException.class, () -> {
+    assertThrows(IllegalArgumentException.class, () -> {
       rental.setExpirationDate(date);
- //   });
+    });
   }
 
- // @Test void setInvalidMovie()
+  @Test void setInvalidMovie()
   {
-  //  assertThrows(IllegalArgumentException.class, () -> {
+    assertThrows(IllegalArgumentException.class, () -> {
       rental.setRentedMovie(movie);
-   // });
+    });
   }
 
-//  @Test void setInvalidUser()
+  @Test void setInvalidUser()
   {
- //   assertThrows(IllegalArgumentException.class, () -> {
+    assertThrows(IllegalArgumentException.class, () -> {
       rental.setUser(user);
- //   });
+    });
   }
 
- // @Test void setNullDate()
+  @Test void setNullDate()
   {
-  //  assertThrows(IllegalArgumentException.class, () -> {
+    assertThrows(IllegalArgumentException.class, () -> {
       rental.setExpirationDate(null);
-  //  });
+    });
   }
 
-//  @Test void setNullMovie()
+  @Test void setNullMovie()
   {
- //   assertThrows(IllegalArgumentException.class, () -> {
+    assertThrows(IllegalArgumentException.class, () -> {
       rental.setRentedMovie(null);
-  //  });
+    });
   }
 
- // @Test void setNullUser()
+  @Test void setNullUser()
   {
-  //  assertThrows(IllegalArgumentException.class, () -> {
+    assertThrows(IllegalArgumentException.class, () -> {
       rental.setUser(null);
-  // });
+   });
   }
 
 

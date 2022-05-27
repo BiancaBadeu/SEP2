@@ -56,15 +56,15 @@ public class RentalList
   }
 
   /**
-   * @param user the user
+   * @param username the username
    * @return All the rentals of the given user in the list
    *This method returns all the rentals in the list that have the given user.
    */
-  public ArrayList<Rental> getRentalsWithUser(User user){
+  public ArrayList<Rental> getRentalsWithUser(String username){
     ArrayList<Rental> userRentals = new ArrayList<>();
     for (int i = 0; i<rentals.size();i++)
     {
-      if (rentals.get(i).getUser().equals(user))
+      if (rentals.get(i).getUser().getUserName().equals(username))
       {userRentals.add(rentals.get(i));}
     }
     return userRentals;

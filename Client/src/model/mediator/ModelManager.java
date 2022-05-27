@@ -207,12 +207,12 @@ public class ModelManager implements Model
   }
 
   /**
-   * @param user the user
+   * @param username the username
    * @return The users rentals
    */
-  @Override public ArrayList<Rental> getRentalsWithUser(User user)
+  @Override public ArrayList<Rental> getRentalsWithUser(String username)
   {
-    return client.getRentalsWithUser(user);
+    return client.getRentalsWithUser(username);
   }
 
   /**
