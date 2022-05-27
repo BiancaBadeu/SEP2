@@ -197,7 +197,7 @@ public class Movie implements Serializable
    */
   public void setAvgRating(double avgRating)
   {
-    if(avgRating<0 || avgRating>6)
+    if(avgRating<0 || avgRating>5)
     {
       throw new IllegalArgumentException("Invalid average rating");
     }
