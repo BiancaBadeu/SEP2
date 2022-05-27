@@ -25,10 +25,10 @@ class RentalTest
   {
 
     date = new Date();
-     movie = new Movie("", "", 0,
-        "", 0, 0, "", new ArrayList<Review>());
-     user = new User("", "", "Test test test",
-        "", 0);
+     movie = new Movie("Test The Movie", "Test", 0,
+        "Test", 0, 0, "Test", new ArrayList<Review>());
+     user = new User("Test", "Test", "Test test test",
+        "12345678", 0);
      rental = new Rental(date, movie, user);
   }
 

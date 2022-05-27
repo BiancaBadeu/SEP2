@@ -53,6 +53,13 @@ public class Review implements Serializable
    */
   public void setComment(String comment)
   {
+
+    if(!isValidComment(comment)){
+      throw new IllegalArgumentException("Invalid comment");
+    }
+
+    else
+
     this.comment = comment;
   }
 
@@ -61,6 +68,13 @@ public class Review implements Serializable
    */
   public void setRating(int rating)
   {
+
+    if(!isValidRating(rating)){
+      throw new IllegalArgumentException("Invalid rating");
+    }
+
+    else
+
     this.rating = rating;
   }
 

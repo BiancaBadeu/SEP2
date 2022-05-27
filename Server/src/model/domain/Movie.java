@@ -39,10 +39,7 @@ public class Movie implements Serializable
     this.genres = genres;
     this.reviews = reviews;
 
-    if(!isValid())
-    {
-      throw new IllegalArgumentException("Invalid title");
-    }
+
   }
 
   /**
@@ -136,6 +133,14 @@ public class Movie implements Serializable
    */
   public void setTitle(String title)
   {
+
+    if(title.equals(""))
+    {
+      throw new IllegalArgumentException("Invalid title");
+    }
+
+    else
+
     this.title = title;
   }
 
@@ -247,9 +252,5 @@ public class Movie implements Serializable
     this.avgRating = smth / (double) reviews.size();
   }
 
-  public boolean isValid()
-  {
-    return !title.equals("") && !director.equals("") && !description.equals("")
-        && length >= 0 && releaseYear >= 1888 && !genres.equals("");
-  }
+
 }
