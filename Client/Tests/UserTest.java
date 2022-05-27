@@ -50,5 +50,21 @@ class UserTest
 
   }
 
+  @Test void setNullName()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      user1.setName(null);
+    });
+
+  }
+
+  @Test void setNullPhoneNumber()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      user1.setPhoneNumber(null);
+    });
+
+  }
+
 }
 
