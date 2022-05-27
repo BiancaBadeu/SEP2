@@ -23,14 +23,14 @@ class UserTest
   @Test void setInvalidPhoneNumber()
   {
     assertThrows(IllegalArgumentException.class, () -> {
-      user1.setPhoneNumber("00000000");
+      user1.setPhoneNumber("");
     });
   }
 
   @Test void setInvalidName()
   {
     assertThrows(IllegalArgumentException.class, () -> {
-      user1.setName("1234");
+      user1.setName("");
     });
 
   }
@@ -38,7 +38,7 @@ class UserTest
   @Test void setInvalidUserName()
   {
     assertThrows(IllegalArgumentException.class, () -> {
-      user1.setUserName("&*");
+      user1.setUserName("");
     });
   }
 

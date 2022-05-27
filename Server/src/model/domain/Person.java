@@ -132,6 +132,11 @@ public abstract class Person implements Serializable
   public void setUserName(String userName)
   {
 
+    if(userName==null || userName.equals(""))
+    {
+      throw new IllegalArgumentException("Invalid username");
+    }
+    else
       this.userName = userName;
   }
 

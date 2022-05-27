@@ -6,33 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Tests/MovieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/MovieTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Tests/RentalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/RentalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/ReviewTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/viewmodel/ProfileViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/viewmodel/ProfileViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEP2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/RentalList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/RentalList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/model/mediator/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/mediator/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Client/AdminTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/AdminTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Client/MovieTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/MovieTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Client/RentalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/RentalTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Client/ReviewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/ReviewTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Client/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/UserTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +83,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientMain">
+  <component name="RunManager" selected="JUnit.UserTest">
     <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientMain" />
       <module name="Client" />
@@ -162,10 +135,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientMain" />
-        <item itemvalue="Application.ServerMain" />
         <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.AdminTest" />
+        <item itemvalue="Application.ClientMain" />
+        <item itemvalue="Application.ServerMain" />
         <item itemvalue="JUnit.ReviewTest" />
       </list>
     </recent_temporary>
@@ -191,7 +164,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
