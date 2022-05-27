@@ -63,6 +63,13 @@ public class Admin extends Person
   }
 
   public void setUserName(String userName){
+
+    if(!isValidUsername(userName))
+    {
+      throw new IllegalArgumentException("Invalid username");
+    }
+    else
+
     super.setUserName(userName);
   }
 

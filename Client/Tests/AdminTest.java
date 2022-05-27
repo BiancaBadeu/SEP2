@@ -12,7 +12,7 @@ class AdminTest
 
  @BeforeEach void setUp()
   {
-     admin= new Admin("admin","admin","admin","admin",0);
+     admin= new Admin("admin","admin","admin","12345678",18);
   }
 
   @AfterEach void tearDown()
@@ -61,4 +61,6 @@ class AdminTest
       admin.setPhoneNumber(null);
     });
   }
+
+
 }
