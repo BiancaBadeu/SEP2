@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/Tests/AdminTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Tests/MovieTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Tests/RentalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Tests/ReviewTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Tests/UserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Tests/MovieListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +75,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="model.domain" />
       <recent name="" />
+      <recent name="model.domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="model.domain" />
