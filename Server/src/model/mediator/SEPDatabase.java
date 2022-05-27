@@ -65,8 +65,8 @@ public class SEPDatabase implements SEPPersistence
 
     for (int i = 0; i < results.size(); i++)
     {
-      Person user = new User("", "", "", "", 0);
-      Person admin = new Admin("", "", "", "", 0);
+      Person user = new User("test", "test", "test", "test", 0);
+      Person admin = new Admin("test", "test", "test", "test", 0);
 
       Object[] row = results.get(i);
       for (int j = 0; j < row.length; j++)
@@ -139,7 +139,7 @@ public class SEPDatabase implements SEPPersistence
   {
     String sql = "select * from sep.person;";
     ArrayList<Object[]> results = db.query(sql);
-    User user = new User("","","","",0);
+    User user = new User("test","test","test","test",0);
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
@@ -211,7 +211,7 @@ public class SEPDatabase implements SEPPersistence
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
-      Movie movie = new Movie("","",0,"",0,0,"", new ArrayList<>());
+      Movie movie = new Movie("test","test",0,"test",0,0,"test", new ArrayList<>());
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -259,7 +259,7 @@ public class SEPDatabase implements SEPPersistence
 
     for (int i = 0; i < results.size(); i++)
     {
-      Movie movie = new Movie("", "", 0, "", 0.0, 0, "", new ArrayList<>());
+      Movie movie = new Movie("test", "test", 0, "test", 0.0, 0, "test", new ArrayList<>());
 
       Object[] row = results.get(i);
       for (int j = 0; j < row.length; j++)
@@ -312,7 +312,7 @@ public class SEPDatabase implements SEPPersistence
     String sql = "select * from sep.movies;";
 
     ArrayList<Object[]> results = db.query(sql);
-    Movie movie = new Movie("", "", 0, "", 0.0, 0, "", new ArrayList<>());
+    Movie movie = new Movie("test", "test", 0, "test", 0.0, 0, "test", new ArrayList<>());
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
@@ -394,7 +394,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
 
-      Rental rental = new Rental(new Date(), new Movie("","",0,"",0.0, 0, "", new ArrayList<>()), new User("","","","",0));
+      Rental rental = new Rental(new Date(), new Movie("test","test",0,"test",0.0, 0, "test", new ArrayList<>()), new User("test","test","test","test",0));
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
@@ -444,9 +444,9 @@ public class SEPDatabase implements SEPPersistence
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
+      Movie rentedMovie = new Movie("test","test",0,"test",0.0,0,"test",new ArrayList<>());
+      Rental rental = new Rental(new Date(), rentedMovie, user);
 
-      Rental rental = new Rental(null, null, user);
-      Movie rentedMovie = new Movie("","",0,"",0.0,0,"",new ArrayList<>());
       if (user.getUserName().equals(String.valueOf(row[1]))){
       for (int j = 0; j < row.length; j++)
       {
@@ -512,7 +512,7 @@ public class SEPDatabase implements SEPPersistence
   for (int i = 0; i < results.size(); i++)
   {
     Object[] row = results.get(i);
-    Review review = new Review("",0);
+    Review review = new Review("test",0);
 
     if (title.equals(String.valueOf(row[0]))){
       for (int j = 0; j < row.length; j++)
