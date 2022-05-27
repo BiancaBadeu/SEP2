@@ -10,7 +10,7 @@ class AdminTest
 
   private Admin admin;
 
- //@BeforeEach void setUp()
+// @BeforeEach void setUp()
   {
      admin= new Admin("admin","admin","admin","12345678",18);
   }
@@ -20,16 +20,16 @@ class AdminTest
   }
 
 
-//  @Test void setInvalidName()
+  //@Test void setInvalidName()
   {
-  //  assertThrows(IllegalArgumentException.class, () -> {
+   // assertThrows(IllegalArgumentException.class, () -> {
       admin.setName("");
-  //  });
+   // });
   }
 
-//  @Test void setInvalidUsername()
+  //@Test void setInvalidUsername()
   {
-    //assertThrows(IllegalArgumentException.class, () -> {
+   // assertThrows(IllegalArgumentException.class, () -> {
       admin.setUserName("");
    /// });
   }
