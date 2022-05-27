@@ -45,7 +45,7 @@ public class User extends Person implements Serializable
 
   private boolean isValidPhoneNumber(String phoneNumber)
   {
-    
+
     for(int i = 0; i < phoneNumber.length(); i++)
     {
       if(!Character.isDigit(phoneNumber.charAt(i)))
