@@ -249,10 +249,7 @@ public class Movie implements Serializable
 
   public boolean isValid()
   {
-    if(title.equals("") || director.equals("") || description.equals("") || length<0 || releaseYear<1888 || genres.equals(""))
-    {
-      return false;
-    }
-    return true;
+    return !title.equals("") && !director.equals("") && !description.equals("")
+        && length >= 0 && releaseYear >= 1888 && !genres.equals("");
   }
 }
