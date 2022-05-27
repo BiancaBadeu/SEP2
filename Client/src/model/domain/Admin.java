@@ -22,6 +22,19 @@ public class Admin extends Person
   public Admin(String name, String userName, String password, String phoneNumber, int age){
     super(name, userName, password, phoneNumber, age, "admin");
     this.adminID = userName;
+
+    if(!isValidPhoneNumber(phoneNumber))
+    {
+      throw new IllegalArgumentException("Invalid phone number");
+    }
+    if(!isValidName(name))
+    {
+      throw new IllegalArgumentException("Invalid name");
+    }
+    if(!isValidUsername(userName))
+    {
+      throw new IllegalArgumentException("Invalid username");
+    }
   }
 
   /**
@@ -47,5 +60,57 @@ public class Admin extends Person
    */
   public String toString(){
     return "Admin: " + super.toString() + " " + adminID;
+  }
+
+  public void setUserName(String userName){
+    super.setUserName(userName);
+  }
+
+  private boolean isValidPhoneNumber(String phoneNumber)
+  {
+    if(phoneNumber.length() != 8)
+    {
+      return false;
+    }
+    for(int i = 0; i < phoneNumber.length(); i++)
+    {
+      if(!Character.isDigit(phoneNumber.charAt(i)))
+      {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private boolean isValidName(String name)
+  {
+    if(name.length() < 2)
+    {
+      return false;
+    }
+    for(int i = 0; i < name.length(); i++)
+    {
+      if(!Character.isLetter(name.charAt(i)))
+      {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private boolean isValidUsername(String username)
+  {
+    if(username.length() < 2)
+    {
+      return false;
+    }
+    for(int i = 0; i < username.length(); i++)
+    {
+      if(!Character.isLetter(username.charAt(i)) && !Character.isDigit(username.charAt(i)))
+      {
+        return false;
+      }
+    }
+    return true;
   }
 }
