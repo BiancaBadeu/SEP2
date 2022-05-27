@@ -42,7 +42,7 @@
             <Label text="Release year" />
             <TextField fx:id="releaseYear" prefHeight="26.0" prefWidth="82.0" />
             <Label text="Description" />
-            <TextArea fx:id="description" prefHeight="100.0" prefWidth="312.0" />
+            <TextArea fx:id="description" prefHeight="100.0" prefWidth="312.0" wrapText="true" />
          </children>
       </HBox>
       <Label fx:id="errorLabel" prefHeight="18.0" prefWidth="266.0" text="error label" textFill="RED" />

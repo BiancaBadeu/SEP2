@@ -39,6 +39,25 @@ public class ModelManager implements Model
 
   /**
    * @throws SQLException exception
+   *         A method to get the movies from the database and store it
+   */
+  public void getDatabaseMovies() throws SQLException
+  {
+    MovieList movies = new MovieList();
+    ArrayList<Movie> dbMovies = database.getAllMovies();
+    if (!dbMovies.isEmpty())
+    {
+      for (int i = 0; i < dbMovies.size(); i++)
+      {
+        movies.addMovie(dbMovies.get(i));
+      }
+      this.movieList = movies;
+      System.out.println(movieList.getAllMovies());
+    }
+  }
+
+  /**
+   * @throws SQLException exception
    *         A method to get the information from the database and store it
    */
   public void getAllInfo() throws SQLException
@@ -166,7 +185,14 @@ public class ModelManager implements Model
     {
       e.printStackTrace();
     }
-
+    try
+    {
+      getDatabaseMovies();
+    }
+    catch (SQLException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**

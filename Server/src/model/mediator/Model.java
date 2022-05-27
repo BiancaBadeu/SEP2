@@ -19,6 +19,12 @@ public interface Model extends UnnamedPropertyChangeSubject
 
   /**
    * @throws SQLException exception
+   *         A method to get the movies from the database and store it
+   */
+  void getDatabaseMovies() throws SQLException;
+
+  /**
+   * @throws SQLException exception
    * A method to set the lists from the database in the model
    */
   void getAllInfo() throws SQLException;
