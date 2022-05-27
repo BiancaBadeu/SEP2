@@ -1,16 +1,59 @@
+import model.domain.Movie;
+import model.domain.Rental;
+import model.domain.Review;
+import model.domain.User;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 //import static org.junit.jupiter.api.Assertions.*;
 
 class RentalTest
 {
 
+  private Date date;
+  private Movie movie;
+  private User user;
+private Rental rental;
+
   @BeforeEach void setUp()
   {
+
+    date = new Date();
+     movie = new Movie("Test test test", "Test test test", 0,
+        "Test test test", 0, 0, "Test test test", new ArrayList<Review>());
+     user = new User("Test test test", "Test test test", "Test test test",
+        "Test test test", 0);
+     rental = new Rental(date, movie, user);
   }
 
   @AfterEach void tearDown()
   {
+  }
+
+  @Test void setInvalidDate()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      rental.setExpirationDate(null);
+    });
+  }
+
+  @Test void setInvalidMovie()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      rental.setRentedMovie(null);
+    });
+  }
+
+  @Test void setInvalidUser()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      rental.setUser(null);
+    });
   }
 }

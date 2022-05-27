@@ -8,9 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class AdminTest
 {
 
- Admin admin= new Admin("admin","admin","admin","admin",0);
+  private Admin admin;
+
  @BeforeEach void setUp()
   {
+     admin= new Admin("admin","admin","admin","admin",0);
   }
 
   @AfterEach void tearDown()
