@@ -25,7 +25,17 @@ public class RentalList
    * A method that adds a rental to the rental List
    */
   public void addRental(Movie movie, Date expirationDate, User user){
+
+
+
+    if(movie == null || expirationDate == null || user == null){
+      throw new IllegalArgumentException("Arguments cannot be null");
+    }
+
+
     Rental rented = new Rental(expirationDate,movie,user);
+
+
     rentals.add(rented);
   }
 
