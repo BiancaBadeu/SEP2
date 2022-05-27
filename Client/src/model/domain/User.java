@@ -45,7 +45,7 @@ public class User extends Person implements Serializable
 
   private boolean isValidPhoneNumber(String phoneNumber)
   {
-    if(phoneNumber.length() != 8)
+    if(phoneNumber.length() < 8)
     {
       return false;
     }
