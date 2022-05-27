@@ -28,8 +28,14 @@
                      <children>
                         <HBox prefHeight="7.0" prefWidth="440.0">
                            <children>
-                              <Label text="Title:" />
-                              <Label fx:id="title" prefHeight="18.0" prefWidth="326.0" text="Label" />
+                              <Label text="Title:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="title" prefHeight="18.0" prefWidth="326.0" text="Label">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
                            <padding>
                               <Insets bottom="3.0" />
@@ -37,8 +43,14 @@
                         </HBox>
                         <HBox prefHeight="7.0" prefWidth="440.0">
                            <children>
-                              <Label text="Length:" />
-                              <Label fx:id="length" prefHeight="18.0" prefWidth="307.0" text="Label" />
+                              <Label text="Length:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="length" prefHeight="18.0" prefWidth="307.0" text="Label">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
                            <padding>
                               <Insets bottom="3.0" />
@@ -46,8 +58,14 @@
                         </HBox>
                         <HBox prefHeight="7.0" prefWidth="440.0">
                            <children>
-                              <Label text="Director:" />
-                              <Label fx:id="director" prefHeight="7.0" prefWidth="387.0" text="Label" />
+                              <Label text="Director:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="director" prefHeight="7.0" prefWidth="380.0" text="Label">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
                            <padding>
                               <Insets bottom="3.0" />
@@ -55,8 +73,14 @@
                         </HBox>
                         <HBox prefHeight="7.0" prefWidth="440.0">
                            <children>
-                              <Label text="Release year:" />
-                              <Label fx:id="releaseYear" prefHeight="18.0" prefWidth="63.0" text="Label" />
+                              <Label text="Release year:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="releaseYear" prefHeight="18.0" prefWidth="63.0" text="Label">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
                            <padding>
                               <Insets bottom="3.0" />
@@ -64,8 +88,14 @@
                         </HBox>
                         <HBox prefHeight="7.0" prefWidth="440.0">
                            <children>
-                              <Label text="Genre:" />
-                              <Label fx:id="genre" prefHeight="18.0" prefWidth="274.0" text="Label" />
+                              <Label text="Genre:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="genre" prefHeight="18.0" prefWidth="274.0" text="Label">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
                            </children>
                            <padding>
                               <Insets bottom="3.0" />
@@ -73,8 +103,14 @@
                         </HBox>
                         <HBox prefHeight="141.0" prefWidth="440.0">
                            <children>
-                              <Label prefHeight="18.0" prefWidth="90.0" text="Description:" />
-                              <Label fx:id="description" alignment="TOP_LEFT" prefHeight="94.0" prefWidth="354.0" text="Label" wrapText="true" />
+                              <Label prefHeight="18.0" prefWidth="90.0" text="Description:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="description" alignment="TOP_LEFT" prefHeight="94.0" prefWidth="354.0" text="Label" wrapText="true">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
                      </children>
@@ -82,17 +118,20 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </VBox>
-                  <Button mnemonicParsing="false" onAction="#goBackPressed" prefHeight="18.0" prefWidth="53.0" text="&lt;-">
+                  <Button mnemonicParsing="false" onAction="#goBackPressed" prefHeight="18.0" prefWidth="53.0" text="←">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <Label fx:id="averageRating" prefHeight="26.0" prefWidth="28.0" text="Label">
+            <Label fx:id="averageRating" prefHeight="26.0" prefWidth="46.0" text="Label">
                <VBox.margin>
                   <Insets bottom="5.0" left="100.0" top="5.0" />
                </VBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
             </Label>
             <HBox prefHeight="55.0" prefWidth="583.0">
                <children>
@@ -100,24 +139,39 @@
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Label>
                   <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.5" />
                   <Label text="5">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Label>
                   <Label text="out of ">
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Label>
                   <Label fx:id="numberOfReviews" text="Label">
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
                   </Label>
-                  <Label text="reviews" />
+                  <Label text="reviews">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
                   <Button fx:id="rentButton" mnemonicParsing="false" onAction="#rentPressed" prefHeight="50.0" prefWidth="100.0" text="Rent movie">
                      <HBox.margin>
                         <Insets left="20.0" right="5.0" />

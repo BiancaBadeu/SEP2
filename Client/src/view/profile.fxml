@@ -22,7 +22,7 @@
                         <Image url="@profile-img.png" />
                      </image>
                   </ImageView>
-                  <VBox prefHeight="127.0" prefWidth="374.0">
+                  <VBox prefHeight="127.0" prefWidth="403.0">
                      <children>
                         <HBox prefHeight="15.0" prefWidth="200.0">
                            <children>
@@ -33,7 +33,7 @@
                               <Insets bottom="5.0" />
                            </VBox.margin>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="15.0" prefWidth="200.0">
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="15.0" prefWidth="388.0">
                            <children>
                               <Label text="Full name:" />
                               <Label fx:id="nameLabel" prefHeight="18.0" prefWidth="220.0" text="Label" />
@@ -62,9 +62,9 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </VBox>
-                  <Button mnemonicParsing="false" onAction="#goBackPressed" prefHeight="51.0" prefWidth="82.0" text="&lt;-">
+                  <Button mnemonicParsing="false" onAction="#goBackPressed" prefHeight="30.0" prefWidth="74.0" text="⇦">
                      <font>
-                        <Font size="26.0" />
+                        <Font size="36.0" />
                      </font>
                   </Button>
                </children>
