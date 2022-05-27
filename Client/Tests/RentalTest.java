@@ -19,16 +19,16 @@ class RentalTest
   private Date date;
   private Movie movie;
   private User user;
-private Rental rental;
+  private Rental rental;
 
   @BeforeEach void setUp()
   {
 
     date = new Date();
-     movie = new Movie("Test test test", "Test test test", 0,
-        "Test test test", 0, 0, "Test test test", new ArrayList<Review>());
-     user = new User("Test test test", "Test test test", "Test test test",
-        "Test test test", 0);
+     movie = new Movie("", "", 0,
+        "", 0, 0, "", new ArrayList<Review>());
+     user = new User("", "", "Test test test",
+        "", 0);
      rental = new Rental(date, movie, user);
   }
 
@@ -39,21 +39,44 @@ private Rental rental;
   @Test void setInvalidDate()
   {
     assertThrows(IllegalArgumentException.class, () -> {
-      rental.setExpirationDate(null);
+      rental.setExpirationDate(date);
     });
   }
 
   @Test void setInvalidMovie()
   {
     assertThrows(IllegalArgumentException.class, () -> {
-      rental.setRentedMovie(null);
+      rental.setRentedMovie(movie);
     });
   }
 
   @Test void setInvalidUser()
   {
     assertThrows(IllegalArgumentException.class, () -> {
+      rental.setUser(user);
+    });
+  }
+
+  @Test void setNullDate()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      rental.setExpirationDate(null);
+    });
+  }
+
+  @Test void setNullMovie()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      rental.setRentedMovie(null);
+    });
+  }
+
+  @Test void setNullUser()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
       rental.setUser(null);
     });
   }
+
+  
 }

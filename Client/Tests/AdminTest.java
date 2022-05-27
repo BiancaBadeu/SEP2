@@ -40,4 +40,25 @@ class AdminTest
       admin.setPhoneNumber("");
     });
   }
+
+  @Test void setNullName()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      admin.setName(null);
+    });
+  }
+
+  @Test void setNullUsername()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      admin.setUserName(null);
+    });
+  }
+
+  @Test void setNullPhoneNumber()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      admin.setPhoneNumber(null);
+    });
+  }
 }

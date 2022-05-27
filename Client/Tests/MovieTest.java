@@ -73,4 +73,32 @@ class MovieTest
     });
   }
 
+  @Test void setNullName()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      movie.setTitle(null);
+    });
+  }
+
+  @Test void setNullDescription()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      movie.setDescription(null);
+    });
+  }
+
+  @Test void setNullDirector()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      movie.setDirector(null);
+    });
+  }
+
+  @Test void setNullGenres()
+  {
+    assertThrows(IllegalArgumentException.class, () -> {
+      movie.setGenres(null);
+    });
+  }
+
 }
