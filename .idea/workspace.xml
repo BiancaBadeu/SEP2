@@ -8,10 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/Tests/RentalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/RentalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/domain/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/domain/Review.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/model/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Client/RentalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Client/RentalTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,19 +90,20 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RentalTest">
-    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ClientMain" />
-      <module name="Client" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-17.0.1\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.MovieTest">
     <configuration name="AdminTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AdminTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MovieTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,19 +137,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ClientMain" />
       <item itemvalue="JUnit.ReviewTest" />
       <item itemvalue="JUnit.AdminTest" />
       <item itemvalue="JUnit.UserTest" />
       <item itemvalue="JUnit.RentalTest" />
+      <item itemvalue="JUnit.MovieTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MovieTest" />
         <item itemvalue="JUnit.RentalTest" />
         <item itemvalue="JUnit.ReviewTest" />
         <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.AdminTest" />
-        <item itemvalue="Application.ClientMain" />
       </list>
     </recent_temporary>
   </component>

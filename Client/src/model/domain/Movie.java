@@ -133,7 +133,7 @@ public class Movie implements Serializable
    */
   public void setTitle(String title)
   {
-    if(title.equals(""))
+    if(title==null || title.equals(""))
     {
       throw new IllegalArgumentException("Invalid title");
     }
@@ -149,7 +149,14 @@ public class Movie implements Serializable
    */
   public void setDirector(String director)
   {
-    this.director = director;
+    if(director==null || director.equals(""))
+    {
+      throw new IllegalArgumentException("Invalid director");
+    }
+
+    else
+
+      this.director = director;
   }
 
   /**
@@ -158,7 +165,14 @@ public class Movie implements Serializable
    */
   public void setDescription(String description)
   {
-    this.description = description;
+    if(description==null || description.equals("") )
+    {
+      throw new IllegalArgumentException("Invalid description");
+    }
+
+    else
+
+      this.description = description;
   }
 
   /**
@@ -167,7 +181,14 @@ public class Movie implements Serializable
    */
   public void setLength(int length)
   {
-    this.length = length;
+    if(length<=0)
+    {
+      throw new IllegalArgumentException("Invalid length");
+    }
+
+    else
+
+      this.length = length;
   }
 
   /**
@@ -176,7 +197,15 @@ public class Movie implements Serializable
    */
   public void setAvgRating(double avgRating)
   {
-    this.avgRating = avgRating;
+    if(avgRating<0 || avgRating>6)
+    {
+      throw new IllegalArgumentException("Invalid average rating");
+    }
+
+    else
+
+
+      this.avgRating = avgRating;
     /*
     if(!reviews.isEmpty()){
     double sum=avgRating;
@@ -194,6 +223,10 @@ public class Movie implements Serializable
    */
   public void setReleaseYear(int releaseYear)
   {
+
+    if(releaseYear<1888){
+      throw new IllegalArgumentException("Invalid release year");
+    }
     this.releaseYear = releaseYear;
   }
 
@@ -203,7 +236,13 @@ public class Movie implements Serializable
    */
   public void setGenres(String genres)
   {
-    this.genres = genres;
+    if(genres==null||genres.equals(""))
+    {
+      throw new IllegalArgumentException("Invalid genre");
+    }
+
+    else
+      this.genres = genres;
   }
 
   public void setReviews(ArrayList<Review> reviews)

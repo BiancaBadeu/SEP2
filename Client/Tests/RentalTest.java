@@ -36,7 +36,7 @@ class RentalTest
   {
   }
 
-  
+
 
   @Test void setNullDate()
   {
