@@ -89,14 +89,22 @@ public class ModelManager implements Model
       System.out.println(personList.getPersons());
     }
 
+    Date date = new Date();
+
     RentalList rentals = new RentalList();
     ArrayList<Rental> dbRentals = database.getAllRentals();
     if (!dbRentals.isEmpty())
     {
       for (int i = 0; i < dbRentals.size(); i++)
       {
-        rentals.addRental(dbRentals.get(i).getRentedMovie(),
-            dbRentals.get(i).getExpirationDate(), dbRentals.get(i).getUser());
+        if(dbRentals.get(i).getExpirationDate().toInstant().isBefore(date.toInstant()))
+        {
+              database.removeRental(dbRentals.get(i).getRentedMovie().getTitle(), dbRentals.get(i).getUserName());
+        }
+        else
+        {
+          rentals.addRental(dbRentals.get(i).getRentedMovie(), dbRentals.get(i).getExpirationDate(), dbRentals.get(i).getUser());
+        }
       }
       this.rentalList = rentals;
       System.out.println(rentalList.getAllRentals());
