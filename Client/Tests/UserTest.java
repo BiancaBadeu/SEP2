@@ -13,7 +13,7 @@ class UserTest
   @BeforeEach void setUp()
   {
 
-    user1 = new User("Test", "Test", "Test", "Test", 1);
+    user1 = new User("Test", "Test", "Test", "12345678", 18);
   }
 
   @AfterEach void tearDown()
