@@ -25,6 +25,15 @@ public class Admin extends Person
 
 
 
+    if(phoneNumber.equals("")){
+      throw new IllegalArgumentException("Phone number cannot be empty");
+    }
+
+    if(name.equals("")){
+      throw new IllegalArgumentException("Name cannot be empty");
+    }
+
+
   }
 
   /**
@@ -53,6 +62,12 @@ public class Admin extends Person
   }
 
   public void setUserName(String userName){
+
+    if(userName.equals("")){
+      throw new IllegalArgumentException("Username cannot be empty");
+    }
+
+    else
 
     super.setUserName(userName);
   }

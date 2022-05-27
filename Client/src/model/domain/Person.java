@@ -116,6 +116,12 @@ public abstract class Person implements Serializable
   public void setPhoneNumber(String phoneNumber)
   {
 
+    if(phoneNumber==null || phoneNumber.equals(""))
+    {
+      throw new IllegalArgumentException("Invalid phone number");
+    }
+    else
+
     this.phoneNumber = phoneNumber;
   }
 
