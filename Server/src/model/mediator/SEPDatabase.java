@@ -65,8 +65,8 @@ public class SEPDatabase implements SEPPersistence
 
     for (int i = 0; i < results.size(); i++)
     {
-      Person user = new User("test", "test", "test", "test", 0);
-      Person admin = new Admin("test", "test", "test", "test", 0);
+      Person user = new User("test", "test", "test", "123456789", 0);
+      Person admin = new Admin("test", "test", "test", "123456789", 0);
 
       Object[] row = results.get(i);
       for (int j = 0; j < row.length; j++)
@@ -139,7 +139,7 @@ public class SEPDatabase implements SEPPersistence
   {
     String sql = "select * from sep.person;";
     ArrayList<Object[]> results = db.query(sql);
-    User user = new User("test","test","test","test",0);
+    User user = new User("test","test","test","123456789",0);
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);
@@ -394,7 +394,7 @@ public class SEPDatabase implements SEPPersistence
     {
       Object[] row = results.get(i);
 
-      Rental rental = new Rental(new Date(), new Movie("test","test",9,"test",0.0, 1999, "test", new ArrayList<>()), new User("test","test","test","test",0));
+      Rental rental = new Rental(new Date(), new Movie("test","test",9,"test",0.0, 1999, "test", new ArrayList<>()), new User("test","test","test","123456789",0));
       for (int j = 0; j < row.length; j++)
       {
         switch (j)
