@@ -27,7 +27,7 @@
                   <TextField fx:id="usernameLogin" maxWidth="200.0" minWidth="200.0" prefHeight="26.0" prefWidth="200.0" promptText="username" VBox.vgrow="NEVER" />
                   <PasswordField fx:id="passwordLogin" maxWidth="200.0" prefWidth="200.0" promptText="password" />
                   <Label fx:id="errorLabelLogin" prefHeight="3.0" prefWidth="200.0" text="error" textFill="RED" />
-                  <Button mnemonicParsing="false" onAction="#loginPressed" prefHeight="35.0" prefWidth="80.0" text="Log in" />
+                  <Button  mnemonicParsing="false" onAction="#loginPressed" prefHeight="35.0" prefWidth="80.0" text="Log in" />
                </children>
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="422.0" prefWidth="340.0" spacing="10.0">

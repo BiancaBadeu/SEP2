@@ -1,28 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeViewController">
    <children>
-      <ListView fx:id="topratedList" layoutX="54.0" layoutY="124.0" prefHeight="450.0" prefWidth="250.0" />
-      <Button layoutX="318.0" layoutY="227.0" mnemonicParsing="false" onAction="#topratedDetailsPressed" text="View top-rated movie details" />
-      <ListView fx:id="trendingList" layoutX="499.0" layoutY="124.0" prefHeight="450.0" prefWidth="250.0" />
-      <Label layoutX="513.0" layoutY="39.0" text="Trending Movies">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label layoutX="57.0" layoutY="39.0" text="Top-Rated Movies">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Button layoutX="320.0" layoutY="414.0" mnemonicParsing="false" onAction="#trendingDetailsPressed" text="View trending movie details" />
-      <Button layoutX="362.0" layoutY="539.0" mnemonicParsing="false" onAction="#viewProfilePressed" text="View profile" />
-      <Button layoutX="356.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchPressed" text="Search movies" />
+      <HBox prefHeight="650.0" prefWidth="850.0">
+         <children>
+            <VBox prefHeight="600.0" prefWidth="300.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="155.0" prefWidth="300.0" text="Top-Rated Movies">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="topratedList" prefHeight="445.0" prefWidth="300.0" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="602.0" prefWidth="272.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#searchPressed" text="Search movies">
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#topratedDetailsPressed" text="View top-rated movie details">
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#trendingDetailsPressed" text="View trending movie details">
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#viewProfilePressed" text="View profile">
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="598.0" prefWidth="300.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="155.0" prefWidth="300.0" text="Trending Movies">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="trendingList" prefHeight="445.0" prefWidth="300.0" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

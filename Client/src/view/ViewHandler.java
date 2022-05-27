@@ -121,7 +121,11 @@ public class ViewHandler
         loader.setLocation(getClass().getResource(fxmlFile));
         root = loader.load();
         startViewController = loader.getController();
+        currentScene.getStylesheets().add(
+            String.valueOf(getClass().getResource("style.css")));
+
         startViewController.init(this,  viewModelFactory.getStartViewModel(), root);
+
       }
       catch (Exception e)
       {
