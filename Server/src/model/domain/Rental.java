@@ -58,7 +58,12 @@ public class Rental implements Serializable
    */
   public void setExpirationDate(Date expirationDate)
   {
-    this.expirationDate = expirationDate;
+    if(expirationDate == null)
+    {
+      throw new IllegalArgumentException("Expiration date cannot be null");
+    }
+    else
+      this.expirationDate = expirationDate;
   }
 
   /**
@@ -67,7 +72,12 @@ public class Rental implements Serializable
    */
   public void setUser(User user)
   {
-    this.user = user;
+    if(user == null)
+    {
+      throw new IllegalArgumentException("User cannot be null");
+    }
+    else
+      this.user = user;
   }
 
   /**
@@ -92,7 +102,12 @@ public class Rental implements Serializable
    */
   public void setRentedMovie(Movie rentedMovie)
   {
-    this.rentedMovie = rentedMovie;
+    if(rentedMovie == null)
+    {
+      throw new IllegalArgumentException("The movie cannot be null");
+    }
+    else
+      this.rentedMovie = rentedMovie;
   }
 
   /**

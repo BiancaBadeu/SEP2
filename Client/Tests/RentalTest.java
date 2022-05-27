@@ -36,26 +36,7 @@ class RentalTest
   {
   }
 
-  @Test void setInvalidDate()
-  {
-    assertThrows(IllegalArgumentException.class, () -> {
-      rental.setExpirationDate(date);
-    });
-  }
-
-  @Test void setInvalidMovie()
-  {
-    assertThrows(IllegalArgumentException.class, () -> {
-      rental.setRentedMovie(movie);
-    });
-  }
-
-  @Test void setInvalidUser()
-  {
-    assertThrows(IllegalArgumentException.class, () -> {
-      rental.setUser(user);
-    });
-  }
+  
 
   @Test void setNullDate()
   {
