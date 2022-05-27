@@ -14,7 +14,7 @@ public class Rental implements Serializable
 
   /**
    * @param expirationDate the expiration date of the rental
-   * //@param user the user who rented the movie
+   * @param user the user who rented the movie
    * @param rentedMovie the movie rented
    *
    * Constructor for the rental class.
@@ -53,22 +53,21 @@ public class Rental implements Serializable
   }
 
   /**
-   * @param expirationDate
+   * @param expirationDate the expiration date
    * Setter for the expiration date of the rental
    */
   public void setExpirationDate(Date expirationDate)
   {
-
     if(expirationDate == null)
     {
       throw new IllegalArgumentException("Expiration date cannot be null");
     }
     else
-    this.expirationDate = expirationDate;
+      this.expirationDate = expirationDate;
   }
 
   /**
-   * @param user
+   * @param user the user
    * Setter for the user of the rental
    */
   public void setUser(User user)
@@ -90,7 +89,7 @@ public class Rental implements Serializable
   }
 
   /**
-   * @param userName
+   * @param userName the username
    * Setter for the username of the rental
    */
   public void setUserName(String userName){
@@ -98,18 +97,17 @@ public class Rental implements Serializable
   }
 
   /**
-   * @param rentedMovie
+   * @param rentedMovie the rented movie
    * Setter for the rented movie of the rental
    */
   public void setRentedMovie(Movie rentedMovie)
   {
-
     if(rentedMovie == null)
     {
       throw new IllegalArgumentException("The movie cannot be null");
     }
     else
-    this.rentedMovie = rentedMovie;
+      this.rentedMovie = rentedMovie;
   }
 
   /**

@@ -10,9 +10,9 @@ public class Admin extends Person
 
   /**
    * @param name the first name of the administrator
-   * @param phoneNumber the phone number of the administrator
    * @param userName the username of the administrator
    * @param password the password of the administrator
+   * @param phoneNumber the phone number of the administrator
    * @param age the age of the administrator
    *
    * Constructor for the class Admin. Initializes instance variables with the super method.
@@ -23,8 +23,6 @@ public class Admin extends Person
     super(name, userName, password, phoneNumber, age, "admin");
     this.adminID = userName;
 
-
-
     if(phoneNumber.equals("")){
       throw new IllegalArgumentException("Phone number cannot be empty");
     }
@@ -32,7 +30,6 @@ public class Admin extends Person
     if(name.equals("")){
       throw new IllegalArgumentException("Name cannot be empty");
     }
-
   }
 
   /**
@@ -60,16 +57,17 @@ public class Admin extends Person
     return "Admin: " + super.toString() + " " + adminID;
   }
 
+  /**
+   * @param userName the username
+   *                 A method to set the username
+   */
   public void setUserName(String userName){
 
-    if(userName.equals("")){
+    if(userName.equals(""))
+    {
       throw new IllegalArgumentException("Username cannot be empty");
     }
-
     else
-
       super.setUserName(userName);
   }
-
-
 }

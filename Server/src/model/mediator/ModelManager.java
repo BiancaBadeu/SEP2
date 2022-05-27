@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * The ModelManager class is the main class of the model. It is responsible for managing the model.
+ * The ModelManager class is the main class of the model. It is responsible for managing the model. Implements the model
+ * @see Model
  */
 public class ModelManager implements Model
 {
@@ -38,7 +39,7 @@ public class ModelManager implements Model
 
   /**
    * @throws SQLException exception
-   *                      A method to get the information from the database and store it
+   *         A method to get the information from the database and store it
    */
   public void getAllInfo() throws SQLException
   {
@@ -221,6 +222,10 @@ public class ModelManager implements Model
     return movieList.getAllMovies();
   }
 
+  /**
+   * @param genre the genre
+   * @return an array list of movies with the genre
+   */
   @Override public ArrayList<Movie> getMoviesWithGenre(String genre)
   {
     return movieList.getMoviesWithGenre(genre);
@@ -287,21 +292,12 @@ public class ModelManager implements Model
   {
     return rentalList.getRentalsWithUser(username);
   }
-/*
---For the next sprint :)
-  @Override public ArrayList<Rental> getRentalsWithMovie(Movie movie)
-  {
-    return rentalList.getRentalsWithMovie(movie);
-  }
-*/
 
   /**
    * @param listener the listener to be removed
    *                 A method to remove a listener
    */
-  public void removeListener(PropertyChangeListener listener)
-  {
-  }
+  public void removeListener(PropertyChangeListener listener) {}
 
   /**
    * @param title a String variable representing the title of a movie
@@ -490,8 +486,6 @@ public class ModelManager implements Model
     {
       e.printStackTrace();
     }
-
   }
-
 }
 

@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * A class representing a model manager. Implements the model
- * @see Model ;
+ * @see Model
  */
 public class ModelManager implements Model
 {
@@ -128,19 +128,6 @@ public class ModelManager implements Model
   {
     client.cancelRental(title, username);
   }
-
-/*
---For the next sprint :)
-  @Override public ArrayList<Rental> getRentalsWithUser(User user)
-  {
-    return rentalList.getRentalsWithUser(user);
-  }
-
-  @Override public ArrayList<Rental> getRentalsWithMovie(Movie movie)
-  {
-    return rentalList.getRentalsWithMovie(movie);
-  }
-*/
 
   /**
    * @param title a String variable representing the title of a movie

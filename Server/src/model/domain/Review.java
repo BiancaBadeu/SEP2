@@ -50,18 +50,31 @@ public class Review implements Serializable
 
   /**
    * @param comment the comment
+   *                Setter for the comment
    */
   public void setComment(String comment)
   {
-    this.comment = comment;
+    if(!isValidComment(comment))
+    {
+      throw new IllegalArgumentException("Invalid comment");
+    }
+    else
+      this.comment = comment;
   }
 
   /**
    * @param rating the rating
+   *               Setter for the rating
    */
   public void setRating(int rating)
   {
-    this.rating = rating;
+
+    if(!isValidRating(rating))
+    {
+      throw new IllegalArgumentException("Invalid rating");
+    }
+    else
+      this.rating = rating;
   }
 
   /**
@@ -72,6 +85,10 @@ public class Review implements Serializable
     return rating + " stars. " + comment;
   }
 
+  /**
+   * @param rating the rating
+   * @return a boolean value if the rating is valid
+   */
   public boolean isValidRating(int rating){
     if(rating < 0 || rating > 5){
       return false;
@@ -79,6 +96,10 @@ public class Review implements Serializable
     return true;
   }
 
+  /**
+   * @param comment the comment
+   * @return a boolean value if the comment is valid
+   */
   public boolean isValidComment(String comment){
     if(comment == null || comment.isEmpty()){
       return false;

@@ -20,8 +20,6 @@ public class User extends Person implements Serializable
   public User(String name, String username, String password, String phoneNumber, int age)
   {
     super(name, username, password, phoneNumber, age, "user");
-
-
   }
 
   /**
@@ -31,6 +29,5 @@ public class User extends Person implements Serializable
   {
     return super.toString();
   }
-
 
 }

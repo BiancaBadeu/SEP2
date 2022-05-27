@@ -18,9 +18,9 @@ public abstract class Person implements Serializable
 
   /**
    * @param name the name of the person
-   * @param phoneNumber the phone number of the person
    * @param userName the username of the person
    * @param password the password of the person
+   * @param phoneNumber the phone number of the person
    * @param age the age of the person
    * @param type the type of the person (user, admin)
    *
@@ -98,40 +98,35 @@ public abstract class Person implements Serializable
    */
   public void setName(String name1)
   {
-
     if(name1==null || name1.equals(""))
     {
       throw new IllegalArgumentException("Invalid name");
     }
     else
-
       this.name = name1;
 
   }
 
   /**
-   * @param phoneNumber
+   * @param phoneNumber the phone number
    * Setter for the phone number of the person
    */
   public void setPhoneNumber(String phoneNumber)
   {
-
     if(phoneNumber==null || phoneNumber.equals(""))
     {
       throw new IllegalArgumentException("Invalid phone number");
     }
     else
-
       this.phoneNumber = phoneNumber;
   }
 
   /**
-   * @param userName
+   * @param userName the username
    * Setter for the username of the person
    */
   public void setUserName(String userName)
   {
-
     if(userName==null || userName.equals(""))
     {
       throw new IllegalArgumentException("Invalid username");
@@ -141,7 +136,7 @@ public abstract class Person implements Serializable
   }
 
   /**
-   * @param password
+   * @param password the password
    * Setter for the password of the person
    */
   public void setPassword(String password)
@@ -150,7 +145,7 @@ public abstract class Person implements Serializable
   }
 
   /**
-   * @param age
+   * @param age the age
    * Setter for the age of the person
    */
   public void setAge(int age)

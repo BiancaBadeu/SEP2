@@ -15,7 +15,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 /**
- * The SEPDatabase class is responsible for managing the connection with Database.
+ * The SEPDatabase class is responsible for managing the connection with Database. Implements SEPPersistence
+ * @see SEPPersistence
  */
 public class SEPDatabase implements SEPPersistence
 {
@@ -39,9 +40,8 @@ public class SEPDatabase implements SEPPersistence
    * @param userName    the username of the user
    * @param password    the password of the user
    * @param age         the age of the user
-   *                    adds user to database
    * @throws SQLException exception
-   * a method that adds a new user to database.
+   *                    A method to add user to database
    */
   @Override public void addUser(String name, String phoneNumber,
       String userName, String password, int age) throws SQLException
@@ -133,7 +133,7 @@ public class SEPDatabase implements SEPPersistence
    * @param userName the username
    * @return a user object
    * @throws SQLException exception
-   * a method that gets a user with that name from the database
+   *        A method that gets a user with that username from the database
    */
   @Override public User getUser(String userName) throws SQLException
   {
@@ -172,8 +172,8 @@ public class SEPDatabase implements SEPPersistence
   }
   /**
    * @param movie adds movie to database
-   * @throws SQLException exception\
-   * a method that adds the movie to the database.
+   * @throws SQLException exception
+   *      A method that adds the movie to the database.
    */
   @Override public void addMovie(Movie movie) throws SQLException
   {
@@ -188,7 +188,7 @@ public class SEPDatabase implements SEPPersistence
   /**
    * @param movie the movie to be removed
    * @throws SQLException exception
-   * a method that removes the movie from the database.
+   *        A method that removes the movie from the database.
    */
   @Override public void removeMovie(Movie movie) throws SQLException
   {
@@ -305,7 +305,7 @@ public class SEPDatabase implements SEPPersistence
    * @param title the title
    * @return a movie object
    * @throws SQLException exception
-   * a method that returns a movie with that title from the database.
+   *      A method that returns a movie with that title from the database.
    */
   @Override public Movie getMovieWithTitle(String title) throws SQLException
   {
@@ -356,6 +356,12 @@ public class SEPDatabase implements SEPPersistence
       return movie;
   }
 
+  /**
+   * @param avgRating the average rating
+   * @param title     the title
+   * @throws SQLException exception
+   *      A method to update the average rating of a movie
+   */
   @Override public void updateAvgRating(double avgRating, String title) throws SQLException
   {
     String sql = "update sep.movies set avgRating = ? WHERE movieName=?;";
@@ -367,7 +373,7 @@ public class SEPDatabase implements SEPPersistence
    * @param user the user
    * @param rentedMovie the rented movie
    * @throws SQLException exception
-   * a method that adds a rental to the database.
+   *      A method that adds a rental to the database.
    */
   @Override public void addRental(Date expirationDate, User user,
       Movie rentedMovie) throws SQLException
@@ -502,6 +508,11 @@ public class SEPDatabase implements SEPPersistence
 
   }
 
+  /**
+   * @param title the title
+   * @return an array list of reviews of that movie
+   * @throws SQLException exception
+   */
   public ArrayList<Review> getAllReviewForMovie(String title) throws SQLException
 {
 
@@ -534,7 +545,14 @@ public class SEPDatabase implements SEPPersistence
   return all;
 }
 
-
+  /**
+   * @param title   the title
+   * @param star    the rating
+   * @param comment the comment
+   * @param user    the username
+   * @throws SQLException exception
+   *        A method to add a review
+   */
   @Override public void addReview(String title, int star, String comment, String user)
       throws SQLException
   {
@@ -548,7 +566,7 @@ public class SEPDatabase implements SEPPersistence
    * @param title the title
    * @param username the username
    * @throws SQLException exception
-   * a method that removes the rental for given title of the movie and for that user from the database.
+   *      A method that removes the rental for given title of the movie and for that user from the database.
    */
   public void removeRental(String title, String username) throws SQLException
   {

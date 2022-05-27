@@ -17,21 +17,21 @@ public interface SEPPersistence
    * @param userName    the username of the user
    * @param password    the password of the user
    * @param age         the age of the user
-   *                    adds user to database
    * @throws SQLException exception
+   *           A method to add a user to database
    */
   void addUser(String name, String phoneNumber, String userName, String password, int age) throws SQLException;
 
   /**
    * @param movie adds movie to database
    * @throws SQLException exception
-   * adds a movie to database
+   * A method to add a movie to database
    */
   void addMovie(Movie movie) throws SQLException; 
   /**
    * @param movie the movie to be removed
    * @throws SQLException exception
-   * removes a movie form database
+   * A method to remove a movie form database
    */
   void removeMovie(Movie movie) throws SQLException;
   /**
@@ -47,11 +47,11 @@ public interface SEPPersistence
   ArrayList<Movie> getAllMovies() throws SQLException;
 
   /**
-   * @param expirationDate the date the renatl expires
+   * @param expirationDate the date the rental expires
    * @param user the user
    * @param rentedMovie the rented movie
    * @throws SQLException exception
-   * adds rental to database
+   * A method to add a rental to database
    */
   void addRental(java.util.Date expirationDate, User user, Movie rentedMovie) throws SQLException;
   /**
@@ -91,7 +91,7 @@ public interface SEPPersistence
    * @param comment the comment
    * @param user the username
    * @throws SQLException
-   * adds a review to database
+   * A method to add a review to database
    */
   void addReview(String title, int star, String comment, String user) throws SQLException;
 
@@ -99,17 +99,22 @@ public interface SEPPersistence
    * @param avgRating the average rating
    * @param title the title
    * @throws SQLException exception
+   *      A method to update the average rating of a movie
    */
   void updateAvgRating(double avgRating, String title) throws SQLException;
 
-
+  /**
+   * @param title the title of the movie
+   * @return an array list with the reviews for the movie
+   * @throws SQLException exception
+   */
   ArrayList<Review> getAllReviewForMovie(String title) throws SQLException;
 
   /**
    * @param title the title
    * @param username the username
    * @throws SQLException exception
-   * removes rental from database.
+   * A method to remove a rental from database.
    */
   void removeRental(String title, String username) throws SQLException;
 }

@@ -70,31 +70,37 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @param phoneNumber the person's phone number
    * @param age the person's age
    * @param type the person's type
+   *             A method to add a person
    */
   void addPerson(String name, String username, String password, String phoneNumber, int age, String type);
   /**
    * @param movie the movie to be added
+   *              A method to add a movie
    */
   void addMovie(Movie movie);
 
   /**
    * @param movie the movie to be removed
+   *              A method to remove a movie
    */
   void removeMovie(Movie movie);
 
   /**
    * @param title the movie's title
+   *              A method to rent a movie
    */
   void rentMovie(String title, User user);
 
   /**
    * @param listener the listener to be added
+   *                 A method to add a listener
    */
   void addListener(PropertyChangeListener listener);
 
   /**
    * @param movie the movie to be rented
    * @param expirationDate  the expiration date of the rental
+   *                        A method to add a rental
    */
   void addRental(Movie movie, Date expirationDate, User user);
   /**
@@ -107,10 +113,7 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @return an array list with the rentals for the user
    */
   ArrayList<Rental> getRentalsWithUser(String username);
-  /*
-  --For the next sprint :)
-  ArrayList<Rental> getRentalsWithMovie(Movie movie);
-*/
+
   /**
    * @param username the username of the user
    * @param password the password of the user
@@ -170,8 +173,5 @@ public interface Model extends UnnamedPropertyChangeSubject
    *              A method to leave a review
    */
   void leaveReview(String comment, int star, String title, String user);
-
-  //void addReview(String comment, int stars);
-
 }
 

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Movie class
+ * A class representing a movie
  */
 public class Movie implements Serializable
 {
@@ -20,10 +20,10 @@ public class Movie implements Serializable
   /**
    * @param title the title of the movie
    * @param director the director of the movie
-   * @param description the description of the movie
    * @param length the length of the movie
+   * @param description the description of the movie
    * @param avgRating the average rating of the movie
-   * @param genres the genres of the movie
+   * @param genres the genre of the movie
    * @param reviews the reviews of the movie
    *
    * Constructor for the Movie class
@@ -38,8 +38,6 @@ public class Movie implements Serializable
     this.avgRating = avgRating;
     this.genres = genres;
     this.reviews = reviews;
-
-
   }
 
   /**
@@ -108,9 +106,9 @@ public class Movie implements Serializable
   public int getNumberOfReviews(){return reviews.size();}
 
   /**
-   * @return the genres of the movie
+   * @return the genre of the movie
    *
-   * Getter for the genres of the movie
+   * Getter for the genre of the movie
    */
   public String getGenres()
   {
@@ -128,7 +126,7 @@ public class Movie implements Serializable
   }
 
   /**
-   * @param title tht title
+   * @param title the title
    * Setter for the title of the movie
    */
   public void setTitle(String title)
@@ -137,9 +135,7 @@ public class Movie implements Serializable
     {
       throw new IllegalArgumentException("Invalid title");
     }
-
     else
-
       this.title = title;
   }
 
@@ -201,20 +197,8 @@ public class Movie implements Serializable
     {
       throw new IllegalArgumentException("Invalid average rating");
     }
-
     else
-
-
       this.avgRating = avgRating;
-    /*
-    if(!reviews.isEmpty()){
-    double sum=avgRating;
-    for (int i=0; i<reviews.size();i++){
-      sum=sum+reviews.get(i).getRating();
-    }
-    sum= sum/numberOfReviews;
-    this.avgRating= sum;
-    }*/
   }
 
   /**
@@ -245,6 +229,10 @@ public class Movie implements Serializable
       this.genres = genres;
   }
 
+  /**
+   * @param reviews an array list of reviews
+   *                Setter for the reviews
+   */
   public void setReviews(ArrayList<Review> reviews)
   {
     this.reviews=reviews;

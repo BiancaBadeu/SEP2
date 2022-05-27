@@ -17,6 +17,7 @@ public class RentalList
   {
     this.rentals = new ArrayList<>();
   }
+
   /**
    *@param user the user renting a movie
    * @param movie the movie rented
@@ -84,6 +85,4 @@ public class RentalList
     }
     return movieRentals;
   }
-
-
 }

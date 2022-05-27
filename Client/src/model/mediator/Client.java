@@ -12,7 +12,7 @@ import java.util.Date;
 
 /**
  * A class representing the client. Implements the model
- * @see Model ;
+ * @see Model
  */
 public class Client implements Model
 {

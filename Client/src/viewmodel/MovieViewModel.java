@@ -238,9 +238,6 @@ public class MovieViewModel
   }
 
   /**
-   * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
-   * @see Model
-   *
    * A method to leave a review (rating + comment)
    */
   public void leaveReview()
