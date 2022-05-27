@@ -23,7 +23,7 @@ public class SEPDatabase implements SEPPersistence
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "admin";
+  private static final String PASSWORD = "ladubuleve39";
 
   /**
    * Empty constructor which initializes the db and connects the database
@@ -66,7 +66,7 @@ public class SEPDatabase implements SEPPersistence
     for (int i = 0; i < results.size(); i++)
     {
       Person user = new User("test", "test", "test", "123456789", 0);
-      Person admin = new Admin("test", "test", "test", "987654321", 0);
+      Person admin = new Admin("test", "test1", "test", "987654321", 0);
 
       Object[] row = results.get(i);
       for (int j = 0; j < row.length; j++)
@@ -83,7 +83,7 @@ public class SEPDatabase implements SEPPersistence
               user.setPhoneNumber(String.valueOf(row[j]));
               break;
             case 2:
-              user.setUserName((String.valueOf(row[j])));
+              user.setUserName(String.valueOf(row[j]));
               break;
             case 3:
               user.setPassword(String.valueOf(row[j]));
@@ -107,7 +107,7 @@ public class SEPDatabase implements SEPPersistence
               admin.setPhoneNumber(String.valueOf(row[j]));
               break;
             case 2:
-              admin.setUserName((String.valueOf(row[j])));
+              admin.setUserName(String.valueOf(row[j]));
               break;
             case 3:
               admin.setPassword(String.valueOf(row[j]));
