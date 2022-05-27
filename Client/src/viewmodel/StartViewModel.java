@@ -150,10 +150,10 @@ public class StartViewModel
   public StringProperty getAgeProperty(){return age;}
 
   /**
-   @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
-   @see Model
-
-   A methof to log in the user
+   * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
+   * @see Model
+   *
+   * A method to log in the user
    **/
   public boolean login()
   {

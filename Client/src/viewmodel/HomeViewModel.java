@@ -99,8 +99,8 @@ public class HomeViewModel implements PropertyChangeListener
    * @param type the type of the list (top-rated, trending)
    * @return true or false
    *
-   * Method where the selected property is gathered and checked with the movies in the movieList. Such information is sent to the ViewModelState to be used by
-   * the MovieViewModel.
+   * Method where the selected property is gathered and checked with the movies in the movieList.
+   * Such information is sent to the ViewModelState to be used by the MovieViewModel.
    * @see ViewModelState
    * @see MovieViewModel
    */

@@ -153,12 +153,8 @@ public class MovieViewController
 
   /**
    * A FXML method called when the button named Leave review is pressed
-   * It cals the method leaveReview in the viewModel and if the method returns true(the user is allowed to leave the review),
-   * it will call the method reset in the controller, so that it refreshes the list of reviews and the average rating.
-   *
-   * @see viewmodel.MovieViewModel
-   * @see view.MovieViewController
-   * /
+   * It cals the method leaveReview in the viewModel
+   * @see MovieViewModel
    */
   @FXML private void leaveReviewPressed()
   {
@@ -167,7 +163,7 @@ public class MovieViewController
 
   /**
    * A FXML method called when the button 0 is pressed
-   * It will set a label with the rating 0 and disable the rest of the buttons
+   * It will set a label with the rating 0
    */
   @FXML private void star0Pressed()
   {
@@ -176,7 +172,7 @@ public class MovieViewController
 
   /**
    * A FXML method called when the button 1 is pressed
-   * It will set a label with the rating 1 and disable the rest of the buttons
+   * It will set a label with the rating 1
    */
   @FXML private void star1Pressed()
   {
@@ -185,7 +181,7 @@ public class MovieViewController
 
   /**
    * A FXML method called when the button 2 is pressed
-   * It will set a label with the rating 2 and disable the rest of the buttons
+   * It will set a label with the rating 2
    */
   @FXML private void star2Pressed()
   {
@@ -194,7 +190,7 @@ public class MovieViewController
 
   /**
    * A FXML method called when the button 3 is pressed
-   * It will set a label with the rating 3 and disable the rest of the buttons
+   * It will set a label with the rating 3
    */
   @FXML private void star3Pressed()
   {
@@ -203,7 +199,7 @@ public class MovieViewController
 
   /**
    * A FXML method called when the button 4 is pressed
-   * It will set a label with the rating 4 and disable the rest of the buttons
+   * It will set a label with the rating 4
    */
   @FXML private void star4Pressed()
   {
@@ -212,7 +208,7 @@ public class MovieViewController
 
   /**
    * A FXML method called when the button 5 is pressed
-   * It will set a label with the rating 5 and disable the rest of the buttons
+   * It will set a label with the rating 5
    */
   @FXML private void star5Pressed()
   {

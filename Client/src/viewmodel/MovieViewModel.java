@@ -223,18 +223,18 @@ public class MovieViewModel
    *
    * A method to cancel a rental
    */
-  public boolean cancelMovie(){
-
-    try{
+  public boolean cancelMovie()
+  {
+    try
+    {
       model.cancelRental(title.get(), userState.getUser().getUserName());
       return true;
     }
-
-    catch(Exception e){
+    catch(Exception e)
+    {
       errorLabel.set(e.getMessage());
       return false;
     }
-
   }
 
   /**
@@ -251,7 +251,6 @@ public class MovieViewModel
     catch (Exception e)
     {
       errorLabel.set(e.getMessage());
-
     }
   }
 }

@@ -89,7 +89,6 @@ public class AdminViewController
   @FXML private void addPressed()
   {
       boolean add = viewModel.addMovie();
-
       if(add)
       {
         reset();
@@ -101,7 +100,6 @@ public class AdminViewController
    * It cals the method getEdit in the viewModel and if the method returns true(the admin is allowed to edit the movie),
    *   it will call a method in the viewModel to get the information of the movie.
    *   @see viewmodel.AdminViewModel
-   *
    */
   @FXML private void editPressed()
   {

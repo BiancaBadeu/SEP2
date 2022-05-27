@@ -210,8 +210,8 @@ public class AdminViewModel
 
   /**
    * @param focusedItem the movie selected from the list
-   *                    A method to get the movie's information and store it into the text fields, so that the admin can edit them. It also removes the
-   *                    movie from the movie list, to be added later when the edit is done
+   *     A method to get the movie's information and store it into the text fields, so that the admin can edit them.
+   *          It also removes the movie from the movie list, to be added later when the edit is done
    */
   public void getMovieToEdit(String focusedItem)
   {

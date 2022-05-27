@@ -12,8 +12,8 @@ public class ViewModelFactory
   private HomeViewModel homeViewModel;
   private AdminViewModel adminViewModel;
   private ProfileViewModel profileViewModel;
-  private ViewModelState state = null;
-  private ViewModelStateUser stateUser = null;
+  private ViewModelState state;
+  private ViewModelStateUser stateUser;
   private SearchViewModel searchViewModel;
 
   /**
