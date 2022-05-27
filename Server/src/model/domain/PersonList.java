@@ -37,6 +37,14 @@ public class PersonList
    */
   public void addPerson(String name, String username, String password, String phoneNumber, int age, String type)
   {
+    if(name==null || username==null || password==null || phoneNumber==null || type==null)
+      throw new IllegalArgumentException("Person cannot be null");
+
+    else if(name.equals("") || username.equals("") || password.equals("") || phoneNumber.equals("") || type.equals(""))
+      throw new IllegalArgumentException("Person cannot be empty");
+
+
+
     Person person = null;
     if(type.equals("user"))
     {person = new User(name, username, password, phoneNumber, age);}

@@ -19,6 +19,7 @@ class MovieListTest
      movieList = new MovieList();
      movie = new Movie("The Godfather", "Crime", 197, "iweijwjwui", 9.2,
         1998, "pepe", new ArrayList<>());
+     movieList.addMovie(movie);
 
   }
 
@@ -26,11 +27,15 @@ class MovieListTest
   {
   }
 
-  @Test void add(){
+  @Test void addNullMovie(){
 
     assertThrows(IllegalArgumentException.class, () -> {
-      movieList.addMovie(movie);
+
+      for(int i=0; i<10; i++){
+        movieList.addMovie(null);
+      }
     });
   }
+
 
 }
