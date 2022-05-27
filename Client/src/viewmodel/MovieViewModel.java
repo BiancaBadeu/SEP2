@@ -83,6 +83,7 @@ public class MovieViewModel
    */
   public boolean reset()
   {
+
     //everything set to the selected movie info
     Movie selected = state.getSelectedMovie();
     this.title.set(""+selected.getTitle());
@@ -242,17 +243,18 @@ public class MovieViewModel
    *
    * A method to leave a review (rating + comment)
    */
-  public boolean leaveReview()
+  public void leaveReview()
   {
     try
     {
       model.leaveReview(comment.get(), Integer.parseInt(star.get()), title.get(), userState.getUser().getUserName());
-      return true;
+      reset();
+      errorLabel.set("Changes will appear once you enter the window again.");
     }
     catch (Exception e)
     {
       errorLabel.set(e.getMessage());
-      return false;
+
     }
   }
 }

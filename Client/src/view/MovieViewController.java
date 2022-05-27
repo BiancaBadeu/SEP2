@@ -162,11 +162,7 @@ public class MovieViewController
    */
   @FXML private void leaveReviewPressed()
   {
-    boolean leaveReview = viewModel.leaveReview();
-    if (leaveReview)
-    {
-      reset();
-    }
+    viewModel.leaveReview();
   }
 
   /**
