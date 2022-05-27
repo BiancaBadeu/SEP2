@@ -48,19 +48,7 @@ class AdminTest
     });
   }
 
-  @Test void setNullUsername()
-  {
-    assertThrows(IllegalArgumentException.class, () -> {
-      admin.setUserName(null);
-    });
-  }
 
-  @Test void setNullPhoneNumber()
-  {
-    assertThrows(IllegalArgumentException.class, () -> {
-      admin.setPhoneNumber(null);
-    });
   }
 
 
-}

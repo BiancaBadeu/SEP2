@@ -131,7 +131,7 @@ public abstract class Person implements Serializable
    */
   public void setUserName(String userName1)
   {
-    if(userName1.equals("") || userName1==null){
+    if(userName1==null ||userName1.equals("") ){
       throw new IllegalArgumentException("Invalid username");
     }
 

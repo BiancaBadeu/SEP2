@@ -107,7 +107,7 @@ public class Admin extends Person
 
   private boolean isValidUsername(String username)
   {
-    if(username.length() < 2)
+    if(username.length() < 2 )
     {
       return false;
     }
