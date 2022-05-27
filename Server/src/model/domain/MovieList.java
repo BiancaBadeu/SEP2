@@ -19,16 +19,22 @@ public class MovieList
 
   /**
    * @param movie
-   *    A method to add a movie to the list.
+   * adds a movie to the list.
    */
   public void addMovie(Movie movie)
   {
-    movies.add(movie);
+
+    if(movie==null)
+      throw new IllegalArgumentException("Movie cannot be null");
+
+    else
+
+      movies.add(movie);
   }
 
   /**
    * @param movie
-   *    A method to remove a movie from the list.
+   * removes a movie from the list.
    */
   public void removeMovie(Movie movie){
     movies.remove(movie);
@@ -83,11 +89,11 @@ public class MovieList
    */
   public ArrayList<Movie> getTrendingMovies(){
     ArrayList<Movie> trendingMovies = new ArrayList<>();
-      for (int i = 0; i < movies.size(); i++)
-      {
-        if(trendingMovies.size() < 15)
-            trendingMovies.add(movies.get(i));
-      }
+    for (int i = 0; i < movies.size(); i++)
+    {
+      if(trendingMovies.size() < 15)
+        trendingMovies.add(movies.get(i));
+    }
     return trendingMovies;
   }
 
@@ -103,8 +109,9 @@ public class MovieList
 
   /**
    * @param director The director to search for
+   *
+   * This method returns all the movies in the list that have the given director.
    * @return All the movies with the given director in the list.
-   *      This method returns all the movies in the list that have the given director.
    */
   public ArrayList<Movie> getMoviesWithDirector(String director)
   {
@@ -125,8 +132,10 @@ public class MovieList
 
   /**
    * @param length The length to search for
+   *
+   * This method returns all the movies in the list that have a bigger length than the given length.
+   *
    * @return movies with length bigger than the given length
-   *     This method returns all the movies in the list that have a bigger length than the given length.
    */
   public ArrayList<Movie> getMoviesWithLengthBiggerThan(int length)
   {
@@ -148,8 +157,10 @@ public class MovieList
 
   /**
    * @param length The length to search for
+   *
+   * This method returns all the movies in the list that have a smaller length than the given length.
+   *
    * @return movies with length smaller than the given length
-   *     This method returns all the movies in the list that have a smaller length than the given length.
    */
   public ArrayList<Movie> getMoviesWithLengthSmallerThan(int length)
   {
@@ -166,8 +177,10 @@ public class MovieList
 
   /**
    * @param rating The rating to search for
+   *
+   * This method returns all the movies in the list that have a smaller average rating than the given rating.
+   *
    * @return movies with average rating smaller than the given rating
-   *   This method returns all the movies in the list that have a smaller average rating than the given rating.
    */
   public ArrayList<Movie> getMoviesWithAverageRatingSmallerThan(double rating)
   {
@@ -185,8 +198,10 @@ public class MovieList
 
   /**
    * @param rating The rating to search for
+   *
+   * This method returns all the movies in the list that have a bigger average rating than the given rating.
+   *
    * @return movies with average rating bigger than the given rating
-   *    This method returns all the movies in the list that have a bigger average rating than the given rating.
    */
   public ArrayList<Movie> getMoviesWithAverageRatingBiggerThan(double rating)
   {
@@ -223,8 +238,8 @@ public class MovieList
 
   /**
    * @param genre The genre to search for
+   * This method returns all the movies in the list that have the given genre.
    * @return The movies with the given genre
-   *        This method returns all the movies in the list that have the given genre.
    */
   public ArrayList<Movie> getMoviesWithGenre(String genre){
 
@@ -241,8 +256,10 @@ public class MovieList
 
   /**
    * @param title The title to search for
+   *
+   * This method returns all the movies in the list that have the given title.
+   *
    * @return The movie with the given title
-   *      This method returns all the movies in the list that have the given title.
    */
   public Movie getMovieWithTitle(String title){
 
