@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/domain/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Tests/RentalListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Tests/RentalListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/Rental.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Rental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/RentalList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/RentalList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/model/domain/MovieList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/domain/MovieList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Server/MovieListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Server/MovieListTest.class" afterDir="false" />
-    </list>
+    <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +82,21 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RentalListTest">
+  <component name="RunManager" selected="Application.ClientMain">
+    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientMain" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ServerMain" />
+      <module name="Server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MovieTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <option name="PACKAGE_NAME" value="" />
@@ -118,38 +124,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReviewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ReviewTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.ReviewTest" />
-      <item itemvalue="JUnit.UserTest" />
       <item itemvalue="JUnit.RentalTest" />
       <item itemvalue="JUnit.MovieTest" />
       <item itemvalue="JUnit.RentalListTest" />
+      <item itemvalue="Application.ServerMain" />
+      <item itemvalue="Application.ClientMain" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClientMain" />
+        <item itemvalue="Application.ServerMain" />
         <item itemvalue="JUnit.RentalListTest" />
         <item itemvalue="JUnit.MovieTest" />
         <item itemvalue="JUnit.RentalTest" />
-        <item itemvalue="JUnit.ReviewTest" />
-        <item itemvalue="JUnit.UserTest" />
       </list>
     </recent_temporary>
   </component>
