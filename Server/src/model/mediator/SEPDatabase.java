@@ -139,7 +139,7 @@ public class SEPDatabase implements SEPPersistence
   {
     String sql = "select * from sep.person;";
     ArrayList<Object[]> results = db.query(sql);
-    User user = new User("test","test","test","123456789",0);
+    User user = new User("testt","test","test","123456789",0);
     for (int i = 0; i < results.size(); i++)
     {
       Object[] row = results.get(i);

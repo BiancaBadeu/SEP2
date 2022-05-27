@@ -21,18 +21,7 @@ public class User extends Person implements Serializable
   {
     super(name, username, password, phoneNumber, age, "user");
 
-    if(!isValidPhoneNumber(phoneNumber))
-    {
-      throw new IllegalArgumentException("Invalid phone number");
-    }
-    if(!isValidName(name))
-    {
-      throw new IllegalArgumentException("Invalid name");
-    }
-    if(!isValidUsername(username))
-    {
-      throw new IllegalArgumentException("Invalid username");
-    }
+
   }
 
   /**
@@ -43,51 +32,5 @@ public class User extends Person implements Serializable
     return super.toString();
   }
 
-  private boolean isValidPhoneNumber(String phoneNumber)
-  {
-    if(phoneNumber.length() < 8)
-    {
-      return false;
-    }
-    for(int i = 0; i < phoneNumber.length(); i++)
-    {
-      if(!Character.isDigit(phoneNumber.charAt(i)))
-      {
-        return false;
-      }
-    }
-    return true;
-  }
 
-  private boolean isValidName(String name)
-  {
-    if(name.length() < 2)
-    {
-      return false;
-    }
-    for(int i = 0; i < name.length(); i++)
-    {
-      if(!Character.isLetter(name.charAt(i)))
-      {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  private boolean isValidUsername(String username)
-  {
-    if(username.length() < 2)
-    {
-      return false;
-    }
-    for(int i = 0; i < username.length(); i++)
-    {
-      if(!Character.isLetter(username.charAt(i)) && !Character.isDigit(username.charAt(i)))
-      {
-        return false;
-      }
-    }
-    return true;
-  }
 }
