@@ -188,7 +188,7 @@ public class Server implements RemoteModel
 
     /**
      * @param title the title of the movie
-     * @param user  the user
+     * @param username  the username
      *              A method to cancel a rental
      */
     @Override public void cancelRental (String title, String username) throws RemoteException

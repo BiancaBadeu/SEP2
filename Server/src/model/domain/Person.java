@@ -1,6 +1,7 @@
 package model.domain;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * This class represents a person which can be a user or an admin.
@@ -92,12 +93,20 @@ public abstract class Person implements Serializable
   public int getAge(){return age;}
 
   /**
-   * @param name
+   * @param name1 the name of the person
    * Setter for the name of the person
    */
-  public void setName(String name)
+  public void setName(String name1)
   {
-    this.name = name;
+
+    if(name1==null || name1.equals(""))
+    {
+      throw new IllegalArgumentException("Invalid name");
+    }
+    else
+
+      this.name = name1;
+
   }
 
   /**
@@ -106,16 +115,28 @@ public abstract class Person implements Serializable
    */
   public void setPhoneNumber(String phoneNumber)
   {
-    this.phoneNumber = phoneNumber;
+
+    if(phoneNumber.length() != 8)
+    {
+      throw new IllegalArgumentException("Invalid phone number");
+    }
+    else
+
+      this.phoneNumber = phoneNumber;
   }
 
   /**
-   * @param userName
+   * @param userName1
    * Setter for the username of the person
    */
-  public void setUserName(String userName)
+  public void setUserName(String userName1)
   {
-    this.userName = userName;
+    if(userName1==null ||userName1.equals("") ){
+      throw new IllegalArgumentException("Invalid username");
+    }
+
+    else
+      this.userName = userName;
   }
 
   /**
@@ -145,4 +166,7 @@ public abstract class Person implements Serializable
         + ", phoneNumber='" + phoneNumber + '\'' + ", password='" + password
         + '\'' + ", age=" + age + ", type='" + type + '\'' + '}';
   }
+
+
+
 }

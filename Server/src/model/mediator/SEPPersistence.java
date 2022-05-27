@@ -81,15 +81,15 @@ public interface SEPPersistence
 
   /**
    * @return Array list of person
-   * @throws SQLException
+   * @throws SQLException exception
    */
   ArrayList<Person> getAllPersons() throws SQLException;
 
   /**
-   * @param title
-   * @param star
-   * @param comment
-   * @param user
+   * @param title the title
+   * @param star the rating
+   * @param comment the comment
+   * @param user the username
    * @throws SQLException
    * adds a review to database
    */
@@ -107,7 +107,7 @@ public interface SEPPersistence
 
   /**
    * @param title the title
-   * @param username the usename
+   * @param username the username
    * @throws SQLException exception
    * removes rental from database.
    */

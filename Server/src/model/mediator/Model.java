@@ -138,7 +138,7 @@ public interface Model extends UnnamedPropertyChangeSubject
 
   /**
    * @param title the title of the movie
-   * @param user the user
+   * @param username the username
    *
    * A method to cancel a rental
    */

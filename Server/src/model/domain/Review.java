@@ -20,6 +20,14 @@ public class Review implements Serializable
   public Review(String comment, int rating){
     this.comment = comment;
     this.rating = rating;
+
+    if(!isValidRating(rating)){
+      throw new IllegalArgumentException("Invalid rating");
+    }
+
+    if(!isValidComment(comment)){
+      throw new IllegalArgumentException("Invalid comment");
+    }
   }
 
   /**
@@ -62,6 +70,20 @@ public class Review implements Serializable
   public String toString()
   {
     return rating + " stars. " + comment;
+  }
+
+  public boolean isValidRating(int rating){
+    if(rating < 0 || rating > 5){
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isValidComment(String comment){
+    if(comment == null || comment.isEmpty()){
+      return false;
+    }
+    return true;
   }
 
 }

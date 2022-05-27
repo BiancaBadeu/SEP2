@@ -120,7 +120,7 @@ public class ModelManager implements Model
 
   /**
    * @param title the title of the movie
-   * @param user  the user
+   * @param username  the username
    *
    *  A method to remove a rental from the rental list
    */

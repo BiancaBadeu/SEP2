@@ -38,6 +38,11 @@ public class Movie implements Serializable
     this.avgRating = avgRating;
     this.genres = genres;
     this.reviews = reviews;
+
+    if(!isValid())
+    {
+      throw new IllegalArgumentException("Invalid title");
+    }
   }
 
   /**
@@ -240,5 +245,14 @@ public class Movie implements Serializable
     double smth = oldRating * oldNoOfReviews;
     smth += stars;
     this.avgRating = smth / (double) reviews.size();
+  }
+
+  public boolean isValid()
+  {
+    if(title.equals("") || director.equals("") || description.equals("") || length<0 || releaseYear<1888 || genres.equals(""))
+    {
+      return false;
+    }
+    return true;
   }
 }
