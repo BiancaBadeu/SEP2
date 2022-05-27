@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4d0ea3c-0fea-4f49-8c06-6209ea6f4874" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Tests/RentalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Tests/RentalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/model/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/model/domain/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/domain/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/model/mediator/SEPDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/model/domain/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/domain/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/model/mediator/SEPDatabase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Tests/AdminTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Tests/MovieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Tests/RentalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Tests/ReviewTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/Tests/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/StringStack.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.14476615" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -67,6 +65,7 @@
       <recent name="model.mediator" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programacion\SEP2\Server" />
       <recent name="C:\Users\mihai\OneDrive\Documents\GitHubSEP2\SEP2\Client\src\model" />
       <recent name="C:\Users\Domi\OneDrive\Dokumenty\GitHub\SEP2\Client" />
     </key>
