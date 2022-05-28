@@ -89,10 +89,24 @@ public class MovieList
    */
   public ArrayList<Movie> getTrendingMovies(){
     ArrayList<Movie> trendingMovies = new ArrayList<>();
-    for (int i = 0; i < movies.size(); i++)
+    for (int j = 0; j < 15; j++)
     {
-      if(trendingMovies.size() < 15)
-        trendingMovies.add(movies.get(i));
+      double noReviews = 0;
+      int index = -1;
+      for (int i = j; i < movies.size(); i++)
+      {
+        if (movies.get(i).getNumberOfReviews() > noReviews)
+        {
+          noReviews = movies.get(i).getNumberOfReviews();
+          index = i;
+        }
+      }
+      if (!(noReviews==0)){
+      Movie tempMovie = movies.get(j);
+      movies.set(j, movies.get(index));
+      movies.set(index, tempMovie);
+      }
+      trendingMovies.add(movies.get(j));
     }
     return trendingMovies;
   }
