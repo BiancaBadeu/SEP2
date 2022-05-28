@@ -34,11 +34,6 @@ public interface SEPPersistence
    * A method to remove a movie form database
    */
   void removeMovie(Movie movie) throws SQLException;
-  /**
-   * @return an arraylist with the top 10 highest rated movies from the database
-   * @throws SQLException exception
-   */
-  ArrayList<Movie> getTop10TopRatedMovies() throws SQLException;
 
   /**
    * @return an arraylist with all the movies from the database
@@ -59,12 +54,7 @@ public interface SEPPersistence
    * @throws SQLException exception
    */
   ArrayList<Rental> getAllRentals() throws SQLException;
-  /**
-   * @param user the user
-   * @return an arraylist with all the rentals of the user from the database
-   * @throws SQLException exception
-   */
-  ArrayList<Rental> getRentalsWithUser(User user) throws SQLException;
+
   /**
    * @param title the title
    * @return a movie object

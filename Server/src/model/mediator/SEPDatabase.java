@@ -24,7 +24,7 @@ public class SEPDatabase implements SEPPersistence
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "Perfect@gamer333";
+  private static final String PASSWORD = "1234567890";
 
   /**
    * Empty constructor which initializes the db and connects the database
@@ -199,53 +199,7 @@ public class SEPDatabase implements SEPPersistence
     statement.executeUpdate();
     connection.close();
   }
-  /**
-   * @return an arraylist with the top 10 highest rated movies from the database
-   * @throws SQLException exception
-   */
-  @Override public ArrayList<Movie> getTop10TopRatedMovies() throws SQLException
-  {
-    String sql = "select * from sep.movies order by avgRating DESC limit 10;";
-    ArrayList<Object[]> results = db.query(sql);
-    ArrayList<Movie> top = new ArrayList<>();
-    for (int i = 0; i < results.size(); i++)
-    {
-      Object[] row = results.get(i);
-      Movie movie = new Movie("test","test",9,"test",0,1999,"test", new ArrayList<>());
-      for (int j = 0; j < row.length; j++)
-      {
-        switch (j)
-        {
-          case 0:
-            movie.setTitle(String.valueOf(row[j]));
-            break;
-          case 1:
-            movie.setDirector(String.valueOf(row[j]));
-            break;
-          case 2:
-            movie.setLength(Integer.parseInt((String.valueOf(row[j]))));
-            break;
-          case 3:
-            movie.setDescription(String.valueOf(row[j]));
-            break;
-          case 4:
-            movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
-            break;
-          case 5:
-            movie.setReleaseYear(Integer.parseInt(String.valueOf(row[j])));
-            break;
-          default:
-            break;
-        }
-      }
-      if (!getAllReviewForMovie(movie.getTitle()).isEmpty())
-      {
-        movie.setReviews(getAllReviewForMovie(movie.getTitle()));
-      }
-      top.add(movie);
-    }
-    return top;
-  }
+
 
   /**
    * @return an arraylist with all the movies from the database
@@ -435,78 +389,6 @@ public class SEPDatabase implements SEPPersistence
 
   }
 
-  /**
-   * @param user the user
-   * @return an arraylist with all the rentals of the user from the database
-   * @throws SQLException exception
-   *
-   */
-  @Override public ArrayList<Rental> getRentalsWithUser(User user)
-      throws SQLException
-  {
-    String sql = "select * from sep.rentals r join sep.movies m on m.movieName = r.movieTitle ;";
-    ArrayList<Object[]> results = db.query(sql);
-    ArrayList<Rental> all = new ArrayList<>();
-    for (int i = 0; i < results.size(); i++)
-    {
-      Object[] row = results.get(i);
-      Movie rentedMovie = new Movie("test","test",89,"test",0.0,1999,"test",new ArrayList<>());
-      Rental rental = new Rental(new Date(), rentedMovie, user);
-
-      if (user.getUserName().equals(String.valueOf(row[1]))){
-      for (int j = 0; j < row.length; j++)
-      {
-        switch (j)
-        {
-          case 0:
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd",
-                Locale.ENGLISH);
-            String dateInString = String.valueOf(row[j]);
-            Date date = null;
-            try
-            {
-              date = (Date) formatter.parseObject(dateInString);
-            }
-            catch (ParseException e)
-            {
-              e.printStackTrace();
-            }
-            rental.setExpirationDate(date);
-            break;
-          case 1:
-            rental.setUserName(String.valueOf(row[j]));
-            break;
-          case 3:
-            rentedMovie.setTitle(String.valueOf(row[j]));
-            break;
-          case 4:
-            rentedMovie.setDirector(String.valueOf(row[j]));
-          break;
-          case 5:
-            rentedMovie.setLength(Integer.parseInt((String.valueOf(row[j]))));
-            break;
-          case 6:
-            rentedMovie.setDescription(String.valueOf(row[j]));
-            break;
-          case 7:
-            rentedMovie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
-            break;
-          case 8:
-            rentedMovie.setReleaseYear(Integer.parseInt((String.valueOf(row[j]))));
-            break;
-          case 9:
-            rentedMovie.setGenres(String.valueOf(row[j]));
-            break;
-          default:
-            break;
-        }
-      }
-      rental.setRentedMovie(rentedMovie);
-      all.add(rental);
-    }}
-    return all;
-
-  }
 
   /**
    * @param title the title
