@@ -394,6 +394,13 @@ public class ModelManager implements Model
       if (personList.getPersons().get(i).getUserName().equals(userName))
         throw new IllegalStateException("Username already exists!");
     }
+    Person person= new User(name, userName, password, phoneNumber,
+        Integer.parseInt(age));
+    person.setAge(Integer.parseInt(age));
+    person.setUserName(userName);
+    person.setPassword(password);
+    person.setName(name);
+    person.setPhoneNumber(phoneNumber);
     personList.addPerson(name, userName, password, phoneNumber,
         Integer.parseInt(age), "user");
     try
