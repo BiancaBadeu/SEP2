@@ -141,14 +141,7 @@ public abstract class Person implements Serializable
    */
   public void setPassword(String password)
   {
-
-    if(password==null || password.equals(""))
-    {
-      throw new IllegalArgumentException("Invalid password");
-    }
-    else
-      this.password = password;
-
+    this.password = password;
   }
 
   /**
