@@ -141,14 +141,12 @@ public abstract class Person implements Serializable
    */
   public void setPassword(String password)
   {
-
     if(password==null || password.equals(""))
     {
       throw new IllegalArgumentException("Invalid password");
     }
     else
       this.password = password;
-
   }
 
   /**
@@ -157,6 +155,11 @@ public abstract class Person implements Serializable
    */
   public void setAge(int age)
   {
+    if(age<0  || age>150)
+    {
+      throw new IllegalArgumentException("Invalid age");
+    }
+    else
     this.age = age;
   }
 
