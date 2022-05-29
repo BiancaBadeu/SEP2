@@ -357,8 +357,9 @@ insert into person(name, phoneNumber, userName, password, age) values ('Cosmin-M
 
  /** reviews+ratings **/
 insert into reviewsAndRatings(movieTitle, rating, comment, userName) VALUES ('The Haunting in Connecticut', 4, 'SO GOOD! Loved it!<3', 'costrucks');
-insert into reviewsAndRatings(movieTitle, rating, comment, userName) VALUES ('Scary Stories to Tell in the Dark', 2, 'Hate it.', 'bbc');
+insert into reviewsAndRatings(movieTitle, rating, comment, userName) VALUES ('Scary Stories to Tell in the Dark', 5, 'Best movie, gives me Stranger Things vibes', 'bbc');
 insert into reviewsAndRatings(movieTitle, rating, comment, userName) VALUES ('Ouija: Origin of Evil', 3, 'EHh...', 'Xbey');
+insert into reviewsAndRatings(movieTitle, rating, comment, userName) VALUES ('Descendants 3', 1, 'First movie was better', 'domignat');
 
 /** rentals **/
 insert into rentals(expirationDate, userName, movieTitle) VALUES ('2022-05-01', 'bbc', 'The Haunting in Connecticut');
