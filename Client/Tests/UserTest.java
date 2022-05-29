@@ -66,13 +66,5 @@ class UserTest
 
   }
 
-  @Test void setNullPassword()
-  {
-    assertThrows(IllegalArgumentException.class, () -> {
-      user1.setPassword(null);
-    });
-
-  }
-
 }
 
