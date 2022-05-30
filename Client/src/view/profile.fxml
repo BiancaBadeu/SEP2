@@ -62,9 +62,9 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </VBox>
-                  <Button mnemonicParsing="false" onAction="#goBackPressed" prefHeight="30.0" prefWidth="74.0" text="⇦">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goBackPressed" prefHeight="30.0" prefWidth="74.0" text="⇦">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="48.0" />
                      </font>
                   </Button>
                </children>

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 /**
  * A viewModel class that represents the functionality of the Controller class MovieViewController
+ *
  * @see view.MovieViewController
  */
 public class MovieViewModel
@@ -33,33 +34,36 @@ public class MovieViewModel
   private StringProperty releaseYear;
   private StringProperty star;
 
-
   /**
-   * @param model a Model variable so that the viewModel has access to the model's methods
-   * @param state a ViewModelState variable so that the view Model has access to what has been selected in another GUI window
+   * @param model     a Model variable so that the viewModel has access to the model's methods
+   * @param state     a ViewModelState variable so that the view Model has access to what has been selected in another GUI window
    * @param userState a ViewModelStateUser variable so that the view model knows which user is logged in
-   *
-   * A 3 arguments constructor that initializes the instance variables
+   *                  A 3 arguments constructor that initializes the instance variables
    */
-  public MovieViewModel(Model model, ViewModelState state, ViewModelStateUser userState)
+  public MovieViewModel(Model model, ViewModelState state,
+      ViewModelStateUser userState)
   {
     this.model = model;
     this.state = state;
-    this.userState= userState;
+    this.userState = userState;
 
     this.comments = FXCollections.observableArrayList();
 
-    Movie selected  = state.getSelectedMovie();
-    if(selected != null)
+    Movie selected = state.getSelectedMovie();
+    if (selected != null)
     {
-      this.title = new SimpleStringProperty(""+selected.getTitle());
-      this.length = new SimpleStringProperty(""+selected.getLength());
-      this.director = new SimpleStringProperty(""+selected.getDirector());
-      this.releaseYear = new SimpleStringProperty(""+selected.getReleaseYear());
-      this.genre = new SimpleStringProperty(""+selected.getGenres());
-      this.description = new SimpleStringProperty(""+selected.getDescription());
-      this.averageRating = new SimpleStringProperty(""+selected.getAvgRating());
-      this.numberOfReviews = new SimpleStringProperty(""+selected.getNumberOfReviews());
+      this.title = new SimpleStringProperty("" + selected.getTitle());
+      this.length = new SimpleStringProperty("" + selected.getLength());
+      this.director = new SimpleStringProperty("" + selected.getDirector());
+      this.releaseYear = new SimpleStringProperty(
+          "" + selected.getReleaseYear());
+      this.genre = new SimpleStringProperty("" + selected.getGenres());
+      this.description = new SimpleStringProperty(
+          "" + selected.getDescription());
+      this.averageRating = new SimpleStringProperty(
+          "" + selected.getAvgRating());
+      this.numberOfReviews = new SimpleStringProperty(
+          "" + selected.getNumberOfReviews());
     }
     else
     {
@@ -79,21 +83,21 @@ public class MovieViewModel
 
   /**
    * @return a boolean value and reset the instance variables everytime we open the window.
-   *          It returns true if the movie is rented already and false if not
+   * It returns true if the movie is rented already and false if not
    */
   public boolean reset()
   {
 
     //everything set to the selected movie info
     Movie selected = state.getSelectedMovie();
-    this.title.set(""+selected.getTitle());
-    this.length.set(""+selected.getLength());
-    this.director.set(""+selected.getDirector());
-    this.releaseYear.set(""+selected.getReleaseYear());
-    this.genre.set(""+selected.getGenres());
-    this.description.set(""+selected.getDescription());
-    this.averageRating.set(""+selected.getAvgRating());
-    this.numberOfReviews.set(""+selected.getNumberOfReviews());
+    this.title.set("" + selected.getTitle());
+    this.length.set("" + selected.getLength());
+    this.director.set("" + selected.getDirector());
+    this.releaseYear.set("" + selected.getReleaseYear());
+    this.genre.set("" + selected.getGenres());
+    this.description.set("" + selected.getDescription());
+    this.averageRating.set("" + selected.getAvgRating());
+    this.numberOfReviews.set("" + selected.getNumberOfReviews());
 
     comment.set("");
     errorLabel.set("");
@@ -103,11 +107,12 @@ public class MovieViewModel
     getComments();
 
     ArrayList<Rental> rentals = model.getAllRentals();
-    if(!rentals.isEmpty())
+    if (!rentals.isEmpty())
     {
-      for(int i=0;i<rentals.size();i++)
+      for (int i = 0; i < rentals.size(); i++)
       {
-        if(rentals.get(i).getRentedMovie().getTitle().equals(selected.getTitle()))
+        if (rentals.get(i).getRentedMovie().getTitle()
+            .equals(selected.getTitle()))
           return true;
       }
     }
@@ -116,73 +121,105 @@ public class MovieViewModel
 
   /**
    * @return the title property
-   *
    * A getter for the title string property
    */
-  public  StringProperty getTitleProperty() {return title;}
+  public StringProperty getTitleProperty()
+  {
+    return title;
+  }
+
   /**
    * @return the length property
-   *
    * A getter for the length string property
    */
-  public  StringProperty getLengthProperty() {return length;}
+  public StringProperty getLengthProperty()
+  {
+    return length;
+  }
+
   /**
    * @return the director property
-   *
    * A getter for the director string property
    */
-  public  StringProperty getDirectorProperty() {return director;}
+  public StringProperty getDirectorProperty()
+  {
+    return director;
+  }
+
   /**
    * @return the genre property
-   *
    * A getter for the genre string property
    */
-  public  StringProperty getGenreProperty() {return genre;}
+  public StringProperty getGenreProperty()
+  {
+    return genre;
+  }
+
   /**
    * @return the release year property
-   *
    * A getter for the release year string property
    */
-  public StringProperty getReleaseYearProperty() {return releaseYear;}
+  public StringProperty getReleaseYearProperty()
+  {
+    return releaseYear;
+  }
+
   /**
    * @return the description property
-   *
    * A getter for the description string property
    */
-  public  StringProperty getDescriptionProperty() {return description;}
+  public StringProperty getDescriptionProperty()
+  {
+    return description;
+  }
+
   /**
    * @return the averageRating property
-   *
    * A getter for the average rating string property
    */
-  public  StringProperty getAvgRatingProperty() {return averageRating;}
+  public StringProperty getAvgRatingProperty()
+  {
+    return averageRating;
+  }
+
   /**
    * @return the comment property
-   *
    * A getter for the comment string property
    */
-  public  StringProperty getCommentProperty() {return comment;}
+  public StringProperty getCommentProperty()
+  {
+    return comment;
+  }
+
   /**
    * @return the numberOfReviews property
-   *
    * A getter for the number of reviews string property
    */
-  public  StringProperty getNoOfReviewsProperty() {return numberOfReviews;}
+  public StringProperty getNoOfReviewsProperty()
+  {
+    return numberOfReviews;
+  }
+
   /**
    * @return the errorLabel property
-   *
    * A getter for the error string property
    */
-  public  StringProperty getErrorProperty() {return errorLabel;}
+  public StringProperty getErrorProperty()
+  {
+    return errorLabel;
+  }
+
   /**
    * @return the star property
-   *
    * A getter for the star string property
    */
-  public  StringProperty getStarProperty() {return star;}
+  public StringProperty getStarProperty()
+  {
+    return star;
+  }
+
   /**
    * @return the comments
-   *
    * Method returns the comments for the movie.
    */
   public ObservableList<String> getComments()
@@ -198,16 +235,16 @@ public class MovieViewModel
   }
 
   /**
-   *  @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
-   *  @see Model
-   *
-   *  A method to rent a movie
+   * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
+   * @see Model
+   * A method to rent a movie
    */
   public boolean rentMovie()
   {
     try
     {
-      model.rentMovie(title.get(), userState.getUser()); //suppose name is unique
+      model.rentMovie(title.get(),
+          userState.getUser()); //suppose name is unique
       return true;
     }
     catch (Exception e)
@@ -220,7 +257,6 @@ public class MovieViewModel
   /**
    * @return a boolean value that is true if the model doesn't throw an exception and false if this method catches an exception
    * @see Model
-   *
    * A method to cancel a rental
    */
   public boolean cancelMovie()
@@ -230,7 +266,7 @@ public class MovieViewModel
       model.cancelRental(title.get(), userState.getUser().getUserName());
       return true;
     }
-    catch(Exception e)
+    catch (Exception e)
     {
       errorLabel.set(e.getMessage());
       return false;
@@ -242,15 +278,20 @@ public class MovieViewModel
    */
   public void leaveReview()
   {
-    try
+    if (comment.get().length() < 1000)
     {
-      model.leaveReview(comment.get(), Integer.parseInt(star.get()), title.get(), userState.getUser().getUserName());
-      reset();
-      errorLabel.set("Changes will appear once you enter the window again.");
+      try
+      {
+        model.leaveReview(comment.get(), Integer.parseInt(star.get()),
+            title.get(), userState.getUser().getUserName());
+        reset();
+        errorLabel.set("Changes will appear once you enter the window again.");
+      }
+      catch (Exception e)
+      {
+        errorLabel.set(e.getMessage());
+      }
     }
-    catch (Exception e)
-    {
-      errorLabel.set(e.getMessage());
-    }
+    else errorLabel.set("Comment too long!");
   }
 }
