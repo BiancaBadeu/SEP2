@@ -168,6 +168,7 @@ public class ModelManager implements Model
    */
   public void addMovie(Movie movie)
   {
+
     movieList.addMovie(movie);
     try
     {

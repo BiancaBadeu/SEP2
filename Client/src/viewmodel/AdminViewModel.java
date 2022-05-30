@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import model.mediator.Model;
 import model.domain.Movie;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -157,6 +158,7 @@ public class AdminViewModel
           model.removeMovie(model.getNotRentedMovies().get(i));
         }
       }
+
       model.addMovie(newMovie);
     }
 
@@ -180,6 +182,8 @@ public class AdminViewModel
   public boolean addMovie()
   {
 
+    LocalDate date = LocalDate.now();
+    int currentYear = date.getYear();
     if (title.get().isEmpty() || length.get().isEmpty() || director.get()
         .isEmpty() || description.get().isEmpty() || avgRating.get().isEmpty()
         || releaseYear.get().isEmpty() || genre.get().isEmpty())
@@ -187,7 +191,26 @@ public class AdminViewModel
       error.set("Please fill in all fields.");
       return false;
     }
-
+    else if (description.get().length()>1000)
+    {
+      error.set("Description is too long!");
+      return false;
+    }
+    else if (!length.get().matches("\\d+"))
+    {
+      error.set("Invalid length!");
+      return false;
+    }
+    else if (!avgRating.get().matches("\\d+.\\d+") || Double.parseDouble(avgRating.get())>5)
+    {
+      error.set("Invalid rating!");
+      return false;
+    }
+    else if (!releaseYear.get().matches("\\d+") || Integer.parseInt(releaseYear.get())<1800 || Integer.parseInt(releaseYear.get())>currentYear )
+    {
+      error.set("Invalid year!");
+      return false;
+    }
     else
       return model.validateAddMovie(title.get());
   }
