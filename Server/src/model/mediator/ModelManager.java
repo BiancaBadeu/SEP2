@@ -52,7 +52,6 @@ public class ModelManager implements Model
         movies.addMovie(dbMovies.get(i));
       }
       this.movieList = movies;
-      System.out.println(movieList.getAllMovies());
     }
   }
 
@@ -71,7 +70,6 @@ public class ModelManager implements Model
         movies.addMovie(dbMovies.get(i));
       }
       this.movieList = movies;
-      System.out.println(movieList.getAllMovies());
     }
 
     PersonList persons = new PersonList();
@@ -86,14 +84,11 @@ public class ModelManager implements Model
             dbPersons.get(i).getType());
       }
       this.personList = persons;
-      System.out.println(personList.getPersons());
     }
 
     Date date = new Date();
-
     RentalList rentals = new RentalList();
     ArrayList<Rental> dbRentals = database.getAllRentals();
-    System.out.println("rentals: " + dbRentals.size());
     if (!dbRentals.isEmpty())
     {
       for (int i = 0; i < dbRentals.size(); i++)
@@ -108,7 +103,6 @@ public class ModelManager implements Model
         }
       }
       this.rentalList = rentals;
-      System.out.println("size: " + rentalList.getAllRentals().size() + ", " + rentalList.getAllRentals());
     }
   }
 
