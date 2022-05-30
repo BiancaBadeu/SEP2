@@ -129,11 +129,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ClientMain" />
       <item itemvalue="Application.ServerMain" />
+      <item itemvalue="Application.ClientMain" />
+      <item itemvalue="JUnit.RentalTest" />
       <item itemvalue="JUnit.MovieTest" />
       <item itemvalue="JUnit.RentalListTest" />
-      <item itemvalue="JUnit.RentalTest" />
     </list>
     <recent_temporary>
       <list>
