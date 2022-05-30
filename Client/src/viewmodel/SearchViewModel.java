@@ -80,7 +80,7 @@ public class SearchViewModel
     {
       String genre = model.getAllMovies().get(i).getGenres();
       String title = model.getAllMovies().get(i).getTitle();
-      if(genre.equals(searchBar.get())){
+      if(genre.contains(searchBar.get())){
         searchList.add(title);
       }
     }
