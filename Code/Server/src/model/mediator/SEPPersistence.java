@@ -4,7 +4,6 @@ import model.domain.*;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * A class representing a persistence interface
