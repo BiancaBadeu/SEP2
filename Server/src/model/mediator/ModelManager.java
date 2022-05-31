@@ -357,6 +357,9 @@ public class ModelManager implements Model
    */
   @Override public void login(String username, String password)
   {
+    Person person=new User("n",username,password,"123", 12);
+    person.setPassword(password);
+    person.setUserName(username);
     boolean exists = false;
     for (int i = 0; i < personList.getPersons().size(); i++)
     {
