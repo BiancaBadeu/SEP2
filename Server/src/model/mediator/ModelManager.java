@@ -3,6 +3,7 @@ package model.mediator;
 import model.domain.*;
 
 import java.beans.PropertyChangeListener;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,38 +14,33 @@ import java.util.Date;
  */
 public class ModelManager implements Model
 {
+
+  private Server server;
+
+
   private MovieList movieList;
   private RentalList rentalList;
   private PersonList personList;
-
-  private SEPPersistence database;
 
   /**
    * Empty constructor which initializes the movieList, rentalList, personList, and database
    */
   public ModelManager()
   {
+    this.server = new Server();
     this.movieList = new MovieList();
     this.rentalList = new RentalList();
     this.personList = new PersonList();
-    try
-    {
-      this.database = new SEPDatabase();
-    }
-    catch (ClassNotFoundException e)
-    {
-      e.printStackTrace();
-    }
   }
 
   /**
    * @throws SQLException exception
    *         A method to get the movies from the database and store it
    */
-  public void getDatabaseMovies() throws SQLException
+  public void getDatabaseMovies() throws SQLException, RemoteException
   {
     MovieList movies = new MovieList();
-    ArrayList<Movie> dbMovies = database.getAllMovies();
+    ArrayList<Movie> dbMovies = server.getAllMovies();
     if (!dbMovies.isEmpty())
     {
       for (int i = 0; i < dbMovies.size(); i++)
@@ -59,10 +55,10 @@ public class ModelManager implements Model
    * @throws SQLException exception
    *         A method to get the information from the database and store it
    */
-  public void getAllInfo() throws SQLException
+  public void getAllInfo() throws SQLException, RemoteException
   {
     MovieList movies = new MovieList();
-    ArrayList<Movie> dbMovies = database.getAllMovies();
+    ArrayList<Movie> dbMovies = server.getAllMovies();
     if (!dbMovies.isEmpty())
     {
       for (int i = 0; i < dbMovies.size(); i++)
@@ -73,7 +69,7 @@ public class ModelManager implements Model
     }
 
     PersonList persons = new PersonList();
-    ArrayList<Person> dbPersons = database.getAllPersons();
+    ArrayList<Person> dbPersons = server.getAllPersons();
     if (!dbPersons.isEmpty())
     {
       for (int i = 0; i < dbPersons.size(); i++)
@@ -88,14 +84,14 @@ public class ModelManager implements Model
 
     Date date = new Date();
     RentalList rentals = new RentalList();
-    ArrayList<Rental> dbRentals = database.getAllRentals();
+    ArrayList<Rental> dbRentals = server.getAllRentals();
     if (!dbRentals.isEmpty())
     {
       for (int i = 0; i < dbRentals.size(); i++)
       {
         if(dbRentals.get(i).getExpirationDate().before(date))
         {
-          database.removeRental(dbRentals.get(i).getRentedMovie().getTitle(), dbRentals.get(i).getUserName());
+          server.removeRental(dbRentals.get(i).getRentedMovie().getTitle(), dbRentals.get(i).getUserName());
         }
         else
         {
@@ -166,9 +162,9 @@ public class ModelManager implements Model
     movieList.addMovie(movie);
     try
     {
-      database.addMovie(movie);
+      server.addMovie(movie);
     }
-    catch (SQLException e)
+    catch (RemoteException e)
     {
       e.printStackTrace();
     }
@@ -183,9 +179,9 @@ public class ModelManager implements Model
     movieList.removeMovie(movie);
     try
     {
-      database.removeMovie(movie);
+      server.removeMovie(movie);
     }
-    catch (SQLException e)
+    catch (RemoteException e)
     {
       e.printStackTrace();
     }
@@ -193,7 +189,7 @@ public class ModelManager implements Model
     {
       getDatabaseMovies();
     }
-    catch (SQLException e)
+    catch (SQLException | RemoteException e)
     {
       e.printStackTrace();
     }
@@ -279,9 +275,9 @@ public class ModelManager implements Model
     rentalList.addRental(movie, expirationDate, user);
     try
     {
-      database.addRental(expirationDate, user, movie);
+      server.addRental(movie, expirationDate, user);
     }
-    catch (SQLException e)
+    catch (RemoteException e)
     {
       e.printStackTrace();
     }
@@ -304,14 +300,7 @@ public class ModelManager implements Model
   @Override public void cancelRental(String title, String username)
   {
     rentalList.removeRental(title, username);
-    try
-    {
-      database.removeRental(title, username);
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
+    server.removeRental(title, username);
   }
 
   /**
@@ -342,9 +331,9 @@ public class ModelManager implements Model
 
     try
     {
-      database.addRental(expirationDate, user, getMovieWithTitle(title));
+      server.addRental(getMovieWithTitle(title), expirationDate, user);
     }
-    catch (SQLException e)
+    catch (RemoteException e)
     {
       throw new RuntimeException(e);
     }
@@ -401,15 +390,8 @@ public class ModelManager implements Model
     person.setPhoneNumber(phoneNumber);
     personList.addPerson(name, userName, password, phoneNumber,
         Integer.parseInt(age), "user");
-    try
-    {
-      database.addUser(name, phoneNumber, userName, password,
-          Integer.parseInt(age));
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
+    server.addUser(name, phoneNumber, userName, password,
+        Integer.parseInt(age));
   }
 
   /**
@@ -518,14 +500,7 @@ public class ModelManager implements Model
     }
     movieList.getMovieWithTitle(title).addReview(comment, star);
 
-    try
-    {
-      database.addReview(title, star, comment, user);
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
+    server.addReview(title, star, comment, user);
   }
 }
 

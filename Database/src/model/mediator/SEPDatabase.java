@@ -216,32 +216,32 @@ public class SEPDatabase implements SEPPersistence
       Object[] row = results.get(i);
       for (int j = 0; j < row.length; j++)
       {
-          switch (j)
-          {
-            case 0:
-              movie.setTitle(String.valueOf(row[j]));
-              break;
-            case 1:
-              movie.setDirector(String.valueOf(row[j]));
-              break;
-            case 2:
-              movie.setLength(Integer.parseInt(String.valueOf(row[j])));
-              break;
-            case 3:
-              movie.setDescription(String.valueOf(row[j]));
-              break;
-            case 4:
-              movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
-              break;
-            case 5:
-              movie.setReleaseYear(Integer.parseInt(String.valueOf(row[j])));
-              break;
-            case 6:
-              movie.setGenres(String.valueOf(row[j]));
-              break;
-            default:
-              break;
-          }
+        switch (j)
+        {
+          case 0:
+            movie.setTitle(String.valueOf(row[j]));
+            break;
+          case 1:
+            movie.setDirector(String.valueOf(row[j]));
+            break;
+          case 2:
+            movie.setLength(Integer.parseInt(String.valueOf(row[j])));
+            break;
+          case 3:
+            movie.setDescription(String.valueOf(row[j]));
+            break;
+          case 4:
+            movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
+            break;
+          case 5:
+            movie.setReleaseYear(Integer.parseInt(String.valueOf(row[j])));
+            break;
+          case 6:
+            movie.setGenres(String.valueOf(row[j]));
+            break;
+          default:
+            break;
+        }
 
       }
       if (!getAllReviewForMovie(movie.getTitle()).isEmpty())
@@ -305,7 +305,7 @@ public class SEPDatabase implements SEPPersistence
         movie.setReviews(getAllReviewForMovie(movie.getTitle()));
       }
     }
-      return movie;
+    return movie;
   }
 
   /**
@@ -375,7 +375,7 @@ public class SEPDatabase implements SEPPersistence
             rental.setUser(getUser(String.valueOf(row[j])));
             break;
           case 2:
-           rental.setRentedMovie(getMovieWithTitle((String.valueOf(row[j]))));
+            rental.setRentedMovie(getMovieWithTitle((String.valueOf(row[j]))));
             break;
           default:
             break;
@@ -394,36 +394,36 @@ public class SEPDatabase implements SEPPersistence
    * @throws SQLException exception
    */
   public ArrayList<Review> getAllReviewForMovie(String title) throws SQLException
-{
-
-  String sql = "select r.movieTitle,r.comment,r.rating from sep.reviewsAndRatings r;";
-  ArrayList<Object[]> results = db.query(sql);
-  ArrayList<Review> all = new ArrayList<>();
-
-  for (int i = 0; i < results.size(); i++)
   {
-    Object[] row = results.get(i);
-    Review review = new Review("test",0);
 
-    if (title.equals(String.valueOf(row[0]))){
-      for (int j = 0; j < row.length; j++)
-      {
-        switch (j)
+    String sql = "select r.movieTitle,r.comment,r.rating from sep.reviewsAndRatings r;";
+    ArrayList<Object[]> results = db.query(sql);
+    ArrayList<Review> all = new ArrayList<>();
+
+    for (int i = 0; i < results.size(); i++)
+    {
+      Object[] row = results.get(i);
+      Review review = new Review("test",0);
+
+      if (title.equals(String.valueOf(row[0]))){
+        for (int j = 0; j < row.length; j++)
         {
-          case 1:
-            review.setComment(String.valueOf(row[j]));
-            break;
-          case 2:
-            review.setRating(Integer.parseInt(String.valueOf(row[j])));
-            break;
-          default:
-            break;
+          switch (j)
+          {
+            case 1:
+              review.setComment(String.valueOf(row[j]));
+              break;
+            case 2:
+              review.setRating(Integer.parseInt(String.valueOf(row[j])));
+              break;
+            default:
+              break;
+          }
         }
-      }
-      all.add(review);
-    }}
-  return all;
-}
+        all.add(review);
+      }}
+    return all;
+  }
 
   /**
    * @param title   the title
@@ -452,6 +452,11 @@ public class SEPDatabase implements SEPPersistence
   {
     String sql =" delete from sep.rentals where movietitle=? and username=?;";
     db.update(sql, title, username);
+  }
+
+  @Override public void getAllInfo()
+  {
+
   }
 
 }

@@ -1,11 +1,9 @@
 package model.mediator;
 
-import model.domain.Movie;
-import model.domain.Rental;
-import model.domain.Review;
-import model.domain.User;
+import model.domain.*;
 
 import java.rmi.AlreadyBoundException;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -22,6 +20,19 @@ public class Server implements RemoteModel
 {
 
   private Model model;
+  private RemoteDatabase remoteDatabase;
+
+  public Server()
+  {
+    try
+    {
+      remoteDatabase = (RemoteDatabase) Naming.lookup("rmi://localhost:1098/Database");
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+    }
+  }
 
   /**
    * @param model the model
@@ -296,4 +307,20 @@ public class Server implements RemoteModel
     return model.getMoviesWithGenre(genre);
   }
 
+  public ArrayList<Person> getAllPersons()
+  {
+    return new ArrayList<>();
+  }
+
+  public void removeRental(String title, String userName)
+  {
+  }
+
+  public void addUser(String name, String phoneNumber, String userName, String password, int parseInt)
+  {
+  }
+
+  public void addReview(String title, int star, String comment, String user)
+  {
+  }
 }

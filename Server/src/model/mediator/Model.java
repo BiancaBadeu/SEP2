@@ -7,6 +7,7 @@ import model.domain.User;
 import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 
 import java.beans.PropertyChangeListener;
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,13 +22,13 @@ public interface Model extends UnnamedPropertyChangeSubject
    * @throws SQLException exception
    *         A method to get the movies from the database and store it
    */
-  void getDatabaseMovies() throws SQLException;
+  void getDatabaseMovies() throws SQLException, RemoteException;
 
   /**
    * @throws SQLException exception
    * A method to set the lists from the database in the model
    */
-  void getAllInfo() throws SQLException;
+  void getAllInfo() throws SQLException, RemoteException;
   /**
    * @return an array list containing the movies that are not rented
    */

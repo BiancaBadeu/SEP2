@@ -26,7 +26,7 @@ public interface SEPPersistence
    * @throws SQLException exception
    * A method to add a movie to database
    */
-  void addMovie(Movie movie) throws SQLException; 
+  void addMovie(Movie movie) throws SQLException;
   /**
    * @param movie the movie to be removed
    * @throws SQLException exception
@@ -106,4 +106,5 @@ public interface SEPPersistence
    * A method to remove a rental from database.
    */
   void removeRental(String title, String username) throws SQLException;
+  void getAllInfo();
 }
