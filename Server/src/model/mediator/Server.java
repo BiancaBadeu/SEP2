@@ -53,15 +53,6 @@ public class Server implements RemoteModel
     Registry registry = LocateRegistry.createRegistry(1097);
     UnicastRemoteObject.exportObject(this,0);
     registry.bind("Server", this);
-
-    try
-    {
-      model.getAllInfo();
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
   }
 
   /**
@@ -70,7 +61,7 @@ public class Server implements RemoteModel
    */
   @Override public ArrayList<Movie> getNotRentedMovies() throws RemoteException
   {
-    return model.getNotRentedMovies();
+    return remoteDatabase.getNotRentedMovies();
   }
 
   /**
@@ -80,7 +71,7 @@ public class Server implements RemoteModel
    */
   public boolean checkMovieIsRented(String title) throws RemoteException
   {
-    return model.checkMovieIsRented(title);
+    return remoteDatabase.checkMovieIsRented(title);
   }
     /**
      * @return the top 10 top-rated movies
@@ -88,7 +79,7 @@ public class Server implements RemoteModel
      */
     @Override public ArrayList<Movie> getTop10TopRatedMovies() throws RemoteException
     {
-    return model.getTop10TopRatedMovies();
+    return remoteDatabase.getTop10TopRatedMovies();
   }
 
     /**
@@ -97,7 +88,7 @@ public class Server implements RemoteModel
      */
     @Override public ArrayList<Movie> getTrendingMovies()  throws RemoteException
     {
-    return model.getTrendingMovies();
+    return remoteDatabase.getTrendingMovies();
   }
 
     /**
@@ -106,7 +97,7 @@ public class Server implements RemoteModel
      */
     @Override public ArrayList<Movie> getAllMovies () throws RemoteException
     {
-    return model.getAllMovies();
+    return remoteDatabase.getAllMovies();
   }
 
     /**
@@ -122,7 +113,7 @@ public class Server implements RemoteModel
     @Override public void addPerson (String name, String username, String
     password, String phoneNumber,int age, String type) throws RemoteException
     {
-      model.addPerson(name, username, password, phoneNumber, age, type);
+      remoteDatabase.addPerson(name, username, password, phoneNumber, age, type);
     }
 
     /**
@@ -132,7 +123,7 @@ public class Server implements RemoteModel
      */
     @Override public void addMovie  (Movie movie) throws RemoteException
     {
-      model.addMovie(movie);
+      remoteDatabase.addMovie(movie);
     }
 
     /**
@@ -142,7 +133,7 @@ public class Server implements RemoteModel
      */
     @Override public void removeMovie (Movie movie) throws RemoteException
     {
-      model.removeMovie(movie);
+      remoteDatabase.removeMovie(movie);
     }
 
     /**
@@ -153,7 +144,7 @@ public class Server implements RemoteModel
      */
     @Override public void rentMovie (String title, User user) throws RemoteException
     {
-      model.rentMovie(title, user);
+      remoteDatabase.rentMovie(title, user);
     }
 
     /**
@@ -165,7 +156,7 @@ public class Server implements RemoteModel
      */
     @Override public void addRental (Movie movie, Date expirationDate, User user) throws RemoteException
     {
-      model.addRental(movie, expirationDate, user);
+      remoteDatabase.addRental(movie, expirationDate, user);
     }
 
     /**
@@ -174,7 +165,7 @@ public class Server implements RemoteModel
      */
     @Override public ArrayList<Rental> getAllRentals ()  throws RemoteException
     {
-    return model.getAllRentals();
+    return remoteDatabase.getAllRentals();
   }
 
     /**
@@ -185,7 +176,7 @@ public class Server implements RemoteModel
      */
     @Override public void login (String username, String password) throws RemoteException
     {
-      model.login(username, password);
+      remoteDatabase.login(username, password);
     }
 
     /**
@@ -200,7 +191,7 @@ public class Server implements RemoteModel
     @Override public void createUser (String name, String userName, String
     password, String phoneNumber, String age) throws RemoteException
     {
-      model.createUser(name, userName, password, phoneNumber, age);
+      remoteDatabase.createUser(name, userName, password, phoneNumber, age);
     }
 
     /**
@@ -211,7 +202,7 @@ public class Server implements RemoteModel
      */
     @Override public String checkPerson (String name, String password) throws RemoteException
     {
-      return model.checkPerson(name, password);
+      return remoteDatabase.checkPerson(name, password);
     }
 
     /**
@@ -222,7 +213,7 @@ public class Server implements RemoteModel
      */
     @Override public void cancelRental (String title, String username) throws RemoteException
     {
-      model.cancelRental(title, username);
+      remoteDatabase.cancelRental(title, username);
     }
 
     /**
@@ -232,7 +223,7 @@ public class Server implements RemoteModel
      */
     @Override public User getUser (String username) throws RemoteException
     {
-      return model.getUser(username);
+      return remoteDatabase.getUser(username);
     }
 
     /**
@@ -242,7 +233,7 @@ public class Server implements RemoteModel
      */
     @Override public Movie getMovieWithTitle (String title) throws RemoteException
     {
-      return model.getMovieWithTitle(title);
+      return remoteDatabase.getMovieWithTitle(title);
     }
 
     /**
@@ -252,7 +243,7 @@ public class Server implements RemoteModel
      */
     @Override public boolean validateAddMovie (String title) throws RemoteException
     {
-      return model.validateAddMovie(title);
+      return remoteDatabase.validateAddMovie(title);
     }
 
     /**
@@ -262,7 +253,7 @@ public class Server implements RemoteModel
      */
     @Override public ArrayList<Rental> getRentalsWithUser (String username) throws RemoteException
     {
-      return model.getRentalsWithUser(username);
+      return remoteDatabase.getRentalsWithUser(username);
     }
 
     /**
@@ -272,7 +263,7 @@ public class Server implements RemoteModel
      */
     @Override public ArrayList<Review> getReviewsForMovie (Movie movie) throws RemoteException
     {
-      return model.getReviewsForMovie(movie);
+      return remoteDatabase.getReviewsForMovie(movie);
     }
 
     /**
@@ -284,7 +275,7 @@ public class Server implements RemoteModel
      */
     @Override public void leaveReview (String comment,int rating, String title, String user) throws RemoteException
     {
-      model.leaveReview(comment, rating, title, user);
+      remoteDatabase.leaveReview(comment, rating, title, user);
     }
 
   /**
@@ -294,7 +285,7 @@ public class Server implements RemoteModel
    */
     @Override public ArrayList<Movie> getMovieLike (String title) throws RemoteException
     {
-      return model.getMovieLike(title);
+      return remoteDatabase.getMovieLike(title);
     }
 
   /**
@@ -304,12 +295,12 @@ public class Server implements RemoteModel
    */
   @Override public ArrayList<Movie> getMoviesWithGenre(String genre) throws RemoteException
   {
-    return model.getMoviesWithGenre(genre);
+    return remoteDatabase.getMoviesWithGenre(genre);
   }
 
-  public ArrayList<Person> getAllPersons()
+  public ArrayList<Person> getAllPersons() throws RemoteException
   {
-    return new ArrayList<>();
+    return remoteDatabase.getAllPersons();
   }
 
   public void removeRental(String title, String userName)

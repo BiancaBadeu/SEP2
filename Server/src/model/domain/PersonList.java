@@ -52,4 +52,9 @@ public class PersonList
     {person = new Admin(name, username, password, phoneNumber, age);}
     persons.add(person);
   }
+
+  public void addPerson(Person person)
+  {
+    persons.add(person);
+  }
 }

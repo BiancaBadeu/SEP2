@@ -25,12 +25,19 @@ public class ModelManager implements Model
   /**
    * Empty constructor which initializes the movieList, rentalList, personList, and database
    */
-  public ModelManager()
+  public ModelManager() throws RemoteException
   {
     this.server = new Server();
     this.movieList = new MovieList();
     this.rentalList = new RentalList();
     this.personList = new PersonList();
+    ArrayList<Person> list = server.getAllPersons();
+    for(int i=0;i<list.size();i++)
+    {
+      personList.addPerson(list.get(i));
+      System.out.println(list.get(i));
+    }
+
   }
 
   /**

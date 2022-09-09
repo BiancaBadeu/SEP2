@@ -107,4 +107,5 @@ public interface SEPPersistence
    */
   void removeRental(String title, String username) throws SQLException;
   void getAllInfo();
+  ArrayList<Movie> getTop10RatedMovies() throws SQLException;
 }

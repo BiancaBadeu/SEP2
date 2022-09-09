@@ -1,6 +1,7 @@
 package model.domain;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * This class represents a person which can be a user or an admin.
@@ -117,7 +118,7 @@ public abstract class Person implements Serializable
       throw new IllegalArgumentException("Invalid phone number");
     }
     else
-     this.phoneNumber = phoneNumber;
+      this.phoneNumber = phoneNumber;
   }
 
   /**

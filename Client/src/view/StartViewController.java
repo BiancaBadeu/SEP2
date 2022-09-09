@@ -85,11 +85,12 @@ public class StartViewController
   @FXML private void loginPressed()
   {
     boolean logedin = viewModel.login();
+    System.out.println("Opening next window");
 
-    if(logedin && viewModel.checkType().equals("user"))
+    //if(logedin && viewModel.checkType().equals("user"))
       viewHandler.openView("home");
-    else if(logedin && viewModel.checkType().equals("admin"))
-      viewHandler.openView("admin");
+   // else if(logedin && viewModel.checkType().equals("admin"))
+      //viewHandler.openView("admin");
   }
   /**
    * A FXML method called when the button named Sign up is pressed

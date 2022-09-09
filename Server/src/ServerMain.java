@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 
 public class ServerMain
 {
-  public static void main(String[] args)
+  public static void main(String[] args) throws RemoteException
   {
     Model model = new ModelManager();
     RemoteModel server = new Server(model);

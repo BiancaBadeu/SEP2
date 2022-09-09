@@ -161,7 +161,7 @@ public class Movie implements Serializable
    */
   public void setDescription(String description)
   {
-    if(description==null || description.equals("") || description.length()>1000)
+    if(description==null || description.equals("") || description.length()>1000 )
     {
       throw new IllegalArgumentException("Invalid description");
     }

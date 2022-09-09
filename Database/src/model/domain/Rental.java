@@ -23,8 +23,6 @@ public class Rental implements Serializable
     this.expirationDate = expirationDate;
     this.user = user;
     this.rentedMovie = rentedMovie;
-
-
   }
 
   /**
@@ -79,7 +77,7 @@ public class Rental implements Serializable
       throw new IllegalArgumentException("User cannot be null");
     }
     else
-    this.user = user;
+      this.user = user;
   }
 
   /**

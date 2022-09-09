@@ -459,4 +459,55 @@ public class SEPDatabase implements SEPPersistence
 
   }
 
+  @Override public ArrayList<Movie> getTop10RatedMovies() throws SQLException
+  {
+    String sql = "select * from sep.movies;";
+    ArrayList<Object[]> results = db.query(sql);
+    ArrayList<Movie> all = new ArrayList<>();
+
+    for (int i = 0; i < results.size(); i++)
+    {
+      Movie movie = new Movie("test", "test", 1, "test", 0.0, 1999, "test", new ArrayList<>());
+
+      Object[] row = results.get(i);
+      for (int j = 0; j < row.length; j++)
+      {
+        switch (j)
+        {
+          case 0:
+            movie.setTitle(String.valueOf(row[j]));
+            break;
+          case 1:
+            movie.setDirector(String.valueOf(row[j]));
+            break;
+          case 2:
+            movie.setLength(Integer.parseInt(String.valueOf(row[j])));
+            break;
+          case 3:
+            movie.setDescription(String.valueOf(row[j]));
+            break;
+          case 4:
+            movie.setAvgRating(Double.parseDouble(String.valueOf(row[j])));
+            break;
+          case 5:
+            movie.setReleaseYear(Integer.parseInt(String.valueOf(row[j])));
+            break;
+          case 6:
+            movie.setGenres(String.valueOf(row[j]));
+            break;
+          default:
+            break;
+        }
+
+      }
+      if (!getAllReviewForMovie(movie.getTitle()).isEmpty())
+      {
+        movie.setReviews(getAllReviewForMovie(movie.getTitle()));
+      }
+      if(all.size()<=9)
+        all.add(movie);
+    }
+    return all;
+  }
+
 }
