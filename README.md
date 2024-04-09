@@ -6,3 +6,5 @@ Second-semester project from the Software Technology Engineering programme:
 - Multi-user Client-Server system for renting, adding/removing movies and giving reviews/ratings
 - Java, JavaFX, HTML/CSS, PostgreSQL
 - Methodology: Unified Process; Framework: SCRUM
+
+Team: @Eli3336, @Xbey25, @domignat
